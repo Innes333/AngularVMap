@@ -1,0 +1,13 @@
+<div class="container-fluid center">
+	<div class="row">
+		<div class="col-md-12">
+			{{test}}
+		</div>
+		<leaflet class="lf-map" center="man"  controls="controls" geojson="geojson"></leaflet>
+
+	</div>
+</div>
+<div id="popup-items" 
+	class="popup"
+	data-ng-include src="'components/directives/popup-items-template.html'">
+</div>

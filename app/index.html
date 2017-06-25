@@ -3,19 +3,21 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>atart start build</title>
+	<title>VMaps - GeoData</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="shortcut icon" href="assets/img/favicon.png">	
 
-	<!-- build:css assets/css/vendor.min.css -->	
+	<!-- build:css assets/css/vendor.min.css -->
 	<link rel="stylesheet" href="assets/libs/bootstrap/bootstrap-grid.min.css" />
-	<link rel="stylesheet" href="assets/libs/font-awesome/css/font-awesome.min.css" />
 	<link rel="stylesheet" href="assets/css/vendor.min.css" />
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.css">
+
 	<!-- endbuild -->
 
 	<!-- build:css assets/css/main.min.css -->	
 	<link rel="stylesheet" href="assets/css/main.min.css" />
+	<link rel="stylesheet" href="//unpkg.com/leaflet@0.7.7/dist/leaflet.css">
 	<!-- endbuild -->
 </head>
 
@@ -25,7 +27,7 @@
 	</div>
 	
 	<header>		
-		<navigation></navigation>
+		<navigation data-ng-if="appConfig.user"></navigation>		
 	</header>
 
 	<main>
@@ -66,11 +68,11 @@
 	<script src="assets/libs/jquery/jquery-2.1.3.min.js"></script>
 	<script src="assets/libs/moment/moment.min.js"></script>
 	<script src="assets/libs/underscore/underscore.min.js"></script>
+	<script src="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.js"></script>
 	<!-- endbuild -->
-
 	<!-- build:js js/angular.min.js -->
 	<script src="assets/libs/angular/angular.min.js"></script>
-	<!-- endbuild -->
+	<!-- If you need other layers -->
 
 	<!-- build:js js/angular-libs.min.js -->
 	<script src="assets/libs/angular-route/angular-route.min.js"></script>
@@ -83,12 +85,15 @@
 	<!-- endbuild -->
 	
 	<!-- build:js js/contollers.min.js -->
+	<script src="components/authorization-controller/authorization-contoller.js"></script>
 	<script src="components/main-controller/main-ctrl.js"></script>	
+	<script src="components/map-controller/map-ctrl.js"></script>
 	<!-- endbuild -->
 
 	<!-- build:js js/directives.min.js -->
 	<script src="components/directives/navigation-directive.js"></script>
 	<script src="components/directives/popup-directive.js"></script>
+	<script src="components/directives/leaflet-directive.js"></script>
 	<!-- endbuild -->
 
 	<!-- build:js js/filters.min.js -->
@@ -96,6 +101,7 @@
 	<!-- endbuild -->
 
 	<!-- build:js js/services.min.js -->
+	<script src="components/services/authentication-service.js"></script>
 	<script src="components/services/services.js"></script>
 	<!-- endbuild -->  
 
