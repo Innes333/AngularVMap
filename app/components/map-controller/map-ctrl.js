@@ -6,8 +6,8 @@
 
 		angular.extend($scope, {
 			man: {
-				lat: 9.405006,
-				lng: 0.495222,
+				lat: 0.407885,
+				lng: 9.4706029,
 				zoom: 15
 			},
 			controls: {
@@ -15,31 +15,43 @@
 			}
 		}),
 
-		// Get the countries geojson data from a JSON
-		$http.get("/GeoJSON/POLES_WORK.json").success(function(data, status) {
-			angular.extend($scope, {
-				geojson: {
-					data: data,
-					style: {
-						fillColor: "green",
-						weight: 2,
-						opacity: 1,
-						color: 'white',
-						dashArray: '3',
-						fillOpacity: 0.7
-					}
-				}
-			});
-		});
 
-		$scope.loadItems = function(){
-			dataService.getData(apiUrl.itemsUrl)
-				.then(function (response) {
-					$scope.itemList = response.data;
-				}, function (error) {
-					throw dataService.catchError(error,'Ajax call error massege!');
+		// Get the countries geojson data from a JSON
+		dataService.getData(apiUrl.geoJsonUrl + 'data.geojson')
+			.then(function (response) {
+				angular.extend($scope, {
+					geojson: {
+						data: response.data,
+						style: {
+							fillColor: "green",
+							weight: 20,
+							opacity: 1,
+							color: 'red',
+							dashArray: '3',
+							fillOpacity: 0.7
+						}
+					}
+				});
+			}, function (error) {
+				throw dataService.catchError(error,'Ajax call error massege!');
 			});
-		};
+		// $http.get("./GeoJSON/POLES_WORK.json").success(function(data, status) {
+		// 	angular.extend($scope, {
+		// 		geojson: {
+		// 			data: data,
+		// 			style: {
+		// 				fillColor: "green",
+		// 				weight: 2,
+		// 				opacity: 1,
+		// 				color: 'white',
+		// 				dashArray: '3',
+		// 				fillOpacity: 0.7
+		// 			}
+		// 		}
+		// 	});
+		// });
+
+
 
 	}]);
 }());

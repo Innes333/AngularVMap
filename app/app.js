@@ -3,7 +3,8 @@
 		.constant('apiUrl',{
 			"baseUrl":  'http://localhost:3000/',
 			"loginUrl": 'login.json',
-			"itemsUrl":	"testJson.json"
+			"itemsUrl":	"testJson.json",
+			"geoJsonUrl": "GeoJSON/"
 		})
 		.config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider){
 			$httpProvider.defaults.headers.common['X-Requested-With'];
@@ -44,62 +45,5 @@
 					message: ''
 				}
 			};
-
-			window.onerror = function(msg, file, line, col, error) {
-				var report = {					
-					agent: navigator.userAgent,
-					url: window.location.href,
-					errorTime: new Date().toISOString(),
-					file: file,
-					line: line
-				};
-				if (col) report.column = col;
-				if (error) {
-					report.errorType = error instanceof EvalError ? 'EvalError' :
-					error instanceof RangeError ? 'RangeError':
-					error instanceof ReferenceError ? 'ReferenceError':
-					error instanceof SyntaxError ? 'SyntaxError':
-					error instanceof TypeError ? 'TypeError':
-					error instanceof URIError ? 'URIError': 'Unknown error';
-					report.stack = error.stack;
-					report.originalMessage = error.message;
-				};
-				report.message = msg;
-
-				$rootScope.appConfig.appError.status = true;
-				$rootScope.appConfig.appError.message = report;
-				$http.post('http://someApiLogUrl/', report)
-				.then(function (response) {
-						console.log('Log on update server!');
-					}, function (error) {
-						console.log(error)
-				});
-			};
-		}])
-		.config(['$provide', function($provide) {
-			$provide.decorator("$exceptionHandler", ['$delegate', '$injector', function($delegate, $injector) {  
-				return function(exception, cause) {
-					var $http         = $injector.get('$http'),
-							$rootScope    = $injector.get('$rootScope'),
-							$localStorage = $injector.get('$localStorage');
-
-					$delegate(exception, cause);
-					var report = {
-						agent: navigator.userAgent,
-						url: window.location.href,
-						errorTime: new Date().toISOString(),
-						massage: exception
-					};
-
-					$rootScope.appConfig.appError.status = true;
-					$rootScope.appConfig.appError.message = report;
-					$http.post('http://someApiLogUrl/', report)
-						.then(function (response) {
-							console.log('Log on update server!');
-						}, function (error) {
-							console.log(error)
-					});
-				};
-			}]);
 		}])
 }());

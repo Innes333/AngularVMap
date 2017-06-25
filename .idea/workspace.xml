@@ -2,51 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ee19fb1e-e780-4221-97d8-05b7fb561aa3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/GeoJSON/POLES_WORK.geojson" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/GeoJSON/Styles.qgs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/GeoJSON/Z_1_CROSS WORK.geojson" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/GeoJSON/Z_1_OFC_12(splited).geojson" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/GeoJSON/Z_1_OFC_144(splited).geojson" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/GeoJSON/Z_1_OFC_48(splited).geojson" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/GeoJSON/Z_1_SC_144 WORK.geojson" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/GeoJSON/Z_1_SC_48 WORK.geojson" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/components/authorization-controller/authorization-contoller.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/components/authorization-controller/authorization-contoller.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/components/directives/leaflet-directive.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/components/map-controller/map-ctrl.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/components/map-controller/map-ctrl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/components/services/authentication-service.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/login.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/css/font-awesome/fonts/FontAwesome.otf" afterPath="$PROJECT_DIR$/app/assets/css/font-awesome/fonts/FontAwesome.otf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/css/font-awesome/fonts/fontawesome-webfont.eot" afterPath="$PROJECT_DIR$/app/assets/css/font-awesome/fonts/fontawesome-webfont.eot" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/css/font-awesome/fonts/fontawesome-webfont.ttf" afterPath="$PROJECT_DIR$/app/assets/css/font-awesome/fonts/fontawesome-webfont.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/css/font-awesome/fonts/fontawesome-webfont.woff" afterPath="$PROJECT_DIR$/app/assets/css/font-awesome/fonts/fontawesome-webfont.woff" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/css/font-awesome/fonts/fontawesome-webfont.woff2" afterPath="$PROJECT_DIR$/app/assets/css/font-awesome/fonts/fontawesome-webfont.woff2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/fonts/CenturyGothicRegular/CenturyGothic.eot" afterPath="$PROJECT_DIR$/app/assets/fonts/CenturyGothicRegular/CenturyGothic.eot" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/fonts/CenturyGothicRegular/CenturyGothic.ttf" afterPath="$PROJECT_DIR$/app/assets/fonts/CenturyGothicRegular/CenturyGothic.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/fonts/CenturyGothicRegular/CenturyGothic.woff" afterPath="$PROJECT_DIR$/app/assets/fonts/CenturyGothicRegular/CenturyGothic.woff" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/fonts/CenturyGothicRegular/CenturyGothicRegular.eot" afterPath="$PROJECT_DIR$/app/assets/fonts/CenturyGothicRegular/CenturyGothicRegular.eot" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/fonts/CenturyGothicRegular/CenturyGothicRegular.ttf" afterPath="$PROJECT_DIR$/app/assets/fonts/CenturyGothicRegular/CenturyGothicRegular.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/fonts/CenturyGothicRegular/CenturyGothicRegular.woff" afterPath="$PROJECT_DIR$/app/assets/fonts/CenturyGothicRegular/CenturyGothicRegular.woff" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/fonts/OpenSansBold/OpenSansBold.eot" afterPath="$PROJECT_DIR$/app/assets/fonts/OpenSansBold/OpenSansBold.eot" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/fonts/OpenSansBold/OpenSansBold.ttf" afterPath="$PROJECT_DIR$/app/assets/fonts/OpenSansBold/OpenSansBold.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/fonts/OpenSansBold/OpenSansBold.woff" afterPath="$PROJECT_DIR$/app/assets/fonts/OpenSansBold/OpenSansBold.woff" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/fonts/RobotoLight/RobotoLight.eot" afterPath="$PROJECT_DIR$/app/assets/fonts/RobotoLight/RobotoLight.eot" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/fonts/RobotoLight/RobotoLight.ttf" afterPath="$PROJECT_DIR$/app/assets/fonts/RobotoLight/RobotoLight.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/fonts/RobotoLight/RobotoLight.woff" afterPath="$PROJECT_DIR$/app/assets/fonts/RobotoLight/RobotoLight.woff" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/fonts/RobotoRegular/RobotoRegular.eot" afterPath="$PROJECT_DIR$/app/assets/fonts/RobotoRegular/RobotoRegular.eot" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/fonts/RobotoRegular/RobotoRegular.ttf" afterPath="$PROJECT_DIR$/app/assets/fonts/RobotoRegular/RobotoRegular.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/fonts/RobotoRegular/RobotoRegular.woff" afterPath="$PROJECT_DIR$/app/assets/fonts/RobotoRegular/RobotoRegular.woff" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/img/slider0.jpg" afterPath="$PROJECT_DIR$/app/assets/img/slider0.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/libs/font-awesome/fonts/FontAwesome.otf" afterPath="$PROJECT_DIR$/app/assets/libs/font-awesome/fonts/FontAwesome.otf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/libs/font-awesome/fonts/fontawesome-webfont.eot" afterPath="$PROJECT_DIR$/app/assets/libs/font-awesome/fonts/fontawesome-webfont.eot" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/libs/font-awesome/fonts/fontawesome-webfont.ttf" afterPath="$PROJECT_DIR$/app/assets/libs/font-awesome/fonts/fontawesome-webfont.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/libs/font-awesome/fonts/fontawesome-webfont.woff" afterPath="$PROJECT_DIR$/app/assets/libs/font-awesome/fonts/fontawesome-webfont.woff" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/GeoJSON/Z_1_SC_144 WORK.geojson" afterPath="$PROJECT_DIR$/app/GeoJSON/data.geojson" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.js" afterPath="$PROJECT_DIR$/app/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/css/main.min.css" afterPath="$PROJECT_DIR$/app/assets/css/main.min.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/sass/main.sass" afterPath="$PROJECT_DIR$/app/assets/sass/main.sass" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/directives/navigation-template.html" afterPath="$PROJECT_DIR$/app/components/directives/navigation-template.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/map-controller/map-ctrl.js" afterPath="$PROJECT_DIR$/app/components/map-controller/map-ctrl.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -59,31 +20,21 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="map-ctrl.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="map-ctrl.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/components/map-controller/map-ctrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="18" column="19" lean-forward="false" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+            <state relative-caret-position="312">
+              <caret line="28" column="39" lean-forward="false" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="filters.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/components/services/filters.js">
+      <file leaf-file-name="data.geojson" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/GeoJSON/data.geojson">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="11" column="7" lean-forward="false" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="authentication-service.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/components/services/authentication-service.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="20" column="47" lean-forward="true" selection-start-line="20" selection-start-column="47" selection-end-line="20" selection-end-column="47" />
+            <state relative-caret-position="96">
+              <caret line="4" column="63" lean-forward="false" selection-start-line="4" selection-start-column="53" selection-end-line="4" selection-end-column="63" />
               <folding />
             </state>
           </provider>
@@ -92,8 +43,18 @@
       <file leaf-file-name="POLES_WORK.geojson" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/GeoJSON/POLES_WORK.geojson">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="4" column="776" lean-forward="false" selection-start-line="4" selection-start-column="757" selection-end-line="4" selection-end-column="776" />
+            <state relative-caret-position="480">
+              <caret line="20" column="776" lean-forward="false" selection-start-line="20" selection-start-column="758" selection-end-line="20" selection-end-column="776" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main-ctrl.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/components/main-controller/main-ctrl.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="312">
+              <caret line="13" column="15" lean-forward="true" selection-start-line="8" selection-start-column="12" selection-end-line="13" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -112,8 +73,8 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="24">
-              <caret line="1" column="70" lean-forward="false" selection-start-line="1" selection-start-column="70" selection-end-line="1" selection-end-column="70" />
+            <state relative-caret-position="409">
+              <caret line="46" column="14" lean-forward="false" selection-start-line="46" selection-start-column="14" selection-end-line="46" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -133,7 +94,7 @@
         <entry file="file://$PROJECT_DIR$/app/assets/sass/main.sass">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="348">
-              <caret line="617" column="30" lean-forward="false" selection-start-line="617" selection-start-column="30" selection-end-line="617" selection-end-column="30" />
+              <caret line="617" column="27" lean-forward="false" selection-start-line="617" selection-start-column="27" selection-end-line="617" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -142,8 +103,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="6" column="59" lean-forward="true" selection-start-line="6" selection-start-column="59" selection-end-line="6" selection-end-column="59" />
+            <state relative-caret-position="288">
+              <caret line="12" column="82" lean-forward="false" selection-start-line="12" selection-start-column="82" selection-end-line="12" selection-end-column="82" />
               <folding />
             </state>
           </provider>
@@ -201,10 +162,10 @@
         <option value="$PROJECT_DIR$/app/components/services/authentication-service.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/app/components/directives/leaflet-directive.js" />
-        <option value="$PROJECT_DIR$/app/app.js" />
-        <option value="$PROJECT_DIR$/app/assets/sass/main.sass" />
         <option value="$PROJECT_DIR$/app/components/map-controller/map-ctrl.html" />
+        <option value="$PROJECT_DIR$/app/assets/sass/main.sass" />
         <option value="$PROJECT_DIR$/app/index.html" />
+        <option value="$PROJECT_DIR$/app/app.js" />
         <option value="$PROJECT_DIR$/app/components/map-controller/map-ctrl.js" />
       </list>
     </option>
@@ -279,33 +240,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="services" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AngularVMap" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AngularVMap" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="map-controller" />
+              <option name="myItemId" value="GeoJSON" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -341,7 +276,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main-controller" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -356,6 +295,7 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -803,15 +743,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1498320085768</updated>
-      <workItem from="1498320087020" duration="23740000" />
+      <workItem from="1498320087020" duration="26051000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23740000" />
+    <option name="totallyTimeSpent" value="26051000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -824,7 +765,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32985386" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32985386" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18739635" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
@@ -878,14 +819,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="744">
           <caret line="43" column="49" lean-forward="true" selection-start-line="43" selection-start-column="49" selection-end-line="43" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/main-controller/main-ctrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -992,22 +925,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/sass/main.sass">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="617" column="30" lean-forward="false" selection-start-line="617" selection-start-column="30" selection-end-line="617" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="1" column="70" lean-forward="false" selection-start-line="1" selection-start-column="70" selection-end-line="1" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/GeoJSON/Z_1_SC_48 WORK.geojson">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1032,34 +949,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/GeoJSON/POLES_WORK.geojson">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="4" column="776" lean-forward="false" selection-start-line="4" selection-start-column="757" selection-end-line="4" selection-end-column="776" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/libs/font-awesome/css/font-awesome.min.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="6" column="59" lean-forward="true" selection-start-line="6" selection-start-column="59" selection-end-line="6" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/map-controller/map-ctrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="18" column="19" lean-forward="false" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
           <folding />
         </state>
       </provider>
@@ -1076,6 +969,62 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="20" column="47" lean-forward="true" selection-start-line="20" selection-start-column="47" selection-end-line="20" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/sass/main.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="617" column="27" lean-forward="false" selection-start-line="617" selection-start-column="27" selection-end-line="617" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="12" column="82" lean-forward="false" selection-start-line="12" selection-start-column="82" selection-end-line="12" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/main-controller/main-ctrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="13" column="15" lean-forward="true" selection-start-line="8" selection-start-column="12" selection-end-line="13" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="46" column="14" lean-forward="false" selection-start-line="46" selection-start-column="14" selection-end-line="46" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/GeoJSON/POLES_WORK.geojson">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="20" column="776" lean-forward="false" selection-start-line="20" selection-start-column="758" selection-end-line="20" selection-end-column="776" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/GeoJSON/data.geojson">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="4" column="63" lean-forward="false" selection-start-line="4" selection-start-column="53" selection-end-line="4" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/map-controller/map-ctrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="28" column="39" lean-forward="false" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
           <folding />
         </state>
       </provider>
