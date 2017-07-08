@@ -13,6 +13,5 @@
 					throw dataService.catchError(error,'Ajax call error massege!');								
 			});
 		};
-
 	}]);
 }());

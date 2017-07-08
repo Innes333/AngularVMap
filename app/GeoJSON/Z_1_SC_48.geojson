@@ -1,0 +1,10 @@
+{
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "City_Region": "Libreville", "Location_Type": "Pole", "Location_ID": null, "Splice_Closure_name": "SC_48_16", "Splice_Closure_serial_number": null, "Splice_Closure_installation_dat": null, "Splice_Closure_Template": "Optical Splice Box for 48FO", "Comment": null, "Longitude": 545544.38724175119, "Latitude": 55531.616700518389, "ID_Prov": "Temp_SC_481" }, "geometry": { "type": "Point", "coordinates": [ 9.409308060340232, 0.502398951288345 ] } },
+{ "type": "Feature", "properties": { "City_Region": "Libreville", "Location_Type": "Pole", "Location_ID": null, "Splice_Closure_name": "SC_48_19", "Splice_Closure_serial_number": null, "Splice_Closure_installation_dat": null, "Splice_Closure_Template": "Optical Splice Box for 48FO", "Comment": null, "Longitude": 545979.06692381331, "Latitude": 55382.197114441668, "ID_Prov": "Temp_SC_4810" }, "geometry": { "type": "Point", "coordinates": [ 9.413214382817536, 0.501046890595218 ] } },
+{ "type": "Feature", "properties": { "City_Region": "Libreville", "Location_Type": "Pole", "Location_ID": null, "Splice_Closure_name": "SC_48_17", "Splice_Closure_serial_number": null, "Splice_Closure_installation_dat": null, "Splice_Closure_Template": "Optical Splice Box for 48FO", "Comment": null, "Longitude": 545619.0, "Latitude": 55084.36, "ID_Prov": "Temp_SC_4816" }, "geometry": { "type": "Point", "coordinates": [ 9.409978318747562, 0.498352514836112 ] } },
+{ "type": "Feature", "properties": { "City_Region": "Libreville", "Location_Type": "Pole", "Location_ID": null, "Splice_Closure_name": "SC_48_18", "Splice_Closure_serial_number": null, "Splice_Closure_installation_dat": null, "Splice_Closure_Template": "Optical Splice Box for 48FO", "Comment": null, "Longitude": 545877.39, "Latitude": 55347.51, "ID_Prov": "Temp_SC_4817" }, "geometry": { "type": "Point", "coordinates": [ 9.412300579880302, 0.500733105657378 ] } }
+]
+}

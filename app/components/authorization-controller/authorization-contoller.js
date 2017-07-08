@@ -7,7 +7,6 @@
 			}();
 			$scope.login = function(user){			
 				AuthenticationService.Login(user, function (result){
-					console.log(result);
 					if(result === true) {
 						$location.path('/map');
 						$rootScope.appConfig.user = user;						

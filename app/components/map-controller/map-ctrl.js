@@ -4,54 +4,73 @@
 
 		$scope.test = "Hello from main controller!";
 
-		angular.extend($scope, {
-			man: {
-				lat: 0.407885,
-				lng: 9.4706029,
-				zoom: 15
-			},
-			controls: {
-				scale: true,
-			}
-		}),
+			angular.extend($scope, {
+				libreville: {
+					lat: 0.504503980130774,
+					lng: 9.408579986073635,
+					zoom: 15
+				},
+				layers: {
+					baselayers: {
+						osm: {
+							name: 'Layers:',
+							url: 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+							type: 'xyz'
+						},
+					},
+					overlays:{}
+				}
+			});
+
+			dataService.getData('./GeoJSON/Z_1_DROP.geojson')
+				.then(function (response) {
+					$scope.itemList = response.data;
+				}, function (error) {
+					throw dataService.catchError(error,'Ajax call error massege!');
+			});
 
 
-		// Get the countries geojson data from a JSON
-		dataService.getData(apiUrl.geoJsonUrl + 'data.geojson')
-			.then(function (response) {
-				angular.extend($scope, {
-					geojson: {
-						data: response.data,
-						style: {
-							fillColor: "green",
-							weight: 20,
-							opacity: 1,
-							color: 'red',
-							dashArray: '3',
-							fillOpacity: 0.7
+			$http.get("./GeoJSON/Z_1_DROP.geojson")
+				.success(function(data, status) {
+				angular.extend($scope.layers.overlays, {
+					lines: {
+						name:'POLES',
+						type: 'geoJSONShape',
+						data: data,
+						visible: true,
+						layerOptions: {
+							style: {
+								color: 'red',
+								fillColor: 'red',
+								weight: 1.0,
+								opacity: 0.6,
+								fillOpacity: 0.2
+							}
 						}
 					}
 				});
-			}, function (error) {
-				throw dataService.catchError(error,'Ajax call error massege!');
 			});
-		// $http.get("./GeoJSON/POLES_WORK.json").success(function(data, status) {
-		// 	angular.extend($scope, {
-		// 		geojson: {
-		// 			data: data,
-		// 			style: {
-		// 				fillColor: "green",
-		// 				weight: 2,
-		// 				opacity: 1,
-		// 				color: 'white',
-		// 				dashArray: '3',
-		// 				fillOpacity: 0.7
-		// 			}
-		// 		}
-		// 	});
-		// });
 
-
+			$http.get("./GeoJSON/Z_1_Buildings.geojson")
+				.success(function(data, status) {
+				angular.extend($scope.layers.overlays, {
+					buildings: {
+						name:'buildings',
+						type: 'geoJSONShape',
+						data: data,
+						visible: true,
+						layerOptions: {
+							style: {
+								color: 'orange',
+								fillColor: 'orange',
+								weight: 1.0,
+								opacity: 0.6,
+								fillOpacity: 0.2
+							}
+						}
+					}
+				});
+			});
 
 	}]);
 }());

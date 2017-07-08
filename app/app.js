@@ -1,10 +1,20 @@
 (function(){
 	angular.module('nameApp', ['ngRoute', 'ngStorage', 'ngWebsocket', 'leaflet-directive'])
 		.constant('apiUrl',{
-			"baseUrl":  'http://localhost:3000/',
-			"loginUrl": 'login.json',
-			"itemsUrl":	"testJson.json",
-			"geoJsonUrl": "GeoJSON/"
+			'baseUrl':  'http://localhost:3000/',
+			'loginUrl': 'login.json',
+			'itemsUrl':	'testJson.json',
+			'geoJsonUrl': 'GeoJSON/',
+			'layersGeoJSON': {
+				'Drop': {
+					'url': 'Z_1_DROP',
+					'color': 'red',
+				},
+				'Buildings': {
+					'url': 'Z_1_DROP',
+					'color': 'red',
+				}
+			}
 		})
 		.config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider){
 			$httpProvider.defaults.headers.common['X-Requested-With'];
@@ -28,7 +38,7 @@
 		.run(['$window', '$rootScope', '$http', '$location', '$localStorage', '$route', '$timeout', function($window, $rootScope, $http, $location, $localStorage, $route, $timeout) {
 			$rootScope.$on('$locationChangeStart', function (event, next, current) {
 				var publicPages = ['/'],
-						restrictedPage = publicPages.indexOf($location.path()) === -1;
+					restrictedPage = publicPages.indexOf($location.path()) === -1;
 				// if(restrictedPage && !$rootScope.appConfig.user){
 				// 	$location.path('/');
 				// }else if(!$rootScope.appConfig.user){

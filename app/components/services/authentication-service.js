@@ -1,7 +1,7 @@
 (function(){
 	angular
 		.module('nameApp')
-			.factory('AuthenticationService', ['$rootScope', '$http', '$localStorage', 'apiUrl', function($rootScope, $http, $localStorage, apiUrl){
+			.factory('AuthenticationService', ['$rootScope', '$http', 'apiUrl', function($rootScope, $http, apiUrl){
 				this.Login = function(user, callback) {
 
 					var roles = {
