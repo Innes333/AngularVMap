@@ -2,71 +2,83 @@
 	angular.module('nameApp')
 		.controller('mapCtrl', ['$http', 'leafletData', '$interval','$rootScope','$scope', '$window', '$routeParams', '$timeout', '$localStorage', 'apiUrl', 'baseFunc', 'dataService', function($http, leafletData, $interval, $rootScope, $scope, $window, $routeParams, $timeout, $localStorage, apiUrl, baseFunc, dataService){
 
-		$scope.test = "Hello from main controller!";
-
 			angular.extend($scope, {
 				libreville: {
 					lat: 0.504503980130774,
 					lng: 9.408579986073635,
 					zoom: 15
 				},
+				controls: {
+					scale:{},
+					search: {}
+				},
 				layers: {
 					baselayers: {
 						osm: {
 							name: 'Layers:',
 							url: 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-							type: 'xyz'
-						},
+							type: 'xyz',
+							layerOptions: {
+								mapid: 'lf-map'
+							},
+							layerParams: {
+								showOnSelector: false
+							}
+						}
 					},
-					overlays:{}
+					overlays: {},
 				}
 			});
 
-			dataService.getData('./GeoJSON/Z_1_DROP.geojson')
-				.then(function (response) {
-					$scope.itemList = response.data;
-				}, function (error) {
-					throw dataService.catchError(error,'Ajax call error massege!');
-			});
+			for (layer in apiUrl.layersGeoJSON) {
+				var layerConfig = apiUrl.layersGeoJSON[layer];
+				loadLayers(layerConfig, layer);
+			};
 
-
-			$http.get("./GeoJSON/Z_1_DROP.geojson")
-				.success(function(data, status) {
-				angular.extend($scope.layers.overlays, {
-					lines: {
-						name:'POLES',
-						type: 'geoJSONShape',
-						data: data,
-						visible: true,
-						layerOptions: {
-							style: {
-								color: 'red',
-								fillColor: 'red',
-								weight: 1.0,
-								opacity: 0.6,
-								fillOpacity: 0.2
+			function loadLayers(layerConfig, layerName) {
+				dataService.getData(layerConfig.url + '.geojson')
+					.then(function (response) {
+						angular.extend($scope.layers.overlays, {
+							[layerName]: {
+								name: layerConfig.name,
+								type: 'geoJSONShape',
+								data: response.data,
+								visible: true,
+								layerOptions: {
+									style: {
+										color: layerConfig.color,
+										fillColor: layerConfig.bgc,
+										weight: 1.0,
+										opacity: 0.6,
+										fillOpacity: 0.2
+									},
+									marker: {
+										type: 'div',
+										iconSize: [30, 30],
+										popupAnchor:  [0, 0],
+										color: layerConfig.color,
+										html: 'Using <strong>Bold text as an icon</strong>:'
+									},
+								}
 							}
-						}
-					}
-				});
-			});
+						});
 
-			$http.get("./GeoJSON/Z_1_Buildings.geojson")
-				.success(function(data, status) {
-				angular.extend($scope.layers.overlays, {
-					buildings: {
-						name:'buildings',
-						type: 'geoJSONShape',
-						data: data,
-						visible: true,
-						layerOptions: {
-							style: {
-								color: 'orange',
-								fillColor: 'orange',
-								weight: 1.0,
-								opacity: 0.6,
-								fillOpacity: 0.2
-							}
+					}, function (error) {
+						throw dataService.catchError(error, 'Ajax call error massege!');
+					});
+			};
+
+			leafletData.getLayers().then(function(baselayers) {
+				console.log(baselayers.overlays.drop);
+				angular.extend($scope.controls, {
+					search: {
+						propertyName: 'BuildingID',
+						marker: false,
+						layer: baselayers.overlays.drop,
+						moveToLocation: function (latlng, title, map) {
+							//map.fitBounds( latlng.layer.getBounds() );
+							var zoom = map.getBoundsZoom(latlng.layer.getBounds());
+							map.setView(latlng, zoom); // access the zoom
 						}
 					}
 				});

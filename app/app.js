@@ -6,13 +6,47 @@
 			'itemsUrl':	'testJson.json',
 			'geoJsonUrl': 'GeoJSON/',
 			'layersGeoJSON': {
-				'Drop': {
-					'url': 'Z_1_DROP',
+				'drop': {
+					'name': 'Drop',
+					'url': 'GeoJSON/Z_1_DROP',
 					'color': 'red',
+					'bgc': 'orange'
 				},
-				'Buildings': {
-					'url': 'Z_1_DROP',
+				'buildings': {
+					'name': 'Buildings',
+					'url': 'GeoJSON/Z_1_Buildings',
+					'color': 'orange',
+					'bgc': 'orange'
+				},
+				'cross': {
+					'name': 'Cross',
+					'url': 'GeoJSON/Z_1_CROSS',
 					'color': 'red',
+					'bgc': 'red'
+				},
+				'mdu': {
+					'name': 'MDU',
+					'url': 'GeoJSON/Z_1_MDU',
+					'color': 'red',
+					'bgc': 'red'
+				},
+				'otb': {
+					'name': 'OTB',
+					'url': 'GeoJSON/Z_1_OTB',
+					'color': '#00df43',
+					'bgc': '#00df43'
+				},
+				'areaOtb': {
+					'name': 'Area OTB',
+					'url': 'GeoJSON/Z_1_AREA_OTB',
+					'color': '#d4a2f9',
+					'bgc': '#d4a2f9'
+				},
+				'squares': {
+					'name': 'Squares',
+					'url': 'GeoJSON/Z_1_Squares',
+					'color': '#ee8c59',
+					'bgc': '#ee8c59'
 				}
 			}
 		})
