@@ -246,9 +246,15 @@ input,textarea,button
 	position: relative
 	height: calc(100vh - 54px)
 	.w-logo
+		margin-bottom: 25px
 		img
-			height: 150px
+			width: 44%
+			&.vmap-logo
+				margin-right: 5%
+			&.your-logo
+				margin-left: 5%
 	.login-content
+		max-width: 700px
 		position: absolute
 		top: 45%
 		left: 50%
@@ -441,6 +447,8 @@ footer
 	color: $white		
 	width: 100%
 	z-index: 1000
+	text-transform: uppercase
+	font-size: 12px
 	.copy 
 		position: absolute
 		min-height: 35px
@@ -448,6 +456,7 @@ footer
 		left: 0
 		width: 100%
 		line-height: 35px
+		color: $white
 		background-color: #232e3a
 		a
 			color: $white
@@ -456,7 +465,6 @@ footer
 			&:hover
 				text-decoration: underline
 		.dev
-			font-size: 12px
 			text-align: right
 			span
 				font-style: italic
@@ -528,6 +536,38 @@ main
 				&::after
 					opacity: 1
 
+.about
+	text-align: left
+	padding-top: 80px
+	font-size: 17px
+	.about-headline
+		margin-bottom: 30px
+		span
+			color: $greenMain
+			font-weight: 700
+	ol
+		margin: 0
+	.descr
+		color: $greenMain
+		font-weight: 600
+		margin: 20px 0 10px
+	.sign
+		margin-top: 30px
+		font-style: italic
+
+.contact
+	text-align: left
+	padding-top: 80px
+	font-size: 17px
+	.contact-headline
+		margin-bottom: 30px
+		span
+			color: $greenMain
+			font-weight: 700
+	a
+		color: $darkBlue
+		text-decoration: underline
+		margin-left: 10px
 
 
 //ALWAYS END

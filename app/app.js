@@ -47,6 +47,24 @@
 					'url': 'GeoJSON/Z_1_Squares',
 					'color': '#ee8c59',
 					'bgc': '#ee8c59'
+				},
+				'ofc-12': {
+					'name': 'OFC-12',
+					'url': 'GeoJSON/Z_1_OFC_12',
+					'color': '#ee8c59',
+					'bgc': '#ee8c59'
+				},
+				'ofc-48': {
+					'name': 'OFC-48',
+					'url': 'GeoJSON/Z_1_OFC_48',
+					'color': '#ee8c59',
+					'bgc': '#ee8c59'
+				},
+				'ofc-fig-8': {
+					'name': 'OFC-FIG-8',
+					'url': 'GeoJSON/Z_1_OFC_FIG_8',
+					'color': '#ee8c59',
+					'bgc': '#ee8c59'
 				}
 			}
 		})
@@ -65,6 +83,14 @@
 				templateUrl: 'components/map-controller/map-ctrl.html',
 				controller: 'mapCtrl'
 			})
+			.when('/contact', {
+				templateUrl: 'components/contact-controller/contact-ctrl.html',
+				controller: 'mapCtrl'
+			})
+			.when('/about', {
+				templateUrl: 'components/about-controller/about-ctrl.html',
+				controller: 'mapCtrl'
+			})
 			.otherwise({
 				redirectTo: '/'
 			})
@@ -73,12 +99,12 @@
 			$rootScope.$on('$locationChangeStart', function (event, next, current) {
 				var publicPages = ['/'],
 					restrictedPage = publicPages.indexOf($location.path()) === -1;
-				// if(restrictedPage && !$rootScope.appConfig.user){
-				// 	$location.path('/');
-				// }else if(!$rootScope.appConfig.user){
-				// 	$location.path('/');
-				// 	$rootScope.appConfig.user = false;
-				// };
+				if(restrictedPage && !$rootScope.appConfig.user){
+					$location.path('/');
+				}else if(!$rootScope.appConfig.user){
+					$location.path('/');
+					$rootScope.appConfig.user = false;
+				};
 			});
 
 			$rootScope.appConfig = {

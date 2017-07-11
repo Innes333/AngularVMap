@@ -3,14 +3,13 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>VMaps - GeoData</title>
+	<title>VMaps GeoData Visualizer</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="shortcut icon" href="assets/img/logo.png">
 
 	<!-- build:css assets/css/vendor.min.css -->
 	<link rel="stylesheet" href="assets/libs/bootstrap/bootstrap-grid.min.css" />
-	<link rel="stylesheet" href="assets/libs/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="assets/css/vendor.min.css" />
 	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.css">
 
@@ -28,8 +27,8 @@
 	</div>
 	
 	<header>		
-		<navigation></navigation>
-		<!--<navigation data-ng-if="appConfig.user"></navigation>-->
+		<!--<navigation></navigation>-->
+		<navigation data-ng-if="appConfig.user"></navigation>
 	</header>
 
 	<main>
@@ -51,10 +50,7 @@
 					</div>
 					<div class="col-md-6 col-sm-8 col-xs-8">
 						<div class="dev">
-							<a href="http://inna-i.zz.mu/" target="_blank" rel="nofollow">
-								Developed by
-								<span>Inna Ivashchuk</span>
-							</a>
+							Spatial Intelligence
 						</div>
 					</div>
 				</div>

@@ -44,20 +44,15 @@
 								type: 'geoJSONShape',
 								data: response.data,
 								visible: true,
+								marker: {},
 								layerOptions: {
 									style: {
+										radius: 5,
 										color: layerConfig.color,
 										fillColor: layerConfig.bgc,
 										weight: 1.0,
-										opacity: 0.6,
-										fillOpacity: 0.2
-									},
-									marker: {
-										type: 'div',
-										iconSize: [30, 30],
-										popupAnchor:  [0, 0],
-										color: layerConfig.color,
-										html: 'Using <strong>Bold text as an icon</strong>:'
+										opacity: 0.8,
+										fillOpacity: 0.4,
 									},
 								}
 							}
@@ -69,7 +64,6 @@
 			};
 
 			leafletData.getLayers().then(function(baselayers) {
-				console.log(baselayers.overlays.drop);
 				angular.extend($scope.controls, {
 					search: {
 						propertyName: 'BuildingID',
