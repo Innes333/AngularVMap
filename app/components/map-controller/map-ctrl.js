@@ -27,41 +27,34 @@
 						}
 					},
 					overlays: {},
-				}
+				},
 			});
 
-			for (layer in apiUrl.layersGeoJSON) {
-				var layerConfig = apiUrl.layersGeoJSON[layer];
-				loadLayers(layerConfig, layer);
-			};
-
-			function loadLayers(layerConfig, layerName) {
-				dataService.getData(layerConfig.url + '.geojson')
+			angular.forEach(apiUrl.layersGeoJSON, function(layer, key) {
+				var layerName = layer.name;
+				dataService.getData(layer.url + '.geojson')
 					.then(function (response) {
-						angular.extend($scope.layers.overlays, {
-							[layerName]: {
-								name: layerConfig.name,
+						$scope.layers.overlays[layerName] = {
+								name: layerName,
 								type: 'geoJSONShape',
 								data: response.data,
 								visible: true,
-								marker: {},
 								layerOptions: {
 									style: {
-										radius: 5,
-										color: layerConfig.color,
-										fillColor: layerConfig.bgc,
-										weight: 1.0,
-										opacity: 0.8,
-										fillOpacity: 0.4,
+										color: layer.color,
+										fillColor: layer.bgc,
+										fillOpacity: 0.6,
+										weight: 3,
+										radius: 6,
+										clickable: true
 									},
 								}
-							}
-						});
+						};
 
 					}, function (error) {
 						throw dataService.catchError(error, 'Ajax call error massege!');
 					});
-			};
+			});
 
 			leafletData.getLayers().then(function(baselayers) {
 				angular.extend($scope.controls, {

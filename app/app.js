@@ -9,8 +9,8 @@
 				'drop': {
 					'name': 'Drop',
 					'url': 'GeoJSON/Z_1_DROP',
-					'color': 'red',
-					'bgc': 'orange'
+					'color': '#b96763',
+					'bgc': '#b96763'
 				},
 				'buildings': {
 					'name': 'Buildings',
@@ -27,8 +27,8 @@
 				'mdu': {
 					'name': 'MDU',
 					'url': 'GeoJSON/Z_1_MDU',
-					'color': 'red',
-					'bgc': 'red'
+					'color': '#ff0ff7',
+					'bgc': '#ff0ff7'
 				},
 				'otb': {
 					'name': 'OTB',
@@ -97,14 +97,14 @@
 		}])
 		.run(['$window', '$rootScope', '$http', '$location', '$localStorage', '$route', '$timeout', function($window, $rootScope, $http, $location, $localStorage, $route, $timeout) {
 			$rootScope.$on('$locationChangeStart', function (event, next, current) {
-				var publicPages = ['/'],
-					restrictedPage = publicPages.indexOf($location.path()) === -1;
-				if(restrictedPage && !$rootScope.appConfig.user){
-					$location.path('/');
-				}else if(!$rootScope.appConfig.user){
-					$location.path('/');
-					$rootScope.appConfig.user = false;
-				};
+				// var publicPages = ['/'],
+				// 	restrictedPage = publicPages.indexOf($location.path()) === -1;
+				// if(restrictedPage && !$rootScope.appConfig.user){
+				// 	$location.path('/');
+				// }else if(!$rootScope.appConfig.user){
+				// 	$location.path('/');
+				// 	$rootScope.appConfig.user = false;
+				// };
 			});
 
 			$rootScope.appConfig = {

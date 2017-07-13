@@ -127,10 +127,19 @@ gulp.task('scripts', function(){
 	return gulp.src('app/**/*.html')
 		.pipe(useref())
 		.pipe(gulpif('*.js', uglify()))
+		.on('error', function (err) { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
 		.pipe(gulpif('*.css', minifycss('')))
 		.pipe(gulp.dest('dist'));
 });
 
+// gulp.task('scripts', function() {
+// 	return gulp.src(['dev_assets/scripts/*.js'])
+// 		.pipe(concat('all.min.js'))
+// 		.pipe(uglify())
+// 		.on('error', function (err) { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
+// 		.pipe(gulp.dest('public/js'))
+// 		.pipe(livereload());
+// })
 gulp.task('static', function(){
 	gulp.src('app/assets/fonts/**/*')
 		.pipe(gulp.dest('dist/assets/fonts/'));
