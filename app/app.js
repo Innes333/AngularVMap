@@ -6,65 +6,116 @@
 			'itemsUrl':	'testJson.json',
 			'geoJsonUrl': 'GeoJSON/',
 			'layersGeoJSON': {
-				'drop': {
-					'name': 'Drop',
-					'url': 'GeoJSON/Z_1_DROP',
-					'color': '#b96763',
-					'bgc': '#b96763'
-				},
 				'buildings': {
 					'name': 'Buildings',
 					'url': 'GeoJSON/Z_1_Buildings',
 					'color': 'orange',
-					'bgc': 'orange'
+					'bgc': 'orange',
+					'opacity': 0.6,
+					'fillOpacity': 0.2,
+					'weight': 1.0,
 				},
-				'cross': {
-					'name': 'Cross',
-					'url': 'GeoJSON/Z_1_CROSS',
-					'color': 'red',
-					'bgc': 'red'
-				},
-				'mdu': {
-					'name': 'MDU',
-					'url': 'GeoJSON/Z_1_MDU',
-					'color': '#ff0ff7',
-					'bgc': '#ff0ff7'
-				},
-				'otb': {
-					'name': 'OTB',
-					'url': 'GeoJSON/Z_1_OTB',
-					'color': '#00df43',
-					'bgc': '#00df43'
-				},
+				// 'otb': {
+				// 	'name': 'OTB',
+				// 	'url': 'GeoJSON/Z_1_OTB',
+				// 	'color': '#00df43',
+				// 	'bgc': '#00df43'
+				// },
 				'areaOtb': {
 					'name': 'Area OTB',
 					'url': 'GeoJSON/Z_1_AREA_OTB',
-					'color': '#d4a2f9',
-					'bgc': '#d4a2f9'
+					'color': '#daadf9',
+					'bgc': '#daadf9',
+					'opacity': 0.6,
+					'fillOpacity': 0.6,
+					'weight': 1.0,
+				},
+				'areaTrunk': {
+					'name': 'Area Trunk',
+					'url': 'GeoJSON/Z_1_AREA_TRUNK',
+					'color': '#daadf9',
+					'bgc': '#daadf9',
+					'opacity': 0.6,
+					'fillOpacity': 0.6,
+					'weight': 1.0,
 				},
 				'squares': {
 					'name': 'Squares',
 					'url': 'GeoJSON/Z_1_Squares',
 					'color': '#ee8c59',
-					'bgc': '#ee8c59'
+					'bgc': '#ee8c59',
+					'opacity': 0.6,
+					'fillOpacity': 0.2,
+					'weight': 1.0,
 				},
 				'ofc-12': {
 					'name': 'OFC-12',
 					'url': 'GeoJSON/Z_1_OFC_12',
-					'color': '#ee8c59',
-					'bgc': '#ee8c59'
+					'color': '#00fffe',
+					'bgc': '#00fffe',
+					'opacity': 0.6,
+					'fillOpacity': 0.2,
+					'weight': 2,
 				},
 				'ofc-48': {
 					'name': 'OFC-48',
 					'url': 'GeoJSON/Z_1_OFC_48',
-					'color': '#ee8c59',
-					'bgc': '#ee8c59'
+					'color': '#88000f',
+					'bgc': '#88000f',
+					'opacity': 0.6,
+					'fillOpacity': 0.2,
+					'weight': 1.5,
+				},
+				'ofc-144': {
+					'name': 'OFC-144',
+					'url': 'GeoJSON/Z_1_OFC_144',
+					'color': '#002af6',
+					'bgc': '#002af6',
+					'opacity': 0.6,
+					'fillOpacity': 0.2,
+					'weight': 1.0,
+				},
+				'sc-144': {
+					'name': 'SC-144',
+					'url': 'GeoJSON/Z_1_SC_144',
+					'color': '#002af6',
+					'bgc': '#002af6',
+					'opacity': 0.6,
+					'fillOpacity': 0.2,
+					'weight': 1.0,
 				},
 				'ofc-fig-8': {
 					'name': 'OFC-FIG-8',
 					'url': 'GeoJSON/Z_1_OFC_FIG_8',
-					'color': '#ee8c59',
-					'bgc': '#ee8c59'
+					'color': '#ff001e',
+					'bgc': '#ff001e',
+					'opacity': 0.6,
+					'fillOpacity': 0.2,
+					'weight': 1.0,
+				},
+				// 'cross': {
+				// 	'name': 'Cross',
+				// 	'url': 'GeoJSON/Z_1_CROSS',
+				// 	'color': 'red',
+				// 	'bgc': 'red'
+				// },
+				'mdu': {
+					'name': 'MDU',
+					'url': 'GeoJSON/Z_1_MDU',
+					'color': '#ff0ff7',
+					'bgc': '#ff0ff7',
+					'opacity': 0.8,
+					'fillOpacity': 0.2,
+					'weight': 1.0,
+				},
+				'drop': {
+					'name': 'Drop',
+					'url': 'GeoJSON/Z_1_DROP',
+					'color': '#88000f',
+					'bgc': '#88000f',
+					'opacity': 1,
+					'fillOpacity': 1,
+					'weight': 1.0,
 				}
 			}
 		})

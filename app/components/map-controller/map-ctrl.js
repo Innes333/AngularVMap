@@ -32,6 +32,7 @@
 
 			angular.forEach(apiUrl.layersGeoJSON, function(layer, key) {
 				var layerName = layer.name;
+				console.log(layerName);
 				dataService.getData(layer.url + '.geojson')
 					.then(function (response) {
 						$scope.layers.overlays[layerName] = {
@@ -43,10 +44,9 @@
 									style: {
 										color: layer.color,
 										fillColor: layer.bgc,
-										fillOpacity: 0.6,
-										weight: 3,
-										radius: 6,
-										clickable: true
+										weight: layer.weight,
+										opacity: layer.opacity,
+										fillOpacity: layer.fillOpacity
 									},
 								}
 						};
