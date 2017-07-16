@@ -1,16 +1,31 @@
 (function(){
 	angular.module('nameApp')
-		.controller('mapCtrl', ['$http', 'leafletData', '$interval','$rootScope','$scope', '$window', '$routeParams', '$timeout', '$localStorage', 'apiUrl', 'baseFunc', 'dataService', function($http, leafletData, $interval, $rootScope, $scope, $window, $routeParams, $timeout, $localStorage, apiUrl, baseFunc, dataService){
+		.controller('mapCtrl', ['$http',
+			'leafletData', '$interval',	'$rootScope', '$scope', '$window', '$routeParams',
+			'$timeout', '$localStorage', 'apiUrl', 	'baseFunc', 'dataService',
+			function($http, leafletData, $interval, $rootScope,
+			         $scope, $window, $routeParams, $timeout, $localStorage, apiUrl, baseFunc, dataService){
 
 			angular.extend($scope, {
 				libreville: {
 					lat: 0.504503980130774,
 					lng: 9.408579986073635,
-					zoom: 15
+					zoom: 15,
+				},
+				defaults: {
+					zoomAnimation: false,
+					markerZoomAnimation: false,
+					fadeAnimation: false
 				},
 				controls: {
 					scale:{},
-					search: {}
+					search: {},
+					custom: new L.Control.Measure({
+						primaryLengthUnit: 'meters',
+						secondaryLengthUnit: 'kilometers',
+						primaryAreaUnit: 'sqmeters',
+						secondaryAreaUnit: 'hectares'
+					}),
 				},
 				layers: {
 					baselayers: {
@@ -22,35 +37,64 @@
 								mapid: 'lf-map'
 							},
 							layerParams: {
-								showOnSelector: false
+								showOnSelector: true
 							}
 						}
 					},
 					overlays: {},
 				},
+
 			});
 
-			angular.forEach(apiUrl.layersGeoJSON, function(layer, key) {
+			// get poly objects
+			angular.forEach(apiUrl.polyGeoJSON, function(layer, key) {
 				var layerName = layer.name;
-				console.log(layerName);
 				dataService.getData(layer.url + '.geojson')
 					.then(function (response) {
 						$scope.layers.overlays[layerName] = {
-								name: layerName,
+								name: layerName + '<img src="../../assets/img/' + layer.img + '">',
 								type: 'geoJSONShape',
 								data: response.data,
 								visible: true,
 								layerOptions: {
+									className: layer.className,
 									style: {
 										color: layer.color,
 										fillColor: layer.bgc,
 										weight: layer.weight,
 										opacity: layer.opacity,
-										fillOpacity: layer.fillOpacity
+										fillOpacity: layer.fillOpacity,
+										zIndex: 100,
 									},
-								}
+								},
+
 						};
 
+					}, function (error) {
+						throw dataService.catchError(error, 'Ajax call error massege!');
+					});
+			});
+
+
+			//get point objects
+			angular.forEach(apiUrl.pointGeoJSON, function(layer) {
+				var layerName = layer.name;
+				dataService.getData(layer.url + '.geojson')
+					.then(function (response) {
+						$scope.layers.overlays[layerName] = {
+							name: layerName + '<img src="../../assets/img/' + layer.img + '">',
+							type: 'geoJSONAwesomeMarker',
+							data: response.data,
+							visible: true,
+							clickable: true,
+							icon: {
+								iconSize: [8, 8],
+								popupAnchor: [1, 5],
+								shadowSize: [0, 0],
+								className: 'awesome-marker ' + layerName.toLowerCase(),
+								iconColor: 'white'
+							},
+						};
 					}, function (error) {
 						throw dataService.catchError(error, 'Ajax call error massege!');
 					});
@@ -70,6 +114,21 @@
 					}
 				});
 			});
+
+
+			// get current location by IP
+			$scope.searchIP = function() {
+				var url = "http://freegeoip.net/json/";
+				$http.get(url).success(function(res) {
+					$scope.libreville = {
+						lat: res.latitude,
+						lng: res.longitude,
+						zoom: 10
+					};
+					$scope.ip = res.ip;
+				});
+			};
+
 
 	}]);
 }());
