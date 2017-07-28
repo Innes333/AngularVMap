@@ -1,6 +1,15 @@
 <div class="container-fluid center w-map">
 	<div class="row">
-		<leaflet id="map" class="lf-map" center="libreville" geojson="geojson" controls="controls" layers="layers" defaults="defaults"></leaflet>
+		<leaflet 
+			id="map"
+			class="lf-map"
+			center="libreville"
+			geojson="geojson"
+			controls="controls"
+			layers="layers"
+			defaults="defaults"
+			watch-markers="false">
+		</leaflet>
 		<div class="location-control" data-ng-click="searchIP()"></div>
 	</div>
 </div>

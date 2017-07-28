@@ -1592,6 +1592,23 @@
 
 				return utfgrid;
 			};
+			
+			var createPopupContent = function(feature) {
+				var content = '';
+				feature.properties.Location_ID !== null && feature.properties.Location_ID !== undefined ? 
+					content += '<div><span>Location ID:</span> ' + feature.properties.Location_ID +'</div>' : '';
+
+				feature.properties.ID_Prov !== null && feature.properties.ID_Prov !== undefined ? 
+					content += '<div><span>ID Prov:</span> ' + feature.properties.ID_Prov +'</div>' : '';
+
+				feature.properties.City_Region !== null && feature.properties.City_Region !== undefined ? 
+					content += '<div><span>City region:</span> ' + feature.properties.City_Region +'</div>' : '';
+
+				feature.properties.District !== null && feature.properties.District !== undefined ? 
+					content += '<div><span>District:</span> ' + feature.properties.District +'</div>' : '';
+
+				return content;
+			};
 
 			var layerTypes = {
 				xyz: {
@@ -1641,16 +1658,19 @@
 						});
 					},
 				},
-				geoJSONVectorMarker: {
+				geoJSONSVGMarker: {
 					mustHaveUrl: false,
 					createLayer: function(params) {
 						return new L.geoJson(params.data, {
 							pointToLayer: function(feature, latlng) {
-								return L.marker(latlng, {icon: L.VectorMarkers.icon(params.icon)});
+								return L.circleMarker(latlng, params.options);
 							},
+							onEachFeature: function (feature, layer) {
+					            layer.bindPopup(createPopupContent(feature));
+					        } 
 						});
 					},
-				},
+				},				
 				utfGrid: {
 					mustHaveUrl: true,
 					createLayer: utfGridCreateLayer,

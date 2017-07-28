@@ -447,9 +447,10 @@ header
 	position: absolute
 	bottom: 0
 	z-index: 10000
-	height: 90px
+	height: 100px
 	width: 100%
-	background-image: url(../img/theme-full.jpg)
+	background-image: url(../img/theme-green.png)
+	background-size: cover
 footer 
 	position: relative
 	color: $white		
@@ -501,6 +502,18 @@ main
 	width: 100%
 	margin-top: 35px
 	height: calc(100vh - 70px)
+	
+	.layer-measure-resultarea.leaflet-interactive,
+	.layer-measurearea.leaflet-interactive,
+	.layer-measureboundary.leaflet-interactive
+		stroke: $greenMain
+		fill: $greenMain
+		fill-opacity: 0.2
+	.layer-measurevertex
+		stroke: $greenMain
+		fill: $greenMain
+	svg
+		pointer-events: all
 
 	.leaflet-control-search
 		.search-input
@@ -529,11 +542,32 @@ main
 			display: none
 
 	.leaflet-control-layers-overlays
-		img
-			float: right
-			margin-top: 13px
+		.circle
+			margin-left: 5px
+			margin-right: 8px
+			display: inline-block
+			width: 10px
+			height: 10px
+			border-radius: 10px
+			text-align: center
+			background: #333333
+			border: 1px solid #000000
+			&.sc-48
+				background: #33a02c
+			&.sc-144
+				background: #1e2cec
+			&.otb
+				background: #975959
+			&.cross
+				background: red
+			&.newPole
+				background: #f2eb15
+		
 		span
 			color: $darkBlue
+			position: relative
+			display: inline-block
+			
 		input[type="checkbox"]
 			position: relative
 			margin: 5px auto
@@ -569,6 +603,13 @@ main
 			&:checked
 				&::after
 					opacity: 1
+	.leaflet-popup-content
+		margin: 20px 12px
+		span
+			color: $darkBlue
+			font-weight: 600
+			font-size: 10px
+			text-transform: uppercase
 
 .about
 	text-align: left
@@ -632,36 +673,44 @@ main
 	font-size: 1.1em
 	border-bottom: solid 1px #DDD
 
-.leaflet-control-measure p, .leaflet-measure-resultpopup p
+.leaflet-control-measure p,
+.leaflet-measure-resultpopup p
 	margin: 10px 0 0
 	line-height: 1em
 
-.leaflet-control-measure p:first-child, .leaflet-measure-resultpopup p:first-child
+.leaflet-control-measure p:first-child,
+.leaflet-measure-resultpopup p:first-child
 	margin-top: 0
 
-.leaflet-control-measure a, .leaflet-measure-resultpopup a
+.leaflet-control-measure a,
+.leaflet-measure-resultpopup a
 	color: #5E66CC
 	text-decoration: none
 
-.leaflet-control-measure a:hover, .leaflet-measure-resultpopup a:hover
+.leaflet-control-measure a:hover,
+.leaflet-measure-resultpopup a:hover
 	opacity: 0.5
 	text-decoration: none
 
-.leaflet-control-measure .tasks, .leaflet-measure-resultpopup .tasks
+.leaflet-control-measure .tasks,
+.leaflet-measure-resultpopup .tasks
 	margin: 12px 0 0
 	padding: 10px 0 0
 	border-top: solid 1px #DDD
 	list-style: none
 	list-style-image: none
 
-.leaflet-control-measure .tasks li, .leaflet-measure-resultpopup .tasks li
+.leaflet-control-measure .tasks li,
+.leaflet-measure-resultpopup .tasks li
 	display: inline
 	margin: 0 10px 0 0
 
-.leaflet-control-measure .tasks li:last-child, .leaflet-measure-resultpopup .tasks li:last-child
+.leaflet-control-measure .tasks li:last-child,
+.leaflet-measure-resultpopup .tasks li:last-child
 	margin-right: 0
 
-.leaflet-control-measure .coorddivider, .leaflet-measure-resultpopup .coorddivider
+.leaflet-control-measure .coorddivider,
+.leaflet-measure-resultpopup .coorddivider
 	color: #999
 
 .leaflet-control-measure
@@ -769,61 +818,6 @@ main
 	background-image: url(../img/trash_@2X.png)
 	background-size: 11px 12px
 
-
-/* Awesome markers */
-
-.awesome-marker-icon-blue
-	background: #333333
-	width: 10px
-	height: 10px
-	border-radius: 10px
-	position: absolute
-	left: 0
-	top: 0
-	display: block
-	text-align: center
-	border: 1px solid #000000
-	&.sc-144
-		background: #1f38ff
-	&.sc-144
-		background: #189941
-	&.otb
-		background: url(../img/otb.png) no-repeat 0% 0%
-		height: 15px!important
-		width: 15px!important
-		border: none
-	&.cross
-		background: url(../img/cross.png) no-repeat 0% 0%
-		height: 15px!important
-		width: 15px!important
-		border: none
-
-
-
-.awesome-marker-shadow
-	background:  none
-	width: 36px
-	height: 16px
-
-
-.awesome-marker
-	i
-		color: #333
-		margin-top: 10px
-		display: inline-block
-		font-size: 14px
-	.icon-white
-		color: #fff
-
-.leaflet-overlay-pane
-	.area-truck
-		z-index: 10
-	.area-otb
-		z-index: 15
-	.ofc-48
-		z-index: 100
-	.mdu
-		z-index: 150
 
 
 //ALWAYS END

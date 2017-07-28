@@ -6,7 +6,7 @@
 		<title>VMaps GeoData Visualizer</title>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="shortcut icon" href="assets/img/logo.png">
+		<link rel="shortcut icon" href="assets/img/favicon.ico">
 
 		<!-- build:css assets/css/vendor.min.css -->
 		<link rel="stylesheet" href="assets/libs/bootstrap/bootstrap-grid.min.css" />
@@ -40,7 +40,7 @@
 	</main>
 
 
-	<footer>
+	<footer data-ng-if="appConfig.user">
 		<div class="copy">
 			<div class="container">
 				<div class="row">
@@ -77,7 +77,8 @@
 		<!--<script src="assets/libs/leaflet/leaflet-heat.js"></script>-->
 		<!--<script src="assets/libs/leaflet/leaflet.rotatedMarker.js"></script>-->
 		<!--<script src="assets/libs/leaflet/OSMBuildings-Leaflet.js"></script>-->
-		<!--<script src="assets/libs/leaflet/leaflet-hash.js"></script>-->
+		<script src="assets/libs/leaflet/leaflet-hash.js"></script>
+		<script src="assets/libs/leaflet/multi-style-layer.js"></script>
 		<!--<script src="assets/libs/leaflet/leaflet-tilelayer-wmts.js"></script>-->
 		<script src="assets/libs/leaflet/Autolinker.min.js"></script>
 		<script src="assets/libs/leaflet/leaflet-measure.js"></script>
@@ -107,7 +108,8 @@
 		<script src="components/services/authentication-service.js"></script>
 		<script src="components/services/services.js"></script>
 		<!-- endbuild -->
-
+	
+		
 	</body>
 
 </html>
