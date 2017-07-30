@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ee19fb1e-e780-4221-97d8-05b7fb561aa3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/img/favicon.ico" afterPath="$PROJECT_DIR$/app/assets/img/favicon.ico" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/components/directives/leaflet-directive.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.js" afterPath="$PROJECT_DIR$/app/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/css/main.min.css" afterPath="$PROJECT_DIR$/app/assets/css/main.min.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/libs/leaflet/leaflet-directive.js" afterPath="$PROJECT_DIR$/app/assets/libs/leaflet/leaflet-directive.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/sass/main.sass" afterPath="$PROJECT_DIR$/app/assets/sass/main.sass" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/about-controller/about-ctrl.html" afterPath="$PROJECT_DIR$/app/components/about-controller/about-ctrl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/map-controller/map-ctrl.html" afterPath="$PROJECT_DIR$/app/components/map-controller/map-ctrl.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/authorization-controller/authorization-contoller.js" afterPath="$PROJECT_DIR$/app/components/authorization-controller/authorization-contoller.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/map-controller/map-ctrl.js" afterPath="$PROJECT_DIR$/app/components/map-controller/map-ctrl.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
     </list>
@@ -22,55 +21,108 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2024">
-              <caret line="88" column="34" lean-forward="true" selection-start-line="88" selection-start-column="34" selection-end-line="88" selection-end-column="34" />
-              <folding>
-                <marker date="1501277115946" expanded="true" signature="5084:5371" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1909">
-              <caret line="83" column="70" lean-forward="false" selection-start-line="83" selection-start-column="70" selection-end-line="83" selection-end-column="70" />
-              <folding>
-                <marker date="1501277110918" expanded="true" signature="3901:3909" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.sass" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/sass/main.sass">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10373">
-              <caret line="451" column="48" lean-forward="false" selection-start-line="451" selection-start-column="48" selection-end-line="451" selection-end-column="48" />
-              <folding>
-                <marker date="1501277133782" expanded="true" signature="8127:8184" ph="..." />
-                <marker date="1501277133782" expanded="true" signature="15829:15830" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="contact-ctrl.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/components/contact-controller/contact-ctrl.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/index.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="330">
+                  <caret line="72" column="43" lean-forward="false" selection-start-line="72" selection-start-column="43" selection-end-line="72" selection-end-column="43" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="main.sass" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/assets/sass/main.sass">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="344">
+                  <caret line="584" column="35" lean-forward="false" selection-start-line="584" selection-start-column="35" selection-end-line="584" selection-end-column="35" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="authorization-contoller.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/components/authorization-controller/authorization-contoller.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="345">
+                  <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="map-ctrl.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/components/map-controller/map-ctrl.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="2541">
+                  <caret line="124" column="52" lean-forward="false" selection-start-line="124" selection-start-column="52" selection-end-line="124" selection-end-column="52" />
+                  <folding>
+                    <marker date="1501444743313" expanded="true" signature="1246:1252" ph="©" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="leaflet-directive.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/components/directives/leaflet-directive.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="255">
+                  <caret line="4256" column="33" lean-forward="true" selection-start-line="4256" selection-start-column="33" selection-end-line="4256" selection-end-column="33" />
+                  <folding>
+                    <marker date="1501444806561" expanded="true" signature="58961:58997" ph="data:" />
+                    <marker date="1501444806561" expanded="true" signature="59957:59968" ph="..." />
+                    <marker date="1501444806561" expanded="true" signature="61260:61266" ph="©" />
+                    <marker date="1501444806561" expanded="true" signature="127944:127954" ph="..." />
+                    <marker date="1501444806561" expanded="true" signature="128041:128051" ph="..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="contact-ctrl.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/components/contact-controller/contact-ctrl.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="299">
+                  <caret line="13" column="47" lean-forward="true" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="47" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="map-ctrl.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/components/map-controller/map-ctrl.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="322">
+                  <caret line="149" column="72" lean-forward="false" selection-start-line="147" selection-start-column="12" selection-end-line="149" selection-end-column="72" />
+                  <folding>
+                    <marker date="1501444743313" expanded="true" signature="1246:1252" ph="©" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/app.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="402">
+                  <caret line="200" column="18" lean-forward="false" selection-start-line="195" selection-start-column="16" selection-end-line="200" selection-end-column="18" />
+                  <folding>
+                    <marker date="1501444827538" expanded="true" signature="4865:5152" ph="..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -82,36 +134,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>navi</find>
-      <find>btn</find>
-      <find>main</find>
-      <find>nav-</find>
-      <find>f</find>
-      <find>fo</find>
-      <find>foote</find>
-      <find>che</find>
-      <find>#34495e</find>
-      <find>add</find>
-      <find>logo</find>
-      <find>.cop</find>
-      <find>footer</find>
-      <find>foo</find>
-      <find>ima</find>
-      <find>image</find>
-      <find>.log</find>
-      <find>ont-awesome</find>
       <find>leaflet</find>
       <find>nav</find>
       <find>cance</find>
       <find>start</find>
       <find>poteaux</find>
       <find>lege</find>
-      <find>control</find>
       <find>layer</find>
       <find>rule</find>
       <find>contr</find>
       <find>conta</find>
       <find>the</find>
+      <find>Авторизационные данные указаны не верно!</find>
+      <find>logo</find>
+      <find>zIndex</find>
+      <find>geojson</find>
+      <find>jsonsvg</find>
+      <find>pointerEve</find>
+      <find>availableOptions</find>
+      <find>svg</find>
+      <find>interac</find>
+      <find>point</find>
+      <find>GeoJSONPlugin</find>
+      <find>control</find>
+      <find>GeoJSONsha</find>
+      <find>ToLayer</find>
+      <find>createPopupContent</find>
+      <find>control.la</find>
+      <find>circle</find>
+      <find>cons</find>
+      <find>console.lo</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/app/components/authorization-controller</dir>
@@ -131,9 +183,7 @@
         <option value="$PROJECT_DIR$/app/components/authorizatio-controller/authorization-contoller.js" />
         <option value="$PROJECT_DIR$/app/components/authorizatio-controller/authorization-contoller.html" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/app/components/directives/leaflet-directive.js" />
         <option value="$PROJECT_DIR$/app/components/services/authentication-service.js" />
-        <option value="$PROJECT_DIR$/app/components/authorization-controller/authorization-contoller.js" />
         <option value="$PROJECT_DIR$/app/GeoJSON/Styles.qgs" />
         <option value="$PROJECT_DIR$/app/assets/sass/_form.sass" />
         <option value="$PROJECT_DIR$/app/assets/sass/_mixins.sass" />
@@ -152,13 +202,15 @@
         <option value="$PROJECT_DIR$/app/js/leaflet.js" />
         <option value="$USER_HOME$/Downloads/port/Leaflet/index.html" />
         <option value="$PROJECT_DIR$/app/assets/libs/leaflet/leaflet.awesome-markers.js" />
-        <option value="$PROJECT_DIR$/app/index.html" />
         <option value="$PROJECT_DIR$/app/components/map-controller/map-ctrl.html" />
-        <option value="$PROJECT_DIR$/app/components/map-controller/map-ctrl.js" />
-        <option value="$PROJECT_DIR$/app/app.js" />
-        <option value="$PROJECT_DIR$/app/assets/sass/main.sass" />
-        <option value="$PROJECT_DIR$/app/assets/libs/leaflet/leaflet-directive.js" />
         <option value="$PROJECT_DIR$/app/components/contact-controller/contact-ctrl.html" />
+        <option value="$PROJECT_DIR$/app/components/authorization-controller/authorization-contoller.js" />
+        <option value="$PROJECT_DIR$/app/index.html" />
+        <option value="$PROJECT_DIR$/app/assets/libs/leaflet/leaflet-directive.js" />
+        <option value="$PROJECT_DIR$/app/assets/sass/main.sass" />
+        <option value="$PROJECT_DIR$/app/components/map-controller/map-ctrl.js" />
+        <option value="$PROJECT_DIR$/app/components/directives/leaflet-directive.js" />
+        <option value="$PROJECT_DIR$/app/app.js" />
       </list>
     </option>
   </component>
@@ -257,6 +309,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="directives" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AngularVMap" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AngularVMap" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="contact-controller" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -298,6 +372,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sass" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -366,6 +444,24 @@
               <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AngularVMap" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AngularVMap" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
@@ -384,19 +480,19 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/components/directives" />
+      <recent name="$PROJECT_DIR$/app/assets/img" />
+      <recent name="$PROJECT_DIR$/app/assets/libs/leaflet/css" />
+      <recent name="$PROJECT_DIR$/app/assets/libs/leaflet" />
+      <recent name="$PROJECT_DIR$/app/js" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/assets/libs/leaflet" />
       <recent name="$PROJECT_DIR$/app/GeoJSON" />
       <recent name="$PROJECT_DIR$/app" />
       <recent name="$PROJECT_DIR$/app/components/map-controller" />
       <recent name="$PROJECT_DIR$/app/components" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/assets/img" />
-      <recent name="$PROJECT_DIR$/app/assets/libs/leaflet/css" />
-      <recent name="$PROJECT_DIR$/app/assets/libs/leaflet" />
-      <recent name="$PROJECT_DIR$/app/js" />
-      <recent name="$PROJECT_DIR$/dist" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -851,12 +947,12 @@
       <workItem from="1500233889079" duration="1437000" />
       <workItem from="1500276858957" duration="1817000" />
       <workItem from="1501056059468" duration="376000" />
-      <workItem from="1501277166769" duration="219000" />
+      <workItem from="1501277166769" duration="17914000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="163989000" />
+    <option name="totallyTimeSpent" value="181684000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -869,6 +965,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32953367" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -881,11 +978,12 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23076923" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29313928" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29313928" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1722805" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11264495" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -898,7 +996,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="combo" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -956,14 +1053,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/GeoJSON/Z_1_SC_48 WORK.geojson" />
-    <entry file="file://$PROJECT_DIR$/app/GeoJSON/Z_1_AREA_OTB.geojson">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="12" column="82" lean-forward="false" selection-start-line="12" selection-start-column="82" selection-end-line="12" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/GeoJSON/Z_1_Buildings.geojson">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1185,17 +1274,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/sass/main.sass">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10373">
-          <caret line="451" column="48" lean-forward="false" selection-start-line="451" selection-start-column="48" selection-end-line="451" selection-end-column="48" />
-          <folding>
-            <marker date="1501277133782" expanded="true" signature="8127:8184" ph="..." />
-            <marker date="1501277133782" expanded="true" signature="15829:15830" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/components/directives/navigation-template.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
@@ -1228,54 +1306,83 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/index.html">
+    <entry file="file://$PROJECT_DIR$/app/components/contact-controller/contact-ctrl.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1909">
-          <caret line="83" column="70" lean-forward="false" selection-start-line="83" selection-start-column="70" selection-end-line="83" selection-end-column="70" />
-          <folding>
-            <marker date="1501277110918" expanded="true" signature="3901:3909" ph="..." />
-          </folding>
+        <state relative-caret-position="299">
+          <caret line="13" column="47" lean-forward="true" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="47" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/map-controller/map-ctrl.js">
+    <entry file="file://$PROJECT_DIR$/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="12" column="29" lean-forward="false" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
+        <state relative-caret-position="330">
+          <caret line="72" column="43" lean-forward="false" selection-start-line="72" selection-start-column="43" selection-end-line="72" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/libs/leaflet/leaflet-directive.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1645" column="51" lean-forward="false" selection-start-line="1645" selection-start-column="51" selection-end-line="1645" selection-end-column="51" />
+        <state relative-caret-position="485">
+          <caret line="1613" column="107" lean-forward="true" selection-start-line="1597" selection-start-column="16" selection-end-line="1613" selection-end-column="107" />
           <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <marker date="1501277132790" expanded="true" signature="58255:58291" ph="data:" />
-            <marker date="1501277132790" expanded="true" signature="59251:59262" ph="..." />
-            <marker date="1501277132790" expanded="true" signature="60530:60536" ph="©" />
-            <marker date="1501277132790" expanded="true" signature="127215:127225" ph="..." />
-            <marker date="1501277132790" expanded="true" signature="127312:127322" ph="..." />
+            <marker date="1501433963038" expanded="true" signature="58998:59034" ph="data:" />
+            <marker date="1501433963038" expanded="true" signature="59994:60005" ph="..." />
+            <marker date="1501433963038" expanded="true" signature="61273:61279" ph="©" />
+            <marker date="1501433963038" expanded="true" signature="128042:128052" ph="..." />
+            <marker date="1501433963038" expanded="true" signature="128139:128149" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/authorization-controller/authorization-contoller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/sass/main.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="584" column="35" lean-forward="false" selection-start-line="584" selection-start-column="35" selection-end-line="584" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/map-controller/map-ctrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="149" column="72" lean-forward="false" selection-start-line="147" selection-start-column="12" selection-end-line="149" selection-end-column="72" />
+          <folding>
+            <marker date="1501444743313" expanded="true" signature="1246:1252" ph="©" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/directives/leaflet-directive.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="4256" column="33" lean-forward="true" selection-start-line="4256" selection-start-column="33" selection-end-line="4256" selection-end-column="33" />
+          <folding>
+            <marker date="1501444806561" expanded="true" signature="58961:58997" ph="data:" />
+            <marker date="1501444806561" expanded="true" signature="59957:59968" ph="..." />
+            <marker date="1501444806561" expanded="true" signature="61260:61266" ph="©" />
+            <marker date="1501444806561" expanded="true" signature="127944:127954" ph="..." />
+            <marker date="1501444806561" expanded="true" signature="128041:128051" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2024">
-          <caret line="88" column="34" lean-forward="true" selection-start-line="88" selection-start-column="34" selection-end-line="88" selection-end-column="34" />
+        <state relative-caret-position="402">
+          <caret line="200" column="18" lean-forward="false" selection-start-line="195" selection-start-column="16" selection-end-line="200" selection-end-column="18" />
           <folding>
-            <marker date="1501277115946" expanded="true" signature="5084:5371" ph="..." />
+            <marker date="1501444827538" expanded="true" signature="4865:5152" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/contact-controller/contact-ctrl.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>

@@ -295,12 +295,14 @@
 			var controlOptions = {
 				collapsed: defaults.controls.layers.collapsed,
 				position: defaults.controls.layers.position,
-				autoZIndex: false,
+				autoZIndex: true,
+				sortLayers: false,
+				sortFunction: function() {}
 			};
 
 			angular.extend(controlOptions, defaults.controls.layers.options);
-
 			var control;
+
 			if (defaults.controls.layers && isDefined(defaults.controls.layers.control)) {
 				control = defaults.controls.layers.control.apply(this, [[], [], controlOptions]);
 			} else {
@@ -1595,10 +1597,10 @@
 			
 			var createPopupContent = function(feature) {
 				var content = '';
-				feature.properties.Location_ID !== null && feature.properties.Location_ID !== undefined ? 
+				feature.properties.Location_ID !== null && feature.properties.Location_ID !== undefined ?
 					content += '<div><span>Location ID:</span> ' + feature.properties.Location_ID +'</div>' : '';
 
-				feature.properties.ID_Prov !== null && feature.properties.ID_Prov !== undefined ? 
+				feature.properties.ID_Prov !== null && feature.properties.ID_Prov !== undefined ?
 					content += '<div><span>Prov ID:</span> ' + feature.properties.ID_Prov +'</div>' : '';
 
 				feature.properties.BuildingID !== null && feature.properties.BuildingID !== undefined ?
@@ -1607,10 +1609,10 @@
 				feature.properties.Length !== null && feature.properties.Length !== undefined ?
 					content += '<div><span>Length:</span> ' + feature.properties.Length +'</div>' : '';
 
-				feature.properties.City_Region !== null && feature.properties.City_Region !== undefined ? 
+				feature.properties.City_Region !== null && feature.properties.City_Region !== undefined ?
 					content += '<div><span>City region:</span> ' + feature.properties.City_Region +'</div>' : '';
 
-				feature.properties.District !== null && feature.properties.District !== undefined ? 
+				feature.properties.District !== null && feature.properties.District !== undefined ?
 					content += '<div><span>District:</span> ' + feature.properties.District +'</div>' : '';
 
 				return content;
@@ -1681,11 +1683,8 @@
 					mustHaveUrl: false,
 					createLayer: function (params) {
 						return new L.geoJson(params.data, {
-							pointToLayer: function() {
-								return L.polyline(params.options);
-							},
+							style: params.options,
 							onEachFeature: function (feature, layer) {
-								console.log(feature);
 								layer.bindPopup(createPopupContent(feature));
 							}
 						});
@@ -2261,6 +2260,7 @@
 						visible: true,
 						position: 'topright',
 						collapsed: true,
+						sortLayers: true,
 					},
 				},
 				nominatim: {
@@ -2815,8 +2815,6 @@
 				marker.openPopup();
 				updatedFocus = true;
 			}
-			console.log(oldMarkerData.zIndexOffset);
-			console.log(markerData.zIndexOffset);
 			// zIndexOffset adjustment
 			if (oldMarkerData.zIndexOffset !== markerData.zIndexOffset) {
 				marker.setZIndexOffset(markerData.zIndexOffset);
@@ -4254,8 +4252,6 @@
 										groupVisibleCount[layer.group].visibles++;
 									}
 								}
-								console.log(layer.index);
-								console.log(layer.overlays[key].setZIndex);
 								if (isDefined(layer.index) && leafletLayers.overlays[key].setZIndex) {
 									leafletLayers.overlays[key].setZIndex(newOverlayLayers[key].index);
 								}

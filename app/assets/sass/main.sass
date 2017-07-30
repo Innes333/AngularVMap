@@ -249,6 +249,7 @@ input,textarea,button
 		margin-bottom: 25px
 		img
 			width: 44%
+			max-width: 190px
 			&.vmap-logo
 				margin-right: 5%
 			&.your-logo
@@ -502,7 +503,10 @@ main
 	width: 100%
 	margin-top: 35px
 	height: calc(100vh - 70px)
-	
+
+	.leaflet-interactive
+		cursor: pointer
+
 	.layer-measure-resultarea.leaflet-interactive,
 	.layer-measurearea.leaflet-interactive,
 	.layer-measureboundary.leaflet-interactive
@@ -556,6 +560,43 @@ main
 				background: #33a02c
 			&.sc-144
 				background: #1e2cec
+			&.otb
+				background: #975959
+			&.cross
+				background: red
+			&.newPole
+				background: #f2eb15
+		.line
+			margin-left: 5px
+			margin-right: 8px
+			display: inline-block
+			width: 10px
+			height: 2px
+			text-align: center
+			background: #333333
+			border: 1px solid #000
+			&.drop
+				background: #8b2b22
+			&.ofc_12
+				background: #24dff0
+			&.ofc_48
+				background: #88000f
+			&.ofc_144
+				background: #002af6
+
+		.square
+			margin-left: 5px
+			margin-right: 8px
+			display: inline-block
+			width: 10px
+			height: 10px
+			text-align: center
+			background: #333333
+			border: 1px solid #000000
+			&.buildings
+				background: #b8b8b8
+			&.ofc_48
+				background: #88000f
 			&.otb
 				background: #975959
 			&.cross

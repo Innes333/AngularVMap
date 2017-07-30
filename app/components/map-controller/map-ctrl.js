@@ -6,7 +6,7 @@
 			function($http, $interval, leafletData, $rootScope,
 			         $scope, $window, $routeParams, $timeout, $localStorage, apiUrl, baseFunc, dataService){
 
-			
+
 	        angular.extend($scope, {
 				libreville: {
 					lat: 0.504503980130774,
@@ -27,8 +27,9 @@
 						primaryAreaUnit: 'sqmeters',
 						secondaryAreaUnit: 'hectares'
 					}),
-				},				
+				},
 				layers: {
+					sortLayers: true,
 					baselayers: {
 						 osm: {
 	                        name: 'Layers',
@@ -40,9 +41,9 @@
 	                            continuousWorld: true,
 	                            showOnSelector: true,
 	                            minZoom: 15,
-   								maxZoom: 35
+   								maxZoom: 25
 	                        }
-	                    }						
+	                    }
 					},
 					overlays: {},
 				},
@@ -50,47 +51,17 @@
 			});
 
 
-		   // {  
-		  //    "type":"Feature",
-		  //    "properties":{  
-		  //       "City_Region":"Libreville",
-		  //       "Location_Type":"Pole",
-		  //       "Location_ID":"Pole_2914",
-		  //       "District":"Zone 1",
-		  //       "Neighbourhood":"Agondje",
-		  //       "Latitude":0.503653,
-		  //       "Longitude":9.408403,
-		  //       "Comment":"NP_2",
-		  //       "Nature_du_support":"Metal",
-		  //       "Geometrie_du_Poteau":"Octogonal",
-		  //       "Commentaires_Etats_du_poteaux":"To be Installed",
-		  //       "Commentaires":"NP_2",
-		  //       "Hauteur_de_lelement_le_plus_ba":7.5,
-		  //       "Hauteur_poteau_hors_sol":"8"
-		  //    },
-		  //    "geometry":{  
-		  //       "type":"Point",
-		  //       "coordinates":[  
-		  //          9.408403,
-		  //          0.503653
-		  //       ]
-		  //    }
-		  // },
-
-			var createPopupContent = function(layerData) {
-				var content = "<div><p>" + layerData.features[0].properties.Location_ID + "</p></div>"
-				return content;
-			}
 			// get poly objects
 			var addPolyLayer = function(layer, layerName) {
 				dataService.getData(layer.url + '.geojson')
 					.then(function (response) {
 						$scope.layers.overlays[layerName] = {
-								name: layer.name + '<img src="../../assets/img/' + layer.img + '">',
+								name: '<span class="square ' + layerName + '"></span>' + layer.name,
 								type: 'geoJSONShape',
 								data: response.data,
 								visible: true,
-								zIndexOffset: layer.zIndex,
+								setZIndex: layer.zIndex,
+								sortLayers: true,
 								layerOptions: {
 									className: layer.className,
 									style: {
@@ -98,7 +69,7 @@
 										fillColor: layer.bgc,
 										weight: layer.weight,
 										opacity: layer.opacity,
-										fillOpacity: layer.fillOpacity,			
+										fillOpacity: layer.fillOpacity,
 									},
 								},
 
@@ -118,40 +89,73 @@
 							type: 'geoJSONSVGMarker',
 							data: response.data,
 							visible: true,
-							clickable: true,	
+							clickable: true,
+							setZIndex: layer.zIndex,
 							layerOptions: {
 								radius: layer.radius,
 								fillColor: layer.bgc,
 							    color: layer.color,
 								weight: 1,
 							    opacity: layer.opacity,
-							    fillOpacity: 0.8
+							    fillOpacity: 0.8,
+								setZIndex: layer.zIndex,
+								pointerEvents: 'all',
 							},
-						};						
+
+						};
+					}, function (error) {
+						throw dataService.catchError(error, 'Ajax call error massege!');
+					});
+			}
+			//
+			var addPolylineLayer = function(layer, layerName) {
+				dataService.getData(layer.url + '.geojson')
+					.then(function (response) {
+						$scope.layers.overlays[layerName] = {
+							name: '<span class="line ' + layerName + '"></span>' + layer.name,
+							type: 'geoJSONPolyline',
+							data: response.data,
+							visible: true,
+							clickable: true,
+							setZIndex: layer.zIndex,
+							layerOptions: {
+								radius: layer.radius,
+								fillColor: layer.bgc,
+							    color: layer.color,
+								weight: layer.weight,
+							    opacity: layer.opacity,
+							    fillOpacity: 0.8,
+								setZIndex: layer.zIndex,
+								pointerEvents: 'all',
+							},
+
+						};
 					}, function (error) {
 						throw dataService.catchError(error, 'Ajax call error massege!');
 					});
 			}
 
-			// Add layers in correct order
+			// Add point layers
 			addPointLayer(apiUrl.pointGeoJSON.sc48, 'sc-48');
 			addPointLayer(apiUrl.pointGeoJSON.sc144, 'sc-144');
-			addPointLayer(apiUrl.pointGeoJSON.newPole, 'newPole');	
-			addPointLayer(apiUrl.pointGeoJSON.poteaux, 'poteaux');	
-			addPointLayer(apiUrl.pointGeoJSON.cross, 'cross');	
-			addPointLayer(apiUrl.pointGeoJSON.otb, 'otb');		
-		
+			addPointLayer(apiUrl.pointGeoJSON.newPole, 'newPole');
+			addPointLayer(apiUrl.pointGeoJSON.poteaux, 'poteaux');
+			addPointLayer(apiUrl.pointGeoJSON.cross, 'cross');
+			addPointLayer(apiUrl.pointGeoJSON.otb, 'otb');
 
-			// Add layers in correct order
-			addPolyLayer(apiUrl.polyGeoJSON.drop, 'drop');
+			// Add polyline layers
+			addPolylineLayer(apiUrl.polylineGeoJSON.drop, 'drop');
+			addPolylineLayer(apiUrl.polylineGeoJSON.ofc_12, 'ofc_12');
+			addPolylineLayer(apiUrl.polylineGeoJSON.ofc_48, 'ofc_48');
+			addPolylineLayer(apiUrl.polylineGeoJSON.ofc_144, 'ofc_144');
+
+			// Add shape layers
 			addPolyLayer(apiUrl.polyGeoJSON.ofc_fig_8, 'ofc_fig_8');
-			addPolyLayer(apiUrl.polyGeoJSON.ofc_12, 'ofc_12');		
-			addPolyLayer(apiUrl.polyGeoJSON.ofc_48, 'ofc_48');			
-			addPolyLayer(apiUrl.polyGeoJSON.ofc_144, 'ofc_144');
 			addPolyLayer(apiUrl.polyGeoJSON.buildings, 'buildings');
 			addPolyLayer(apiUrl.polyGeoJSON.mdu, 'mdu');
 
-			
+
+
 			leafletData.getLayers().then(function(baselayers) {
 				angular.extend($scope.controls, {
 					search: {

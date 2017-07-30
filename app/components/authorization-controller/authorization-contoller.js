@@ -13,7 +13,7 @@
 					}else if(typeof result === 'object'){
 						$scope.error = result.data;			
 					}else{
-						$scope.error = 'Авторизационные данные указаны не верно!';						
+						$scope.error = 'Please enter a valid login and password';
 					}
 				});
 			}
