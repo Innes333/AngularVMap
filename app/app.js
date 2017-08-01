@@ -9,7 +9,6 @@
 				'sc48': {
 					'name': 'SC-48',
 					'url': 'GeoJSON/Z_1_SC_48',
-					'img': 'sc-48.png',
 					'zIndex': 510,
 					'color': '#000',
 					'bgc': '#33a02c',
@@ -21,7 +20,6 @@
 				'sc144': {
 					'name': 'SC-144',
 					'url': 'GeoJSON/Z_1_SC_144',
-					'img': 'sc-144.png',
 					'zIndex': 505,
 					'color': '#000',
 					'bgc': '#1e2cec',
@@ -33,7 +31,6 @@
 				'newPole': {
 					'name': 'New Pole',
 					'url': 'GeoJSON/Z_1_NEW_POLE',
-					'img': 'new-pole.png',
 					'color': '#000',
 					'zIndex': 510,
 					'bgc': '#f2eb15',
@@ -45,7 +42,6 @@
 				'poteaux': {
 					'name': 'Poteaux',
 					'url': 'GeoJSON/Z_1_Poteaux',
-					'img': 'poteaux.png',
 					'color': '#000',
 					'zIndex': 510,
 					'bgc': '#000',
@@ -57,7 +53,6 @@
 				'cross': {
 					'name': 'Cross',
 					'url': 'GeoJSON/Z_1_CROSS',
-					'img': 'cross.png',
 					'zIndex': 500,
 					'color': '#000',
 					'bgc': 'red',
@@ -69,7 +64,6 @@
 				'otb': {
 					'name': 'OTB',
 					'url': 'GeoJSON/Z_1_OTB',
-					'img': 'otb.png',
 					'color': '#000',
 					'zIndex': 510,
 					'bgc': '#975959',
@@ -83,7 +77,6 @@
 				'drop': {
 					'name': 'Drop',
 					'className': 'drop',
-					'img': 'ofc-48.png',
 					'url': 'GeoJSON/Z_1_DROP',
 					'color': '#8b2b22',
 					'bgc': '#8b2b22',
@@ -94,7 +87,6 @@
 				'ofc_12': {
 					'name': 'OFC-12',
 					'className': 'ofc-12',
-					'img': 'ofc-12.png',
 					'url': 'GeoJSON/Z_1_OFC_12',
 					'color': '#24dff0',
 					'bgc': '#23dff0',
@@ -116,13 +108,22 @@
 				'ofc_144': {
 					'name': 'OFC-144',
 					'className': 'ofc-144',
-					'img': 'ofc-144.png',
 					'url': 'GeoJSON/Z_1_OFC_144',
 					'color': '#002af6',
 					'bgc': '#002af6',
 					'opacity': 0.6,
 					'fillOpacity': 0.2,
 					'weight': 1.0,
+				},
+				'ofc_fig_8': {
+					'name': 'OFC-FIG-8',
+					'className': 'ofc-fig-48',
+					'url': 'GeoJSON/Z_1_OFC_FIG_8',
+					'color': '#ff001e',
+					'bgc': '#ff001e',
+					'opacity': 0.6,
+					'fillOpacity': 0.2,
+					'weight': 2,
 				},
 			},
 			'polyGeoJSON': {
@@ -137,17 +138,6 @@
 					'fillOpacity': 0.8,
 					'weight': 1.0,
 					'zIndex': 300,
-				},
-				'ofc_fig_8': {
-					'name': 'OFC-FIG-8',
-					'className': 'ofc-fig-48',
-					'img': 'ofc-fig.png',
-					'url': 'GeoJSON/Z_1_OFC_FIG_8',
-					'color': '#ff001e',
-					'bgc': '#ff001e',
-					'opacity': 0.6,
-					'fillOpacity': 0.2,
-					'weight': 1.0,
 				},
 				'mdu': {
 					'name': 'MDU',

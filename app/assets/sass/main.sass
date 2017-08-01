@@ -163,6 +163,14 @@ input,textarea,button
 	@include border-radius(5px)
 	@extend %extend_bg_blue
 
+.form-group
+	label
+		font-size: 9px
+		background: #41c7a2
+		background: -webkit-linear-gradient(-45deg, #44dcf4 0, #32d8c0 60%,#d3f37d 100%)
+		background: linear-gradient(135deg, $blue 0, $greenMain 60%, $yellowGreen 100%)
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$blue, endColorstr=$main,GradientType=1 )
+		background: -moz-linear-gradient(-45deg, #44dcf4 0, #32d8c0 60%,#d3f37d 100%)
 
 // Button start------------------------
 .btn
@@ -173,12 +181,18 @@ input,textarea,button
 	vertical-align: top
 	min-width: 170px
 	text-align: center
-	font-size: 12px
+	font-size: 11px
 	color: $white
+	font-family: sans-serif
+	font-weight: 600
 	box-shadow: 0 1px 3px $blackLight
 	@include border-radius(3px)
 	@include transition(all 0.3s)
-	@extend %extend_bg_blue
+	background: #41c7a2
+	background: -webkit-linear-gradient(-45deg, #44dcf4 0, #32d8c0 60%,#d3f37d 100%)
+	background: linear-gradient(135deg, $blue 0, $greenMain 60%, $yellowGreen 100%)
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$blue, endColorstr=$main,GradientType=1 )
+	background: -moz-linear-gradient(-45deg, #44dcf4 0, #32d8c0 60%,#d3f37d 100%)
 	&:hover
 		box-shadow: none
 	&:disabled
@@ -545,105 +559,112 @@ main
 		input
 			display: none
 
-	.leaflet-control-layers-overlays
-		.circle
-			margin-left: 5px
-			margin-right: 8px
-			display: inline-block
-			width: 10px
-			height: 10px
-			border-radius: 10px
-			text-align: center
-			background: #333333
-			border: 1px solid #000000
-			&.sc-48
-				background: #33a02c
-			&.sc-144
-				background: #1e2cec
-			&.otb
-				background: #975959
-			&.cross
-				background: red
-			&.newPole
-				background: #f2eb15
-		.line
-			margin-left: 5px
-			margin-right: 8px
-			display: inline-block
-			width: 10px
-			height: 2px
-			text-align: center
-			background: #333333
-			border: 1px solid #000
-			&.drop
-				background: #8b2b22
-			&.ofc_12
-				background: #24dff0
-			&.ofc_48
-				background: #88000f
-			&.ofc_144
-				background: #002af6
 
-		.square
-			margin-left: 5px
-			margin-right: 8px
-			display: inline-block
-			width: 10px
-			height: 10px
-			text-align: center
-			background: #333333
-			border: 1px solid #000000
-			&.buildings
-				background: #b8b8b8
-			&.ofc_48
-				background: #88000f
-			&.otb
-				background: #975959
-			&.cross
-				background: red
-			&.newPole
-				background: #f2eb15
-		
-		span
-			color: $darkBlue
-			position: relative
-			display: inline-block
-			
-		input[type="checkbox"]
-			position: relative
-			margin: 5px auto
-			width: 24px
-			height: 20px
-			vertical-align: inherit
-			visibility: hidden
-			cursor: pointer
-			&::before
-				visibility: visible
-				content: ''
-				position: absolute
-				width: 16px
-				height: 16px
-				position: absolute
-				top: 6px
-				left: 3px
-				background-color: #fff
-				border: 1px solid $darkBlue
-				border-radius: 2px
-			&::after
-				content: ''
-				width: 10px
-				height: 10px
-				position: absolute
-				top: 50%
-				left: 50%
-				margin-top: -1px
-				margin-left: -6px
-				background: $darkBlue
-				visibility: visible
-				opacity: 0
-			&:checked
-				&::after
-					opacity: 1
+.leaflet-control-layers-overlays
+
+	.circle
+		margin-left: 28px
+		margin-right: 8px
+		display: inline-block
+		width: 10px
+		height: 10px
+		border-radius: 10px
+		text-align: center
+		background: #333333
+		border: 1px solid #000000
+		&.sc-48
+			background: #33a02c
+		&.sc-144
+			background: #1e2cec
+		&.otb
+			background: #975959
+		&.cross
+			background: red
+		&.newPole
+			background: #f2eb15
+	.line
+		margin-left: 28px
+		margin-right: 8px
+		display: inline-block
+		vertical-align: middle
+		width: 10px
+		height: 2px
+		text-align: center
+		background: #333333
+		&.drop
+			background: #8b2b22
+		&.ofc_12
+			background: #24dff0&
+		&.ofc_fig_8
+			background: #ff001e
+		&.ofc_48
+			background: #88000f
+		&.ofc_144
+			background: #002af6
+
+	.square
+		margin-left: 28px
+		margin-right: 8px
+		display: inline-block
+		width: 10px
+		height: 10px
+		text-align: center
+		background: #333333
+		border: 1px solid #000000
+		&.buildings
+			background: #b8b8b8
+		&.ofc_48
+			background: #88000f
+		&.otb
+			background: #975959
+		&.cross
+			background: red
+		&.newPole
+			background: #f2eb15
+
+	span
+		color: $darkBlue
+		position: relative
+		display: inline-block
+
+	input[type="checkbox"]
+		position: absolute
+		width: 24px
+		height: 20px
+		vertical-align: inherit
+		visibility: hidden
+		-moz-visibility: hidden
+		cursor: pointer
+		&:checked + span
+			.checked
+				opacity: 1
+	div
+		position: relative
+		line-height: 25px
+	.check
+		content: ''
+		position: absolute
+		width: 16px
+		height: 16px
+		position: absolute
+		top: 3px
+		left: 3px
+		background-color: #fff
+		border: 1px solid $darkBlue
+		border-radius: 2px
+	.checked
+		content: ''
+		width: 10px
+		height: 10px
+		position: absolute
+		top: 50%
+		left: 50%
+		margin-top: -5px
+		margin-left: -5px
+		background: $darkBlue
+		visibility: visible
+		opacity: 0
+
 	.leaflet-popup-content
 		margin: 20px 12px
 		span
@@ -651,7 +672,8 @@ main
 			font-weight: 600
 			font-size: 10px
 			text-transform: uppercase
-
+	.leaflet-control-layers-list
+		display: block!important
 .about
 	text-align: left
 	padding-top: 80px

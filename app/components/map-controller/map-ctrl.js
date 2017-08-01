@@ -56,7 +56,7 @@
 				dataService.getData(layer.url + '.geojson')
 					.then(function (response) {
 						$scope.layers.overlays[layerName] = {
-								name: '<span class="square ' + layerName + '"></span>' + layer.name,
+								name: '<span class="check"><span class="checked"></span></span><span class="square ' + layerName + '"></span>' + layer.name,
 								type: 'geoJSONShape',
 								data: response.data,
 								visible: true,
@@ -85,7 +85,7 @@
 				dataService.getData(layer.url + '.geojson')
 					.then(function (response) {
 						$scope.layers.overlays[layerName] = {
-							name: '<span class="circle ' + layerName + '"></span>' + layer.name,
+							name: '<span class="check"><span class="checked"></span></span><span class="circle ' + layerName + '"></span>' + layer.name,
 							type: 'geoJSONSVGMarker',
 							data: response.data,
 							visible: true,
@@ -112,7 +112,7 @@
 				dataService.getData(layer.url + '.geojson')
 					.then(function (response) {
 						$scope.layers.overlays[layerName] = {
-							name: '<span class="line ' + layerName + '"></span>' + layer.name,
+							name: '<span class="check"><span class="checked"></span></span><span class="line ' + layerName + '"></span>' + layer.name,
 							type: 'geoJSONPolyline',
 							data: response.data,
 							visible: true,
@@ -148,9 +148,9 @@
 			addPolylineLayer(apiUrl.polylineGeoJSON.ofc_12, 'ofc_12');
 			addPolylineLayer(apiUrl.polylineGeoJSON.ofc_48, 'ofc_48');
 			addPolylineLayer(apiUrl.polylineGeoJSON.ofc_144, 'ofc_144');
-
+			addPolylineLayer(apiUrl.polylineGeoJSON.ofc_fig_8, 'ofc_fig_8');
 			// Add shape layers
-			addPolyLayer(apiUrl.polyGeoJSON.ofc_fig_8, 'ofc_fig_8');
+
 			addPolyLayer(apiUrl.polyGeoJSON.buildings, 'buildings');
 			addPolyLayer(apiUrl.polyGeoJSON.mdu, 'mdu');
 
