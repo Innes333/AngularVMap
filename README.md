@@ -38,19 +38,19 @@ $ gulp ftp-deploy
 ```
 Commitment rules
 ----------------
+```
+	Name of feature-branch - [taskNumber]-[taskName] 
 
-Name of feature-branch - [taskNumber]-[taskName] 
-
-Example - 1001-fix-issues-in-IE
-
-
-Name of commit - [typeOfUpdate](partWichWasUpdated):-[what was done] 
-Types - fix, feat(new feature), update
-
-Example - fix(LayerConrtor): add sort odred of layers
+	Example - 1001-fix-issues-in-IE
 
 
+	Name of commit - [typeOfUpdate](partWichWasUpdated):-[what was done] 
+	Types - fix, feat(new feature), update
 
+	Example - fix(LayerConrtor): add sort odred of layers
+
+
+```
 
 
 
