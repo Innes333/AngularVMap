@@ -36,7 +36,21 @@ Open gulpfile.js find  "ftpConfig"  object and set your param
 ```
 $ gulp ftp-deploy
 ```
+Commitment rules
+----------------
 
-More information
------------
-[Hove install and use gulp](http://tsumbaluk.in.ua/blog/gulp-ustanovka-i-nastrojka-komponentov-rukovodstvo-dlya-udobnoj-i-bystroj-front-end-razrabotki)
+Name of feature-branch - [taskNumber]-[taskName] 
+
+Example - 1001-fix-issues-in-IE
+
+
+Name of commit - [typeOfUpdate](partWichWasUpdated):-[what was done] 
+Types - fix, feat(new feature), update
+
+Example - fix(LayerConrtor): add sort odred of layers
+
+
+
+
+
+
