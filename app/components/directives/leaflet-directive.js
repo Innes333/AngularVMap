@@ -1595,8 +1595,12 @@
 				return utfgrid;
 			};
 			
-			var createPopupContent = function(feature) {
+			var createPopupContent = function(feature, layer) {
+
 				var content = '';
+				layer.options.layerName !== null && layer.options.layerName !== undefined ?
+					content += '<div class="layer-name">' + layer.options.layerName.toUpperCase() +'</div>' : '';
+
 				feature.properties.Location_ID !== null && feature.properties.Location_ID !== undefined ?
 					content += '<div><span>Location ID:</span> ' + feature.properties.Location_ID +'</div>' : '';
 
@@ -1674,7 +1678,7 @@
 								return L.circleMarker(latlng, params.options);
 							},
 							onEachFeature: function (feature, layer) {
-					            layer.bindPopup(createPopupContent(feature));
+					            layer.bindPopup(createPopupContent(feature, layer));
 					        } 
 						});
 					},
@@ -1685,7 +1689,7 @@
 						return new L.geoJson(params.data, {
 							style: params.options,
 							onEachFeature: function (feature, layer) {
-								layer.bindPopup(createPopupContent(feature));
+								layer.bindPopup(createPopupContent(feature, layer));
 							}
 						});
 					}

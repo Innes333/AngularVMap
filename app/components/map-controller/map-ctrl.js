@@ -71,6 +71,7 @@
 										opacity: layer.opacity,
 										fillOpacity: layer.fillOpacity,
 									},
+									layerName,
 								},
 
 						};
@@ -100,6 +101,7 @@
 							    fillOpacity: 0.8,
 								setZIndex: layer.zIndex,
 								pointerEvents: 'all',
+								layerName,
 							},
 
 						};
@@ -127,6 +129,7 @@
 							    fillOpacity: 0.8,
 								setZIndex: layer.zIndex,
 								pointerEvents: 'all',
+								layerName,
 							},
 
 						};
@@ -149,8 +152,8 @@
 			addPolylineLayer(apiUrl.polylineGeoJSON.ofc_48, 'ofc_48');
 			addPolylineLayer(apiUrl.polylineGeoJSON.ofc_144, 'ofc_144');
 			addPolylineLayer(apiUrl.polylineGeoJSON.ofc_fig_8, 'ofc_fig_8');
-			// Add shape layers
 
+			// Add shape layers
 			addPolyLayer(apiUrl.polyGeoJSON.buildings, 'buildings');
 			addPolyLayer(apiUrl.polyGeoJSON.mdu, 'mdu');
 
