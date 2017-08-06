@@ -166,12 +166,7 @@ input,textarea,button
 .form-group
 	label
 		font-size: 9px
-		background: #41c7a2
-		background: -webkit-linear-gradient(-45deg, #44dcf4 0, #32d8c0 60%,#d3f37d 100%)
-		background: linear-gradient(135deg, $blue 0, $greenMain 60%, $yellowGreen 100%)
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$blue, endColorstr=$main,GradientType=1 )
-		background: -moz-linear-gradient(-45deg, #44dcf4 0, #32d8c0 60%,#d3f37d 100%)
-
+		@extend %extend_bg_gradient
 // Button start------------------------
 .btn
 	text-transform: uppercase	
@@ -188,11 +183,8 @@ input,textarea,button
 	box-shadow: 0 1px 3px $blackLight
 	@include border-radius(3px)
 	@include transition(all 0.3s)
-	background: #41c7a2
-	background: -webkit-linear-gradient(-45deg, #44dcf4 0, #32d8c0 60%,#d3f37d 100%)
-	background: linear-gradient(135deg, $blue 0, $greenMain 60%, $yellowGreen 100%)
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$blue, endColorstr=$main,GradientType=1 )
-	background: -moz-linear-gradient(-45deg, #44dcf4 0, #32d8c0 60%,#d3f37d 100%)
+	@extend %extend_bg_gradient
+	
 	&:hover
 		box-shadow: none
 	&:disabled
