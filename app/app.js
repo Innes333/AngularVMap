@@ -159,33 +159,34 @@
 			$httpProvider.defaults.useXDomain     = true;
 
 			$routeProvider
-			.when('/', {
-				templateUrl: 'components/authorization-controller/authorization-contoller.html',
-				controller: 'loginCtrl'
-			})
-			.when('/map', {
-				templateUrl: 'components/map-controller/map-ctrl.html',
-				controller: 'mapCtrl'
-			})
-			.when('/contact', {
-				templateUrl: 'components/contact-controller/contact-ctrl.html',
-				controller: 'mapCtrl'
-			})
-			.when('/about', {
-				templateUrl: 'components/about-controller/about-ctrl.html',
-				controller: 'mapCtrl'
-			})
-			.otherwise({
-				redirectTo: '/'
-			})
+				.when('/', {
+					templateUrl: 'components/authorization-controller/authorization-contoller.html',
+					controller: 'loginCtrl'
+				})
+				.when('/map', {
+					templateUrl: 'components/map-controller/map-ctrl.html',
+					controller: 'mapCtrl',
+				})
+				.when('/contact', {
+					templateUrl: 'components/contact-controller/contact-ctrl.html',
+					controller: 'mapCtrl'
+				})
+				.when('/about', {
+					templateUrl: 'components/about-controller/about-ctrl.html',
+					controller: 'mapCtrl'
+				})
+				.otherwise({
+					redirectTo: '/'
+				});
+
 		}])
 		.run(['$window', '$rootScope', '$http', '$location', '$localStorage', '$route', '$timeout', function($window, $rootScope, $http, $location, $localStorage, $route, $timeout) {
 			$rootScope.$on('$locationChangeStart', function (event, next, current) {
 				var publicPages = ['/'],
 					restrictedPage = publicPages.indexOf($location.path()) === -1;
-				if(restrictedPage && !$rootScope.appConfig.user){
+				if (restrictedPage && !$rootScope.appConfig.user){
 					$location.path('/');
-				}else if(!$rootScope.appConfig.user){
+				} else if(!$rootScope.appConfig.user){
 					$location.path('/');
 					$rootScope.appConfig.user = false;
 				};

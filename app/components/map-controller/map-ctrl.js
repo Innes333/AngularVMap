@@ -19,8 +19,6 @@
 					fadeAnimation: false
 				},
 				controls: {
-					scale:{},
-					search: {},
 					custom: new L.Control.Measure({
 						primaryLengthUnit: 'meters',
 						secondaryLengthUnit: 'kilometers',
@@ -47,7 +45,6 @@
 					},
 					overlays: {},
 				},
-
 			});
 
 
@@ -157,21 +154,24 @@
 			addPolyLayer(apiUrl.polyGeoJSON.buildings, 'buildings');
 			addPolyLayer(apiUrl.polyGeoJSON.mdu, 'mdu');
 
+			var map = leafletData.getMap('map');
 
-
-			leafletData.getLayers().then(function(baselayers) {
-				angular.extend($scope.controls, {
-					search: {
-						propertyName: 'BuildingID',
-						marker: false,
-						layer: baselayers.overlays.drop,
-						moveToLocation: function (latlng, title, map) {
-							map.fitBounds( latlng.layer.getBounds() );
-							var zoom = map.getBoundsZoom(latlng.layer.getBounds());
-							map.setView(latlng, zoom); // access the zoom
+			$scope.$watch('layers.overlays.poteaux', function() {
+				leafletData.getLayers('map').then(function(baselayers) {
+					if (baselayers.overlays.poteaux != undefined) {
+						$scope.controls.search = {
+							layer: baselayers.overlays.poteaux,
+							initial: false,
+							propertyName: 'Location_ID',
+							hideMarkerOnCollapse: false,
+							buildTip: function(text, val) {
+								var type = val.layer.feature.properties.Location_ID;
+								return '<a href="#">' + '<b>' + type + ' </b><span>poteaux</span></a>';
+							}
 						}
 					}
 				});
+
 			});
 
 
