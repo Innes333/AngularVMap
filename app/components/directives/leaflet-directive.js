@@ -1607,6 +1607,12 @@
 				feature.properties.ID_Prov !== null && feature.properties.ID_Prov !== undefined ?
 					content += '<div><span>Prov ID:</span> ' + feature.properties.ID_Prov +'</div>' : '';
 
+				feature.properties.OSP_Cable_name !== null && feature.properties.OSP_Cable_name !== undefined ?
+					content += '<div><span>OSP Cable name:</span> ' + feature.properties.OSP_Cable_name +'</div>' : '';
+
+				feature.properties.OSP_Cable_Template !== null && feature.properties.OSP_Cable_Template !== undefined ?
+					content += '<div><span>OSP Cable Template:</span> ' + feature.properties.OSP_Cable_Template +'</div>' : '';
+
 				feature.properties.BuildingID !== null && feature.properties.BuildingID !== undefined ?
 					content += '<div><span>Building ID:</span> ' + feature.properties.BuildingID +'</div>' : '';
 
@@ -1616,8 +1622,17 @@
 				feature.properties.City_Region !== null && feature.properties.City_Region !== undefined ?
 					content += '<div><span>City region:</span> ' + feature.properties.City_Region +'</div>' : '';
 
+				feature.properties.Neighbourhood !== null && feature.properties.Neighbourhood !== undefined ?
+					content += '<div><span>Neighbourhood:</span> ' + feature.properties.Neighbourhood +'</div>' : '';
+
 				feature.properties.District !== null && feature.properties.District !== undefined ?
 					content += '<div><span>District:</span> ' + feature.properties.District +'</div>' : '';
+
+				feature.properties.Longitude !== null && feature.properties.Longitude !== undefined ?
+					content += '<div><span>Longitude:</span> ' + feature.properties.Longitude +'</div>' : '';
+
+				feature.properties.Latitude !== null && feature.properties.Latitude !== undefined ?
+					content += '<div><span>Latitude:</span> ' + feature.properties.Latitude +'</div>' : '';
 
 				return content;
 			};
