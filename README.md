@@ -47,7 +47,7 @@ Commitment rules
 	Name of commit - [typeOfUpdate](partWichWasUpdated):-[what was done] 
 	Types - fix, feat(new feature), update
 
-	Example - fix(LayerConrtor): add sort orded of layers
+	Example - fix(LayerConrtor): add sort order of layers
 
 
 ```
