@@ -76,7 +76,7 @@
 						};
 
 					}, function (error) {
-						throw dataService.catchError(error, 'Ajax call error massege!');
+						throw dataService.catchError(error, 'Ajax call error message!');
 					});
 			};
 
@@ -105,7 +105,7 @@
 
 						};
 					}, function (error) {
-						throw dataService.catchError(error, 'Ajax call error massege!');
+						throw dataService.catchError(error, 'Ajax call error message!');
 					});
 			}
 			// addPolylineLayer
@@ -133,7 +133,7 @@
 
 						};
 					}, function (error) {
-						throw dataService.catchError(error, 'Ajax call error massege!');
+						throw dataService.catchError(error, 'Ajax call error message!');
 					});
 			}
 
@@ -215,67 +215,32 @@
 				}
 			};
 
+			var getLayres = function(typeOfLayer) {
+				for (var pointLayer in typeOfLayer.point) {
+					addPointLayer(apiUrl.pointGeoJSON[pointLayer], pointLayer);
+				}
+				// Add polyline layers
+				for (var polylineLayer in typeOfLayer.polyline) {
+					addPolylineLayer(apiUrl.polylineGeoJSON[polylineLayer], polylineLayer);
+				}
+				// Add shape layers
+				for (var polygonLayer in typeOfLayer.polygon) {
+					addPolyLayer(apiUrl.polyGeoJSON[polygonLayer], polygonLayer);
+				}
+			};
 
 			switch ($rootScope.appConfig.user.username) {
-				case 'admin': {
-						// Add point layers
-						for (var pointLayer in adminLayers.point) {
-							addPointLayer(apiUrl.pointGeoJSON[pointLayer], pointLayer);
-						}
-						// Add polyline layers
-						for (var polylineLayer in adminLayers.polyline) {
-							addPolylineLayer(apiUrl.polylineGeoJSON[polylineLayer], polylineLayer);
-						}
-						// Add shape layers
-						for (var polygonLayer in adminLayers.polygon) {
-							addPolyLayer(apiUrl.polyGeoJSON[polygonLayer], polygonLayer);
-						}
-					}
+				case 'admin':
+					getLayres(adminLayers);
 				break;
-				case 'presidence': {
-						// Add point layers
-						for (var pointLayer in presidenceLayers.point) {
-							addPointLayer(apiUrl.pointGeoJSON[pointLayer], pointLayer);
-						}
-						// Add polyline layers
-						for (var polylineLayer in presidenceLayers.polyline) {
-							addPolylineLayer(apiUrl.polylineGeoJSON[polylineLayer], polylineLayer);
-						}
-						// Add shape layers
-						for (var polygonLayer in presidenceLayers.polygon) {
-							addPolyLayer(apiUrl.polyGeoJSON[polygonLayer], polygonLayer);
-						}
-					}
+				case 'presidence':
+					getLayres(presidenceLayers);
 				break;
-				case 'bti': {
-						// Add point layers
-						for (var pointLayer in btiLayers.point) {
-							addPointLayer(apiUrl.pointGeoJSON[pointLayer], pointLayer);
-						}
-						// Add polyline layers
-						for (var polylineLayer in btiLayers.polyline) {
-							addPolylineLayer(apiUrl.polylineGeoJSON[polylineLayer], polylineLayer);
-						}
-						// Add shape layers
-						for (var polygonLayer in btiLayers.polygon) {
-							addPolyLayer(apiUrl.polyGeoJSON[polygonLayer], polygonLayer);
-						}
-					}
+				case 'bti':
+					getLayres(btiLayers);
 				break;
-				case 'bts': {
-						// Add point layers
-						for (var pointLayer in btsLayers.point) {
-							addPointLayer(apiUrl.pointGeoJSON[pointLayer], pointLayer);
-						}
-						// Add polyline layers
-						for (var polylineLayer in btsLayers.polyline) {
-							addPolylineLayer(apiUrl.polylineGeoJSON[polylineLayer], polylineLayer);
-						}
-						// Add shape layers
-						for (var polygonLayer in btsLayers.polygon) {
-							addPolyLayer(apiUrl.polyGeoJSON[polygonLayer], polygonLayer);
-						}
-					}
+				case 'bts':
+					getLayres(btsLayers);
 				break;
 				default: {
 						// Add shape layers
