@@ -47,8 +47,10 @@
 				},
 			});
 
+	        // get map object from $scope
+	        var map = leafletData.getMap('map');
 
-			// get poly objects
+			// addPolyLayer
 			var addPolyLayer = function(layer, layerName) {
 				dataService.getData(layer.url + '.geojson')
 					.then(function (response) {
@@ -78,7 +80,7 @@
 					});
 			};
 
-
+			// addPointLayer
 			var addPointLayer = function(layer, layerName) {
 				dataService.getData(layer.url + '.geojson')
 					.then(function (response) {
@@ -106,7 +108,7 @@
 						throw dataService.catchError(error, 'Ajax call error massege!');
 					});
 			}
-			//
+			// addPolylineLayer
 			var addPolylineLayer = function(layer, layerName) {
 				dataService.getData(layer.url + '.geojson')
 					.then(function (response) {
@@ -135,26 +137,116 @@
 					});
 			}
 
-			// Add point layers
-			addPointLayer(apiUrl.pointGeoJSON.sc48, 'sc-48');
-			addPointLayer(apiUrl.pointGeoJSON.sc144, 'sc-144');
-			addPointLayer(apiUrl.pointGeoJSON.newPole, 'newPole');
-			addPointLayer(apiUrl.pointGeoJSON.poteaux, 'poteaux');
-			addPointLayer(apiUrl.pointGeoJSON.cross, 'cross');
-			addPointLayer(apiUrl.pointGeoJSON.otb, 'otb');
+			var adminLayers = {
+				point: {
+					sc48: 'sc48',
+					sc144: 'sc144',
+					newPole: 'newPole',
+					poteaux: 'poteaux',
+					cross: 'cross',
+					otb: 'otb',
+				},
+				polyline: {
+					drop: 'drop',
+					ofc_12: 'ofc_12',
+					ofc_48: 'ofc_48',
+					ofc_144: 'ofc_144',
+					ofc_fig_8: 'ofc_fig_8',
+				},
+				polygon: {
+					buildings: 'buildings',
+					mdu: 'mdu',
+				}
+			};
 
-			// Add polyline layers
-			addPolylineLayer(apiUrl.polylineGeoJSON.drop, 'drop');
-			addPolylineLayer(apiUrl.polylineGeoJSON.ofc_12, 'ofc_12');
-			addPolylineLayer(apiUrl.polylineGeoJSON.ofc_48, 'ofc_48');
-			addPolylineLayer(apiUrl.polylineGeoJSON.ofc_144, 'ofc_144');
-			addPolylineLayer(apiUrl.polylineGeoJSON.ofc_fig_8, 'ofc_fig_8');
+			var btiLayers = {
+				point: {
+					sc48: 'sc48',
+					sc144: 'sc144',
+					cross: 'cross',
+				},
+				polyline: {
+					ofc_144: 'ofc_144',
+					ofc_48: 'ofc_48',
+					ofc_fig_8: 'ofc_fig_8',
+				},
+				polygon: {
+					buildings: 'buildings',
+				}
+			};
 
-			// Add shape layers
-			addPolyLayer(apiUrl.polyGeoJSON.buildings, 'buildings');
-			addPolyLayer(apiUrl.polyGeoJSON.mdu, 'mdu');
+			var btsLayers = {
+				point: {
+					poteaux: 'poteaux',
+					newPole: 'newPole',
+					otb: 'otb',
+				},
+				polyline: {
+					ofc_12: 'ofc_12',
+					ofc_48: 'ofc_48',
+					ofc_144: 'ofc_144',
+					drop: 'drop',
+				},
+				polygon: {
+					buildings: 'buildings',
+					mdu: 'mdu',
+				}
+			};
 
-			var map = leafletData.getMap('map');
+
+			switch ($rootScope.appConfig.user.username) {
+				case 'admin': {
+						// Add point layers
+						for (var pointLayer in adminLayers.point) {
+							addPointLayer(apiUrl.pointGeoJSON[pointLayer], pointLayer);
+						}
+						// Add polyline layers
+						for (var polylineLayer in adminLayers.polyline) {
+							addPolylineLayer(apiUrl.polylineGeoJSON[polylineLayer], polylineLayer);
+						}
+						// Add shape layers
+						for (var polygonLayer in adminLayers.polygon) {
+							addPolyLayer(apiUrl.polyGeoJSON[polygonLayer], polygonLayer);
+						}
+					}
+				break;
+				case 'bti': {
+						// Add point layers
+						for (var pointLayer in btiLayers.point) {
+							addPointLayer(apiUrl.pointGeoJSON[pointLayer], pointLayer);
+						}
+						// Add polyline layers
+						for (var polylineLayer in btiLayers.polyline) {
+							addPolylineLayer(apiUrl.polylineGeoJSON[polylineLayer], polylineLayer);
+						}
+						// Add shape layers
+						for (var polygonLayer in btiLayers.polygon) {
+							addPolyLayer(apiUrl.polyGeoJSON[polygonLayer], polygonLayer);
+						}
+					}
+				break;
+				case 'bts': {
+						// Add point layers
+						for (var pointLayer in btsLayers.point) {
+							addPointLayer(apiUrl.pointGeoJSON[pointLayer], pointLayer);
+						}
+						// Add polyline layers
+						for (var polylineLayer in btsLayers.polyline) {
+							addPolylineLayer(apiUrl.polylineGeoJSON[polylineLayer], polylineLayer);
+						}
+						// Add shape layers
+						for (var polygonLayer in btsLayers.polygon) {
+							addPolyLayer(apiUrl.polyGeoJSON[polygonLayer], polygonLayer);
+						}
+					}
+				break;
+				default: {
+						// Add shape layers
+						for (var polygonLayer in adminLayers.polygon) {
+							addPolyLayer(apiUrl.polyGeoJSON[polygonLayer], polygonLayer);
+						}
+					}
+			}
 
 			$scope.$watch('layers.overlays.poteaux', function() {
 				leafletData.getLayers('map').then(function(baselayers) {

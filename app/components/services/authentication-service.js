@@ -9,9 +9,17 @@
 							name: 'admin',
 							password: '1'
 						}],
-						user: [{
-							name: 'user',
-							password: '1'
+						presidence: [{
+							name: 'presidence',
+							password: '123+'
+						}],
+						bti: [{
+							name: 'bti',
+							password: '123+'
+						}],
+						bts: [{
+							name: 'bts',
+							password: '123+'
 						}]
 					};
 					for(role in roles) {
