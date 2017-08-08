@@ -159,6 +159,28 @@
 				}
 			};
 
+			var presidenceLayers = {
+				point: {
+					sc48: 'sc48',
+					sc144: 'sc144',
+					newPole: 'newPole',
+					poteaux: 'poteaux',
+					cross: 'cross',
+					otb: 'otb',
+				},
+				polyline: {
+					drop: 'drop',
+					ofc_12: 'ofc_12',
+					ofc_48: 'ofc_48',
+					ofc_144: 'ofc_144',
+					ofc_fig_8: 'ofc_fig_8',
+				},
+				polygon: {
+					buildings: 'buildings',
+					mdu: 'mdu',
+				}
+			};
+
 			var btiLayers = {
 				point: {
 					sc48: 'sc48',
@@ -206,6 +228,21 @@
 						}
 						// Add shape layers
 						for (var polygonLayer in adminLayers.polygon) {
+							addPolyLayer(apiUrl.polyGeoJSON[polygonLayer], polygonLayer);
+						}
+					}
+				break;
+				case 'presidence': {
+						// Add point layers
+						for (var pointLayer in presidenceLayers.point) {
+							addPointLayer(apiUrl.pointGeoJSON[pointLayer], pointLayer);
+						}
+						// Add polyline layers
+						for (var polylineLayer in presidenceLayers.polyline) {
+							addPolylineLayer(apiUrl.polylineGeoJSON[polylineLayer], polylineLayer);
+						}
+						// Add shape layers
+						for (var polygonLayer in presidenceLayers.polygon) {
 							addPolyLayer(apiUrl.polyGeoJSON[polygonLayer], polygonLayer);
 						}
 					}
