@@ -192,6 +192,14 @@
 				};
 			});
 
+			$rootScope.$on('$routeChangeStart', function(next, current) { 
+		   		$rootScope.appConfig.preloader = true;
+		 	});
+
+		 	$rootScope.$on('$routeChangeSuccess', function() {
+		        $rootScope.appConfig.preloader = false;
+		    });
+
 			$rootScope.appConfig = {
 				preloader: false,
 				user: false,
