@@ -360,14 +360,14 @@ header
 			display: inline-block
 			position: absolute
 			bottom: 4px
-			left: 30px
+			left: 25px
 			img
 				max-height: 32px
 				margin-top: 12px
 		ul
 			text-align: right
 			font-size: 0
-			padding-right: 35px
+			padding-right: 18px
 			li
 				display: inline-block
 				&.active
@@ -379,9 +379,9 @@ header
 					position: relative
 					display: inline-block
 					line-height: 42px
-					padding: 0 20px
+					padding: 0 16px
 					color: $white
-					font-size: 13px
+					font-size: 12px
 					text-transform: uppercase
 					overflow: hidden
 					&::before
@@ -521,6 +521,11 @@ main
 		fill: $greenMain
 	svg
 		pointer-events: all
+
+	.leaflet-control-layers-toggle
+		background-image: url(../img/layers.png)
+		width: 36px
+		height: 36px
 
 	.leaflet-top .leaflet-control
 		margin-top: 15px
@@ -801,19 +806,16 @@ main
 			white-space: nowrap
 			overflow: hidden
 
-.leaflet-retina .leaflet-control-measure .leaflet-control-measure-toggle
-	background-image: url(../img/rulers2X.png)
-	background-size: 16px 16px
-	&:hover
+.leaflet-control-measure
+	.leaflet-control-measure-toggle
 		background-image: url(../img/rulers2X.png)
 		background-size: 16px 16px
+		width: 36px
+		height: 36px
+		&:hover
+			background-image: url(../img/rulers2X.png)
+			background-size: 16px 16px
 
-.leaflet-touch .leaflet-control-measure .leaflet-control-measure-toggle
-	width: 44px
-	height: 44px
-	&:hover
-		width: 44px
-		height: 44px
 
 .leaflet-control-measure
 	.startprompt
@@ -899,10 +901,8 @@ main
 			font-weight: 600
 			line-height: 25px
 			color: $darkBlue
-.leaflet-control-layers-toggle
-    background-image: url(../img/layers.png);
-    width: 36px;
-    height: 36px;
+
+
 
 
 //ALWAYS END
