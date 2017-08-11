@@ -179,6 +179,8 @@
 					redirectTo: '/'
 				});
 
+			
+
 		}])
 		.run(['$window', '$rootScope', '$http', '$location', '$localStorage', '$route', '$timeout', function($window, $rootScope, $http, $location, $localStorage, $route, $timeout) {
 			$rootScope.$on('$locationChangeStart', function (event, next, current) {
@@ -190,18 +192,15 @@
 					$location.path('/');
 					$rootScope.appConfig.user = false;
 				};
+				$rootScope.appConfig.preloader = true;
 			});
-
-			$rootScope.$on('$routeChangeStart', function(next, current) { 
-		   		$rootScope.appConfig.preloader = true;
-		 	});
-
-		 	$rootScope.$on('$routeChangeSuccess', function() {
-		        $rootScope.appConfig.preloader = false;
-		    });
+		 	
+			$rootScope.$on('$routeChangeSuccess', function() {
+					$rootScope.appConfig.preloader = false;
+	      	});		    
 
 			$rootScope.appConfig = {
-				preloader: false,
+				preloader: true,
 				user: false,
 				appError: {
 					status: false,
