@@ -190,6 +190,11 @@
 					$location.path('/');
 					$rootScope.appConfig.user = false;
 				};
+				$rootScope.appConfig.preloader = true;
+			});
+
+			$rootScope.$on('$routeChangeSuccess', function() {
+				$rootScope.appConfig.preloader = false;
 			});
 
 			$rootScope.appConfig = {
