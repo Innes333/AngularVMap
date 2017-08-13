@@ -1,4 +1,4 @@
-angular.module('nameApp')
+angular.module('vMapsApp')
 	.directive('navigation', navigation)
 	.directive('autoActive',['$location', '$localStorage', autoActive]);
 	function navigation () {

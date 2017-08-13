@@ -1,10 +1,12 @@
 (function(){
-	angular.module('nameApp')
+	angular.module('vMapsApp')
 		.controller('mapCtrl', ['$http',
-			'$interval', 'leafletData','$rootScope', '$scope', '$window', '$routeParams',
-			'$timeout', '$localStorage', 'apiUrl', 	'baseFunc', 'dataService',
+			'$interval', 'leafletData','$rootScope', '$scope', '$window',
+			'$routeParams', '$timeout', '$localStorage', 'apiUrl',
+			'baseFunc', 'dataService', 'layersForRoles',
 			function($http, $interval, leafletData, $rootScope,
-			         $scope, $window, $routeParams, $timeout, $localStorage, apiUrl, baseFunc, dataService){
+			         $scope, $window, $routeParams, $timeout, $localStorage,
+			         apiUrl, baseFunc, dataService, layersForRoles){
 
 
 	        angular.extend($scope, {
@@ -92,6 +94,7 @@
 							clickable: true,
 							setZIndex: layer.zIndex,
 							layerOptions: {
+								pane: 'markerPane',
 								radius: layer.radius,
 								fillColor: layer.bgc,
 							    color: layer.color,
@@ -120,6 +123,7 @@
 							clickable: true,
 							setZIndex: layer.zIndex,
 							layerOptions: {
+								pane: 'shadowPane',
 								radius: layer.radius,
 								fillColor: layer.bgc,
 							    color: layer.color,
@@ -137,84 +141,6 @@
 					});
 			}
 
-			var adminLayers = {
-				point: {
-					sc48: 'sc48',
-					sc144: 'sc144',
-					newPole: 'newPole',
-					poteaux: 'poteaux',
-					cross: 'cross',
-					otb: 'otb',
-				},
-				polyline: {
-					drop: 'drop',
-					ofc_12: 'ofc_12',
-					ofc_48: 'ofc_48',
-					ofc_144: 'ofc_144',
-					ofc_fig_8: 'ofc_fig_8',
-				},
-				polygon: {
-					buildings: 'buildings',
-					mdu: 'mdu',
-				}
-			};
-
-			var presidenceLayers = {
-				point: {
-					sc48: 'sc48',
-					sc144: 'sc144',
-					newPole: 'newPole',
-					poteaux: 'poteaux',
-					cross: 'cross',
-					otb: 'otb',
-				},
-				polyline: {
-					drop: 'drop',
-					ofc_12: 'ofc_12',
-					ofc_48: 'ofc_48',
-					ofc_144: 'ofc_144',
-					ofc_fig_8: 'ofc_fig_8',
-				},
-				polygon: {
-					buildings: 'buildings',
-					mdu: 'mdu',
-				}
-			};
-
-			var btiLayers = {
-				point: {
-					sc48: 'sc48',
-					sc144: 'sc144',
-					cross: 'cross',
-				},
-				polyline: {
-					ofc_144: 'ofc_144',
-					ofc_48: 'ofc_48',
-					ofc_fig_8: 'ofc_fig_8',
-				},
-				polygon: {
-					buildings: 'buildings',
-				}
-			};
-
-			var btsLayers = {
-				point: {
-					poteaux: 'poteaux',
-					newPole: 'newPole',
-					otb: 'otb',
-				},
-				polyline: {
-					ofc_12: 'ofc_12',
-					ofc_48: 'ofc_48',
-					ofc_144: 'ofc_144',
-					drop: 'drop',
-				},
-				polygon: {
-					buildings: 'buildings',
-					mdu: 'mdu',
-				}
-			};
-
 			var getLayres = function(typeOfLayer) {
 				for (var pointLayer in typeOfLayer.point) {
 					addPointLayer(apiUrl.pointGeoJSON[pointLayer], pointLayer);
@@ -231,23 +157,19 @@
 
 			switch ($rootScope.appConfig.user.username) {
 				case 'admin':
-					getLayres(adminLayers);
+					getLayres(layersForRoles.adminLayers);
 				break;
 				case 'presidence':
-					getLayres(presidenceLayers);
+					getLayres(layersForRoles.presidenceLayers);
 				break;
 				case 'bti':
-					getLayres(btiLayers);
+					getLayres(layersForRoles.btiLayers);
 				break;
 				case 'bts':
-					getLayres(btsLayers);
+					getLayres(layersForRoles.btsLayers);
 				break;
-				default: {
-						// Add shape layers
-						for (var polygonLayer in adminLayers.polygon) {
-							addPolyLayer(apiUrl.polyGeoJSON[polygonLayer], polygonLayer);
-						}
-					}
+				default:
+					getLayres(layersForRoles.adminLayers);
 			}
 
 			$scope.$watch('layers.overlays.poteaux', function() {

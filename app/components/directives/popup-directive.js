@@ -1,4 +1,4 @@
-angular.module('nameApp')
+angular.module('vMapsApp')
 	.directive('popupBtn', ['$document','$window', '$compile', popupBtn])
 	.directive('popupClose', ['$document','$window', '$compile', popupClose])
 

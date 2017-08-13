@@ -1,5 +1,5 @@
 (function(){
-	angular.module('nameApp')
+	angular.module('vMapsApp')
 		.controller('mainCtrl', ['$interval','$rootScope','$scope', '$window', '$routeParams', '$interval', '$timeout', '$localStorage', 'apiUrl', 'baseFunc', 'dataService', function($interval, $rootScope, $scope, $window, $routeParams, $interval, $timeout, $localStorage, apiUrl, baseFunc, dataService){
 
 		$scope.loadItems = function(){

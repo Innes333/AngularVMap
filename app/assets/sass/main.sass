@@ -2,18 +2,12 @@
 @import "_vars.sass"
 @import "_mixins.sass"
 
-+font-face("RobotoRegular", "../fonts/RobotoRegular/RobotoRegular", $file-formats: eot woff ttf)
-+font-face("RobotoLight", "../fonts/RobotoLight/RobotoLight", $file-formats: eot woff ttf)
-+font-face("CenturyGothic", "../fonts/CenturyGothicRegular/CenturyGothic", $file-formats: eot woff ttf)
-+font-face("CenturyGothicRegular", "../fonts/CenturyGothicRegular/CenturyGothicRegular", $file-formats: eot woff ttf)
-+font-face("OpenSansBold", "../fonts/OpenSansBold/OpenSansBold", $file-formats: eot woff ttf)
-
 body
 	font-size: 16px
 	min-width: 320px
 	position: relative
 	line-height: 1.6
-	font-family: "RobotoLight", sans-serif
+	font-family: sans-serif
 	font-weight: 100
 	overflow-x: hidden
 
@@ -69,7 +63,7 @@ a
 		color: $black
 
 h1,h2,h3,h4,h5,h6
-	font-family: "RobotoLight",sans-serif
+	font-family: sans-serif
 	font-weight: 100
 
 h1,h2,h3,h4,h5,h6,ul,p
@@ -97,50 +91,6 @@ input,textarea,button
 	color: $textColor
 	margin-bottom: 25px
 
-.robotoLight
-	font-family: "RobotoLight", sans-serif
-	font-weight: 100
-	font-size: 14px
-	&.big
-		font-size: 32px
-		line-height: 40px
-	&.normal
-		font-size: 22px
-	&.small
-		font-size: 10px
-
-.openSans
-	font-family: "OpenSansBold", sans-serif
-	font-size: 14px
-	&.big
-		font-size: 32px
-		line-height: 40px
-	&.normal
-		font-size: 22px
-	&.small
-		font-size: 10px
-
-.robotoRegular
-	font-family: "RobotoRegular", sans-serif
-	font-size: 14px
-	&.big
-		font-size: 32px
-		line-height: 40px
-	&.normal
-		font-size: 22px
-	&.small
-		font-size: 10px
-
-.centuryGothic
-	font-family: "CenturyGothic", sans-serif
-	font-size: 14px	
-	&.big
-		font-size: 32px
-		line-height: 40px
-	&.normal
-		font-size: 22px
-	&.small
-		font-size: 10px
 .ttu
 	text-transform: uppercase
 

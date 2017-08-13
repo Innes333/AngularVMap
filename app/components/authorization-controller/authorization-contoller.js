@@ -1,5 +1,5 @@
 (function(){
-	angular.module('nameApp')
+	angular.module('vMapsApp')
 		.controller('loginCtrl', ['$scope', '$location', '$localStorage', '$rootScope', 'AuthenticationService', function($scope, $location, $localStorage, $rootScope,AuthenticationService){			
 			$rootScope.appConfig.user = false;
 			var initController = function(){
