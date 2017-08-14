@@ -1,6 +1,6 @@
 (function(){
 	angular
-		.module('nameApp')
+		.module('vMapsApp')
 		.service('baseFunc', function(){
 			this.lineLength = function(coords){
 				var xPow 		= Math.pow(coords[2] - coords[0],2),

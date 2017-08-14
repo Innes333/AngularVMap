@@ -1,6 +1,6 @@
 (function(){
 	angular
-		.module('nameApp')
+		.module('vMapsApp')
 			.factory('AuthenticationService', ['$rootScope', '$http', 'apiUrl', function($rootScope, $http, apiUrl){
 				this.Login = function(user, callback) {
 

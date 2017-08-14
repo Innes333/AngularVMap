@@ -1,4 +1,4 @@
-angular.module('nameApp')
+angular.module('vMapsApp')
 	.filter('toplus', function(){
 		return function(value, sort) {
 			var num = value < 0 ? -value : value;
