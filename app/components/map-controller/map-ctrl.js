@@ -123,11 +123,12 @@
 							clickable: true,
 							setZIndex: layer.zIndex,
 							layerOptions: {
-								pane: 'shadowPane',
+								pane: 'markerPane',
 								radius: layer.radius,
 								fillColor: layer.bgc,
 							    color: layer.color,
 								weight: layer.weight,
+								lineCap: 'square',
 							    opacity: layer.opacity,
 							    fillOpacity: 0.8,
 								setZIndex: layer.zIndex,
@@ -172,16 +173,17 @@
 					getLayres(layersForRoles.adminLayers);
 			}
 
-			$scope.$watch('layers.overlays.poteaux', function() {
+			$scope.$watch('layers.overlays.drop', function() {
 				leafletData.getLayers('map').then(function(baselayers) {
-					if (baselayers.overlays.poteaux != undefined) {
+					console.log();
+					if (baselayers.overlays.drop != undefined) {
 						$scope.controls.search = {
-							layer: baselayers.overlays.poteaux,
+							layer: baselayers.overlays.drop,
 							initial: false,
-							propertyName: 'Location_ID',
+							propertyName: 'Search_id',
 							hideMarkerOnCollapse: false,
 							buildTip: function(text, val) {
-								var type = val.layer.feature.properties.Location_ID;
+								var type = val.layer.feature.properties.Search_id;
 								return '<a href="#">' + '<b>' + type + ' </b><span>poteaux</span></a>';
 							}
 						}
