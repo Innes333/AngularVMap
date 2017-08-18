@@ -8,13 +8,20 @@
 
 
 /* Medium Devices, Desktops */
-@media only screen and (max-width : 992px)
-	/**/
+@media only screen and (max-width : 920px)
+	.w-login
+	.login-content
+		top: 50%
+		.w-logo
+			img
+				max-width: 120px
+
+/**/
 
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
-	
+
 	/*Disable Animation on Mobile Devices*/
 	.animated
 		/*CSS transitions*/
@@ -36,9 +43,34 @@
 		-ms-animation: none !important
 		animation: none !important
 
+	.w-login
+		height: 100vh
+		.w-logo
+			margin-bottom: 10px
+
+	.footer-decor
+		height: calc(100vh - 90vh)
+
+@media only screen and (max-width : 668px)
+	.w-login
+		.login-content
+			max-width: 475px
+			padding: 7px 15px 15px
+	.form-group
+		margin-bottom: 15px
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
+	footer
+		.copy
+			position: relative
+
+	main
+		height: auto
+
+	.footer-decor
+		position: fixed
+
 	.table 
 		.table-head 
 			li
@@ -82,29 +114,5 @@
 @media only screen and (min-width : 1200px)
 	/**/
 
-@media only screen and (max-width : 920px)
-	.w-login 
-		.login-content
-			top: 57%
-			.w-logo
-				img
-					 max-width: 120px
-
-
-@media only screen and (max-width : 768px)
-	.w-login
-		.w-logo
-			margin-bottom: 10px
-
-	.footer-decor
-		height: 40px
-
-@media only screen and (max-width : 568px)
-	.w-login 
-			.login-content
-				max-width: 475px
-				padding: 7px 15px 15px
-	.form-group
-		margin-bottom: 15px
 
 
