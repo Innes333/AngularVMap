@@ -226,7 +226,7 @@
 				polygon: {
 					buildings: 'buildings',
 					mdu: 'mdu',
-				}
+				},
 			},
 			presidenceLayers: {
 				point: {
@@ -247,7 +247,7 @@
 				polygon: {
 					buildings: 'buildings',
 					mdu: 'mdu',
-				}
+				},
 			},
 			btiLayers: {
 				point: {
@@ -279,7 +279,7 @@
 				polygon: {
 					buildings: 'buildings',
 					mdu: 'mdu',
-				}
+				},
 			}
 		})
 }());

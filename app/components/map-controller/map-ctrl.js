@@ -29,7 +29,7 @@
 					}),
 				},
 				layers: {
-					sortLayers: true,
+					sortLayers: false,
 					baselayers: {
 						 osm: {
 	                        name: 'Layers',
@@ -62,7 +62,7 @@
 								data: response.data,
 								visible: true,
 								setZIndex: layer.zIndex,
-								sortLayers: true,
+								sortLayers: false,
 								layerOptions: {
 									className: layer.className,
 									style: {
@@ -143,9 +143,11 @@
 			}
 
 			var getLayres = function(typeOfLayer) {
+				
 				for (var pointLayer in typeOfLayer.point) {
 					addPointLayer(apiUrl.pointGeoJSON[pointLayer], pointLayer);
 				}
+			
 				// Add polyline layers
 				for (var polylineLayer in typeOfLayer.polyline) {
 					addPolylineLayer(apiUrl.polylineGeoJSON[polylineLayer], polylineLayer);
@@ -156,7 +158,8 @@
 				}
 			};
 
-			switch ($rootScope.appConfig.user.username) {
+			var currentUser = $rootScope.appConfig.user.username;
+			switch (currentUser) {
 				case 'admin':
 					getLayres(layersForRoles.adminLayers);
 				break;
@@ -173,25 +176,38 @@
 					getLayres(layersForRoles.adminLayers);
 			}
 
-			$scope.$watch('layers.overlays.drop', function() {
+			$scope.$watchCollection('layers.overlays', function(allArray) {
 				leafletData.getLayers('map').then(function(baselayers) {
-					console.log();
-					if (baselayers.overlays.drop != undefined) {
+
+					// console.log(baselayers.overlays.ofc_12);
+					// console.log(baselayers.overlays.ofc_12._layers);
+
+
+
+
+					if (Object.keys(allArray).length == 13) {
+						var marker = L.marker([0.503415920703226, 9.41377225590114]),
+						marker1 = L.marker([0.503415920703226, 9.41377225590114]);
+
+					var markers = L.featureGroup([marker1, marker]);
+						
+						var poiLayers = L.featureGroup([baselayers.overlays.ofc_12, baselayers.overlays.cross,  baselayers.overlays.otb, baselayers.overlays.newPole,baselayers.overlays.poteaux,baselayers.overlays.sc48,baselayers.overlays.sc144]);
+					
+						
 						$scope.controls.search = {
-							layer: baselayers.overlays.drop,
+							layer: poiLayers,
 							initial: false,
 							propertyName: 'Search_id',
 							hideMarkerOnCollapse: false,
 							buildTip: function(text, val) {
 								var type = val.layer.feature.properties.Search_id;
-								return '<a href="#">' + '<b>' + type + ' </b><span>poteaux</span></a>';
+								// console.log(val.layer.feature.geometry.type);
+								return '<a href="#">' + '<b>' + type + ' </b><span style = background-color:'+val.layer.defaultOptions.fillColor+'>'+val.layer.defaultOptions.layerName+'</span></a>';
 							}
 						}
 					}
 				});
-
 			});
-
 
 			// get current location by IP
 			$scope.searchIP = function() {
