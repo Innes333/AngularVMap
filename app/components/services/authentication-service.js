@@ -1,9 +1,10 @@
 (function(){
 	angular
 		.module('vMapsApp')
-			.factory('AuthenticationService', ['$rootScope', '$http', 'apiUrl', function($rootScope, $http, apiUrl){
-				this.Login = function(user, callback) {
+			.factory('AuthenticationService', ['$rootScope', '$http', 'apiUrl',
+				function($rootScope, $http, apiUrl) {
 
+				this.Login = function(user, callback) {
 					var roles = {
 						admin: [{
 							name: 'admin',

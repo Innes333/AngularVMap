@@ -40,7 +40,6 @@
 	                            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 	                            continuousWorld: true,
 	                            showOnSelector: true,
-	                            minZoom: 15,
    								maxZoom: 25
 	                        }
 	                    }
@@ -158,41 +157,75 @@
 				}
 			};
 
-			var currentUser = $rootScope.appConfig.user.username;
+
+			var currentUser = $rootScope.appConfig.user.username,
+				userLayersCount = 0; 
+
 			switch (currentUser) {
 				case 'admin':
 					getLayres(layersForRoles.adminLayers);
+					userLayersCount = Object.keys(layersForRoles.adminLayers.point).length +
+						Object.keys(layersForRoles.adminLayers.polyline).length +
+						Object.keys(layersForRoles.adminLayers.polygon).length;
 				break;
 				case 'presidence':
 					getLayres(layersForRoles.presidenceLayers);
+					userLayersCount = Object.keys(layersForRoles.presidenceLayers.point).length +
+						Object.keys(layersForRoles.presidenceLayers.polyline).length +
+						Object.keys(layersForRoles.presidenceLayers.polygon).length;
 				break;
 				case 'bti':
 					getLayres(layersForRoles.btiLayers);
+					userLayersCount = Object.keys(layersForRoles.btiLayers.point).length +
+						Object.keys(layersForRoles.btiLayers.polyline).length +
+						Object.keys(layersForRoles.btiLayers.polygon).length;
 				break;
 				case 'bts':
 					getLayres(layersForRoles.btsLayers);
+					userLayersCount = Object.keys(layersForRoles.bts.point).length+
+						Object.keys(layersForRoles.btsLayers.polyline).length +
+						Object.keys(layersForRoles.btsLayers.polygon).length;
 				break;
 				default:
 					getLayres(layersForRoles.adminLayers);
-			}
+					userLayersCount = Object.keys(layersForRoles.adminLayers.point).length +
+						Object.keys(layersForRoles.adminLayers.polyline).length +
+						Object.keys(layersForRoles.adminLayers.polygon).length;
+			};
 
 			$scope.$watchCollection('layers.overlays', function(allArray) {
 				leafletData.getLayers('map').then(function(baselayers) {
 
-					// console.log(baselayers.overlays.ofc_12);
-					// console.log(baselayers.overlays.ofc_12._layers);
+					if (Object.keys(allArray).length == userLayersCount) {					
 
-
-
-
-					if (Object.keys(allArray).length == 13) {
-						var marker = L.marker([0.503415920703226, 9.41377225590114]),
-						marker1 = L.marker([0.503415920703226, 9.41377225590114]);
-
-					var markers = L.featureGroup([marker1, marker]);
-						
-						var poiLayers = L.featureGroup([baselayers.overlays.ofc_12, baselayers.overlays.cross,  baselayers.overlays.otb, baselayers.overlays.newPole,baselayers.overlays.poteaux,baselayers.overlays.sc48,baselayers.overlays.sc144]);
-					
+						switch (currentUser) {
+							case 'admin':
+								poiLayers = L.featureGroup([baselayers.overlays.cross,
+									baselayers.overlays.otb, baselayers.overlays.newPole,
+									baselayers.overlays.poteaux,
+									baselayers.overlays.sc48, baselayers.overlays.sc144]);
+							break;
+							case 'presidence':
+								poiLayers = L.featureGroup([baselayers.overlays.cross,
+									baselayers.overlays.otb, baselayers.overlays.newPole,
+									baselayers.overlays.poteaux, 
+									baselayers.overlays.sc48, baselayers.overlays.sc144]);
+							break;
+							case 'bti':
+								poiLayers = L.featureGroup([baselayers.overlays.cross, 
+									baselayers.overlays.sc48, baselayers.overlays.sc144]);
+							break;
+							case 'bts':
+								poiLayers = L.featureGroup([baselayers.overlays.poteaux, 
+									baselayers.overlays.newPole, baselayers.overlays.otb]);
+							break;
+							default:
+								poiLayers = L.featureGroup([baselayers.overlays.cross,
+									baselayers.overlays.otb, baselayers.overlays.newPole,
+									baselayers.overlays.poteaux,
+									baselayers.overlays.sc48, baselayers.overlays.sc144]);
+								
+						};						
 						
 						$scope.controls.search = {
 							layer: poiLayers,
@@ -201,11 +234,10 @@
 							hideMarkerOnCollapse: false,
 							buildTip: function(text, val) {
 								var type = val.layer.feature.properties.Search_id;
-								// console.log(val.layer.feature.geometry.type);
 								return '<a href="#">' + '<b>' + type + ' </b><span style = background-color:'+val.layer.defaultOptions.fillColor+'>'+val.layer.defaultOptions.layerName+'</span></a>';
 							}
 						}
-					}
+					};
 				});
 			});
 

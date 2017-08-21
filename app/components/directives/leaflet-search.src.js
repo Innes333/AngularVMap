@@ -586,7 +586,6 @@ L.Control.Search = L.Control.extend({
                 		m._latlng = {lat: 0.40, lng: 90.0}
 
                 	}
-                	console.log(m);
                   
                 });
             }
