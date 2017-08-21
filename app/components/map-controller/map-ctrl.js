@@ -162,7 +162,6 @@
 			switch (currentUser) {
 				case 'admin':
 					getLayres(layersForRoles.adminLayers);
-					console.log(Object.keys(layersForRoles.adminLayers).length)
 				break;
 				case 'presidence':
 					getLayres(layersForRoles.presidenceLayers);
@@ -179,9 +178,21 @@
 
 			$scope.$watchCollection('layers.overlays', function(allArray) {
 				leafletData.getLayers('map').then(function(baselayers) {
+
+					// console.log(baselayers.overlays.ofc_12);
+					// console.log(baselayers.overlays.ofc_12._layers);
+
+
+
+
 					if (Object.keys(allArray).length == 13) {
-						var poiLayers = L.featureGroup([baselayers.overlays.cross, baselayers.overlays.otb, baselayers.overlays.newPole,baselayers.overlays.poteaux,baselayers.overlays.sc48,baselayers.overlays.sc144]);
-						console.log(poiLayers);
+						var marker = L.marker([0.503415920703226, 9.41377225590114]),
+						marker1 = L.marker([0.503415920703226, 9.41377225590114]);
+
+					var markers = L.featureGroup([marker1, marker]);
+						
+						var poiLayers = L.featureGroup([baselayers.overlays.ofc_12, baselayers.overlays.cross,  baselayers.overlays.otb, baselayers.overlays.newPole,baselayers.overlays.poteaux,baselayers.overlays.sc48,baselayers.overlays.sc144]);
+					
 						
 						$scope.controls.search = {
 							layer: poiLayers,
@@ -190,7 +201,7 @@
 							hideMarkerOnCollapse: false,
 							buildTip: function(text, val) {
 								var type = val.layer.feature.properties.Search_id;
-								console.log(val.layer.feature.geometry.type);
+								// console.log(val.layer.feature.geometry.type);
 								return '<a href="#">' + '<b>' + type + ' </b><span style = background-color:'+val.layer.defaultOptions.fillColor+'>'+val.layer.defaultOptions.layerName+'</span></a>';
 							}
 						}
