@@ -200,7 +200,7 @@
 
 						switch (currentUser) {
 							case 'admin':
-								poiLayers = L.featureGroup([baselayers.overlays.cross,
+								poiLayers = L.featureGroup([baselayers.overlays.cross, baselayers.overlays.ofc_12, baselayers.overlays.mdu,
 									baselayers.overlays.otb, baselayers.overlays.newPole,
 									baselayers.overlays.poteaux,
 									baselayers.overlays.sc48, baselayers.overlays.sc144]);
@@ -234,7 +234,7 @@
 							hideMarkerOnCollapse: false,
 							buildTip: function(text, val) {
 								var type = val.layer.feature.properties.Search_id;
-								return '<a href="#">' + '<b>' + type + ' </b><span style = background-color:'+val.layer.defaultOptions.fillColor+'>'+val.layer.defaultOptions.layerName+'</span></a>';
+								return '<a href="#">' + '<b>' + type + ' </b><span style = background-color:'+val.layer.options.fillColor+'>'+val.layer.options.layerName+'</span></a>';
 							}
 						}
 					};
