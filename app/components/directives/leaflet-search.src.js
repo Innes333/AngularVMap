@@ -519,6 +519,23 @@ L.Control.Search = L.Control.extend({
 		request.send();
 		return request;   
 	},
+
+	_multiSearch: function(propName, layer, retRecords) {
+		try {
+			if(layer.feature.properties.hasOwnProperty(propName))
+				
+			{
+				loc = layer.getBounds().getCenter();
+				loc.layer = layer;			
+				retRecords[ layer.feature.properties[propName] ] = loc;
+			}
+			else
+				throw new Error("propertyName '"+propName+"' not found in feature");
+		}
+		catch(err){
+			if (console) { console.warn(err); }
+		}
+	},
 	
 	_recordsFromLayer: function() {	//return table: key,value from layer
 		var that = this,
@@ -527,7 +544,7 @@ L.Control.Search = L.Control.extend({
 			loc;
 		
 		this._layer.eachLayer(function(layer) {
-
+			
 			if(layer.hasOwnProperty('_isMarkerSearch')) return;
 
 			if(layer instanceof L.Marker || layer instanceof L.CircleMarker)
@@ -555,10 +572,11 @@ L.Control.Search = L.Control.extend({
 					if (console) { console.warn(err); }
 				}
 			}
-            else if(layer.hasOwnProperty('feature'))//GeoJSON
+            if(layer.hasOwnProperty('feature'))//GeoJSON
 			{
 				try {
 					if(layer.feature.properties.hasOwnProperty(propName))
+						
 					{
 						loc = layer.getBounds().getCenter();
 						loc.layer = layer;			
@@ -574,18 +592,18 @@ L.Control.Search = L.Control.extend({
 			else if(layer instanceof L.LayerGroup)
             {
                 //TODO: Optimize
-                layer.eachLayer(function(m) {
+           
+                layer.eachLayer(function(layer) {
                 	
-                	
-                	if(m.hasOwnProperty('_latlng')) {
-                		loc = m.getLatLng();
-	                    loc.layer = m;
-	                    retRecords[ m.feature.properties[propName] ] = loc;
-                	}
-                	else{
-                		m._latlng = {lat: 0.40, lng: 90.0}
-
-                	}
+                	if(layer.hasOwnProperty('_bounds'))//GeoJSON
+					{
+						that._multiSearch(propName, layer, retRecords);
+						
+					} else {
+						loc = layer.getLatLng();
+	                    loc.layer = layer;
+	                    retRecords[ layer.feature.properties[propName] ] = loc;
+					}
                   
                 });
             }
