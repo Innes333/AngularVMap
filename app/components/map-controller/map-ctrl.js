@@ -200,32 +200,38 @@
 
 						switch (currentUser) {
 							case 'admin':
-								poiLayers = L.featureGroup([baselayers.overlays.cross, baselayers.overlays.ofc_12, baselayers.overlays.mdu,
-									baselayers.overlays.otb, baselayers.overlays.newPole,
-									baselayers.overlays.poteaux,
-									baselayers.overlays.sc48, baselayers.overlays.sc144]);
+								poiLayers = L.featureGroup([baselayers.overlays.cross, baselayers.overlays.otb, baselayers.overlays.newPole,
+									baselayers.overlays.poteaux, baselayers.overlays.sc48, baselayers.overlays.sc144,
+									baselayers.overlays.drop, baselayers.overlays.ofc_12, baselayers.overlays.ofc_48, baselayers.overlays.ofc_144,
+									baselayers.overlays.ofc_fig_8, baselayers.overlays.buildings, baselayers.overlays.mdu]);
 							break;
 							case 'presidence':
-								poiLayers = L.featureGroup([baselayers.overlays.cross,
+								poiLayers = L.featureGroup([baselayers.overlays.cross, baselayers.overlays.mdu,
 									baselayers.overlays.otb, baselayers.overlays.newPole,
-									baselayers.overlays.poteaux, 
-									baselayers.overlays.sc48, baselayers.overlays.sc144]);
+									baselayers.overlays.poteaux,
+									baselayers.overlays.sc48, baselayers.overlays.sc144, baselayers.overlays.drop,
+									baselayers.overlays.ofc_12, baselayers.overlays.ofc_48, baselayers.overlays.ofc_144,
+									baselayers.overlays.ofc_fig_8, baselayers.overlays.buildings, baselayers.overlays.mdu]);
 							break;
 							case 'bti':
 								poiLayers = L.featureGroup([baselayers.overlays.cross, 
-									baselayers.overlays.sc48, baselayers.overlays.sc144]);
+									baselayers.overlays.sc48, baselayers.overlays.sc144,
+									baselayers.overlays.ofc_144, baselayers.overlays.ofc_48,
+									baselayers.overlays.ofc_fig_8, baselayers.overlays.buildings]);
 							break;
 							case 'bts':
-								poiLayers = L.featureGroup([baselayers.overlays.poteaux, 
-									baselayers.overlays.newPole, baselayers.overlays.otb]);
-							break;
+								poiLayers = L.featureGroup([baselayers.overlays.otb, baselayers.overlays.newPole,
+									baselayers.overlays.poteaux,
+									baselayers.overlays.ofc_12, baselayers.overlays.ofc_48, baselayers.overlays.ofc_144, 
+									baselayers.overlays.buildings, baselayers.overlays.mdu
+									]);
+							break;								
 							default:
 								poiLayers = L.featureGroup([baselayers.overlays.cross,
 									baselayers.overlays.otb, baselayers.overlays.newPole,
 									baselayers.overlays.poteaux,
 									baselayers.overlays.sc48, baselayers.overlays.sc144]);
-								
-						};						
+						};				
 						
 						$scope.controls.search = {
 							layer: poiLayers,

@@ -519,6 +519,23 @@ L.Control.Search = L.Control.extend({
 		request.send();
 		return request;   
 	},
+
+	_multiSearch: function(propName, layer, retRecords) {
+		try {
+			if(layer.feature.properties.hasOwnProperty(propName))
+				
+			{
+				loc = layer.getBounds().getCenter();
+				loc.layer = layer;			
+				retRecords[ layer.feature.properties[propName] ] = loc;
+			}
+			else
+				throw new Error("propertyName '"+propName+"' not found in feature");
+		}
+		catch(err){
+			if (console) { console.warn(err); }
+		}
+	},
 	
 	_recordsFromLayer: function() {	//return table: key,value from layer
 		var that = this,
@@ -580,20 +597,8 @@ L.Control.Search = L.Control.extend({
                 	
                 	if(layer.hasOwnProperty('_bounds'))//GeoJSON
 					{
-						try {
-							if(layer.feature.properties.hasOwnProperty(propName))
-								
-							{
-								loc = layer.getBounds().getCenter();
-								loc.layer = layer;			
-								retRecords[ layer.feature.properties[propName] ] = loc;
-							}
-							else
-								throw new Error("propertyName '"+propName+"' not found in feature");
-						}
-						catch(err){
-							if (console) { console.warn(err); }
-						}
+						that._multiSearch(propName, layer, retRecords);
+						
 					} else {
 						loc = layer.getLatLng();
 	                    loc.layer = layer;
