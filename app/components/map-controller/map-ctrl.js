@@ -182,7 +182,7 @@
 				break;
 				case 'bts':
 					getLayres(layersForRoles.btsLayers);
-					userLayersCount = Object.keys(layersForRoles.bts.point).length+
+					userLayersCount = Object.keys(layersForRoles.btsLayers.point).length+
 						Object.keys(layersForRoles.btsLayers.polyline).length +
 						Object.keys(layersForRoles.btsLayers.polygon).length;
 				break;
@@ -197,7 +197,7 @@
 				leafletData.getLayers('map').then(function(baselayers) {
 
 					if (Object.keys(allArray).length == userLayersCount) {					
-
+						var poiLayers;
 						switch (currentUser) {
 							case 'admin':
 								poiLayers = L.featureGroup([baselayers.overlays.cross, baselayers.overlays.otb, baselayers.overlays.newPole,
@@ -218,6 +218,7 @@
 									baselayers.overlays.sc48, baselayers.overlays.sc144,
 									baselayers.overlays.ofc_144, baselayers.overlays.ofc_48,
 									baselayers.overlays.ofc_fig_8, baselayers.overlays.buildings]);
+								console.log(poiLayers);
 							break;
 							case 'bts':
 								poiLayers = L.featureGroup([baselayers.overlays.otb, baselayers.overlays.newPole,
