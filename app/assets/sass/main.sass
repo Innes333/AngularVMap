@@ -437,7 +437,10 @@ main
 
 .w-map
 	position: relative
-	.location-control
+	#map
+	    background-color: #f8fffe
+	.location-control,
+	.map-visibility-control
 		position: absolute
 		top: 123px
 		left: 10px
@@ -453,6 +456,9 @@ main
 		cursor: pointer
 		&:hover
 			background-color: #f4f4f4
+	.map-visibility-control
+		top: auto
+		bottom: 15px
 
 .lf-map
 	width: 100%

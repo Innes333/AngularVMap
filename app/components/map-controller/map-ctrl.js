@@ -261,6 +261,21 @@
 				});
 			};
 
+			// Toggle map baselayer visibility 
+			var baseMapLayer = $scope.layers.baselayers.osm;
+			$scope.toggleLayer = function(overlayName) {
+
+                var overlays = $scope.layers.baselayers
+                $scope.isActive = false;
+                if (overlays.hasOwnProperty(overlayName)) {
+                    delete overlays[overlayName];
+                    $scope.isActive = !$scope.isActive;
+
+                } else {
+                    overlays[overlayName] = baseMapLayer;
+                }
+            };
+
 
 	}]);
 }());

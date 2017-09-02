@@ -11,6 +11,7 @@
 			watch-markers="false">
 		</leaflet>
 		<div class="location-control fa fa-map-marker" data-ng-click="searchIP()"></div>
+		<div class="map-visibility-control fa" data-ng-class="isActive ? 'fa-map-o': 'fa-map'" data-ng-click="toggleLayer('osm')"></div>
 	</div>
 </div>
 <div id="popup-items" 
