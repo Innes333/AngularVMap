@@ -181,6 +181,18 @@
 				},
 			},
 			polyGeoJSON: {
+				hydro: {
+					name: 'Hydro',
+					className: 'hydro',
+					img: 'cross.png',
+					url: 'GeoJSON/Hydro(region)',
+					color: 'blue',
+					bgc: 'blue',
+					opacity: 0.6,
+					fillOpacity: 0.8,
+					weight: 1.0,
+					zIndex: 300,
+				},
 				buildings: {
 					name: 'Buildings',
 					className: 'buildings',
@@ -226,6 +238,7 @@
 				polygon: {
 					buildings: 'buildings',
 					mdu: 'mdu',
+					hydro: 'hydro',
 				},
 			},
 			presidenceLayers: {
