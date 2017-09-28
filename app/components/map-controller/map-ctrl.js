@@ -11,10 +11,8 @@
 
 	        angular.extend($scope, {
 				libreville: {
-					lng: 2.385152,
-					lat: 6.369213,
-					// lat: 0.504503980130774,
-					// lng: 9.408579986073635,
+					lat: 0.504503980130774,
+					lng: 9.408579986073635,
 					zoom: 15,
 				},
 				defaults: {
@@ -165,6 +163,8 @@
 
 			switch (currentUser) {
 				case 'admin':
+					$scope.libreville.lng = 2.385152;
+					$scope.libreville.lat = 6.369213;
 					getLayres(layersForRoles.adminLayers);
 					userLayersCount = Object.keys(layersForRoles.adminLayers.point).length +
 						Object.keys(layersForRoles.adminLayers.polyline).length +
@@ -202,10 +202,9 @@
 						var poiLayers;
 						switch (currentUser) {
 							case 'admin':
-								poiLayers = L.featureGroup([baselayers.overlays.cross, baselayers.overlays.otb, baselayers.overlays.newPole,
-									baselayers.overlays.poteaux, baselayers.overlays.sc48, baselayers.overlays.sc144,
-									baselayers.overlays.drop, baselayers.overlays.ofc_12, baselayers.overlays.ofc_48, baselayers.overlays.ofc_144,
-									baselayers.overlays.ofc_fig_8, baselayers.overlays.buildings, baselayers.overlays.mdu]);
+								poiLayers = L.featureGroup([baselayers.overlays.roads,
+									baselayers.overlays.hydro, baselayers.overlays.buildings,
+									baselayers.overlays.railways]);
 							break;
 							case 'presidence':
 								poiLayers = L.featureGroup([baselayers.overlays.cross, baselayers.overlays.mdu,
@@ -229,13 +228,11 @@
 									]);
 							break;								
 							default:
-								// poiLayers = L.featureGroup([baselayers.overlays.cross,
-								// 	baselayers.overlays.otb, baselayers.overlays.newPole,
-								// 	baselayers.overlays.poteaux,
-								// 	baselayers.overlays.sc48, baselayers.overlays.sc144]);
-								poiLayers = L.featureGroup([baselayers.overlays.roads,
-									baselayers.overlays.hydro, baselayers.overlays.buildings,
-									baselayers.overlays.railways]);
+								poiLayers = L.featureGroup([baselayers.overlays.cross,
+									baselayers.overlays.otb, baselayers.overlays.newPole,
+									baselayers.overlays.poteaux,
+									baselayers.overlays.sc48, baselayers.overlays.sc144]);
+
 						};				
 						
 						$scope.controls.search = {
