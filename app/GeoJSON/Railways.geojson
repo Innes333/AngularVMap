@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "Railways",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": 1, "name": null, "class": "rail" }, "geometry": { "type": "LineString", "coordinates": [ [ 2.394559341241379, 6.368365691034483 ], [ 2.394284, 6.368302 ], [ 2.394008, 6.368222 ], [ 2.393596, 6.368055 ], [ 2.393185, 6.367877 ], [ 2.392273, 6.367301 ], [ 2.391895, 6.367046 ], [ 2.391597, 6.366837 ], [ 2.39130808239173, 6.366641251262148 ] ] } }
+]
+}

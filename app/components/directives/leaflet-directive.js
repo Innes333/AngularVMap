@@ -1600,6 +1600,9 @@
 				var content = '';
 				layer.options.layerName !== null && layer.options.layerName !== undefined ?
 					content += '<div class="layer-name">' + layer.options.layerName.toUpperCase() +'</div>' : '';
+					
+				feature.properties.name !== null && feature.properties.name !== undefined ?
+					content += '<div><span>Name:</span> ' + feature.properties.name +'</div>' : '';
 
 				feature.properties.Location_ID !== null && feature.properties.Location_ID !== undefined ?
 					content += '<div><span>Location ID:</span> ' + feature.properties.Location_ID +'</div>' : '';

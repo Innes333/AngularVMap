@@ -128,6 +128,26 @@
 				},
 			},
 			polylineGeoJSON: {
+				railways: {
+					name: 'Railways',
+					className: 'drop',
+					url: 'GeoJSON/Railways',
+					color: '#000000',
+					bgc: '#000000',
+					opacity: 1,
+					fillOpacity: 1,
+					weight: 1.3,
+				},
+				roads: {
+					name: 'Roads',
+					className: 'roads',
+					url: 'GeoJSON/Roads',
+					color: '#f19040',
+					bgc: '#f19040',
+					opacity: 1,
+					fillOpacity: 1,
+					weight: 2.3,
+				},
 				drop: {
 					name: 'Drop',
 					className: 'drop',
@@ -181,13 +201,25 @@
 				},
 			},
 			polyGeoJSON: {
+				hydro: {
+					name: 'Hydro',
+					className: 'hydro',
+					img: 'cross.png',
+					url: 'GeoJSON/Hydro(region)',
+					color: 'blue',
+					bgc: '#6aacf6',
+					opacity: 0.6,
+					fillOpacity: 0.8,
+					weight: 1.0,
+					zIndex: 300,
+				},
 				buildings: {
 					name: 'Buildings',
 					className: 'buildings',
 					img: 'cross.png',
-					url: 'GeoJSON/Z_1_Buildings',
-					color: '#b8b8b8',
-					bgc: '#b8b8b8',
+					url: 'GeoJSON/Buildings',
+					color: '#333333',
+					bgc: '#8f8f8f',
 					opacity: 0.6,
 					fillOpacity: 0.8,
 					weight: 1.0,
@@ -208,24 +240,14 @@
 		})
 		.constant('layersForRoles',{
 			adminLayers: {
-				point: {
-					sc48: 'sc48',
-					sc144: 'sc144',
-					newPole: 'newPole',
-					poteaux: 'poteaux',
-					cross: 'cross',
-					otb: 'otb',
-				},
+				point: {},
 				polyline: {
-					drop: 'drop',
-					ofc_12: 'ofc_12',
-					ofc_48: 'ofc_48',
-					ofc_144: 'ofc_144',
-					ofc_fig_8: 'ofc_fig_8',
+					roads: 'roads',
+					railways: 'railways',
 				},
 				polygon: {
 					buildings: 'buildings',
-					mdu: 'mdu',
+					hydro: 'hydro',
 				},
 			},
 			presidenceLayers: {

@@ -11,8 +11,10 @@
 
 	        angular.extend($scope, {
 				libreville: {
-					lat: 0.504503980130774,
-					lng: 9.408579986073635,
+					lng: 2.385152,
+					lat: 6.369213,
+					// lat: 0.504503980130774,
+					// lng: 9.408579986073635,
 					zoom: 15,
 				},
 				defaults: {
@@ -217,8 +219,7 @@
 								poiLayers = L.featureGroup([baselayers.overlays.cross, 
 									baselayers.overlays.sc48, baselayers.overlays.sc144,
 									baselayers.overlays.ofc_144, baselayers.overlays.ofc_48,
-									baselayers.overlays.ofc_fig_8, baselayers.overlays.buildings]);
-								console.log(poiLayers);
+									baselayers.overlays.ofc_fig_8, baselayers.overlays.buildings]);								
 							break;
 							case 'bts':
 								poiLayers = L.featureGroup([baselayers.overlays.otb, baselayers.overlays.newPole,
@@ -228,16 +229,19 @@
 									]);
 							break;								
 							default:
-								poiLayers = L.featureGroup([baselayers.overlays.cross,
-									baselayers.overlays.otb, baselayers.overlays.newPole,
-									baselayers.overlays.poteaux,
-									baselayers.overlays.sc48, baselayers.overlays.sc144]);
+								// poiLayers = L.featureGroup([baselayers.overlays.cross,
+								// 	baselayers.overlays.otb, baselayers.overlays.newPole,
+								// 	baselayers.overlays.poteaux,
+								// 	baselayers.overlays.sc48, baselayers.overlays.sc144]);
+								poiLayers = L.featureGroup([baselayers.overlays.roads,
+									baselayers.overlays.hydro, baselayers.overlays.buildings,
+									baselayers.overlays.railways]);
 						};				
 						
 						$scope.controls.search = {
 							layer: poiLayers,
 							initial: false,
-							propertyName: 'Search_id',
+							propertyName: 'search_id',
 							hideMarkerOnCollapse: false,
 							buildTip: function(text, val) {
 								var type = val.layer.feature.properties.Search_id;
@@ -260,6 +264,21 @@
 					$scope.ip = res.ip;
 				});
 			};
+
+			// Toggle map baselayer visibility 
+			var baseMapLayer = $scope.layers.baselayers.osm;
+			$scope.toggleLayer = function(overlayName) {
+
+                var overlays = $scope.layers.baselayers
+                $scope.isActive = false;
+                if (overlays.hasOwnProperty(overlayName)) {
+                    delete overlays[overlayName];
+                    $scope.isActive = !$scope.isActive;
+
+                } else {
+                    overlays[overlayName] = baseMapLayer;
+                }
+            };
 
 
 	}]);
