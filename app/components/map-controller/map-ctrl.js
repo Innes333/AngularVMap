@@ -13,7 +13,7 @@
 				libreville: {
 					lat: 0.504503980130774,
 					lng: 9.408579986073635,
-					zoom: 15,
+					zoom: 16,
 				},
 				defaults: {
 					zoomAnimation: false,
@@ -81,42 +81,19 @@
 					});
 			};
 
-			// addPointLayer
-			var addPointLayer = function(layer, layerName) {
-				dataService.getData(layer.url + '.geojson')
-					.then(function (response) {
-						$scope.layers.overlays[layerName] = {
-							name: '<span class="check"><span class="checked"></span></span><span class="circle ' + layerName + '"></span>' + layer.name,
-							type: 'geoJSONSVGMarker',
-							data: response.data,
-							visible: true,
-							clickable: true,
-							setZIndex: layer.zIndex,
-							layerOptions: {
-								pane: 'markerPane',
-								radius: layer.radius,
-								fillColor: layer.bgc,
-							    color: layer.color,
-								weight: 1,
-							    opacity: layer.opacity,
-							    fillOpacity: 0.8,
-								setZIndex: layer.zIndex,
-								pointerEvents: 'all',
-								layerName,
-							},
+		
+			// addLayer
+			var addLayer = function(layer, layerName) {
+				var layerType = layer.type === 'poly' || layer.type === 'line' ?
+					'geoJSONPolyline' : 'geoJSONSVGMarker';
+				var overlayName = '<span class="check"><span class="checked"></span></span><span class="line '
+				 + layerName + '"></span>' + layer.name;
 
-						};
-					}, function (error) {
-						throw dataService.catchError(error, 'Ajax call error message!');
-					});
-			}
-			// addPolylineLayer
-			var addPolylineLayer = function(layer, layerName) {
 				dataService.getData(layer.url + '.geojson')
 					.then(function (response) {
 						$scope.layers.overlays[layerName] = {
-							name: '<span class="check"><span class="checked"></span></span><span class="line ' + layerName + '"></span>' + layer.name,
-							type: 'geoJSONPolyline',
+							name: overlayName,
+							type: layerType,
 							data: response.data,
 							visible: true,
 							clickable: true,
@@ -127,10 +104,8 @@
 								fillColor: layer.bgc,
 							    color: layer.color,
 								weight: layer.weight,
-								lineCap: 'square',
 							    opacity: layer.opacity,
 							    fillOpacity: 0.8,
-								setZIndex: layer.zIndex,
 								pointerEvents: 'all',
 								layerName,
 							},
@@ -141,34 +116,46 @@
 					});
 			}
 
-			var getLayres = function(typeOfLayer) {
-				
-				for (var pointLayer in typeOfLayer.point) {
-					addPointLayer(apiUrl.pointGeoJSON[pointLayer], pointLayer);
-				}
-			
-				// Add polyline layers
-				for (var polylineLayer in typeOfLayer.polyline) {
-					addPolylineLayer(apiUrl.polylineGeoJSON[polylineLayer], polylineLayer);
-				}
-				// Add shape layers
-				for (var polygonLayer in typeOfLayer.polygon) {
-					addPolyLayer(apiUrl.polyGeoJSON[polygonLayer], polygonLayer);
+			var currentUser = $rootScope.appConfig.user.username,
+			userLayersCount = 0; 
+
+
+			var getLayres = function(nameOfLayers) {
+				if (currentUser === 'demo') {
+					for (var layer in nameOfLayers) {
+						addLayer(apiUrl.demoJSON[layer], layer);
+					}
+				} else {
+					for (var pointLayer in nameOfLayers.point) {
+						addLayer(apiUrl.pointGeoJSON[pointLayer], pointLayer);
+					}				
+					// Add polyline layers
+					for (var polylineLayer in nameOfLayers.polyline) {
+						addLayer(apiUrl.polylineGeoJSON[polylineLayer], polylineLayer);
+					}
+					// Add shape layers
+					for (var polygonLayer in nameOfLayers.polygon) {
+						addPolyLayer(apiUrl.polyGeoJSON[polygonLayer], polygonLayer);
+					}				
 				}
 			};
 
 
-			var currentUser = $rootScope.appConfig.user.username,
-				userLayersCount = 0; 
-
+		
 			switch (currentUser) {
 				case 'admin':
 					$scope.libreville.lng = 2.385152;
 					$scope.libreville.lat = 6.369213;
-					getLayres(layersForRoles.adminLayers);
+					getLayres(layersForRoles.demoLayers);
 					userLayersCount = Object.keys(layersForRoles.adminLayers.point).length +
 						Object.keys(layersForRoles.adminLayers.polyline).length +
 						Object.keys(layersForRoles.adminLayers.polygon).length;
+				break;
+				case 'demo':
+					$scope.libreville.lng = 2.385152;
+					$scope.libreville.lat = 6.369213;
+					getLayres(layersForRoles.demoLayers);
+					userLayersCount = Object.keys(layersForRoles.demoLayers).length;
 				break;
 				case 'presidence':
 					getLayres(layersForRoles.presidenceLayers);
@@ -189,10 +176,10 @@
 						Object.keys(layersForRoles.btsLayers.polygon).length;
 				break;
 				default:
-					getLayres(layersForRoles.adminLayers);
-					userLayersCount = Object.keys(layersForRoles.adminLayers.point).length +
-						Object.keys(layersForRoles.adminLayers.polyline).length +
-						Object.keys(layersForRoles.adminLayers.polygon).length;
+					$scope.libreville.lng = 2.385152;
+					$scope.libreville.lat = 6.369213;
+					getLayres(layersForRoles.demoLayers);
+					userLayersCount = Object.keys(layersForRoles.demoLayers).length;
 			};
 
 			$scope.$watchCollection('layers.overlays', function(allArray) {
@@ -202,6 +189,10 @@
 						var poiLayers;
 						switch (currentUser) {
 							case 'admin':
+								poiLayers = L.featureGroup([baselayers.overlays.roads,
+									baselayers.overlays.hydro, baselayers.overlays.buildings,
+									baselayers.overlays.railways]);
+							case 'demo':
 								poiLayers = L.featureGroup([baselayers.overlays.roads,
 									baselayers.overlays.hydro, baselayers.overlays.buildings,
 									baselayers.overlays.railways]);
@@ -228,10 +219,9 @@
 									]);
 							break;								
 							default:
-								poiLayers = L.featureGroup([baselayers.overlays.cross,
-									baselayers.overlays.otb, baselayers.overlays.newPole,
-									baselayers.overlays.poteaux,
-									baselayers.overlays.sc48, baselayers.overlays.sc144]);
+								poiLayers = L.featureGroup([baselayers.overlays.roads,
+									baselayers.overlays.hydro, baselayers.overlays.buildings,
+									baselayers.overlays.railways]);
 
 						};				
 						

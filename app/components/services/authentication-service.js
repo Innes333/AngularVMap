@@ -10,6 +10,10 @@
 							name: 'admin',
 							password: '1'
 						}],
+						demo: [{
+							name: 'demo',
+							password: 'vmaps'
+						}],
 						presidence: [{
 							name: 'presidence',
 							password: '123+'
