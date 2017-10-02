@@ -1604,6 +1604,15 @@
 				feature.properties.name !== null && feature.properties.name !== undefined ?
 					content += '<div><span>Name:</span> ' + feature.properties.name +'</div>' : '';
 
+				feature.properties.class !== null && feature.properties.class !== undefined ?
+					content += '<div><span>Class:</span> ' + feature.properties.class +'</div>' : '';
+
+				feature.properties.Id !== null && feature.properties.Id !== undefined ?
+					content += '<div><span>ID:</span> ' + feature.properties.Id +'</div>' : '';
+
+				feature.properties.id !== null && feature.properties.id !== undefined ?
+					content += '<div><span>ID:</span> ' + feature.properties.id +'</div>' : '';
+
 				feature.properties.Location_ID !== null && feature.properties.Location_ID !== undefined ?
 					content += '<div><span>Location ID:</span> ' + feature.properties.Location_ID +'</div>' : '';
 

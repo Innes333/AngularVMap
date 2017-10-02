@@ -8,7 +8,6 @@
 			         $scope, $window, $routeParams, $timeout, $localStorage,
 			         apiUrl, baseFunc, dataService, layersForRoles){
 
-
 	        angular.extend($scope, {
 				libreville: {
 					lat: 0.504503980130774,
@@ -50,44 +49,13 @@
 
 	        // get map object from $scope
 	        var map = leafletData.getMap('map');
-
-			// addPolyLayer
-			var addPolyLayer = function(layer, layerName) {
-				dataService.getData(layer.url + '.geojson')
-					.then(function (response) {
-						$scope.layers.overlays[layerName] = {
-								name: '<span class="check"><span class="checked"></span></span><span class="square ' + layerName + '"></span>' + layer.name,
-								type: 'geoJSONShape',
-								data: response.data,
-								visible: true,
-								setZIndex: layer.zIndex,
-								sortLayers: false,
-								layerOptions: {
-									className: layer.className,
-									style: {
-										color: layer.color,
-										fillColor: layer.bgc,
-										weight: layer.weight,
-										opacity: layer.opacity,
-										fillOpacity: layer.fillOpacity,
-									},
-									layerName,
-								},
-
-						};
-
-					}, function (error) {
-						throw dataService.catchError(error, 'Ajax call error message!');
-					});
-			};
-
 		
 			// addLayer
 			var addLayer = function(layer, layerName) {
 				var layerType = layer.type === 'poly' || layer.type === 'line' ?
 					'geoJSONPolyline' : 'geoJSONSVGMarker';
-				var overlayName = '<span class="check"><span class="checked"></span></span><span class="line '
-				 + layerName + '"></span>' + layer.name;
+				var overlayName = '<span class="check"><span class="checked"></span></span><span class="'
+				 + layer.type + ' ' + layerName + '"></span>' + layer.name;
 
 				dataService.getData(layer.url + '.geojson')
 					.then(function (response) {
@@ -117,68 +85,45 @@
 			}
 
 			var currentUser = $rootScope.appConfig.user.username,
-			userLayersCount = 0; 
+			userLayersCount = 0;
 
-
-			var getLayres = function(nameOfLayers) {
+			var getLayers = function(nameOfLayers) {
 				if (currentUser === 'demo') {
 					for (var layer in nameOfLayers) {
 						addLayer(apiUrl.demoJSON[layer], layer);
 					}
 				} else {
-					for (var pointLayer in nameOfLayers.point) {
-						addLayer(apiUrl.pointGeoJSON[pointLayer], pointLayer);
-					}				
-					// Add polyline layers
-					for (var polylineLayer in nameOfLayers.polyline) {
-						addLayer(apiUrl.polylineGeoJSON[polylineLayer], polylineLayer);
+					for (var layer in nameOfLayers) {
+						addLayer(apiUrl.testGeoJSON[layer], layer);
+						console.log(layer);
 					}
-					// Add shape layers
-					for (var polygonLayer in nameOfLayers.polygon) {
-						addPolyLayer(apiUrl.polyGeoJSON[polygonLayer], polygonLayer);
-					}				
 				}
 			};
 
 
-		
 			switch (currentUser) {
-				case 'admin':
-					$scope.libreville.lng = 2.385152;
-					$scope.libreville.lat = 6.369213;
-					getLayres(layersForRoles.demoLayers);
-					userLayersCount = Object.keys(layersForRoles.adminLayers.point).length +
-						Object.keys(layersForRoles.adminLayers.polyline).length +
-						Object.keys(layersForRoles.adminLayers.polygon).length;
-				break;
 				case 'demo':
 					$scope.libreville.lng = 2.385152;
 					$scope.libreville.lat = 6.369213;
-					getLayres(layersForRoles.demoLayers);
+					getLayers(layersForRoles.demoLayers);
 					userLayersCount = Object.keys(layersForRoles.demoLayers).length;
 				break;
 				case 'presidence':
-					getLayres(layersForRoles.presidenceLayers);
-					userLayersCount = Object.keys(layersForRoles.presidenceLayers.point).length +
-						Object.keys(layersForRoles.presidenceLayers.polyline).length +
-						Object.keys(layersForRoles.presidenceLayers.polygon).length;
+					getLayers(layersForRoles.presidenceLayers);
+					userLayersCount = Object.keys(layersForRoles.presidenceLayers).length;
 				break;
 				case 'bti':
-					getLayres(layersForRoles.btiLayers);
-					userLayersCount = Object.keys(layersForRoles.btiLayers.point).length +
-						Object.keys(layersForRoles.btiLayers.polyline).length +
-						Object.keys(layersForRoles.btiLayers.polygon).length;
+					getLayers(layersForRoles.btiLayers);
+					userLayersCount = Object.keys(layersForRoles.btiLayers).length;
 				break;
 				case 'bts':
-					getLayres(layersForRoles.btsLayers);
-					userLayersCount = Object.keys(layersForRoles.btsLayers.point).length+
-						Object.keys(layersForRoles.btsLayers.polyline).length +
-						Object.keys(layersForRoles.btsLayers.polygon).length;
+					getLayers(layersForRoles.btsLayers);
+					userLayersCount = Object.keys(layersForRoles.btsLayers).lengt;
 				break;
 				default:
 					$scope.libreville.lng = 2.385152;
 					$scope.libreville.lat = 6.369213;
-					getLayres(layersForRoles.demoLayers);
+					getLayers(layersForRoles.demoLayers);
 					userLayersCount = Object.keys(layersForRoles.demoLayers).length;
 			};
 
@@ -188,14 +133,15 @@
 					if (Object.keys(allArray).length == userLayersCount) {					
 						var poiLayers;
 						switch (currentUser) {
-							case 'admin':
-								poiLayers = L.featureGroup([baselayers.overlays.roads,
-									baselayers.overlays.hydro, baselayers.overlays.buildings,
-									baselayers.overlays.railways]);
 							case 'demo':
 								poiLayers = L.featureGroup([baselayers.overlays.roads,
 									baselayers.overlays.hydro, baselayers.overlays.buildings,
-									baselayers.overlays.railways]);
+									baselayers.overlays.railways,
+									baselayers.overlays.nbn_metro_exist,
+									baselayers.overlays.ofc_12, baselayers.overlays.ofc_48,
+									baselayers.overlays.ofc_144, baselayers.overlays.otb,
+									baselayers.overlays.sc48, baselayers.overlays.sc144
+								]);
 							break;
 							case 'presidence':
 								poiLayers = L.featureGroup([baselayers.overlays.cross, baselayers.overlays.mdu,
@@ -228,7 +174,7 @@
 						$scope.controls.search = {
 							layer: poiLayers,
 							initial: false,
-							propertyName: 'search_id',
+							propertyName: 'Search_id',
 							hideMarkerOnCollapse: false,
 							buildTip: function(text, val) {
 								var type = val.layer.feature.properties.Search_id;
@@ -252,12 +198,19 @@
 				});
 			};
 
-			// Toggle map baselayer visibility 
-			var baseMapLayer = $scope.layers.baselayers.osm;
-			$scope.toggleLayer = function(overlayName) {
 
-                var overlays = $scope.layers.baselayers
-                $scope.isActive = false;
+			// Toggle map baselayer visibility
+			var baseMapLayer = $scope.layers.baselayers.osm;
+			var overlays = $scope.layers.baselayers;
+			$scope.isActive = true;
+
+			if (currentUser === 'demo') {
+				if (overlays.hasOwnProperty('osm')) {
+					delete overlays['osm'];
+					$scope.isActive = false;
+				}
+			}
+			$scope.toggleLayer = function(overlayName) {
                 if (overlays.hasOwnProperty(overlayName)) {
                     delete overlays[overlayName];
                     $scope.isActive = !$scope.isActive;

@@ -61,7 +61,7 @@
 			demoJSON: {
 				railways: {
 					name: 'Railways',
-					type: 'poly',
+					type: 'line',
 					className: 'drop',
 					url: 'demoJSON/Railways',
 					color: '#000000',
@@ -72,11 +72,11 @@
 				},
 				roads: {
 					name: 'Roads',
-					type: 'poly',
+					type: 'line',
 					className: 'roads',
 					url: 'demoJSON/Roads',
-					color: '#f19040',
-					bgc: '#f19040',
+					color: '#c66843',
+					bgc: '#c66843',
 					opacity: 1,
 					fillOpacity: 1,
 					weight: 2.3,
@@ -108,11 +108,11 @@
 				},
 				nbn_metro_exist: {
 					name: 'NBN Metro exist',
-					type: 'poly',
+					type: 'line',
 					className: 'nbn-metro',
 					url: 'demoJSON/NBN_Metro_exist',
-					color: 'blue',
-					bgc: '#6aacf6',
+					color: '#2ebc6d',
+					bgc: '#2ebc6d',
 					opacity: 0.6,
 					fillOpacity: 0.8,
 					weight: 1.0,
@@ -120,11 +120,11 @@
 				},
 				nbn_metro_moov: {
 					name: 'NBN Metro MOOV',
-					type: 'poly',
-					className: 'ofc-12',
+					type: 'point',
+					className: 'nbn-metro-moov',
 					url: 'demoJSON/NBN_Metro_MOOV',
-					color: 'blue',
-					bgc: '#6aacf6',
+					color: '#333333',
+					bgc: '#1ABC9C',
 					opacity: 0.6,
 					fillOpacity: 0.8,
 					weight: 1.0,
@@ -132,18 +132,18 @@
 				},
 				ofc_12: {
 					name: 'OFC-12',
-					type: 'poly',
+					type: 'line',
 					className: 'ofc-12',
 					url: 'demoJSON/OFC_12',
-					color: '#24dff0',
-					bgc: '#23dff0',
+					color: '#138cf0',
+					bgc: '#138cf0',
 					opacity: 1,
 					fillOpacity: 0.2,
 					weight: 3,
 				},
 				ofc_48: {
 					name: 'OFC-48',
-					type: 'poly',
+					type: 'line',
 					className: 'ofc-48',
 					img: 'ofc-48.png',
 					url: 'demoJSON/OFC_48',
@@ -155,7 +155,7 @@
 				},
 				ofc_144: {
 					name: 'OFC-144',
-					type: 'point',
+					type: 'line',
 					className: 'ofc-144',
 					url: 'demoJSON/OFC_144',
 					color: '#002af6',
@@ -201,9 +201,10 @@
 					'radius': 4,
 				},
 			},
-			pointGeoJSON: {
+			testGeoJSON: {
 				sc48: {
 					name: 'SC-48',
+					type: 'point',
 					url: 'GeoJSON/Z_1_SC_48',
 					zIndex: 510,
 					color: '#000',
@@ -215,6 +216,7 @@
 				},
 				sc144: {
 					name: 'SC-144',
+					type: 'point',
 					url: 'GeoJSON/Z_1_SC_144',
 					zIndex: 505,
 					color: '#000',
@@ -226,6 +228,7 @@
 				},
 				newPole: {
 					name: 'New Pole',
+					type: 'point',
 					url: 'GeoJSON/Z_1_NEW_POLE',
 					color: '#000',
 					zIndex: 510,
@@ -237,6 +240,7 @@
 				},
 				poteaux: {
 					name: 'Poteaux',
+					type: 'point',
 					url: 'GeoJSON/Z_1_Poteaux',
 					color: '#000',
 					zIndex: 510,
@@ -248,6 +252,7 @@
 				},
 				cross: {
 					name: 'Cross',
+					type: 'point',
 					url: 'GeoJSON/Z_1_CROSS',
 					zIndex: 500,
 					color: '#000',
@@ -259,6 +264,7 @@
 				},
 				otb: {
 					name: 'OTB',
+					type: 'point',
 					url: 'GeoJSON/Z_1_OTB',
 					color: '#000',
 					zIndex: 510,
@@ -268,30 +274,9 @@
 					weight: 1.0,
 					'radius': 4,
 				},
-			},
-			polylineGeoJSON: {
-				railways: {
-					name: 'Railways',
-					className: 'drop',
-					url: 'GeoJSON/Railways',
-					color: '#000000',
-					bgc: '#000000',
-					opacity: 1,
-					fillOpacity: 1,
-					weight: 1.3,
-				},
-				roads: {
-					name: 'Roads',
-					className: 'roads',
-					url: 'GeoJSON/Roads',
-					color: '#f19040',
-					bgc: '#f19040',
-					opacity: 1,
-					fillOpacity: 1,
-					weight: 2.3,
-				},
 				drop: {
 					name: 'Drop',
+					type: 'line',
 					className: 'drop',
 					url: 'GeoJSON/Z_1_DROP',
 					color: '#8b2b22',
@@ -302,6 +287,7 @@
 				},
 				ofc_12: {
 					name: 'OFC-12',
+					type: 'point',
 					className: 'ofc-12',
 					url: 'GeoJSON/Z_1_OFC_12',
 					color: '#24dff0',
@@ -312,6 +298,7 @@
 				},
 				ofc_48: {
 					name: 'OFC-48',
+					type: 'point',
 					className: 'ofc-48',
 					img: 'ofc-48.png',
 					url: 'GeoJSON/Z_1_OFC_48',
@@ -323,6 +310,7 @@
 				},
 				ofc_144: {
 					name: 'OFC-144',
+					type: 'point',
 					className: 'ofc-144',
 					url: 'GeoJSON/Z_1_OFC_144',
 					color: '#002af6',
@@ -333,6 +321,7 @@
 				},
 				ofc_fig_8: {
 					name: 'OFC-FIG-8',
+					type: 'point',
 					className: 'ofc-fig-48',
 					url: 'GeoJSON/Z_1_OFC_FIG_8',
 					color: '#ff001e',
@@ -341,25 +330,12 @@
 					fillOpacity: 0.2,
 					weight: 2,
 				},
-			},
-			polyGeoJSON: {
-				hydro: {
-					name: 'Hydro',
-					className: 'hydro',
-					img: 'cross.png',
-					url: 'GeoJSON/Hydro(region)',
-					color: 'blue',
-					bgc: '#6aacf6',
-					opacity: 0.6,
-					fillOpacity: 0.8,
-					weight: 1.0,
-					zIndex: 300,
-				},
 				buildings: {
 					name: 'Buildings',
+					type: 'poly',
 					className: 'buildings',
 					img: 'cross.png',
-					url: 'GeoJSON/Buildings',
+					url: 'GeoJSON/Z_1_Buildings',
 					color: '#333333',
 					bgc: '#8f8f8f',
 					opacity: 0.6,
@@ -369,6 +345,7 @@
 				},
 				mdu: {
 					name: 'MDU',
+					type: 'poly',
 					className: 'mdu',
 					img: 'mdu.png',
 					url: 'GeoJSON/Z_1_MDU',
@@ -381,17 +358,6 @@
 			}
 		})
 		.constant('layersForRoles',{
-			adminLayers: {
-				point: {},
-				polyline: {
-					roads: 'roads',
-					railways: 'railways',
-				},
-				polygon: {
-					buildings: 'buildings',
-					hydro: 'hydro',
-				},
-			},
 			demoLayers: {
 				roads: 'roads',
 				railways: 'railways',
@@ -404,61 +370,41 @@
 				sc48: 'sc48',
 				sc144: 'sc144',
 				nbn_metro_exist: 'nbn_metro_exist',
-				nbn_metro_moov: 'nbn_metro_moov',
-
 			},
 			presidenceLayers: {
-				point: {
-					sc48: 'sc48',
-					sc144: 'sc144',
-					newPole: 'newPole',
-					poteaux: 'poteaux',
-					cross: 'cross',
-					otb: 'otb',
-				},
-				polyline: {
-					drop: 'drop',
-					ofc_12: 'ofc_12',
-					ofc_48: 'ofc_48',
-					ofc_144: 'ofc_144',
-					ofc_fig_8: 'ofc_fig_8',
-				},
-				polygon: {
-					buildings: 'buildings',
-					mdu: 'mdu',
-				},
+				sc48: 'sc48',
+				sc144: 'sc144',
+				newPole: 'newPole',
+				poteaux: 'poteaux',
+				cross: 'cross',
+				otb: 'otb',
+				drop: 'drop',
+				ofc_12: 'ofc_12',
+				ofc_48: 'ofc_48',
+				ofc_144: 'ofc_144',
+				ofc_fig_8: 'ofc_fig_8',
+				buildings: 'buildings',
+				mdu: 'mdu',
 			},
 			btiLayers: {
-				point: {
-					sc48: 'sc48',
-					sc144: 'sc144',
-					cross: 'cross',
-				},
-				polyline: {
-					ofc_144: 'ofc_144',
-					ofc_48: 'ofc_48',
-					ofc_fig_8: 'ofc_fig_8',
-				},
-				polygon: {
-					buildings: 'buildings',
-				}
+				sc48: 'sc48',
+				sc144: 'sc144',
+				cross: 'cross',
+				ofc_144: 'ofc_144',
+				ofc_48: 'ofc_48',
+				ofc_fig_8: 'ofc_fig_8',
+				buildings: 'buildings',
 			},
 			btsLayers: {
-				point: {
-					poteaux: 'poteaux',
-					newPole: 'newPole',
-					otb: 'otb',
-				},
-				polyline: {
-					ofc_12: 'ofc_12',
-					ofc_48: 'ofc_48',
-					ofc_144: 'ofc_144',
-					drop: 'drop',
-				},
-				polygon: {
-					buildings: 'buildings',
-					mdu: 'mdu',
-				},
+				poteaux: 'poteaux',
+				newPole: 'newPole',
+				otb: 'otb',
+				ofc_12: 'ofc_12',
+				ofc_48: 'ofc_48',
+				ofc_144: 'ofc_144',
+				drop: 'drop',
+				buildings: 'buildings',
+				mdu: 'mdu',
 			}
 		})
 }());
