@@ -1596,13 +1596,30 @@
 			};
 			
 			var createPopupContent = function(feature, layer) {
-
 				var content = '';
 				layer.options.layerName !== null && layer.options.layerName !== undefined ?
 					content += '<div class="layer-name">' + layer.options.layerName.toUpperCase() +'</div>' : '';
 					
 				feature.properties.name !== null && feature.properties.name !== undefined ?
 					content += '<div><span>Name:</span> ' + feature.properties.name +'</div>' : '';
+				
+				feature.properties.country !== null && feature.properties.country !== undefined ?
+					content += '<div><span>Сountry:</span> ' + feature.properties.country +'</div>' : '';
+
+				feature.properties.province !== null && feature.properties.province !== undefined ?
+					content += '<div><span>Province:</span> ' + feature.properties.province +'</div>' : '';
+
+				feature.properties.departments !== null && feature.properties.departments !== undefined ?
+					content += '<div><span>Departments:</span> ' + feature.properties.departments +'</div>' : '';
+
+				feature.properties.population !== null && feature.properties.population !== undefined ?
+					content += '<div><span>Population:</span> ' + feature.properties.population +'</div>' : '';
+
+				feature.properties.area_sq_m !== null && feature.properties.area_sq_m !== undefined ?
+					content += '<div><span>Area sq.m.:</span> ' + feature.properties.area_sq_m +'</div>' : '';
+
+				feature.properties.area_sq_km !== null && feature.properties.area_sq_km !== undefined ?
+					content += '<div><span>Area sq.km.:</span> ' + feature.properties.area_sq_km +'</div>' : '';
 
 				feature.properties.class !== null && feature.properties.class !== undefined ?
 					content += '<div><span>Class:</span> ' + feature.properties.class +'</div>' : '';
@@ -1700,7 +1717,6 @@
 				geoJSONSVGMarker: {
 					mustHaveUrl: false,
 					createLayer: function(params) {
-						console.log('enter');
 						return new L.geoJson(params.data, {
 							pointToLayer: function(feature, latlng) {
 								return L.circleMarker(latlng, params.options);
@@ -1713,9 +1729,69 @@
 				},
 				geoJSONPolyline: {
 					mustHaveUrl: false,
-					createLayer: function (params) {								
+					createLayer: function (params) {		
+						var styleSetter = function(feature) {
+							if (typeof params.options.color === 'object') {			
+								return { 
+									fillColor: params.options.fillColor,
+									color: params.options.color[feature.properties.class],
+									pane: params.options.pane,
+									radius: params.options.radius,
+									weight: params.options.weight[feature.properties.class],
+									opacity: params.options.opacity,
+									pointerEvents: 'all',
+									layerName: params.options.layerName,
+								}							
+							} else if (typeof params.options.fillColor === 'object') {								
+								var currentColor = params.options.fillColor[feature.properties.class];
+								if (params.options.layerName === 'population') {
+									var val = feature.properties.population;									
+									switch (true) {
+										case (val < 150): 
+											currentColor = '#1a9641';
+										break;
+										case (150 <= val &&  val < 500): 
+											currentColor = '#77c35c';
+										break;
+										case (500 <= val &&  val < 1000): 
+											currentColor = '#9cbf5a';
+										break;
+										case (1000 <= val &&  val < 2500): 
+											currentColor = '#e2e250';
+										break;		
+										case (2500 <= val &&  val < 4000): 
+											currentColor = '#fec981';
+										break;	
+										case (4000 <= val &&  val < 6500): 
+											currentColor = '#f17c4a';
+										break;	
+										case (6500 <= val &&  val < 13000): 
+											currentColor = '#b73d2b';
+										break;	
+										case (val >= 13000): 
+											currentColor = '#830c0e';
+										break;											
+									}									
+								}								
+								return { 
+									fillColor: currentColor,
+									color: params.options.color,
+									pane: params.options.pane,
+									radius: params.options.radius,
+									weight: params.options.weight,
+									opacity: params.options.opacity,
+									fillOpacity: params.options.fillOpacity,
+									pointerEvents: 'all',
+									layerName: params.options.layerName,						
+								}									
+							} else {
+								return params.options;
+							}		
+						}
+						
+							
 						return new L.geoJson(params.data, {
-							style: params.options,
+							style: styleSetter,
 							onEachFeature: function (feature, layer) {
 								layer.bindPopup(createPopupContent(feature, layer));
 							}

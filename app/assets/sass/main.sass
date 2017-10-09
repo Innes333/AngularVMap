@@ -545,6 +545,29 @@ main
 		input
 			display: none
 
+	.leaflet-control.legend
+		min-width: 150px
+		max-width: 200px
+		padding: 10px 20px
+		background: rgba(255,255,255,0.8)
+		border: 1px solid #e0e0e0
+		border-radius: 3px
+		text-align: left
+		.outline
+			display: inline-block
+			width: 20%
+			height: 20px
+			i
+				display: inline-block
+				width: 20px
+				height: 20px
+		.info-label
+			display: inline-block
+			width: 79%
+			height: 20px
+			line-height: 20px
+			vertical-align: top
+		
 
 .leaflet-control-layers-overlays
 
@@ -610,6 +633,14 @@ main
 			background: #6aacf6
 		&.mdu
 			background: #ff0ff7
+		&.population
+			background: #830c0e
+		&.departments
+			background: rgba(131, 12, 14, 0.1)
+			border: 2px dashed #BF360C
+		&.province
+			background: rgba(131, 12, 14, 0.1)
+			border: 2px dashed #3E2723
 
 	span
 		color: $darkBlue

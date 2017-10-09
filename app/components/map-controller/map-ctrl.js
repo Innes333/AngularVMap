@@ -2,14 +2,14 @@
 	angular.module('vMapsApp')
 		.controller('mapCtrl', ['$http',
 			'$interval', 'leafletData','$rootScope', '$scope', '$window',
-			'$routeParams', '$timeout', '$localStorage', 'apiUrl',
-			'baseFunc', 'dataService', 'layersForRoles',
+			'$routeParams', '$timeout', '$localStorage',
+			'baseFunc', 'dataService', 'rolesConfig',
 			function($http, $interval, leafletData, $rootScope,
 			         $scope, $window, $routeParams, $timeout, $localStorage,
-			         apiUrl, baseFunc, dataService, layersForRoles){
-
+			         baseFunc, dataService, rolesConfig){
+					
 	        angular.extend($scope, {
-				libreville: {
+				vmap: {
 					lat: 0.504503980130774,
 					lng: 9.408579986073635,
 					zoom: 16,
@@ -19,6 +19,7 @@
 					markerZoomAnimation: false,
 					fadeAnimation: false
 				},
+				legend: {},
 				controls: {
 					custom: new L.Control.Measure({
 						primaryLengthUnit: 'meters',
@@ -67,14 +68,15 @@
 							clickable: true,
 							setZIndex: layer.zIndex,
 							layerOptions: {
-								pane: 'markerPane',
+								pane: layer.pane,
 								radius: layer.radius,
-								fillColor: layer.bgc,
+								fillColor: layer.fillColor,
 							    color: layer.color,
 								weight: layer.weight,
 							    opacity: layer.opacity,
-							    fillOpacity: 0.8,
+							    fillOpacity: layer.fillOpacity,
 								pointerEvents: 'all',
+								dashArray: layer.dashArray !== '' ? layer.dashArray : '',
 								layerName,
 							},
 
@@ -87,44 +89,59 @@
 			var currentUser = $rootScope.appConfig.user.username,
 			userLayersCount = 0;
 
-			var getLayers = function(nameOfLayers) {
-				if (currentUser === 'demo') {
-					for (var layer in nameOfLayers) {
-						addLayer(apiUrl.demoJSON[layer], layer);
-					}
-				} else {
-					for (var layer in nameOfLayers) {
-						addLayer(apiUrl.testGeoJSON[layer], layer);
-						console.log(layer);
-					}
-				}
+			var getLayers = function(nameOfLayers, url) {				
+				for (var layer in nameOfLayers) {
+					addLayer(rolesConfig[url][layer], layer);
+				}				
 			};
 
 
 			switch (currentUser) {
 				case 'demo':
-					$scope.libreville.lng = 2.385152;
-					$scope.libreville.lat = 6.369213;
-					getLayers(layersForRoles.demoLayers);
-					userLayersCount = Object.keys(layersForRoles.demoLayers).length;
+					$scope.vmap.lng = 2.385152;
+					$scope.vmap.lat = 6.369213;
+					getLayers(rolesConfig.demoLayers, 'demoJSON');
+					userLayersCount = Object.keys(rolesConfig.demoLayers).length;
+				break;
+				case 'population':
+					$scope.vmap.lat = 0.60393;
+					$scope.vmap.lng = 9.650924;
+					$scope.vmap.zoom = 9;
+					$scope.legend = {
+						position: 'bottomright',
+						colors: [ '#1a9641', '#77c35c', '#9cbf5a', '#e2e250', '#fec981', '#f17c4a', '#b73d2b', '#830c0e' ],
+						labels: [ '0 - 150', '150 - 500', '500 - 1000', '1000 - 2500', '2500 - 4000', '4000 - 6500', '6500 - 13000', '13000 - 80000' ]
+					};
+				getLayers(rolesConfig.populationLayers, 'populationJSON');
+				userLayersCount = Object.keys(rolesConfig.populationLayers).length;
 				break;
 				case 'presidence':
-					getLayers(layersForRoles.presidenceLayers);
-					userLayersCount = Object.keys(layersForRoles.presidenceLayers).length;
+					getLayers(rolesConfig.presidenceLayers, 'testGeoJSON');
+					userLayersCount = Object.keys(rolesConfig.presidenceLayers).length;
 				break;
 				case 'bti':
-					getLayers(layersForRoles.btiLayers);
-					userLayersCount = Object.keys(layersForRoles.btiLayers).length;
+					getLayers(rolesConfig.btiLayers, 'testGeoJSON');
+					userLayersCount = Object.keys(rolesConfig.btiLayers).length;
 				break;
 				case 'bts':
-					getLayers(layersForRoles.btsLayers);
-					userLayersCount = Object.keys(layersForRoles.btsLayers).lengt;
+					getLayers(rolesConfig.btsLayers, 'testGeoJSON');
+					userLayersCount = Object.keys(rolesConfig.btsLayers).lengt;
 				break;
 				default:
-					$scope.libreville.lng = 2.385152;
-					$scope.libreville.lat = 6.369213;
-					getLayers(layersForRoles.demoLayers);
-					userLayersCount = Object.keys(layersForRoles.demoLayers).length;
+					// $scope.vmap.lng = 2.385152;
+					// $scope.vmap.lat = 6.369213;
+					// getLayers(rolesConfig.demoLayers, 'demoJSON');
+					// userLayersCount = Object.keys(rolesConfig.demoLayers).length;
+					$scope.vmap.lat = 0.60393;
+					$scope.vmap.lng = 9.650924;
+					$scope.vmap.zoom = 9;
+					$scope.legend = {
+						position: 'bottomright',
+						colors: [ '#1a9641', '#77c35c', '#9cbf5a', '#e2e250', '#fec981', '#f17c4a', '#b73d2b', '#830c0e' ],
+						labels: [ '0 - 150', '150 - 500', '500 - 1000', '1000 - 2500', '2500 - 4000', '4000 - 6500', '6500 - 13000', '13000 - 80000' ]
+					};
+					getLayers(rolesConfig.populationLayers, 'populationJSON');
+					userLayersCount = Object.keys(rolesConfig.populationLayers).length;
 			};
 
 			$scope.$watchCollection('layers.overlays', function(allArray) {
@@ -165,9 +182,9 @@
 									]);
 							break;								
 							default:
-								poiLayers = L.featureGroup([baselayers.overlays.roads,
-									baselayers.overlays.hydro, baselayers.overlays.buildings,
-									baselayers.overlays.railways]);
+								poiLayers = L.featureGroup([baselayers.overlays.population,
+									baselayers.overlays.departments, baselayers.overlays.province
+								]);
 
 						};				
 						
@@ -178,7 +195,8 @@
 							hideMarkerOnCollapse: false,
 							buildTip: function(text, val) {
 								var type = val.layer.feature.properties.Search_id;
-								return '<a href="#">' + '<b>' + type + ' </b><span style = background-color:'+val.layer.options.fillColor+'>'+val.layer.options.layerName+'</span></a>';
+								return '<a href="#">' + '<b>' + type + ' </b><span style = background-color:'+val.layer.options.fillColor+'>'+
+								val.layer.options.layerName+'</span></a>';
 							}
 						}
 					};
@@ -189,7 +207,7 @@
 			$scope.searchIP = function() {
 				var url = "http://freegeoip.net/json/";
 				$http.get(url).success(function(res) {
-					$scope.libreville = {
+					$scope.vmap = {
 						lat: res.latitude,
 						lng: res.longitude,
 						zoom: 10

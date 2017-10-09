@@ -3,12 +3,13 @@
 		<leaflet 
 			id="map"
 			class="lf-map"
-			center="libreville"
+			center="vmap"
 			geojson="geojson"
 			controls="controls"
 			layers="layers"
 			defaults="defaults"
-			watch-markers="false">
+			watch-markers="false"
+			legend="legend">
 		</leaflet>
 		<div class="location-control fa fa-map-marker" data-ng-click="searchIP()"></div>
 		<div class="map-visibility-control fa" data-ng-class="isActive ? 'fa-map-o': 'fa-map'" data-ng-click="toggleLayer('osm')"></div>

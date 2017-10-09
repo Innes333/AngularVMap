@@ -25,6 +25,10 @@
 						bts: [{
 							name: 'bts',
 							password: '123+'
+						}],
+						population: [{
+							name: 'Gabon',
+							password: 'pop'
 						}]
 					};
 					for(role in roles) {
