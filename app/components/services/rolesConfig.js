@@ -400,7 +400,7 @@
                     url: 'populationJSON/GSMsites',
                     color: '#000',
                     zIndex: 510,
-                    fillColor: '#E91E63',
+                    fillColor: '#2196F3',
                     opacity: 1,
                     fillOpacity: 1,
                     weight: 1.0,
