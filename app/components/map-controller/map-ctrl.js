@@ -194,7 +194,6 @@
 							propertyName: 'Search_id',
 							hideMarkerOnCollapse: false,
 							buildTip: function(text, val) {
-								console.log(baselayers.overlays.GSMsites)
 								var type = val.layer.feature.properties.Search_id;
 								return '<a href="#">' + '<b>' + type + ' </b><span style = background-color:'+val.layer.options.fillColor+'>'+
 								val.layer.options.layerName+'</span></a>';
