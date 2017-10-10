@@ -379,6 +379,7 @@
                     className: 'population',
                     url: 'populationJSON/Population',
                     color: '#333333',
+                    zIndex: 510,
                     fillColor: {
                         '0-150': '#1a9641', 
                         '150-500': '#77c35c', 
@@ -398,13 +399,13 @@
                     pane: 'markerPane',             
                     type: 'point',
                     url: 'populationJSON/GSMsites',
-                    color: '#000',
-                    zIndex: 510,
+                    color: '#2196F3',
+                    zIndex: 650,
                     fillColor: '#2196F3',
                     opacity: 1,
                     fillOpacity: 1,
                     weight: 1.0,
-                    'radius': 4,
+                    'radius': 3,
                 },
             },
             demoLayers: {
@@ -456,10 +457,10 @@
 				mdu: 'mdu',
             },
             populationLayers: {
+                GSMsites: 'GSMsites',
                 departments: 'departments',
                 population: 'population',
-                province: 'province',
-                GSMsites: 'GSMsites'
+                province: 'province'
             }   
         }   
 
