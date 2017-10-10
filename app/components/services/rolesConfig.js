@@ -393,6 +393,30 @@
                     fillOpacity: 1,
                     weight: 1.0,
                 },
+                GSMsites: {
+                    name: 'GSMsites',  
+                    pane: 'markerPane',             
+                    type: 'point',
+                    url: 'populationJSON/GSMsites',
+                    fillColor: {
+                        True: '#E91E63',
+                        False: '#2196F3'
+                    },
+                    color: {
+                        True: '#E91E63',
+                        False: '#2196F3'
+                    },
+                    opacity: 1,
+                    fillOpacity: 1,
+                    weight:  {
+                        True: 3,
+                        False: 2
+                    },      
+                    radius: {
+                        True: 3,
+                        False: 2
+                    },      
+                },
             },
             demoLayers: {
 				roads: 'roads',
@@ -443,6 +467,7 @@
 				mdu: 'mdu',
             },
             populationLayers: {
+                GSMsites: 'GSMsites',
                 departments: 'departments',
                 population: 'population',
                 province: 'province'

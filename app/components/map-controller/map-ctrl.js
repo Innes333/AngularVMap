@@ -148,22 +148,21 @@
 
 					if (Object.keys(allArray).length == userLayersCount) {					
 						var poiLayers;
-
 						// Prepare array of overlay layers
 						var layerArray = [];
 						for (overlay in baselayers.overlays) {
 							layerArray.push(baselayers.overlays[overlay]);
 						}
 					
-						poiLayers = L.featureGroup(layerArray);									
+						poiLayers = L.featureGroup(layerArray);				
 						
 						$scope.controls.search = {
 							layer: poiLayers,
 							initial: false,
-							propertyName: 'Search_id',
+							propertyName: 'search_id',
 							hideMarkerOnCollapse: false,
 							buildTip: function(text, val) {
-								var type = val.layer.feature.properties.Search_id;
+								var type = val.layer.feature.properties.search_id;
 								return '<a href="#">' + '<b>' + type + ' </b><span style = background-color:'+val.layer.options.fillColor+'>'+
 								val.layer.options.layerName+'</span></a>';
 							}

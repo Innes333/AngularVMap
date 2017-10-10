@@ -3,10 +3,10 @@
 "name": "NBN_Metro_MOOV",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
 "features": [
-{ "type": "Feature", "properties": { "Name": "Moov Godomey", "Search_id": "Moov Godomey" }, "geometry": { "type": "Point", "coordinates": [ 2.34785, 6.38985, 0.0 ] } },
-{ "type": "Feature", "properties": { "Name": "Moov Calavi", "Search_id": "Moov Calavi" }, "geometry": { "type": "Point", "coordinates": [ 2.35247, 6.45732, 0.0 ] } },
-{ "type": "Feature", "properties": { "Name": "Moov Akassato", "Search_id": "Moov Akassato" }, "geometry": { "type": "Point", "coordinates": [ 2.35769, 6.49949, 0.0 ] } },
-{ "type": "Feature", "properties": { "Name": "Moov Seme", "Search_id": "Moov Seme" }, "geometry": { "type": "Point", "coordinates": [ 2.617510530578311, 6.381943507187957, 0.0 ] } },
-{ "type": "Feature", "properties": { "Name": "Moov PK3", "Search_id": "Moov PK3" }, "geometry": { "type": "Point", "coordinates": [ 2.466014180329859, 6.370356410609199, 0.0 ] } }
+{ "type": "Feature", "properties": { "Name": "Moov Godomey", "search_id": "Moov Godomey" }, "geometry": { "type": "Point", "coordinates": [ 2.34785, 6.38985, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Moov Calavi", "search_id": "Moov Calavi" }, "geometry": { "type": "Point", "coordinates": [ 2.35247, 6.45732, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Moov Akassato", "search_id": "Moov Akassato" }, "geometry": { "type": "Point", "coordinates": [ 2.35769, 6.49949, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Moov Seme", "search_id": "Moov Seme" }, "geometry": { "type": "Point", "coordinates": [ 2.617510530578311, 6.381943507187957, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Moov PK3", "search_id": "Moov PK3" }, "geometry": { "type": "Point", "coordinates": [ 2.466014180329859, 6.370356410609199, 0.0 ] } }
 ]
 }

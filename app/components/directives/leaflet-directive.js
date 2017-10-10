@@ -1719,7 +1719,22 @@
 					createLayer: function(params) {
 						return new L.geoJson(params.data, {
 							pointToLayer: function(feature, latlng) {
-								return L.circleMarker(latlng, params.options);
+								var styles;
+								if (typeof params.options.fillColor === 'object') {		
+									styles = { 
+										fillColor: params.options.fillColor[feature.properties.class],
+										color: params.options.color[feature.properties.class],
+										pane: params.options.pane,
+										radius: params.options.radius[feature.properties.class],
+										weight: params.options.weight[feature.properties.class],
+										opacity: params.options.opacity,
+										pointerEvents: 'all',
+										layerName: params.options.layerName,
+									}	
+								} else {
+									styles = params.options;
+								}
+								return L.circleMarker(latlng, styles);
 							},
 							onEachFeature: function (feature, layer) {
 					            layer.bindPopup(createPopupContent(feature, layer));
