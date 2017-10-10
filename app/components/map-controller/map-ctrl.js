@@ -19,7 +19,6 @@
 					markerZoomAnimation: false,
 					fadeAnimation: false
 				},
-				legend: {},
 				controls: {
 					custom: new L.Control.Measure({
 						primaryLengthUnit: 'meters',
@@ -149,44 +148,14 @@
 
 					if (Object.keys(allArray).length == userLayersCount) {					
 						var poiLayers;
-						switch (currentUser) {
-							case 'demo':
-								poiLayers = L.featureGroup([baselayers.overlays.roads,
-									baselayers.overlays.hydro, baselayers.overlays.buildings,
-									baselayers.overlays.railways,
-									baselayers.overlays.nbn_metro_exist,
-									baselayers.overlays.ofc_12, baselayers.overlays.ofc_48,
-									baselayers.overlays.ofc_144, baselayers.overlays.otb,
-									baselayers.overlays.sc48, baselayers.overlays.sc144
-								]);
-							break;
-							case 'presidence':
-								poiLayers = L.featureGroup([baselayers.overlays.cross, baselayers.overlays.mdu,
-									baselayers.overlays.otb, baselayers.overlays.newPole,
-									baselayers.overlays.poteaux,
-									baselayers.overlays.sc48, baselayers.overlays.sc144, baselayers.overlays.drop,
-									baselayers.overlays.ofc_12, baselayers.overlays.ofc_48, baselayers.overlays.ofc_144,
-									baselayers.overlays.ofc_fig_8, baselayers.overlays.buildings, baselayers.overlays.mdu]);
-							break;
-							case 'bti':
-								poiLayers = L.featureGroup([baselayers.overlays.cross, 
-									baselayers.overlays.sc48, baselayers.overlays.sc144,
-									baselayers.overlays.ofc_144, baselayers.overlays.ofc_48,
-									baselayers.overlays.ofc_fig_8, baselayers.overlays.buildings]);								
-							break;
-							case 'bts':
-								poiLayers = L.featureGroup([baselayers.overlays.otb, baselayers.overlays.newPole,
-									baselayers.overlays.poteaux,
-									baselayers.overlays.ofc_12, baselayers.overlays.ofc_48, baselayers.overlays.ofc_144, 
-									baselayers.overlays.buildings, baselayers.overlays.mdu
-									]);
-							break;								
-							default:
-								poiLayers = L.featureGroup([baselayers.overlays.population,
-									baselayers.overlays.departments, baselayers.overlays.province
-								]);
 
-						};				
+						// Prepare array of overlay layers
+						var layerArray = [];
+						for (overlay in baselayers.overlays) {
+							layerArray.push(baselayers.overlays[overlay]);
+						}
+					
+						poiLayers = L.featureGroup(layerArray);									
 						
 						$scope.controls.search = {
 							layer: poiLayers,
