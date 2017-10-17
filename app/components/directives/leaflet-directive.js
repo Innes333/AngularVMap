@@ -1661,9 +1661,6 @@
 				feature.properties.area_sq_km !== null && feature.properties.area_sq_km !== undefined ?
 					content += '<div><span>Area sq.km.:</span> ' + feature.properties.area_sq_km +'</div>' : '';
 
-				feature.properties.class !== null && feature.properties.class !== undefined ?
-					content += '<div><span>Class:</span> ' + feature.properties.class +'</div>' : '';
-
 				feature.properties.Id !== null && feature.properties.Id !== undefined ?
 					content += '<div><span>ID:</span> ' + feature.properties.Id +'</div>' : '';
 

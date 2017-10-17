@@ -8,20 +8,19 @@ angular.module('vMapsApp')
 				var list = '';
 				for (layer in rolesConfig.populationLayers) {
 					var layerConfig = rolesConfig.populationJSON[layer];
-					var checkedClass = layerConfig.show ? 'checked' : 'unchecked';
 					list +=
-						'<div class="control-layers-selector">' + 
-						'<span ng-click="switchLayer(' + "'" + layerConfig.className + "'" + 
-						')" class="check"  ng-class="{' + "'active'" + ': !shown}">' +
-						'<span class="checked"></span></span>' +
-						'<span class="'	+ layerConfig.type + ' ' + layerConfig.className + '">'  + layerConfig.name +
-						'</div>';		
+						'<div class="control-layers-selector">' +
+						'<input checked ng-click="switchLayer(' + "'" + layerConfig.className + "'" +
+						')" id="' + layerConfig.className + '" type="checkbox">' +
+						'<label for="' + layerConfig.className + '">' +
+						'<span class="'	+ layerConfig.type + ' ' + layerConfig.className + '"></span>' +
+						layerConfig.name + '</label>' +
+						'</div>';
 				}
 				return list;			
 			},
 			link: function(scope, element, attrs){		
 				scope.switchLayer = function(layerName){
-					scope.$parent.shown = !scope.$parent.shown;
 					var layerConfig = rolesConfig.populationJSON[layerName];
 					leafletData.getLayers('map').then(function(baselayers) {
 						baselayers.overlays[layerName].eachLayer(function (layer) { 
@@ -40,7 +39,6 @@ angular.module('vMapsApp')
 						});			
 					})							
 				};
-				console.log(scope);							
 
 			}
 		}
