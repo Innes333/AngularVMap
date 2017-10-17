@@ -9,6 +9,12 @@
 			         baseFunc, dataService, rolesConfig){
 					
 	        angular.extend($scope, {
+				layercontrol: {
+                    icons: {
+                      uncheck: "fa fa-toggle-off",
+                      check: "fa fa-toggle-on"
+                    }
+                },
 				vmap: {
 					lat: 0.504503980130774,
 					lng: 9.408579986073635,
@@ -28,7 +34,8 @@
 					}),
 				},
 				layers: {
-					sortLayers: false,
+					sortLayers: true,
+					sortFunction: function() {},
 					baselayers: {
 						 osm: {
 	                        name: 'Layers',
@@ -65,7 +72,7 @@
 							data: response.data,
 							visible: true,
 							clickable: true,
-							setZIndex: layer.zIndex,
+							autoZIndex: false,
 							layerOptions: {
 								pane: layer.pane,
 								radius: layer.radius,
@@ -77,7 +84,9 @@
 								pointerEvents: 'all',
 								dashArray: layer.dashArray !== '' ? layer.dashArray : '',
 								layerName,
+								zIndex: 100,
 							},
+							group: "Raster"
 
 						};
 					}, function (error) {
@@ -86,21 +95,26 @@
 			}
 
 			var currentUser = $rootScope.appConfig.user.username,
-			userLayersCount = 0;
+				userLayersCount = 0,
+				currentRoleConfig = {};
+
 
 			var getLayers = function(nameOfLayers, url) {				
 				for (var layer in nameOfLayers) {
-					addLayer(rolesConfig[url][layer], layer);
-				}				
+					addLayer(rolesConfig[url][layer], layer);					
+				}					
 			};
+			
 
+			
+			// var result = factorial(8);
 
 			switch (currentUser) {
 				case 'demo':
 					$scope.vmap.lng = 2.385152;
 					$scope.vmap.lat = 6.369213;
-					getLayers(rolesConfig.demoLayers, 'demoJSON');
 					userLayersCount = Object.keys(rolesConfig.demoLayers).length;
+					getLayers(rolesConfig.demoLayers, 'demoJSON', userLayersCount);
 				break;
 				case 'population':
 					$scope.vmap.lat = 0.60393;
@@ -134,19 +148,27 @@
 					$scope.vmap.lat = 0.60393;
 					$scope.vmap.lng = 9.650924;
 					$scope.vmap.zoom = 9;
+					currentRoleConfig = rolesConfig.populationJSON;
 					$scope.legend = {
 						position: 'bottomright',
 						colors: [ '#1a9641', '#77c35c', '#9cbf5a', '#e2e250', '#fec981', '#f17c4a', '#b73d2b', '#830c0e' ],
 						labels: [ '0 - 150', '150 - 500', '500 - 1000', '1000 - 2500', '2500 - 4000', '4000 - 6500', '6500 - 13000', '13000 - 80000' ]
 					};
-					getLayers(rolesConfig.populationLayers, 'populationJSON');
 					userLayersCount = Object.keys(rolesConfig.populationLayers).length;
+					getLayers(rolesConfig.populationLayers, 'populationJSON');
 			};
 
 			$scope.$watchCollection('layers.overlays', function(allArray) {
 				leafletData.getLayers('map').then(function(baselayers) {
-
-					if (Object.keys(allArray).length == userLayersCount) {					
+					// check if all layers are loaded
+					if (Object.keys(allArray).length == userLayersCount) {	
+						// move to front a layer										
+						if (currentRoleConfig.topLayers.length > 0) {
+							for (i=0; i < currentRoleConfig.topLayers.length; i++) {								
+								baselayers.overlays[currentRoleConfig.topLayers[i]].bringToFront();
+							}
+						}							
+						
 						var poiLayers;
 						// Prepare array of overlay layers
 						var layerArray = [];
@@ -167,6 +189,8 @@
 								val.layer.options.layerName+'</span></a>';
 							}
 						}
+
+						
 					};
 				});
 			});
@@ -187,8 +211,7 @@
 
 			// Toggle map baselayer visibility
 			var baseMapLayer = $scope.layers.baselayers.osm;
-			var overlays = $scope.layers.baselayers;
-			$scope.isActive = true;
+			var overlays = $scope.layers.baselayers;	
 
 			if (currentUser === 'demo') {
 				if (overlays.hasOwnProperty('osm')) {
@@ -197,6 +220,7 @@
 				}
 			}
 			$scope.toggleLayer = function(overlayName) {
+
                 if (overlays.hasOwnProperty(overlayName)) {
                     delete overlays[overlayName];
                     $scope.isActive = !$scope.isActive;

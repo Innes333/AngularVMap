@@ -300,15 +300,16 @@
 				sortFunction: function() {}
 			};
 
+			
 			angular.extend(controlOptions, defaults.controls.layers.options);
 			var control;
-
+			
 			if (defaults.controls.layers && isDefined(defaults.controls.layers.control)) {
 				control = defaults.controls.layers.control.apply(this, [[], [], controlOptions]);
 			} else {
 				control = new L.control.layers([], [], controlOptions);
 			}
-
+			
 			return control;
 		};
 
@@ -1618,6 +1619,45 @@
 				feature.properties.area_sq_m !== null && feature.properties.area_sq_m !== undefined ?
 					content += '<div><span>Area sq.m.:</span> ' + feature.properties.area_sq_m +'</div>' : '';
 
+				feature.properties.longitude !== null && feature.properties.longitude !== undefined ?
+					content += '<div><span>Longitude:</span> ' + feature.properties.longitude +'</div>' : '';
+
+				feature.properties.latitude !== null && feature.properties.latitude !== undefined ?
+					content += '<div><span>Latitude:</span> ' + feature.properties.latitude +'</div>' : '';
+
+				feature.properties.altitude_m !== null && feature.properties.altitude_m !== undefined ?
+					content += '<div><span>Altitude m:</span> ' + feature.properties.altitude_m +'</div>' : '';
+
+				feature.properties.comments !== null && feature.properties.comments !== undefined ?
+					content += '<div><span>Comments:</span> ' + feature.properties.comments +'</div>' : '';
+
+				feature.properties.support_height_m !== null && feature.properties.support_height_m !== undefined ?
+					content += '<div><span>Support height(m):</span> ' + feature.properties.support_height_m +'</div>' : '';
+
+				feature.properties.support_type !== null && feature.properties.support_type !== undefined ?
+					content += '<div><span>Support type:</span> ' + feature.properties.support_type +'</div>' : '';
+
+				feature.properties.bsc !== null && feature.properties.bsc !== undefined ?
+					content += '<div><span>BSC:</span> ' + feature.properties.bsc +'</div>' : '';
+
+				feature.properties.type !== null && feature.properties.type !== undefined ?
+					content += '<div><span>Type:</span> ' + feature.properties.type +'</div>' : '';
+
+				feature.properties.city !== null && feature.properties.city !== undefined ?
+					content += '<div><span>City:</span> ' + feature.properties.city +'</div>' : '';
+
+				feature.properties.lte !== null && feature.properties.lte !== undefined ?
+					content += '<div><span>LTE:</span> ' + feature.properties.lte +'</div>' : '';
+
+				feature.properties.g3 !== null && feature.properties.g3 !== undefined ?
+					content += '<div><span>G3:</span> ' + feature.properties.g3 +'</div>' : '';
+
+				feature.properties.trmflag !== null && feature.properties.trmflag !== undefined ?
+					content += '<div><span>TRM flag:</span> ' + feature.properties.trmflag +'</div>' : '';
+
+				feature.properties.site_name !== null && feature.properties.site_name !== undefined ?
+					content += '<div><span>Site namee:</span> ' + feature.properties.site_name +'</div>' : '';
+
 				feature.properties.area_sq_km !== null && feature.properties.area_sq_km !== undefined ?
 					content += '<div><span>Area sq.km.:</span> ' + feature.properties.area_sq_km +'</div>' : '';
 
@@ -1730,14 +1770,15 @@
 										opacity: params.options.opacity,
 										pointerEvents: 'all',
 										layerName: params.options.layerName,
-									}	
+									}										
 								} else {
 									styles = params.options;
 								}
+								
 								return L.circleMarker(latlng, styles);
 							},
 							onEachFeature: function (feature, layer) {
-					            layer.bindPopup(createPopupContent(feature, layer));
+								layer.bindPopup(createPopupContent(feature, layer));
 					        } 
 						});
 					},
@@ -1809,6 +1850,7 @@
 							style: styleSetter,
 							onEachFeature: function (feature, layer) {
 								layer.bindPopup(createPopupContent(feature, layer));
+								// layer.setZIndex(params.options.zIndex);
 							}
 						});									
 					}
@@ -4080,7 +4122,7 @@
 		}]);
 
 	angular.module('leaflet-directive').directive('layercontrol', ["$filter", "$log", "leafletData", "leafletHelpers", function($filter, $log, leafletData, leafletHelpers) {
-
+		console.log('blah');
 		return {
 			restrict: 'E',
 			scope: {
@@ -4119,7 +4161,6 @@
 											map.removeLayer(leafletLayers.baselayers[i]);
 										}
 									}
-
 									map.addLayer(leafletLayers.baselayers[key]);
 									scp.layers.baselayers[key].icon = $scope.icons.radio;
 								});
@@ -4131,6 +4172,7 @@
 
 					moveLayer: function(ly, newIndex, e) {
 						var delta = Object.keys($scope.layers.baselayers).length;
+						console.log(index);
 						if (newIndex >= (1 + delta) && newIndex <= ($scope.overlaysArray.length + delta)) {
 							var oldLy;
 							for (var key in $scope.layers.overlays) {
@@ -4268,7 +4310,7 @@
 			'<div class="lf-container">' +
 			'<div class="lf-row" ng-repeat="layer in (o = (overlaysArray | orderBy:\'index\':order))" ng-init="initIndex(layer, $index)">' +
 			'<label class="lf-icon-ol-group" ng-if="showGroups &amp;&amp; layer.group &amp;&amp; layer.group != o[$index-1].group">' +
-			'<input class="lf-control-layers-selector" type="checkbox" ng-show="false" ' +
+			'<input class="lf-control-layers-selector test" type="checkbox" ng-show="false" ' +
 			'ng-change="changeGroupVisibility(layer.group)" ng-model="groupProperties[layer.group].visible"/> ' +
 			'<i class="lf-icon lf-icon-check" ng-class="getGroupIcon(groupProperties[layer.group])"></i>' +
 			'<div class="lf-text">{{ layer.group }}</div>' +
@@ -4351,6 +4393,8 @@
 								var layer = newOverlayLayers[key];
 								layer.icon = scope.icons[(layer.visible ? 'check' : 'uncheck')];
 								overlaysArray.push(layer);
+								console.log(key);
+								console.log(layers);
 								if (!isDefined(scope.layerProperties[layer.name])) {
 									scope.layerProperties[layer.name] = {
 										opacity: isDefined(layer.layerOptions.opacity) ? layer.layerOptions.opacity * 100 : 100,
@@ -4463,7 +4507,6 @@
 							delete layers.overlays[layerName];
 							continue;
 						}
-
 						leafletLayers.overlays[layerName] = newOverlayLayer;
 
 						// Only add the visible overlays to the map

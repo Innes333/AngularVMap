@@ -9,10 +9,14 @@
 			layers="layers"
 			defaults="defaults"
 			watch-markers="false"
-			legend="legend">
+			legend="legend">			
 		</leaflet>
 		<div class="location-control fa fa-map-marker" data-ng-click="searchIP()"></div>
 		<div class="map-visibility-control fa" data-ng-class="isActive ? 'fa-map-o': 'fa-map'" data-ng-click="toggleLayer('osm')"></div>
+
+		<div data-layer-control class="control-layers-overlays">			
+		</div>
+
 	</div>
 </div>
 <div id="popup-items" 

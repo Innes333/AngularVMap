@@ -569,7 +569,7 @@ main
 			vertical-align: top
 		
 
-.leaflet-control-layers-overlays
+.control-layers-overlays
 
 	.point
 		margin-left: 28px
@@ -647,17 +647,6 @@ main
 		position: relative
 		display: inline-block
 
-	input[type="checkbox"]
-		position: absolute
-		width: 24px
-		height: 20px
-		vertical-align: inherit
-		visibility: hidden
-		-moz-visibility: hidden
-		cursor: pointer
-		&:checked + span
-			.checked
-				opacity: 1
 	div
 		position: relative
 		line-height: 25px
@@ -672,18 +661,19 @@ main
 		background-color: #fff
 		border: 1px solid $darkBlue
 		border-radius: 2px
-	.checked
-		content: ''
-		width: 10px
-		height: 10px
-		position: absolute
-		top: 50%
-		left: 50%
-		margin-top: -5px
-		margin-left: -5px
-		background: $darkBlue
-		visibility: visible
-		opacity: 0
+		&.active + span
+		
+			// content: ''
+			// width: 10px
+			// height: 10px
+			// position: absolute
+			// top: 50%
+			// left: 50%
+			// margin-top: -5px
+			// margin-left: -5px
+			// background: $darkBlue
+			// visibility: visible
+			// opacity: 1
 
 	.leaflet-popup-content
 		margin: 20px 12px

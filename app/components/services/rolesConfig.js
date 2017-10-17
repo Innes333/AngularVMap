@@ -346,6 +346,7 @@
                 },
             },
             populationJSON: {
+                topLayers: ['GSMsites'],
                 departments: {                    
                     name: 'Departments',
                     pane: 'markerPane',
@@ -357,6 +358,8 @@
                     opacity: 1,
                     fillOpacity: 0.1,
                     weight: 1,
+                    show: true,
+                    zIndex: 100,
 
                 },              
                 province: {
@@ -370,7 +373,9 @@
                     opacity: 1,
                     fillOpacity: 0.1,
                     weight: 2.5,
-                    dashArray: '5,5'
+                    dashArray: '5,5',
+                    show: true,
+                    zIndex: 100,
                 },
                 population: {
                     name: 'Population',
@@ -392,11 +397,14 @@
                     opacity: 0.8,
                     fillOpacity: 1,
                     weight: 1.0,
+                    show: true,
+                    zIndex: 100,
                 },
                 GSMsites: {
                     name: 'GSMsites',  
                     pane: 'markerPane',             
                     type: 'point',
+                    className: 'GSMsites',  
                     url: 'populationJSON/GSMsites',
                     fillColor: {
                         True: '#E91E63',
@@ -416,6 +424,8 @@
                         True: 3,
                         False: 2
                     },      
+                    show: true,
+                    zIndex: 400,
                 },
             },
             demoLayers: {
@@ -467,10 +477,10 @@
 				mdu: 'mdu',
             },
             populationLayers: {
-                GSMsites: 'GSMsites',
                 departments: 'departments',
                 population: 'population',
-                province: 'province'
+                province: 'province',
+                GSMsites: 'GSMsites',
             }   
         }   
 
