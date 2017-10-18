@@ -1596,109 +1596,117 @@
 				return utfgrid;
 			};
 			
-			var createPopupContent = function(feature, layer) {
+			var createPopupContent = function(feature, layer, params) {
+
+				console.log(layer);
 				var content = '';
+				var columns = layer.options.popupColumns;
 				layer.options.layerName !== null && layer.options.layerName !== undefined ?
 					content += '<div class="layer-name">' + layer.options.layerName.toUpperCase() +'</div>' : '';
+
+				for (var i=0; i<columns; i++) {
+					feature.properties[columns[i]] !== null && feature.properties[columns[i]] !== undefined ?
+					content += '<div><span>' + feature.properties[columns[i]] + ':</span> ' + feature.properties[columns[i]] +'</div>' : '';
+				}
 					
-				feature.properties.name !== null && feature.properties.name !== undefined ?
-					content += '<div><span>Name:</span> ' + feature.properties.name +'</div>' : '';
+				// feature.properties.name !== null && feature.properties.name !== undefined ?
+				// 	content += '<div><span>Name:</span> ' + feature.properties.name +'</div>' : '';
 				
-				feature.properties.country !== null && feature.properties.country !== undefined ?
-					content += '<div><span>Сountry:</span> ' + feature.properties.country +'</div>' : '';
+				// feature.properties.country !== null && feature.properties.country !== undefined ?
+				// 	content += '<div><span>Сountry:</span> ' + feature.properties.country +'</div>' : '';
 
-				feature.properties.province !== null && feature.properties.province !== undefined ?
-					content += '<div><span>Province:</span> ' + feature.properties.province +'</div>' : '';
+				// feature.properties.province !== null && feature.properties.province !== undefined ?
+				// 	content += '<div><span>Province:</span> ' + feature.properties.province +'</div>' : '';
 
-				feature.properties.departments !== null && feature.properties.departments !== undefined ?
-					content += '<div><span>Departments:</span> ' + feature.properties.departments +'</div>' : '';
+				// feature.properties.departments !== null && feature.properties.departments !== undefined ?
+				// 	content += '<div><span>Departments:</span> ' + feature.properties.departments +'</div>' : '';
 
-				feature.properties.population !== null && feature.properties.population !== undefined ?
-					content += '<div><span>Population:</span> ' + feature.properties.population +'</div>' : '';
+				// feature.properties.population !== null && feature.properties.population !== undefined ?
+				// 	content += '<div><span>Population:</span> ' + feature.properties.population +'</div>' : '';
 
-				feature.properties.area_sq_m !== null && feature.properties.area_sq_m !== undefined ?
-					content += '<div><span>Area sq.m.:</span> ' + feature.properties.area_sq_m +'</div>' : '';
+				// feature.properties.area_sq_m !== null && feature.properties.area_sq_m !== undefined ?
+				// 	content += '<div><span>Area sq.m.:</span> ' + feature.properties.area_sq_m +'</div>' : '';
 
-				feature.properties.longitude !== null && feature.properties.longitude !== undefined ?
-					content += '<div><span>Longitude:</span> ' + feature.properties.longitude +'</div>' : '';
+				// feature.properties.longitude !== null && feature.properties.longitude !== undefined ?
+				// 	content += '<div><span>Longitude:</span> ' + feature.properties.longitude +'</div>' : '';
 
-				feature.properties.latitude !== null && feature.properties.latitude !== undefined ?
-					content += '<div><span>Latitude:</span> ' + feature.properties.latitude +'</div>' : '';
+				// feature.properties.latitude !== null && feature.properties.latitude !== undefined ?
+				// 	content += '<div><span>Latitude:</span> ' + feature.properties.latitude +'</div>' : '';
 
-				feature.properties.altitude_m !== null && feature.properties.altitude_m !== undefined ?
-					content += '<div><span>Altitude m:</span> ' + feature.properties.altitude_m +'</div>' : '';
+				// feature.properties.altitude_m !== null && feature.properties.altitude_m !== undefined ?
+				// 	content += '<div><span>Altitude m:</span> ' + feature.properties.altitude_m +'</div>' : '';
 
-				feature.properties.comments !== null && feature.properties.comments !== undefined ?
-					content += '<div><span>Comments:</span> ' + feature.properties.comments +'</div>' : '';
+				// feature.properties.comments !== null && feature.properties.comments !== undefined ?
+				// 	content += '<div><span>Comments:</span> ' + feature.properties.comments +'</div>' : '';
 
-				feature.properties.support_height_m !== null && feature.properties.support_height_m !== undefined ?
-					content += '<div><span>Support height(m):</span> ' + feature.properties.support_height_m +'</div>' : '';
+				// feature.properties.support_height_m !== null && feature.properties.support_height_m !== undefined ?
+				// 	content += '<div><span>Support height(m):</span> ' + feature.properties.support_height_m +'</div>' : '';
 
-				feature.properties.support_type !== null && feature.properties.support_type !== undefined ?
-					content += '<div><span>Support type:</span> ' + feature.properties.support_type +'</div>' : '';
+				// feature.properties.support_type !== null && feature.properties.support_type !== undefined ?
+				// 	content += '<div><span>Support type:</span> ' + feature.properties.support_type +'</div>' : '';
 
-				feature.properties.bsc !== null && feature.properties.bsc !== undefined ?
-					content += '<div><span>BSC:</span> ' + feature.properties.bsc +'</div>' : '';
+				// feature.properties.bsc !== null && feature.properties.bsc !== undefined ?
+				// 	content += '<div><span>BSC:</span> ' + feature.properties.bsc +'</div>' : '';
 
-				feature.properties.type !== null && feature.properties.type !== undefined ?
-					content += '<div><span>Type:</span> ' + feature.properties.type +'</div>' : '';
+				// feature.properties.type !== null && feature.properties.type !== undefined ?
+				// 	content += '<div><span>Type:</span> ' + feature.properties.type +'</div>' : '';
 
-				feature.properties.city !== null && feature.properties.city !== undefined ?
-					content += '<div><span>City:</span> ' + feature.properties.city +'</div>' : '';
+				// feature.properties.city !== null && feature.properties.city !== undefined ?
+				// 	content += '<div><span>City:</span> ' + feature.properties.city +'</div>' : '';
 
-				feature.properties.lte !== null && feature.properties.lte !== undefined ?
-					content += '<div><span>LTE:</span> ' + feature.properties.lte +'</div>' : '';
+				// feature.properties.lte !== null && feature.properties.lte !== undefined ?
+				// 	content += '<div><span>LTE:</span> ' + feature.properties.lte +'</div>' : '';
 
-				feature.properties.g3 !== null && feature.properties.g3 !== undefined ?
-					content += '<div><span>G3:</span> ' + feature.properties.g3 +'</div>' : '';
+				// feature.properties.g3 !== null && feature.properties.g3 !== undefined ?
+				// 	content += '<div><span>G3:</span> ' + feature.properties.g3 +'</div>' : '';
 
-				feature.properties.trmflag !== null && feature.properties.trmflag !== undefined ?
-					content += '<div><span>TRM flag:</span> ' + feature.properties.trmflag +'</div>' : '';
+				// feature.properties.trmflag !== null && feature.properties.trmflag !== undefined ?
+				// 	content += '<div><span>TRM flag:</span> ' + feature.properties.trmflag +'</div>' : '';
 
-				feature.properties.site_name !== null && feature.properties.site_name !== undefined ?
-					content += '<div><span>Site namee:</span> ' + feature.properties.site_name +'</div>' : '';
+				// feature.properties.site_name !== null && feature.properties.site_name !== undefined ?
+				// 	content += '<div><span>Site namee:</span> ' + feature.properties.site_name +'</div>' : '';
 
-				feature.properties.area_sq_km !== null && feature.properties.area_sq_km !== undefined ?
-					content += '<div><span>Area sq.km.:</span> ' + feature.properties.area_sq_km +'</div>' : '';
+				// feature.properties.area_sq_km !== null && feature.properties.area_sq_km !== undefined ?
+				// 	content += '<div><span>Area sq.km.:</span> ' + feature.properties.area_sq_km +'</div>' : '';
 
-				feature.properties.Id !== null && feature.properties.Id !== undefined ?
-					content += '<div><span>ID:</span> ' + feature.properties.Id +'</div>' : '';
+				// feature.properties.Id !== null && feature.properties.Id !== undefined ?
+				// 	content += '<div><span>ID:</span> ' + feature.properties.Id +'</div>' : '';
 
-				feature.properties.id !== null && feature.properties.id !== undefined ?
-					content += '<div><span>ID:</span> ' + feature.properties.id +'</div>' : '';
+				// feature.properties.id !== null && feature.properties.id !== undefined ?
+				// 	content += '<div><span>ID:</span> ' + feature.properties.id +'</div>' : '';
 
-				feature.properties.Location_ID !== null && feature.properties.Location_ID !== undefined ?
-					content += '<div><span>Location ID:</span> ' + feature.properties.Location_ID +'</div>' : '';
+				// feature.properties.Location_ID !== null && feature.properties.Location_ID !== undefined ?
+				// 	content += '<div><span>Location ID:</span> ' + feature.properties.Location_ID +'</div>' : '';
 
-				feature.properties.ID_Prov !== null && feature.properties.ID_Prov !== undefined ?
-					content += '<div><span>Prov ID:</span> ' + feature.properties.ID_Prov +'</div>' : '';
+				// feature.properties.ID_Prov !== null && feature.properties.ID_Prov !== undefined ?
+				// 	content += '<div><span>Prov ID:</span> ' + feature.properties.ID_Prov +'</div>' : '';
 
-				feature.properties.OSP_Cable_name !== null && feature.properties.OSP_Cable_name !== undefined ?
-					content += '<div><span>OSP Cable name:</span> ' + feature.properties.OSP_Cable_name +'</div>' : '';
+				// feature.properties.OSP_Cable_name !== null && feature.properties.OSP_Cable_name !== undefined ?
+				// 	content += '<div><span>OSP Cable name:</span> ' + feature.properties.OSP_Cable_name +'</div>' : '';
 
-				feature.properties.OSP_Cable_Template !== null && feature.properties.OSP_Cable_Template !== undefined ?
-					content += '<div><span>OSP Cable Template:</span> ' + feature.properties.OSP_Cable_Template +'</div>' : '';
+				// feature.properties.OSP_Cable_Template !== null && feature.properties.OSP_Cable_Template !== undefined ?
+				// 	content += '<div><span>OSP Cable Template:</span> ' + feature.properties.OSP_Cable_Template +'</div>' : '';
 
-				feature.properties.BuildingID !== null && feature.properties.BuildingID !== undefined ?
-					content += '<div><span>Building ID:</span> ' + feature.properties.BuildingID +'</div>' : '';
+				// feature.properties.BuildingID !== null && feature.properties.BuildingID !== undefined ?
+				// 	content += '<div><span>Building ID:</span> ' + feature.properties.BuildingID +'</div>' : '';
 
-				feature.properties.Length !== null && feature.properties.Length !== undefined ?
-					content += '<div><span>Length:</span> ' + feature.properties.Length +'</div>' : '';
+				// feature.properties.Length !== null && feature.properties.Length !== undefined ?
+				// 	content += '<div><span>Length:</span> ' + feature.properties.Length +'</div>' : '';
 
-				feature.properties.City_Region !== null && feature.properties.City_Region !== undefined ?
-					content += '<div><span>City region:</span> ' + feature.properties.City_Region +'</div>' : '';
+				// feature.properties.City_Region !== null && feature.properties.City_Region !== undefined ?
+				// 	content += '<div><span>City region:</span> ' + feature.properties.City_Region +'</div>' : '';
 
-				feature.properties.Neighbourhood !== null && feature.properties.Neighbourhood !== undefined ?
-					content += '<div><span>Neighbourhood:</span> ' + feature.properties.Neighbourhood +'</div>' : '';
+				// feature.properties.Neighbourhood !== null && feature.properties.Neighbourhood !== undefined ?
+				// 	content += '<div><span>Neighbourhood:</span> ' + feature.properties.Neighbourhood +'</div>' : '';
 
-				feature.properties.District !== null && feature.properties.District !== undefined ?
-					content += '<div><span>District:</span> ' + feature.properties.District +'</div>' : '';
+				// feature.properties.District !== null && feature.properties.District !== undefined ?
+				// 	content += '<div><span>District:</span> ' + feature.properties.District +'</div>' : '';
 
-				feature.properties.Longitude !== null && feature.properties.Longitude !== undefined ?
-					content += '<div><span>Longitude:</span> ' + feature.properties.Longitude +'</div>' : '';
+				// feature.properties.Longitude !== null && feature.properties.Longitude !== undefined ?
+				// 	content += '<div><span>Longitude:</span> ' + feature.properties.Longitude +'</div>' : '';
 
-				feature.properties.Latitude !== null && feature.properties.Latitude !== undefined ?
-					content += '<div><span>Latitude:</span> ' + feature.properties.Latitude +'</div>' : '';
+				// feature.properties.Latitude !== null && feature.properties.Latitude !== undefined ?
+				// 	content += '<div><span>Latitude:</span> ' + feature.properties.Latitude +'</div>' : '';
 
 				return content;
 			};
@@ -1794,6 +1802,7 @@
 									opacity: params.options.opacity,
 									pointerEvents: 'all',
 									layerName: params.options.layerName,
+									popupColumns: params.options.popupColumns
 								}							
 							} else if (typeof params.options.fillColor === 'object') {								
 								var currentColor = params.options.fillColor[feature.properties.class];
@@ -1835,7 +1844,8 @@
 									opacity: params.options.opacity,
 									fillOpacity: params.options.fillOpacity,
 									pointerEvents: 'all',
-									layerName: params.options.layerName,						
+									layerName: params.options.layerName,
+									popupColumns: params.options.popupColumns						
 								}									
 							} else {
 								return params.options;
@@ -1847,7 +1857,6 @@
 							style: styleSetter,
 							onEachFeature: function (feature, layer) {
 								layer.bindPopup(createPopupContent(feature, layer));
-								// layer.setZIndex(params.options.zIndex);
 							}
 						});									
 					}

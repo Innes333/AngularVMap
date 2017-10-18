@@ -359,8 +359,7 @@
                     fillOpacity: 0.1,
                     weight: 1,
                     show: true,
-                    zIndex: 100,
-
+                    popupColumns: ['name', 'type']
                 },              
                 province: {
                     name: 'Province',                    
@@ -375,7 +374,7 @@
                     weight: 2.5,
                     dashArray: '5,5',
                     show: true,
-                    zIndex: 100,
+                    popupColumns: ['name', 'type']
                 },
                 population: {
                     name: 'Population',
@@ -398,7 +397,7 @@
                     fillOpacity: 1,
                     weight: 1.0,
                     show: true,
-                    zIndex: 100,
+                    popupColumns: ['name', 'type']
                 },
                 GSMsites: {
                     name: 'GSMsites',  
@@ -425,7 +424,7 @@
                         False: 2
                     },      
                     show: true,
-                    zIndex: 400,
+                    popupColumns: ['name', 'type'],
                 },
             },
             demoLayers: {
