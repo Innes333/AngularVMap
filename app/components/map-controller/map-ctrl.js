@@ -85,8 +85,8 @@
 								dashArray: layer.dashArray !== '' ? layer.dashArray : '',
 								layerName,
 								zIndex: 100,
+								popupColumns: layer.popupColumns
 							},
-							group: "Raster"
 
 						};
 					}, function (error) {
