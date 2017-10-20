@@ -359,7 +359,13 @@
                     fillOpacity: 0.1,
                     weight: 1,
                     show: true,
-                    popupColumns: ['name', 'type']
+                    popupColumns: [
+                        'country',
+                        'province',
+                        'departments',
+                        'population',
+                        'area_sq_km',
+                    ]
                 },              
                 province: {
                     name: 'Province',                    
@@ -374,7 +380,12 @@
                     weight: 2.5,
                     dashArray: '5,5',
                     show: true,
-                    popupColumns: ['name', 'type']
+	                popupColumns: [
+		                'country',
+		                'province',
+		                'population',
+		                'area_sq_km',
+	                ]
                 },
                 population: {
                     name: 'Population',
@@ -397,7 +408,12 @@
                     fillOpacity: 1,
                     weight: 1.0,
                     show: true,
-                    popupColumns: ['name', 'type']
+	                popupColumns: [
+	                    'name',
+		                'population',
+		                'area_sq_m',
+		                'class',
+	                ]
                 },
                 GSMsites: {
                     name: 'GSMsites',  
@@ -424,7 +440,22 @@
                         False: 2
                     },      
                     show: true,
-                    popupColumns: ['name', 'type'],
+	                popupColumns: [
+		                'name',
+		                'longitude',
+		                'latitude',
+		                'altitude_m',
+                        'comments',
+                        'support_height_m',
+                        'support_type',
+                        'site_name',
+                        'bsc',
+                        'type',
+                        'city',
+                        'lte',
+                        'g3',
+                        'trmflag',
+	                ]
                 },
             },
             demoLayers: {
