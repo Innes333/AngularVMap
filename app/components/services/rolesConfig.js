@@ -190,6 +190,9 @@
                     fillOpacity: 1,
                     weight: 1.0,
                     radius: 3,
+	                popupColumns: [
+		                'name',
+                    ]
                 },
                 sc144: {
                     name: 'SC-144',
@@ -203,6 +206,9 @@
                     fillOpacity: 1,
                     weight: 1.0,
                     'radius': 4,
+	                popupColumns: [
+		                'name',
+	                ]
                 },
                 newPole: {
                     name: 'New Pole',
@@ -216,6 +222,9 @@
                     fillOpacity: 1,
                     weight: 1.0,
                     'radius': 3,
+	                popupColumns: [
+		                'name',
+	                ]
                 },
                 poteaux: {
                     name: 'Poteaux',
@@ -229,6 +238,9 @@
                     fillOpacity: 1,
                     weight: 1.0,
                     'radius': 3,
+	                popupColumns: [
+		                'name',
+	                ]
                 },
                 cross: {
                     name: 'Cross',
@@ -242,6 +254,9 @@
                     fillOpacity: 1,
                     weight: 1.0,
                     'radius': 3,
+	                popupColumns: [
+		                'name',
+	                ]
                 },
                 otb: {
                     name: 'OTB',
@@ -255,6 +270,9 @@
                     fillOpacity: 1,
                     weight: 1.0,
                     'radius': 4,
+	                popupColumns: [
+		                'name',
+	                ]
                 },
                 drop: {
                     name: 'Drop',
@@ -267,6 +285,9 @@
                     opacity: 1,
                     fillOpacity: 1,
                     weight: 1.3,
+	                popupColumns: [
+		                'name',
+	                ]
                 },
                 ofc_12: {
                     name: 'OFC-12',
@@ -279,6 +300,9 @@
                     opacity: 1,
                     fillOpacity: 0.2,
                     weight: 3,
+	                popupColumns: [
+		                'name',
+	                ]
                 },
                 ofc_48: {
                     name: 'OFC-48',
@@ -292,6 +316,9 @@
                     opacity: 0.6,
                     fillOpacity: 1,
                     weight: 1.5,
+	                popupColumns: [
+		                'name',
+	                ]
                 },
                 ofc_144: {
                     name: 'OFC-144',
@@ -304,6 +331,9 @@
                     opacity: 0.6,
                     fillOpacity: 0.2,
                     weight: 1.0,
+	                popupColumns: [
+		                'name',
+	                ]
                 },
                 ofc_fig_8: {
                     name: 'OFC-FIG-8',
@@ -316,6 +346,9 @@
                     opacity: 0.6,
                     fillOpacity: 0.2,
                     weight: 2,
+	                popupColumns: [
+		                'name',
+	                ]
                 },
                 buildings: {
                     name: 'Buildings',
@@ -330,6 +363,9 @@
                     fillOpacity: 0.8,
                     weight: 1.0,
                     zIndex: 300,
+	                popupColumns: [
+		                'name',
+	                ]
                 },
                 mdu: {
                     name: 'MDU',
@@ -343,6 +379,9 @@
                     opacity: 0.8,
                     fillOpacity: 1,
                     weight: 1.0,
+	                popupColumns: [
+		                'name',
+	                ]
                 },
             },
             populationJSON: {
