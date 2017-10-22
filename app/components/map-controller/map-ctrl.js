@@ -63,7 +63,6 @@
 					'geoJSONPolyline' : 'geoJSONSVGMarker';
 				var overlayName = '<span class="check"><span class="checked"></span></span><span class="'
 				 + layer.type + ' ' + layerName + '"></span>' + layer.name;
-
 				dataService.getData(layer.url + '.geojson')
 					.then(function (response) {
 						$scope.layers.overlays[layerName] = {
@@ -95,8 +94,10 @@
 			}
 
 			var currentUser = $rootScope.appConfig.user.username,
-				userLayersCount = 0,
-				currentRoleConfig = {};
+				userLayersCount = 0;
+
+			console.log( $rootScope.appConfig.user);
+			console.log(currentUser);
 
 
 			var getLayers = function(nameOfLayers, url) {				
@@ -105,18 +106,17 @@
 				}					
 			};
 			
-
-			
-			// var result = factorial(8);
-
 			switch (currentUser) {
-				case 'demo':
+				case 'Gabon':
 					$scope.vmap.lng = 2.385152;
 					$scope.vmap.lat = 6.369213;
 					userLayersCount = Object.keys(rolesConfig.demoLayers).length;
 					getLayers(rolesConfig.demoLayers, 'demoJSON', userLayersCount);
+					$scope.userLayers = rolesConfig.demoLayers;
+					$scope.userLayersConfig = rolesConfig.demoJSON;
 				break;
 				case 'population':
+					console.log('pop');
 					$scope.vmap.lat = 0.60393;
 					$scope.vmap.lng = 9.650924;
 					$scope.vmap.zoom = 9;
@@ -125,37 +125,36 @@
 						colors: [ '#1a9641', '#77c35c', '#9cbf5a', '#e2e250', '#fec981', '#f17c4a', '#b73d2b', '#830c0e' ],
 						labels: [ '0 - 150', '150 - 500', '500 - 1000', '1000 - 2500', '2500 - 4000', '4000 - 6500', '6500 - 13000', '13000 - 80000' ]
 					};
-				getLayers(rolesConfig.populationLayers, 'populationJSON');
-				userLayersCount = Object.keys(rolesConfig.populationLayers).length;
+					getLayers(rolesConfig.populationLayers, 'populationJSON');
+					userLayersCount = Object.keys(rolesConfig.populationLayers).length;
+					$scope.userLayers = rolesConfig.populationLayers;
+					$scope.userLayersConfig = rolesConfig.populationJSON;
 				break;
 				case 'presidence':
 					getLayers(rolesConfig.presidenceLayers, 'testGeoJSON');
 					userLayersCount = Object.keys(rolesConfig.presidenceLayers).length;
+					$scope.userLayers = rolesConfig.presidenceLayers;
+					$scope.userLayersConfig = rolesConfig.testGeoJSON;
 				break;
 				case 'bti':
 					getLayers(rolesConfig.btiLayers, 'testGeoJSON');
 					userLayersCount = Object.keys(rolesConfig.btiLayers).length;
+					$scope.userLayers = rolesConfig.btiLayers;
+					$scope.userLayersConfig = rolesConfig.testGeoJSON;
 				break;
 				case 'bts':
 					getLayers(rolesConfig.btsLayers, 'testGeoJSON');
 					userLayersCount = Object.keys(rolesConfig.btsLayers).lengt;
+					$scope.userLayers = rolesConfig.btsLayers;
+					$scope.userLayersConfig = rolesConfig.testGeoJSON;
 				break;
-				default:
-					// $scope.vmap.lng = 2.385152;
-					// $scope.vmap.lat = 6.369213;
-					// getLayers(rolesConfig.demoLayers, 'demoJSON');
-					// userLayersCount = Object.keys(rolesConfig.demoLayers).length;
-					$scope.vmap.lat = 0.60393;
-					$scope.vmap.lng = 9.650924;
-					$scope.vmap.zoom = 9;
-					currentRoleConfig = rolesConfig.populationJSON;
-					$scope.legend = {
-						position: 'bottomright',
-						colors: [ '#1a9641', '#77c35c', '#9cbf5a', '#e2e250', '#fec981', '#f17c4a', '#b73d2b', '#830c0e' ],
-						labels: [ '0 - 150', '150 - 500', '500 - 1000', '1000 - 2500', '2500 - 4000', '4000 - 6500', '6500 - 13000', '13000 - 80000' ]
-					};
-					userLayersCount = Object.keys(rolesConfig.populationLayers).length;
-					getLayers(rolesConfig.populationLayers, 'populationJSON');
+				default:					
+					$scope.vmap.lng = 2.385152;
+					$scope.vmap.lat = 6.369213;
+					userLayersCount = Object.keys(rolesConfig.demoLayers).length;
+					getLayers(rolesConfig.demoLayers, 'demoJSON', userLayersCount);
+					$scope.userLayers = rolesConfig.demoLayers;
+					$scope.userLayersConfig = rolesConfig.demoJSON;
 			};
 
 			$scope.$watchCollection('layers.overlays', function(allArray) {
@@ -163,9 +162,9 @@
 					// check if all layers are loaded
 					if (Object.keys(allArray).length == userLayersCount) {	
 						// move to front a layer										
-						if (currentRoleConfig.topLayers.length > 0) {
-							for (i=0; i < currentRoleConfig.topLayers.length; i++) {								
-								baselayers.overlays[currentRoleConfig.topLayers[i]].bringToFront();
+						if ($scope.userLayersConfig.topLayers) {
+							for (i=0; i < $scope.userLayersConfig.topLayers.length; i++) {								
+								baselayers.overlays[$scope.userLayersConfig.topLayers[i]].bringToFront();
 							}
 						}							
 						
@@ -189,7 +188,6 @@
 								val.layer.options.layerName+'</span></a>';
 							}
 						}
-
 						
 					};
 				});
