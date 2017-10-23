@@ -96,10 +96,6 @@
 			var currentUser = $rootScope.appConfig.user.username,
 				userLayersCount = 0;
 
-			console.log( $rootScope.appConfig.user);
-			console.log(currentUser);
-
-
 			var getLayers = function(nameOfLayers, url) {				
 				for (var layer in nameOfLayers) {
 					addLayer(rolesConfig[url][layer], layer);					
@@ -107,7 +103,7 @@
 			};
 			
 			switch (currentUser) {
-				case 'Gabon':
+				case 'demo':
 					$scope.vmap.lng = 2.385152;
 					$scope.vmap.lat = 6.369213;
 					userLayersCount = Object.keys(rolesConfig.demoLayers).length;
@@ -115,8 +111,7 @@
 					$scope.userLayers = rolesConfig.demoLayers;
 					$scope.userLayersConfig = rolesConfig.demoJSON;
 				break;
-				case 'population':
-					console.log('pop');
+				case 'Gabon':
 					$scope.vmap.lat = 0.60393;
 					$scope.vmap.lng = 9.650924;
 					$scope.vmap.zoom = 9;

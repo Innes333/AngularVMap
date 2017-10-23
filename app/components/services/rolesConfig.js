@@ -638,7 +638,7 @@
                 departments: 'departments',
                 population: 'population',
                 province: 'province',
-                GSMsites: 'GSMsites',
+	            gsm: 'gsm',
             }   
         }   
 
