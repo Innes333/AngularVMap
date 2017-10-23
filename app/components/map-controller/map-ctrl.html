@@ -15,8 +15,8 @@
 		<div class="map-visibility-control fa" data-ng-class="isActive ? 'fa-map-o': 'fa-map'" data-ng-click="toggleLayer('osm')"></div>
 
 		<div class="w-control-layers">
-			<i class="fa fa-clone" aria-hidden="true"></i>
-			<div data-layer-control class="control-layers-overlays"></div>
+			<i class="fa fa-clone" aria-hidden="true" data-ng-click="active = !active"></i>
+			<div data-layer-control class="control-layers-overlays" data-ng-show="active"></div>
 		</div>
 
 

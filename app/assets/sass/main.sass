@@ -435,7 +435,7 @@ main
 .w-map
 	position: relative
 	#map
-	    background-color: #f6ffff
+	    background-color: #ebebeb
 	.location-control,
 	.map-visibility-control
 		position: absolute
@@ -461,6 +461,15 @@ main
 	width: 100%
 	margin-top: 35px
 	height: calc(100vh - 70px)
+
+	.leaflet-tile-pane
+		z-index: 100
+	.leaflet-shadow-pane
+		z-index: 150
+	.leaflet-overlay-pane
+		z-index: 200
+	.leaflet-marker-pane
+		z-index: 250
 
 	.leaflet-interactive
 		cursor: pointer
@@ -578,15 +587,7 @@ main
 	border-radius: 5px
 	text-align: left
 	transition: all 0.4s
-	box-shadow: 0 1px 5px rgba(0,0,0,.4)
-	&:hover
-		width: 190px
-		height: auto
-		.control-layers-overlays
-			opacity: 1
-			display: block
-			padding: 40px 20px 10px
-			font-size: 15px
+	box-shadow: 0 1px 5px rgba(0,0,0,.4)	
 
 	.fa-clone
 		position: absolute
@@ -594,12 +595,17 @@ main
 		right: 9px
 		font-size: 18px
 		cursor: pointer
+		z-index: 1000
 
 	.control-layers-overlays
-		transition: opacity 0.8s
-		display: none
-		opacity: 0
-		font-size: 0
+		position: absolute
+		right: 0
+		padding: 25px 10px 20px 20px
+		min-width: 200px
+		background: #ffffff
+		box-shadow: 0 1px 5px rgba(0,0,0,.4)
+		label
+			font-size: 14px
 
 	input[type=checkbox]
 		display: none
@@ -695,15 +701,6 @@ main
 
 
 
-	.leaflet-popup-content
-		margin: 20px 12px
-		span
-			color: $darkBlue
-			font-weight: 600
-			font-size: 10px
-			text-transform: uppercase
-	.leaflet-control-layers-list
-		display: block!important
 .about
 	text-align: left
 	padding-top: 80px
@@ -793,6 +790,7 @@ main
 	list-style: none
 	list-style-image: none
 	text-align: center
+	font-family: sans-serif
 
 .leaflet-control-measure .tasks li,
 .leaflet-measure-resultpopup .tasks li
@@ -878,17 +876,6 @@ main
 		font-size: 15px
 		margin-right: 4px
 		color: $darkBlue
-
-.leaflet-retina .leaflet-control-measure a.cancel
-	color: $darkBlue
-	background: none
-	font: normal normal normal 14px/1 FontAwesome
-	&::before
-		line-height: 15px
-		content: "\f057"
-		color: $black
-		font-size: 15px
-		margin-right: 4px
 
 .leaflet-control-measure a.finish
 	color: $darkBlue
