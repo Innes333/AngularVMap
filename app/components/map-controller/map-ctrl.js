@@ -9,12 +9,6 @@
 			         baseFunc, dataService, rolesConfig){
 					
 	        angular.extend($scope, {
-				layercontrol: {
-                    icons: {
-                      uncheck: "fa fa-toggle-off",
-                      check: "fa fa-toggle-on"
-                    }
-                },
 				vmap: {
 					lat: 0.504503980130774,
 					lng: 9.408579986073635,

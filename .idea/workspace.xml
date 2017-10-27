@@ -4,7 +4,6 @@
     <list default="true" id="ee19fb1e-e780-4221-97d8-05b7fb561aa3" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/map-controller/map-ctrl.js" afterPath="$PROJECT_DIR$/app/components/map-controller/map-ctrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/services/rolesConfig.js" afterPath="$PROJECT_DIR$/app/components/services/rolesConfig.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,7 +29,7 @@
           <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/app.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="317">
+                <state relative-caret-position="897">
                   <caret line="39" column="18" lean-forward="false" selection-start-line="34" selection-start-column="16" selection-end-line="39" selection-end-column="18" />
                   <folding />
                 </state>
@@ -52,19 +51,7 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="10511">
                   <caret line="457" column="20" lean-forward="false" selection-start-line="457" selection-start-column="20" selection-end-line="457" selection-end-column="20" />
-                  <folding>
-                    <marker date="1508752328453" expanded="true" signature="15854:16109" ph="..." />
-                    <marker date="1508752328453" expanded="true" signature="15948:16108" ph="..." />
-                    <marker date="1508752328453" expanded="true" signature="16138:16389" ph="..." />
-                    <marker date="1508752328453" expanded="true" signature="16147:16388" ph="..." />
-                    <marker date="1508752328453" expanded="true" signature="16221:16388" ph="..." />
-                    <marker date="1508752328453" expanded="true" signature="16419:16676" ph="..." />
-                    <marker date="1508752328453" expanded="true" signature="16434:16675" ph="..." />
-                    <marker date="1508752328453" expanded="true" signature="16508:16675" ph="..." />
-                    <marker date="1508752328453" expanded="true" signature="16700:16802" ph="..." />
-                    <marker date="1508752328453" expanded="true" signature="16705:16801" ph="..." />
-                    <marker date="1508752328453" expanded="true" signature="16740:16801" ph="..." />
-                  </folding>
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -72,8 +59,8 @@
           <file leaf-file-name="leaflet-directive.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/components/directives/leaflet-directive.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="345">
-                  <caret line="1610" column="30" lean-forward="true" selection-start-line="1610" selection-start-column="30" selection-end-line="1610" selection-end-column="30" />
+                <state relative-caret-position="36409">
+                  <caret line="1610" column="30" lean-forward="false" selection-start-line="1610" selection-start-column="30" selection-end-line="1610" selection-end-column="30" />
                   <folding>
                     <marker date="1508752286090" expanded="true" signature="61211:61247" ph="data:" />
                     <marker date="1508752286090" expanded="true" signature="62207:62218" ph="..." />
@@ -88,8 +75,8 @@
           <file leaf-file-name="rolesConfig.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/components/services/rolesConfig.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="303">
-                  <caret line="629" column="33" lean-forward="true" selection-start-line="629" selection-start-column="33" selection-end-line="629" selection-end-column="33" />
+                <state relative-caret-position="14467">
+                  <caret line="629" column="33" lean-forward="false" selection-start-line="629" selection-start-column="33" selection-end-line="629" selection-end-column="33" />
                   <folding />
                 </state>
               </provider>
@@ -98,11 +85,11 @@
           <file leaf-file-name="map-ctrl.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/components/map-controller/map-ctrl.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-676">
-                  <caret line="102" column="14" lean-forward="true" selection-start-line="102" selection-start-column="14" selection-end-line="102" selection-end-column="14" />
+                <state relative-caret-position="92">
+                  <caret line="10" column="36" lean-forward="false" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
                   <folding>
-                    <marker date="1508752783477" expanded="true" signature="1459:1465" ph="©" />
-                    <marker date="1508752783477" expanded="true" signature="6496:6513" ph="..." />
+                    <marker date="1509110696861" expanded="true" signature="1271:1277" ph="©" />
+                    <marker date="1509110696861" expanded="true" signature="6308:6325" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -135,7 +122,7 @@
           <file leaf-file-name="GSMsites.geojson" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/populationJSON/GSMsites.geojson">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="115">
+                <state relative-caret-position="-23">
                   <caret line="5" column="311" lean-forward="false" selection-start-line="5" selection-start-column="304" selection-end-line="5" selection-end-column="311" />
                   <folding />
                 </state>
@@ -283,9 +270,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -421,126 +408,6 @@
       <recent name="$PROJECT_DIR$/app/assets/libs/leaflet/css" />
       <recent name="$PROJECT_DIR$/app/assets/libs/leaflet" />
     </key>
-  </component>
-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
-    <UpdatedFiles>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/assets/css/main.min.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/assets/sass/main.sass</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/components/directives/layer-control-directive.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/components/map-controller/map-ctrl.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/components/map-controller/map-ctrl.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/components/services/authentication-service.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/components/services/rolesConfig.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/demoJSON/Buildings.geojson</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/demoJSON/NBN_Metro_MOOV.geojson</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/demoJSON/NBN_Metro_exist.geojson</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -1019,11 +886,12 @@
       <workItem from="1508230828551" duration="2435000" />
       <workItem from="1508240644963" duration="20000" />
       <workItem from="1508249005632" duration="107000" />
+      <workItem from="1509110637865" duration="61000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="282695000" />
+    <option name="totallyTimeSpent" value="283426000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1041,16 +909,15 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32915717" sideWeight="0.49785176" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25155926" sideWeight="0.4472667" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1689546" sideWeight="0.445058" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2848233" sideWeight="0.4538929" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20274551" sideWeight="0.4561016" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25155926" sideWeight="0.5527333" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1689546" sideWeight="0.554942" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13638873" sideWeight="0.49405771" order="6" side_tool="false" content_ui="combo" />
@@ -1062,34 +929,12 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12674543" sideWeight="0.5059423" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37697995" sideWeight="0.44284925" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="combo" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973147" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32915717" sideWeight="0.49785176" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20274551" sideWeight="0.4561016" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37697995" sideWeight="0.5571507" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13528438" sideWeight="0.49405771" order="6" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12674543" sideWeight="0.5059423" order="4" side_tool="true" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1430,19 +1275,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="10511">
           <caret line="457" column="20" lean-forward="false" selection-start-line="457" selection-start-column="20" selection-end-line="457" selection-end-column="20" />
-          <folding>
-            <marker date="1508752328453" expanded="true" signature="15854:16109" ph="..." />
-            <marker date="1508752328453" expanded="true" signature="15948:16108" ph="..." />
-            <marker date="1508752328453" expanded="true" signature="16138:16389" ph="..." />
-            <marker date="1508752328453" expanded="true" signature="16147:16388" ph="..." />
-            <marker date="1508752328453" expanded="true" signature="16221:16388" ph="..." />
-            <marker date="1508752328453" expanded="true" signature="16419:16676" ph="..." />
-            <marker date="1508752328453" expanded="true" signature="16434:16675" ph="..." />
-            <marker date="1508752328453" expanded="true" signature="16508:16675" ph="..." />
-            <marker date="1508752328453" expanded="true" signature="16700:16802" ph="..." />
-            <marker date="1508752328453" expanded="true" signature="16705:16801" ph="..." />
-            <marker date="1508752328453" expanded="true" signature="16740:16801" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1471,7 +1304,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/populationJSON/GSMsites.geojson">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
+        <state relative-caret-position="-23">
           <caret line="5" column="311" lean-forward="false" selection-start-line="5" selection-start-column="304" selection-end-line="5" selection-end-column="311" />
           <folding />
         </state>
@@ -1479,7 +1312,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
+        <state relative-caret-position="897">
           <caret line="39" column="18" lean-forward="false" selection-start-line="34" selection-start-column="16" selection-end-line="39" selection-end-column="18" />
           <folding />
         </state>
@@ -1487,8 +1320,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/components/directives/leaflet-directive.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="1610" column="30" lean-forward="true" selection-start-line="1610" selection-start-column="30" selection-end-line="1610" selection-end-column="30" />
+        <state relative-caret-position="36409">
+          <caret line="1610" column="30" lean-forward="false" selection-start-line="1610" selection-start-column="30" selection-end-line="1610" selection-end-column="30" />
           <folding>
             <marker date="1508752286090" expanded="true" signature="61211:61247" ph="data:" />
             <marker date="1508752286090" expanded="true" signature="62207:62218" ph="..." />
@@ -1501,19 +1334,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/components/services/rolesConfig.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="629" column="33" lean-forward="true" selection-start-line="629" selection-start-column="33" selection-end-line="629" selection-end-column="33" />
+        <state relative-caret-position="14467">
+          <caret line="629" column="33" lean-forward="false" selection-start-line="629" selection-start-column="33" selection-end-line="629" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/components/map-controller/map-ctrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-676">
-          <caret line="102" column="14" lean-forward="true" selection-start-line="102" selection-start-column="14" selection-end-line="102" selection-end-column="14" />
+        <state relative-caret-position="92">
+          <caret line="10" column="36" lean-forward="false" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
           <folding>
-            <marker date="1508752783477" expanded="true" signature="1459:1465" ph="©" />
-            <marker date="1508752783477" expanded="true" signature="6496:6513" ph="..." />
+            <marker date="1509110696861" expanded="true" signature="1271:1277" ph="©" />
+            <marker date="1509110696861" expanded="true" signature="6308:6325" ph="..." />
           </folding>
         </state>
       </provider>
