@@ -12,7 +12,7 @@
 				vmap: {
 					lat: 0.504503980130774,
 					lng: 9.408579986073635,
-					zoom: 16,
+					zoom: 16
 				},
 				defaults: {
 					zoomAnimation: false,
@@ -85,7 +85,7 @@
 					}, function (error) {
 						throw dataService.catchError(error, 'Ajax call error message!');
 					});
-			}
+			};
 
 			var currentUser = $rootScope.appConfig.user.username,
 				userLayersCount = 0;
@@ -149,10 +149,10 @@
 			$scope.$watchCollection('layers.overlays', function(allArray) {
 				leafletData.getLayers('map').then(function(baselayers) {
 					// check if all layers are loaded
-					if (Object.keys(allArray).length == userLayersCount) {	
+					if (Object.keys(allArray).length === userLayersCount) {
 						// move to front a layer										
 						if ($scope.userLayersConfig.topLayers) {
-							for (i=0; i < $scope.userLayersConfig.topLayers.length; i++) {								
+							for (var i=0; i < $scope.userLayersConfig.topLayers.length; i++) {
 								baselayers.overlays[$scope.userLayersConfig.topLayers[i]].bringToFront();
 							}
 						}							

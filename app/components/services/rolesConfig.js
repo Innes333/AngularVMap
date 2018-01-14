@@ -146,7 +146,8 @@
                         'Marker_Stop',
                         'Cable_Lenght',
                         'ID_Prov'
-	                ]
+	                ],
+                    category: 'ofc'
                 },
                 ofc_48: {
                     name: 'OFC-48',
@@ -169,7 +170,8 @@
                         'Marker_Stop',
                         'Cable_Lenght',
                         'ID_Prov'
-	                ]
+	                ],
+	                category: 'ofc'
                 },
                 ofc_144: {
                     name: 'OFC-144',
@@ -191,7 +193,8 @@
                         'Marker_Stop',
                         'Cable_Lenght',
                         'ID_Prov'
-	                ]
+	                ],
+	                category: 'ofc'
                 },
                 otb: {
                     name: 'OTB',	
@@ -238,7 +241,8 @@
                         'Splice_Closure_Template',
                         'Longitude',
                         'Latitude'
-	                ]
+	                ],
+	                category: 'sc'
                 },
                 sc144: {
                     name: 'SC-144',
@@ -261,8 +265,9 @@
                         'Splice_Closure_Template',
                         'Longitude',
                         'Latitude'
-	                ]
-                },
+	                ],
+	                category: 'sc'
+                }
             },
             testGeoJSON: {
                 sc48: {
@@ -421,7 +426,7 @@
                     fillOpacity: 0.2,
                     weight: 1.0,
 	                popupColumns: [
-		                'name',
+		                'name'
 	                ]
                 },
                 ofc_fig_8: {
@@ -436,7 +441,7 @@
                     fillOpacity: 0.2,
                     weight: 2,
 	                popupColumns: [
-		                'name',
+		                'name'
 	                ]
                 },
                 buildings: {
@@ -469,7 +474,7 @@
                     fillOpacity: 1,
                     weight: 1.0,
 	                popupColumns: [
-		                'name',
+		                'name'
 	                ]
                 },
             },
@@ -540,7 +545,7 @@
 	                    'name',
 		                'population',
 		                'area_sq_m',
-		                'class',
+		                'class'
 	                ]
                 },
                 gsm: {
@@ -582,14 +587,14 @@
                         'city',
                         'lte',
                         'g3',
-                        'trmflag',
+                        'trmflag'
 	                ]
-                },
+                }
             },
             demoLayers: {
 				roads: 'roads',
 				railways: 'railways',
-				buildings: 'buildings',
+				// buildings: 'buildings',
 				hydro: 'hydro',
 				ofc_12: 'ofc_12',
 				ofc_48: 'ofc_48',
@@ -612,7 +617,7 @@
 				ofc_144: 'ofc_144',
 				ofc_fig_8: 'ofc_fig_8',
 				buildings: 'buildings',
-				mdu: 'mdu',
+				mdu: 'mdu'
 			},
 			btiLayers: {
 				sc48: 'sc48',
@@ -621,7 +626,7 @@
 				ofc_144: 'ofc_144',
 				ofc_48: 'ofc_48',
 				ofc_fig_8: 'ofc_fig_8',
-				buildings: 'buildings',
+				buildings: 'buildings'
 			},
 			btsLayers: {
 				poteaux: 'poteaux',
@@ -632,13 +637,13 @@
 				ofc_144: 'ofc_144',
 				drop: 'drop',
 				buildings: 'buildings',
-				mdu: 'mdu',
+				mdu: 'mdu'
             },
             populationLayers: {
                 departments: 'departments',
                 population: 'population',
                 province: 'province',
-	            gsm: 'gsm',
+	            gsm: 'gsm'
             }   
         }   
 
