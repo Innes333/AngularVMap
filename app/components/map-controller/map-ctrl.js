@@ -76,7 +76,7 @@
 							    fillOpacity: layer.fillOpacity,
 								pointerEvents: 'all',
 								dashArray: layer.dashArray !== '' ? layer.dashArray : '',
-								layerName,
+								layerName: layerName,
 								zIndex: 100,
 								popupColumns: layer.popupColumns
 							},
@@ -200,12 +200,12 @@
 			var baseMapLayer = $scope.layers.baselayers.osm;
 			var overlays = $scope.layers.baselayers;	
 
-			if (currentUser === 'demo') {
-				if (overlays.hasOwnProperty('osm')) {
-					delete overlays['osm'];
-					$scope.isActive = false;
-				}
-			}
+			// if (currentUser === 'demo') {
+			// 	if (overlays.hasOwnProperty('osm')) {
+			// 		delete overlays['osm'];
+			// 		$scope.isActive = false;
+			// 	}
+			// }
 			$scope.toggleLayer = function(overlayName) {
 
                 if (overlays.hasOwnProperty(overlayName)) {

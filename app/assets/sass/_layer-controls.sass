@@ -22,8 +22,16 @@
     z-index: 1000
 
   .category
+    margin: 5px 0
+    padding: 0 0 10px
+    border-bottom: 1px dashed $grayLight
+    border-top: 1px dashed $grayLight
+
     .control-layers-selector
       padding-left: 20px
+
+    .category-label
+      text-transform: uppercase
 
   .control-layers-overlays
     position: absolute
@@ -42,6 +50,7 @@
       display: inline-block
       content: "\f096"
       letter-spacing: 10px
+      color: #555
     &:checked + label:before
       content: "\f046"
       letter-spacing: 5px

@@ -15,7 +15,7 @@ angular.module('vMapsApp')
 						')" id="' + config.className + '" type="checkbox">' +
 						'<label for="' + config.className + '">' +
 						'<span class="'	+ config.type + ' ' + config.className + '"></span>' +
-						config.name + '</label>' +
+						'<span class="l-name">' + config.name + '</span></label>' +
 						'</div>';
 				};
 
@@ -68,7 +68,7 @@ angular.module('vMapsApp')
 								'); ' + layer + '=!' + layer + '" id="' + layer + '" type="checkbox">' +
 								'<label class="category-label" for="' + layer + '">' +
 								layer + '</label>' +
-								'<div>' + checkboxes +
+								'<div class="sub-categories">' + checkboxes +
 								'</div>' +
 								'</div>';
 						}
