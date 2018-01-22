@@ -68,7 +68,8 @@ angular.module('vMapsApp')
 								'); ' + layer + '=!' + layer + '" id="' + layer + '" type="checkbox">' +
 								'<label class="category-label" for="' + layer + '">' +
 								layer + '</label>' +
-								'<div class="sub-categories">' + checkboxes +
+								'<span class="fa fa-angle-down" ng-click="show' + layer + '= !show' + layer + '"> </span>' +
+								'<div class="sub-categories" ng-show="show' + layer + '">' + checkboxes +
 								'</div>' +
 								'</div>';
 						}
