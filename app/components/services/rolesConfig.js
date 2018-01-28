@@ -7,133 +7,15 @@
             loginUrl: 'login.json',
             itemsUrl:	'testJson.json',
             demoJSON: {
-                topLayers: ['roads', 'otb'],
-                railways: {
-                    name: 'Railways',
-                    className: 'drop',
-                    pane: 'overlayPane',
-                    type: 'line',
-                    url: 'demoJSON/Railways',
-                    color: '#000000',
-                    fillColor: '#000000',
-                    opacity: 1,
-                    fillOpacity: 1,
-                    weight: 1.3,
-                    popupColumns: [
-                        'id',
-                        'name',
-                        'class'
-	                ]
-                },
-                roads: {
-                    name: 'Roads',
-                    pane: 'overlayPane',
-                    type: 'line',
-                    className: 'roads',
-                    url: 'demoJSON/Roads',
-                    fillColor: '#333333',
-                    color: {
-                        residential: '#e4893e',
-                        pedestrian: '#b6a79e',
-                        primary: '#fffb89',
-                        path: '#333333',
-                        secondary: '#e8e586',
-                        tertiary: '#bfbcbc'
-                    },
-                    opacity: 1,
-                    fillOpacity: 1,
-                    weight: {
-                        residential: 2,
-                        pedestrian: 2,
-                        primary: 5,
-                        path: 1.5,
-                        secondary: 2,
-                        tertiary: 2
-                    },		
-                    popupColumns: [
-                        'id',
-                        'name',
-                        'class'
-	                ]
-                },
-                hydro: {
-                    name: 'Hydro',
-                    className: 'hydro',
-                    pane: 'overlayPane',
-                    type: 'poly',
-                    url: 'demoJSON/Hydro(region)',
-                    color: 'blue',
-                    fillColor: '#6aacf6',
-                    opacity: 0.6,
-                    fillOpacity: 0.8,
-                    weight: 1.0,
-                    popupColumns: [
-                        'id',
-                        'name',
-                        'class'
-	                ]
-                },
-                buildings: {
-                    name: 'Buildings',
-                    className: 'buildings',
-                    pane: 'overlayPane',
-                    type: 'poly',
-                    img: 'cross.png',
-                    url: 'demoJSON/Buildings',
-                    color: '#333333',
-                    fillColor: {
-                        residential: '#ccc',
-                        church: '#9daab6',
-                        school: '#7F8C8D',
-                        mall: '#c4dbee'
-                    },
-                    opacity: 0.8,
-                    fillOpacity: 1,
-                    weight: 1.0,
-                    popupColumns: [
-                        'id',
-                        'name',
-                        'class'
-	                ]
-                },
-                nbn_metro_exist: {
-                    name: 'NBN Metro exist',
-                    className: 'nbn_metro_exist',
-                    pane: 'overlayPane',
-                    type: 'line',
-                    url: 'demoJSON/NBN_Metro_exist',
-                    color: '#4A148C',
-                    fillColor: '#4A148C',
-                    opacity: 1,
-                    fillOpacity: 1,
-                    weight: 2.5,
-                    popupColumns: [
-                        'name'
-	                ]
-                },
-                nbn_metro_moov: {
-                    name: 'NBN Metro MOOV',
-                    className: 'nbn-metro-moov',
-                    pane: 'overlayPane',
-                    type: 'point',
-                    url: 'demoJSON/NBN_Metro_MOOV',
-                    color: '#4A148C',
-                    fillColor: '#4A148C',
-                    opacity: 0.6,
-                    fillOpacity: 0.8,
-                    weight: 2.0,
-                    popupColumns: [
-		                'name',
-	                ]
-                },
+                topLayers: ['otb', 'sc144', 'sc48'],
                 ofc_12: {
                     name: 'OFC-12',
                     className: 'ofc_12',
                     pane: 'overlayPane',
                     type: 'line',
                     url: 'demoJSON/OFC_12',
-                    color: '#4CAF50',
-                    fillColor: '#4CAF50',
+                    color: '#64FFDA',
+                    fillColor: '#64FFDA',
                     opacity: 1,
                     fillOpacity: 1,
                     weight: 2.0,
@@ -156,8 +38,8 @@
                     type: 'line',
                     img: 'ofc-48.png',
                     url: 'demoJSON/OFC_48',
-                    color: '#FFC107',
-                    fillColor: '#FFC107',
+                    color: '#795548',
+                    fillColor: '#795548',
                     opacity: 1,
                     fillOpacity: 1,
                     weight: 2.5,
@@ -197,9 +79,9 @@
 	                category: 'ofc'
                 },
                 otb: {
-                    name: 'OTB',	
-                    className: 'otb',	
-                    pane: 'overlayPane',				
+                    name: 'OTB',
+                    className: 'otb',
+                    pane: 'overlayPane',
                     type: 'point',
                     url: 'demoJSON/OTB',
                     color: '#000',
@@ -218,7 +100,8 @@
                         'OTB_Template',
                         'Longitude',
                         'Latitude'
-	                ]
+	                ],
+	                category: 'otb'
                 },
                 sc48: {
                     name: 'SC-48',
@@ -267,6 +150,130 @@
                         'Latitude'
 	                ],
 	                category: 'sc'
+                },
+                railways: {
+                    name: 'Railways',
+                    className: 'drop',
+                    pane: 'overlayPane',
+                    type: 'line',
+                    url: 'demoJSON/Railways',
+                    color: '#000000',
+                    fillColor: '#000000',
+                    opacity: 1,
+                    fillOpacity: 1,
+                    weight: 1.3,
+                    popupColumns: [
+                        'id',
+                        'name',
+                        'class'
+	                ],
+	                category: 'other'
+                },
+                roads: {
+                    name: 'Roads',
+                    pane: 'overlayPane',
+                    type: 'line',
+                    className: 'roads',
+                    url: 'demoJSON/Roads',
+                    fillColor: '#333333',
+                    color: {
+                        residential: '#e4893e',
+                        pedestrian: '#b6a79e',
+                        primary: '#fffb89',
+                        path: '#333333',
+                        secondary: '#e8e586',
+                        tertiary: '#bfbcbc'
+                    },
+                    opacity: 1,
+                    fillOpacity: 1,
+                    weight: {
+                        residential: 2,
+                        pedestrian: 2,
+                        primary: 5,
+                        path: 1.5,
+                        secondary: 2,
+                        tertiary: 2
+                    },		
+                    popupColumns: [
+                        'id',
+                        'name',
+                        'class'
+	                ],
+	                category: 'other'
+                },
+                hydro: {
+                    name: 'Hydro',
+                    className: 'hydro',
+                    pane: 'overlayPane',
+                    type: 'poly',
+                    url: 'demoJSON/Hydro(region)',
+                    color: 'blue',
+                    fillColor: '#6aacf6',
+                    opacity: 0.6,
+                    fillOpacity: 0.8,
+                    weight: 1.0,
+                    popupColumns: [
+                        'id',
+                        'name',
+                        'class'
+	                ],
+	                category: 'other'
+                },
+                buildings: {
+                    name: 'Buildings',
+                    className: 'buildings',
+                    pane: 'overlayPane',
+                    type: 'poly',
+                    img: 'cross.png',
+                    url: 'demoJSON/Buildings',
+                    color: '#333333',
+                    fillColor: {
+                        residential: '#ccc',
+                        church: '#9daab6',
+                        school: '#7F8C8D',
+                        mall: '#c4dbee'
+                    },
+                    opacity: 0.8,
+                    fillOpacity: 1,
+                    weight: 1.0,
+                    popupColumns: [
+                        'id',
+                        'name',
+                        'class'
+	                ],
+	                category: 'other'
+                },
+                nbn_metro_exist: {
+                    name: 'NBN Metro exist',
+                    className: 'nbn_metro_exist',
+                    pane: 'overlayPane',
+                    type: 'line',
+                    url: 'demoJSON/NBN_Metro_exist',
+                    color: '#4A148C',
+                    fillColor: '#4A148C',
+                    opacity: 1,
+                    fillOpacity: 1,
+                    weight: 2.5,
+                    popupColumns: [
+                        'name'
+	                ],
+	                category: 'other'
+                },
+                nbn_metro_moov: {
+                    name: 'NBN Metro MOOV',
+                    className: 'nbn-metro-moov',
+                    pane: 'overlayPane',
+                    type: 'point',
+                    url: 'demoJSON/NBN_Metro_MOOV',
+                    color: '#4A148C',
+                    fillColor: '#4A148C',
+                    opacity: 0.6,
+                    fillOpacity: 0.8,
+                    weight: 2.0,
+                    popupColumns: [
+		                'name'
+	                ],
+	                category: 'other'
                 }
             },
             testGeoJSON: {
@@ -283,7 +290,7 @@
                     weight: 1.0,
                     radius: 3,
 	                popupColumns: [
-		                'name',
+		                'name'
                     ]
                 },
                 sc144: {
@@ -592,16 +599,16 @@
                 }
             },
             demoLayers: {
-				roads: 'roads',
-				railways: 'railways',
-				// buildings: 'buildings',
-				hydro: 'hydro',
 				ofc_12: 'ofc_12',
 				ofc_48: 'ofc_48',
 				ofc_144: 'ofc_144',
 				otb: 'otb',
 				sc48: 'sc48',
 				sc144: 'sc144',
+				roads: 'roads',
+				railways: 'railways',
+				// buildings: 'buildings',
+				hydro: 'hydro',
 				nbn_metro_exist: 'nbn_metro_exist',
 			},
 			presidenceLayers: {
