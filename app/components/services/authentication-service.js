@@ -30,6 +30,11 @@
 							name: 'Gabon',
 							password: 'pop',
 							role: 'population'
+						}],
+						vincent: [{
+							name: 'Vincent',
+							password: 'DEDJINOU',
+							role: 'vincent'
 						}]
 					};
 					for(role in roles) {

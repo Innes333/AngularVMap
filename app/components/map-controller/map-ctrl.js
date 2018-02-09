@@ -25,7 +25,7 @@
 						secondaryLengthUnit: 'kilometers',
 						primaryAreaUnit: 'sqmeters',
 						secondaryAreaUnit: 'hectares'
-					}),
+					})
 				},
 				layers: {
 					sortLayers: true,
@@ -44,8 +44,8 @@
 	                        }
 	                    }
 					},
-					overlays: {},
-				},
+					overlays: {}
+				}
 			});
 
 	        // get map object from $scope
@@ -79,8 +79,7 @@
 								layerName: layerName,
 								zIndex: 100,
 								popupColumns: layer.popupColumns
-							},
-
+							}
 						};
 					}, function (error) {
 						throw dataService.catchError(error, 'Ajax call error message!');
@@ -95,7 +94,7 @@
 					addLayer(rolesConfig[url][layer], layer);					
 				}					
 			};
-			
+
 			switch (currentUser) {
 				case 'demo':
 					$scope.vmap.lng = 2.385152;
@@ -104,6 +103,14 @@
 					getLayers(rolesConfig.demoLayers, 'demoJSON', userLayersCount);
 					$scope.userLayers = rolesConfig.demoLayers;
 					$scope.userLayersConfig = rolesConfig.demoJSON;
+				break;
+				case 'Vincent':
+					$scope.vmap.lng = 2.24078;
+					$scope.vmap.lat = 7.973468;
+					userLayersCount = Object.keys(rolesConfig.vincentLayers).length;
+					getLayers(rolesConfig.vincentLayers, 'vincentJSON', userLayersCount);
+					$scope.userLayers = rolesConfig.vincentLayers;
+					$scope.userLayersConfig = rolesConfig.vincentJSON;
 				break;
 				case 'Gabon':
 					$scope.vmap.lat = 0.60393;

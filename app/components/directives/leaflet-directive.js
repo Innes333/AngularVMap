@@ -1662,16 +1662,17 @@
 						return new L.geoJson(params.data, {
 							pointToLayer: function(feature, latlng) {
 								var styles;
-								if (typeof params.options.fillColor === 'object') {		
-									styles = { 
+								if (typeof params.options.fillColor === 'object') {
+									styles = {
 										fillColor: params.options.fillColor[feature.properties.class],
 										color: params.options.color[feature.properties.class],
 										pane: params.options.pane,
-										radius: params.options.radius[feature.properties.class],
-										weight: params.options.weight[feature.properties.class],
+										radius: params.options.radius,
+										weight: params.options.weight,
 										opacity: params.options.opacity,
+										fillOpacity: params.options.fillOpacity,
 										pointerEvents: 'all',
-										layerName: params.options.layerName,
+										layerName: params.options.layerName
 									}										
 								} else {
 									styles = params.options;

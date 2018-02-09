@@ -276,6 +276,74 @@
 	                category: 'other'
                 }
             },
+            vincentJSON: {
+	            topLayers: ['report'],
+	            cable: {
+		            name: 'Backbone Dassa-Glazoue Cable',
+		            pane: 'overlayPane',
+		            className: 'cable',
+		            type: 'line',
+		            url: 'vincentJSON/Backbone-Dassa-Glazoue-Cable',
+		            color: '#34495E',
+		            fillColor: '#34495E',
+		            opacity: 1,
+		            fillOpacity: 1,
+		            weight: 2,
+		            popupColumns: [
+			            'Items',
+			            'Site_Name',
+			            'DU_Route_Distance_M_'
+		            ]
+	            },
+	            report: {
+		            name: 'Backbone Dassa-Glazoue',
+		            className: 'report',
+		            pane: 'overlayPane',
+		            type: 'point',
+		            url: 'vincentJSON/Backbone-Dassa-Glazoue-Report',
+		            color: {
+			            one: '#213690',
+			            two: '#8E44AD',
+			            three: '#d36226',
+			            four: '#16A085',
+			            five: '#e73429'
+		            },
+		            fillColor: {
+			            one: '#213690',
+			            two: '#8E44AD',
+			            three: '#d36226',
+			            four: '#16A085',
+			            five: '#e73429'
+		            },
+		            opacity: 1,
+		            fillOpacity: 1,
+		            weight: 2.0,
+		            radius: 4,
+		            popupColumns: [
+			            'Items',
+			            'Site Name',
+			            'DU Route Distance  (M)',
+			            'Section',
+			            'Distance  (M)',
+			            'type',
+			            'New Duct(M)',
+			            'Existing Duct(M)',
+			            'HH',
+			            'New L3T',
+			            'New L5T',
+			            'Concrete Envelop',
+			            'Electric Route Marker',
+			            'Joint box (96 fibers)',
+			            'GI',
+			            'Break and Reinstatement',
+			            'site',
+			            'MH\\/HH type',
+			            'longitude',
+			            'latitude',
+			            'MH\\/HH name in as-built and GIS'
+		            ]
+	            }
+            },
             testGeoJSON: {
                 sc48: {
                     name: 'SC-48',
@@ -483,7 +551,7 @@
 	                popupColumns: [
 		                'name'
 	                ]
-                },
+                }
             },
             populationJSON: {
                 topLayers: ['gsm'],
@@ -651,7 +719,11 @@
                 population: 'population',
                 province: 'province',
 	            gsm: 'gsm'
-            }   
+            },
+            vincentLayers: {
+                cable: 'cable',
+                report: 'report'
+            }
         }   
 
 	})
