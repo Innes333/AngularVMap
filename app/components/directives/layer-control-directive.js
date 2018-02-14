@@ -10,13 +10,36 @@ angular.module('vMapsApp')
 				scope.checked = true;
 
 				var createCheckbox = function (config, category) {
+						
+					var multiColorLayerFunc = function() {
+
+						if (typeof config.color==="object") {
+							
+							var subLayer = config.color;
+							var result = '';
+
+							for (var item in subLayer) {
+								if(subLayer.hasOwnProperty(item)) {
+							      result +='<li class="l-sub-name"><span class="l-name-sub-color" style="background:' + subLayer[item] + '"></span>' + item + '</li>';
+							    } 
+							}
+
+							return result;
+
+						} else {
+							return '<li class="l-color"></li>';
+						}
+					}
+					
 					return '<div class="control-layers-selector">' +
 						'<input ng-checked="'+ category + '" checked ng-click="switchLayer(' + "'" + config.className + "'" +
 						')" id="' + config.className + '" type="checkbox">' +
 						'<label for="' + config.className + '">' +
 						'<span class="'	+ config.type + ' ' + config.className + '"></span>' +
 						'<span class="l-name">' + config.name + '</span></label>' +
+						'<ul class="l-sub">' + multiColorLayerFunc() + '</ul>' +
 						'</div>';
+
 				};
 
 				var switcher = function (baseLayers, layerName) {
@@ -53,7 +76,7 @@ angular.module('vMapsApp')
 					for (layer in layersArray) {
 						if (typeof layersArray[layer] === 'string') {
 							var layerConfig = userLayersConfig[layer];
-							list += createCheckbox(layerConfig, 'checked');
+							list += createCheckbox(layerConfig, 'checked');							
 						} else {
 							var checkboxes = '';
 							scope[layer] = true;
@@ -72,7 +95,9 @@ angular.module('vMapsApp')
 								'<div class="sub-categories" ng-show="show' + layer + '">' + checkboxes +
 								'</div>' +
 								'</div>';
-						}
+
+						}				
+						
 
 					}
 					list += categoryList;
