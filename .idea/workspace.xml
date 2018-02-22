@@ -2,15 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ee19fb1e-e780-4221-97d8-05b7fb561aa3" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/vincentJSON/Backbone-Dassa-Glazoue-Cable.geojson" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/vincentJSON/Backbone-Dassa-Glazoue-Report.geojson" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/pdf/SYNOPDassa-Glazou.pdf" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/app/assets/css/main.min.css" afterPath="$PROJECT_DIR$/app/assets/css/main.min.css" />
-      <change beforePath="$PROJECT_DIR$/app/assets/sass/_layer-controls.sass" afterPath="$PROJECT_DIR$/app/assets/sass/_layer-controls.sass" />
+      <change beforePath="$PROJECT_DIR$/app/assets/sass/main.sass" afterPath="$PROJECT_DIR$/app/assets/sass/main.sass" />
       <change beforePath="$PROJECT_DIR$/app/components/directives/leaflet-directive.js" afterPath="$PROJECT_DIR$/app/components/directives/leaflet-directive.js" />
       <change beforePath="$PROJECT_DIR$/app/components/map-controller/map-ctrl.js" afterPath="$PROJECT_DIR$/app/components/map-controller/map-ctrl.js" />
-      <change beforePath="$PROJECT_DIR$/app/components/services/authentication-service.js" afterPath="$PROJECT_DIR$/app/components/services/authentication-service.js" />
-      <change beforePath="$PROJECT_DIR$/app/components/services/rolesConfig.js" afterPath="$PROJECT_DIR$/app/components/services/rolesConfig.js" />
+      <change beforePath="$PROJECT_DIR$/app/vincentJSON/Backbone-Dassa-Glazoue-Cable.geojson" afterPath="$PROJECT_DIR$/app/vincentJSON/Backbone-Dassa-Glazoue-Cable.geojson" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,21 +28,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="18" column="18" lean-forward="false" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+            <state relative-caret-position="384">
+              <caret line="40" column="54" lean-forward="true" selection-start-line="40" selection-start-column="54" selection-end-line="40" selection-end-column="54" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="authentication-service.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="authentication-service.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/components/services/authentication-service.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="458">
-              <caret line="34" column="44" lean-forward="true" selection-start-line="34" selection-start-column="44" selection-end-line="34" selection-end-column="44" />
+            <state relative-caret-position="387">
+              <caret line="35" column="47" lean-forward="false" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -53,15 +51,35 @@
       <file leaf-file-name="leaflet-directive.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/components/directives/leaflet-directive.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="39288">
-              <caret line="1664" column="83" lean-forward="false" selection-start-line="1664" selection-start-column="83" selection-end-line="1664" selection-end-column="83" />
+            <state relative-caret-position="254">
+              <caret line="1607" column="42" lean-forward="false" selection-start-line="1607" selection-start-column="42" selection-end-line="1607" selection-end-column="42" />
               <folding>
-                <marker date="1517395031062" expanded="true" signature="61206:61242" ph="data:" />
-                <marker date="1517395031062" expanded="true" signature="62202:62213" ph="..." />
-                <marker date="1517395031062" expanded="true" signature="63505:63511" ph="©" />
-                <marker date="1517395031062" expanded="true" signature="130241:130251" ph="..." />
-                <marker date="1517395031062" expanded="true" signature="130338:130348" ph="..." />
+                <marker date="1519329831329" expanded="true" signature="61411:61447" ph="data:" />
+                <marker date="1519329831329" expanded="true" signature="62407:62418" ph="..." />
+                <marker date="1519329831329" expanded="true" signature="63710:63716" ph="©" />
+                <marker date="1519329831329" expanded="true" signature="130446:130456" ph="..." />
+                <marker date="1519329831329" expanded="true" signature="130543:130553" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_popup.sass" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/sass/_popup.sass">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.sass" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/sass/main.sass">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1082">
+              <caret line="768" column="0" lean-forward="false" selection-start-line="768" selection-start-column="0" selection-end-line="768" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -95,8 +113,10 @@
         <entry file="file://$PROJECT_DIR$/app/assets/sass/_layer-controls.sass">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2808">
-              <caret line="117" column="25" lean-forward="false" selection-start-line="117" selection-start-column="19" selection-end-line="117" selection-end-column="25" />
-              <folding />
+              <caret line="126" column="25" lean-forward="false" selection-start-line="126" selection-start-column="19" selection-end-line="126" selection-end-column="25" />
+              <folding>
+                <marker date="1519324935594" expanded="true" signature="795:983" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -104,31 +124,21 @@
       <file leaf-file-name="map-ctrl.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/components/map-controller/map-ctrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="648">
-              <caret line="27" column="22" lean-forward="false" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
+            <state relative-caret-position="123">
+              <caret line="146" column="24" lean-forward="false" selection-start-line="146" selection-start-column="24" selection-end-line="146" selection-end-column="24" />
               <folding>
-                <marker date="1517393385062" expanded="true" signature="1269:1275" ph="©" />
-                <marker date="1517393385062" expanded="true" signature="6656:6673" ph="..." />
+                <marker date="1519329216012" expanded="true" signature="1269:1275" ph="©" />
+                <marker date="1519329216012" expanded="true" signature="6665:6682" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Roads.geojson" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/demoJSON/Roads.geojson">
+      <file leaf-file-name="Backbone-Dassa-Glazoue-Cable.geojson" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/vincentJSON/Backbone-Dassa-Glazoue-Cable.geojson">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main-ctrl.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/components/main-controller/main-ctrl.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="3" column="12" lean-forward="false" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+            <state relative-caret-position="288">
+              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -159,7 +169,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>metro</find>
       <find>leaflet-control-la</find>
       <find>measure</find>
       <find>check</find>
@@ -189,6 +198,7 @@
       <find>clas</find>
       <find>fill</find>
       <find>road</find>
+      <find>pop</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/app/components/authorization-controller</dir>
@@ -244,16 +254,17 @@
         <option value="$PROJECT_DIR$/app/populationJSON/Departments.geojson" />
         <option value="$PROJECT_DIR$/app/populationJSON/Province.geojson" />
         <option value="$PROJECT_DIR$/app/assets/sass/_media.sass" />
-        <option value="$PROJECT_DIR$/app/assets/sass/main.sass" />
         <option value="$PROJECT_DIR$/app/components/directives/layer-control-directive.js" />
         <option value="$PROJECT_DIR$/app/components/main-controller/main-ctrl.js" />
-        <option value="$PROJECT_DIR$/app/app.js" />
-        <option value="$PROJECT_DIR$/app/components/map-controller/map-ctrl.js" />
         <option value="$PROJECT_DIR$/app/vincentJSON/Backbone-Dassa-Glazoue-Report.geojson" />
         <option value="$PROJECT_DIR$/app/components/services/authentication-service.js" />
-        <option value="$PROJECT_DIR$/app/components/directives/leaflet-directive.js" />
         <option value="$PROJECT_DIR$/app/assets/sass/_layer-controls.sass" />
         <option value="$PROJECT_DIR$/app/components/services/rolesConfig.js" />
+        <option value="$PROJECT_DIR$/app/components/map-controller/map-ctrl.js" />
+        <option value="$PROJECT_DIR$/app/vincentJSON/Backbone-Dassa-Glazoue-Cable.geojson" />
+        <option value="$PROJECT_DIR$/app/components/directives/leaflet-directive.js" />
+        <option value="$PROJECT_DIR$/app/app.js" />
+        <option value="$PROJECT_DIR$/app/assets/sass/main.sass" />
       </list>
     </option>
   </component>
@@ -288,7 +299,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -305,21 +319,26 @@
               <item name="AngularVMap" type="b2602c69:ProjectViewProjectNode" />
               <item name="AngularVMap" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AngularVMap" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AngularVMap" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="sass" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AngularVMap" type="b2602c69:ProjectViewProjectNode" />
               <item name="AngularVMap" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="directives" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AngularVMap" type="b2602c69:ProjectViewProjectNode" />
               <item name="AngularVMap" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
+              <item name="pdf" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AngularVMap" type="b2602c69:ProjectViewProjectNode" />
@@ -331,9 +350,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -346,13 +362,6 @@
     <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\xiaom\IdeaProjects\AngularVMap\app\vincentJSON" />
-      <recent name="$PROJECT_DIR$/app/assets/fonts" />
-      <recent name="$PROJECT_DIR$/app/components/directives" />
-      <recent name="$PROJECT_DIR$/app/assets/img" />
-      <recent name="$PROJECT_DIR$/app/assets/libs/leaflet/css" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/GeoJSON" />
       <recent name="$PROJECT_DIR$/app/assets/css/font-awesome" />
@@ -360,6 +369,125 @@
       <recent name="$PROJECT_DIR$/app" />
       <recent name="$PROJECT_DIR$/app/components/map-controller" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\xiaom\IdeaProjects\AngularVMap\app\pdf" />
+      <recent name="C:\Users\xiaom\IdeaProjects\AngularVMap\app\vincentJSON" />
+      <recent name="$PROJECT_DIR$/app/assets/fonts" />
+      <recent name="$PROJECT_DIR$/app/components/directives" />
+      <recent name="$PROJECT_DIR$/app/assets/img" />
+    </key>
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/assets/css/main.min.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/assets/sass/_layer-controls.sass</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/components/directives/layer-control-directive.js</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -842,11 +970,14 @@
       <workItem from="1517243944696" duration="13000" />
       <workItem from="1517386319738" duration="9370000" />
       <workItem from="1517743022057" duration="29000" />
+      <workItem from="1518157367746" duration="80000" />
+      <workItem from="1518367516040" duration="1572000" />
+      <workItem from="1519324698508" duration="2877000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="322537000" />
+    <option name="totallyTimeSpent" value="327066000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -866,21 +997,21 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27901787" sideWeight="0.47014925" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2779018" sideWeight="0.47867805" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20200893" sideWeight="0.45415777" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27901787" sideWeight="0.5298507" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20200893" sideWeight="0.4520256" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2779018" sideWeight="0.52132195" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15458423" sideWeight="0.49405771" order="6" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15938166" sideWeight="0.49405771" order="6" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973147" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12674543" sideWeight="0.5059423" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12674543" sideWeight="0.5059423" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -977,13 +1108,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/assets/sass/_mixins.sass">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="509">
-          <caret line="47" column="81" lean-forward="true" selection-start-line="43" selection-start-column="4" selection-end-line="47" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/libs/leaflet/leaflet-search.src.js" />
     <entry file="file://$PROJECT_DIR$/app/assets/libs/leaflet/multi-style-layer.js" />
     <entry file="file://$PROJECT_DIR$/app/assets/libs/leaflet/OSMBuildings-Leaflet.js" />
@@ -1190,7 +1314,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
           <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1208,25 +1331,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/sass/main.sass">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19344">
-          <caret line="806" column="0" lean-forward="false" selection-start-line="806" selection-start-column="0" selection-end-line="806" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/components/directives/layer-control-directive.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
           <caret line="25" column="85" lean-forward="false" selection-start-line="25" selection-start-column="85" selection-end-line="25" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="18" column="18" lean-forward="false" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1243,24 +1351,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/map-controller/map-ctrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="27" column="22" lean-forward="false" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
-          <folding>
-            <marker date="1517393385062" expanded="true" signature="1269:1275" ph="©" />
-            <marker date="1517393385062" expanded="true" signature="6656:6673" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/vincentJSON/Backbone-Dassa-Glazoue-Cable.geojson">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="5" column="110" lean-forward="false" selection-start-line="5" selection-start-column="90" selection-end-line="5" selection-end-column="110" />
         </state>
       </provider>
     </entry>
@@ -1331,6 +1421,59 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/services/rolesConfig.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6960">
+          <caret line="290" column="29" lean-forward="false" selection-start-line="290" selection-start-column="29" selection-end-line="290" selection-end-column="29" />
+          <folding>
+            <element signature="e#18978#22937#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/sass/_layer-controls.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2808">
+          <caret line="126" column="25" lean-forward="false" selection-start-line="126" selection-start-column="19" selection-end-line="126" selection-end-column="25" />
+          <folding>
+            <marker date="1519324935594" expanded="true" signature="795:983" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/map-controller/map-ctrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="146" column="24" lean-forward="false" selection-start-line="146" selection-start-column="24" selection-end-line="146" selection-end-column="24" />
+          <folding>
+            <marker date="1519329216012" expanded="true" signature="1269:1275" ph="©" />
+            <marker date="1519329216012" expanded="true" signature="6665:6682" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/directives/leaflet-directive.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="1607" column="42" lean-forward="false" selection-start-line="1607" selection-start-column="42" selection-end-line="1607" selection-end-column="42" />
+          <folding>
+            <marker date="1519329831329" expanded="true" signature="61411:61447" ph="data:" />
+            <marker date="1519329831329" expanded="true" signature="62407:62418" ph="..." />
+            <marker date="1519329831329" expanded="true" signature="63710:63716" ph="©" />
+            <marker date="1519329831329" expanded="true" signature="130446:130456" ph="..." />
+            <marker date="1519329831329" expanded="true" signature="130543:130553" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/sass/_popup.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/vincentJSON/Backbone-Dassa-Glazoue-Report.geojson">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
@@ -1354,42 +1497,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/directives/leaflet-directive.js">
+    <entry file="file://$PROJECT_DIR$/app/vincentJSON/Backbone-Dassa-Glazoue-Cable.geojson">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="39288">
-          <caret line="1664" column="83" lean-forward="false" selection-start-line="1664" selection-start-column="83" selection-end-line="1664" selection-end-column="83" />
-          <folding>
-            <marker date="1517395031062" expanded="true" signature="61206:61242" ph="data:" />
-            <marker date="1517395031062" expanded="true" signature="62202:62213" ph="..." />
-            <marker date="1517395031062" expanded="true" signature="63505:63511" ph="©" />
-            <marker date="1517395031062" expanded="true" signature="130241:130251" ph="..." />
-            <marker date="1517395031062" expanded="true" signature="130338:130348" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/services/rolesConfig.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6960">
-          <caret line="290" column="29" lean-forward="false" selection-start-line="290" selection-start-column="29" selection-end-line="290" selection-end-column="29" />
-          <folding>
-            <element signature="e#18978#22937#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/sass/_layer-controls.sass">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2808">
-          <caret line="117" column="25" lean-forward="false" selection-start-line="117" selection-start-column="19" selection-end-line="117" selection-end-column="25" />
+        <state relative-caret-position="288">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/components/services/authentication-service.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="34" column="44" lean-forward="true" selection-start-line="34" selection-start-column="44" selection-end-line="34" selection-end-column="44" />
+        <state relative-caret-position="387">
+          <caret line="35" column="47" lean-forward="false" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/sass/main.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1082">
+          <caret line="768" column="0" lean-forward="false" selection-start-line="768" selection-start-column="0" selection-end-line="768" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="40" column="54" lean-forward="true" selection-start-line="40" selection-start-column="54" selection-end-line="40" selection-end-column="54" />
           <folding />
         </state>
       </provider>

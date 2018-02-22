@@ -144,13 +144,13 @@
 					$scope.userLayers = rolesConfig.btsLayers;
 					$scope.userLayersConfig = rolesConfig.testGeoJSON;
 				break;
-				default:					
-					$scope.vmap.lng = 2.385152;
-					$scope.vmap.lat = 6.369213;
-					userLayersCount = Object.keys(rolesConfig.demoLayers).length;
-					getLayers(rolesConfig.demoLayers, 'demoJSON', userLayersCount);
-					$scope.userLayers = rolesConfig.demoLayers;
-					$scope.userLayersConfig = rolesConfig.demoJSON;
+				default:
+					$scope.vmap.lng = 2.24078;
+					$scope.vmap.lat = 7.973468;
+					userLayersCount = Object.keys(rolesConfig.vincentLayers).length;
+					getLayers(rolesConfig.vincentLayers, 'vincentJSON', userLayersCount);
+					$scope.userLayers = rolesConfig.vincentLayers;
+					$scope.userLayersConfig = rolesConfig.vincentJSON;
 			};
 
 			$scope.$watchCollection('layers.overlays', function(allArray) {

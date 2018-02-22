@@ -1605,6 +1605,10 @@
 					feature.properties[columns[i]] !== null && feature.properties[columns[i]] !== undefined ?
 					content += '<div><span>' + columns[i] + ':</span> ' + feature.properties[columns[i]] +'</div>' : '';
 				}
+				if (feature.properties.pdf) {
+					console.log(feature.properties.file);
+					content += '<a href="pdf/'+ feature.properties.pdf + '.pdf" class="pdf-link" target="_blank">' + 'Open PDF' + '</a>'
+				}
 				return content;
 			};
 
