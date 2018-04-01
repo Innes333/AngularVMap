@@ -65,7 +65,7 @@
                     opacity: 1,
                     fillOpacity: 1,
                     weight: 1.0,
-                    radius: 3,
+                    radius: 4,
                     popupColumns: [
                         'City_Region',
                         'Location_Type',
@@ -90,7 +90,7 @@
                     opacity: 1,
                     fillOpacity: 1,
                     weight: 1.0,
-                    radius: 3,
+                    radius: 4,
                     popupColumns: [
                         'City_Region',
                         'Location_Type',
@@ -139,7 +139,7 @@
                     opacity: 1,
                     fillOpacity: 1,
                     weight: 1.0,
-                    radius: 3,
+                    radius: 2,
                     popupColumns: [
                         'City_Region',
                         'Location_Type',
@@ -151,7 +151,7 @@
                         'Longitude',
                         'Latitude'
 	                ],
-	                category: 'sc'
+	                category: 'other'
                 },      
                 demand: {
                     name: 'Demand',
@@ -219,7 +219,7 @@
             demoLayers: {
                 ar: 'ar',
                 cross: 'cross',
-                // demand: 'demand',
+                demand: 'demand',
 				ofc_12: 'ofc_12',
 				ofc_144: 'ofc_144',
 				otb: 'otb',
