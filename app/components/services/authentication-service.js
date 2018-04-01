@@ -6,36 +6,11 @@
 
 				this.Login = function(user, callback) {
 					var roles = {
-						demo: [{
-							name: 'demo',
-							password: 'vmaps',
-							role: 'demo'
-						}],
-						presidence: [{
-							name: 'presidence',
-							password: '123+',
-							role: 'presidence'
-						}],
-						bti: [{
-							name: 'bti',
-							password: '123+',
-							role: 'bti'
-						}],
-						bts: [{
-							name: 'bts',
-							password: '123+',
-							role: 'bts'
-						}],
-						population: [{
-							name: 'Gabon',
-							password: 'pop',
-							role: 'population'
-						}],
-						vincent: [{
-							name: 'Vincent',
-							password: 'DEDJINOU',
-							role: 'vincent'
-						}]
+						togo: [{
+							name: 'Togo',
+							password: 'demo',
+							role: 'admin',
+						}]						
 					};
 					for(role in roles) {
 						var item = roles[role];

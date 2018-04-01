@@ -97,60 +97,20 @@
 
 			switch (currentUser) {
 				case 'demo':
-					$scope.vmap.lng = 2.385152;
-					$scope.vmap.lat = 6.369213;
+					$scope.vmap.lng = 1.240906;
+					$scope.vmap.lat = 6.130398;
 					userLayersCount = Object.keys(rolesConfig.demoLayers).length;
 					getLayers(rolesConfig.demoLayers, 'demoJSON', userLayersCount);
 					$scope.userLayers = rolesConfig.demoLayers;
 					$scope.userLayersConfig = rolesConfig.demoJSON;
-				break;
-				case 'Vincent':
-					$scope.vmap.lng = 2.24078;
-					$scope.vmap.lat = 7.973468;
-					userLayersCount = Object.keys(rolesConfig.vincentLayers).length;
-					getLayers(rolesConfig.vincentLayers, 'vincentJSON', userLayersCount);
-					$scope.userLayers = rolesConfig.vincentLayers;
-					$scope.userLayersConfig = rolesConfig.vincentJSON;
-				break;
-				case 'Gabon':
-					$scope.vmap.lat = 0.60393;
-					$scope.vmap.lng = 9.650924;
-					$scope.vmap.zoom = 9;
-					$scope.legend = {
-						position: 'bottomright',
-						colors: [ '#1a9641', '#77c35c', '#9cbf5a', '#e2e250', '#fec981', '#f17c4a', '#b73d2b', '#830c0e' ],
-						labels: [ '0 - 150', '150 - 500', '500 - 1000', '1000 - 2500', '2500 - 4000', '4000 - 6500', '6500 - 13000', '13000 - 80000' ]
-					};
-					getLayers(rolesConfig.populationLayers, 'populationJSON');
-					userLayersCount = Object.keys(rolesConfig.populationLayers).length;
-					$scope.userLayers = rolesConfig.populationLayers;
-					$scope.userLayersConfig = rolesConfig.populationJSON;
-				break;
-				case 'presidence':
-					getLayers(rolesConfig.presidenceLayers, 'testGeoJSON');
-					userLayersCount = Object.keys(rolesConfig.presidenceLayers).length;
-					$scope.userLayers = rolesConfig.presidenceLayers;
-					$scope.userLayersConfig = rolesConfig.testGeoJSON;
-				break;
-				case 'bti':
-					getLayers(rolesConfig.btiLayers, 'testGeoJSON');
-					userLayersCount = Object.keys(rolesConfig.btiLayers).length;
-					$scope.userLayers = rolesConfig.btiLayers;
-					$scope.userLayersConfig = rolesConfig.testGeoJSON;
-				break;
-				case 'bts':
-					getLayers(rolesConfig.btsLayers, 'testGeoJSON');
-					userLayersCount = Object.keys(rolesConfig.btsLayers).lengt;
-					$scope.userLayers = rolesConfig.btsLayers;
-					$scope.userLayersConfig = rolesConfig.testGeoJSON;
-				break;
+				break;							
 				default:
-					$scope.vmap.lng = 2.24078;
-					$scope.vmap.lat = 7.973468;
-					userLayersCount = Object.keys(rolesConfig.vincentLayers).length;
-					getLayers(rolesConfig.vincentLayers, 'vincentJSON', userLayersCount);
-					$scope.userLayers = rolesConfig.vincentLayers;
-					$scope.userLayersConfig = rolesConfig.vincentJSON;
+					$scope.vmap.lng = 1.240906;
+					$scope.vmap.lat = 6.130398;
+					userLayersCount = Object.keys(rolesConfig.demoLayers).length;
+					getLayers(rolesConfig.demoLayers, 'demoJSON', userLayersCount);
+					$scope.userLayers = rolesConfig.demoLayers;
+					$scope.userLayersConfig = rolesConfig.demoJSON;
 			};
 
 			$scope.$watchCollection('layers.overlays', function(allArray) {
@@ -213,8 +173,8 @@
 			// 		$scope.isActive = false;
 			// 	}
 			// }
-			$scope.toggleLayer = function(overlayName) {
 
+			$scope.toggleLayer = function(overlayName) {
                 if (overlays.hasOwnProperty(overlayName)) {
                     delete overlays[overlayName];
                     $scope.isActive = !$scope.isActive;
@@ -222,7 +182,16 @@
                 } else {
                     overlays[overlayName] = baseMapLayer;
                 }
-            };
+			};
+			
+			// changee city location
+			$scope.cityOptions = ['Lome', 'Tabligbo', 'Kara'];
+  
+			$scope.selectedCityChanged = function(){
+				var cityLoc = rolesConfig.cityLocation[$scope.selectedCity];
+				$scope.vmap.lng = cityLoc.lng;
+				$scope.vmap.lat = cityLoc.lat;
+			}
 
 
 	}]);

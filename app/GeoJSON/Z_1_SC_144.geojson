@@ -1,9 +1,0 @@
-{
-"type": "FeatureCollection",
-"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
-"features": [
-{ "type": "Feature", "properties": { "City_Region": "Libreville", "Location_Type": "Pole", "Location_ID": null, "Splice_Closure_name": "SC_144_17", "Splice_Closure_serial_number": null, "Splice_Closure_installation_dat": null, "Splice_Closure_Template": "Optical Splice Box for 144FO", "Comment": null, "Longitude": 545445.84115657012, "Latitude": 55669.888555683399, "ID_Prov": "Temp_SC_144_9", "search_id": "SC_144_17" }, "geometry": { "type": "Point", "coordinates": [ 9.40842248301869, 0.503649946177348 ] } },
-{ "type": "Feature", "properties": { "City_Region": "Libreville", "Location_Type": "Pole", "Location_ID": null, "Splice_Closure_name": "SC_144_19", "Splice_Closure_serial_number": null, "Splice_Closure_installation_dat": null, "Splice_Closure_Template": "Optical Splice Box for 144FO", "Comment": null, "Longitude": 545815.30445609533, "Latitude": 55406.232222165214, "ID_Prov": "Temp_SC_144_10", "search_id": "SC_144_19" }, "geometry": { "type": "Point", "coordinates": [ 9.411742619243604, 0.501264385002739 ] } },
-{ "type": "Feature", "properties": { "City_Region": "Libreville", "Location_Type": "Pole", "Location_ID": null, "Splice_Closure_name": "SC_144_18", "Splice_Closure_serial_number": null, "Splice_Closure_installation_dat": null, "Splice_Closure_Template": "Optical Splice Box for 144FO", "Comment": null, "Longitude": 545543.22457770549, "Latitude": 55545.463881964773, "ID_Prov": "Temp_SC_144_31", "search_id": "SC_144_18" }, "geometry": { "type": "Point", "coordinates": [ 9.409297553506086, 0.502524163459824 ] } }
-]
-}
