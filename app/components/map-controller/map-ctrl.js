@@ -15,9 +15,9 @@
 					zoom: 16
 				},
 				defaults: {
-					zoomAnimation: false,
+					zoomAnimation: true,
 					markerZoomAnimation: false,
-					fadeAnimation: false
+					fadeAnimation: true
 				},
 				controls: {
 					custom: new L.Control.Measure({
