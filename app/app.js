@@ -5,10 +5,6 @@
 			$httpProvider.defaults.headers.delete = {'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'};
 			$httpProvider.defaults.useXDomain     = true;
 			$routeProvider
-				.when('/', {
-					templateUrl: 'components/authorization-controller/authorization-contoller.html',
-					controller: 'loginCtrl'
-				})
 				.when('/map', {
 					templateUrl: 'components/map-controller/map-ctrl.html',
 					controller: 'mapCtrl',
@@ -22,7 +18,7 @@
 					controller: 'mapCtrl'
 				})
 				.otherwise({
-					redirectTo: '/'
+					redirectTo: '/map'
 				});
 
 		}])
@@ -30,19 +26,13 @@
 			function($window, $rootScope, $http, $location, $localStorage, $route, $timeout) {
 
 			$rootScope.$on('$locationChangeStart', function (event, next, current) {
-				var publicPages = ['/'],
-					restrictedPage = publicPages.indexOf($location.path()) === -1;
-				if (restrictedPage && !$rootScope.appConfig.user){
-					$location.path('/');
-				} else if(!$rootScope.appConfig.user){
-					$location.path('/');
-					$rootScope.appConfig.user = false;
-				}
 				$rootScope.appConfig.preloader = true;
 			});
 
 			$rootScope.$on('$routeChangeSuccess', function() {
-				$rootScope.appConfig.preloader = false;
+				if (window.location.href.indexOf('/map') === -1) {
+					$rootScope.appConfig.preloader = false;
+				}
 			});
 
 			$rootScope.appConfig = {

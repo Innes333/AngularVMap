@@ -159,8 +159,14 @@
                     pane: 'overlayPane',
                     type: 'poly',
                     url: 'demoJSON/Demand_LOM_AR3',
-                    color: '#757575',
-                    fillColor: '#757575',
+                    color: {
+                        connected: '#1ABC9C',
+                        unconnected: '#757575',
+                    },
+                    fillColor: {
+                        connected: '#1ABC9C',
+                        unconnected: '#757575',
+                    },
                     opacity: 1,
                     fillOpacity: 0.3,
                     weight: 1.0,

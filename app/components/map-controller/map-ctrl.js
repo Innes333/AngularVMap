@@ -86,8 +86,7 @@
 					});
 			};
 
-			var currentUser = $rootScope.appConfig.user.username,
-				userLayersCount = 0;
+			var userLayersCount = 0;
 
 			var getLayers = function(nameOfLayers, url) {				
 				for (var layer in nameOfLayers) {
@@ -95,28 +94,20 @@
 				}					
 			};
 
-			switch (currentUser) {
-				case 'demo':
-					$scope.vmap.lng = 1.240906;
-					$scope.vmap.lat = 6.130398;
-					userLayersCount = Object.keys(rolesConfig.demoLayers).length;
-					getLayers(rolesConfig.demoLayers, 'demoJSON', userLayersCount);
-					$scope.userLayers = rolesConfig.demoLayers;
-					$scope.userLayersConfig = rolesConfig.demoJSON;
-				break;							
-				default:
-					$scope.vmap.lng = 1.240906;
-					$scope.vmap.lat = 6.130398;
-					userLayersCount = Object.keys(rolesConfig.demoLayers).length;
-					getLayers(rolesConfig.demoLayers, 'demoJSON', userLayersCount);
-					$scope.userLayers = rolesConfig.demoLayers;
-					$scope.userLayersConfig = rolesConfig.demoJSON;
-			};
+	
+			$scope.vmap.lng = 1.240906;
+			$scope.vmap.lat = 6.130398;
+			userLayersCount = Object.keys(rolesConfig.demoLayers).length;
+			getLayers(rolesConfig.demoLayers, 'demoJSON', userLayersCount);
+			$scope.userLayers = rolesConfig.demoLayers;
+			$scope.userLayersConfig = rolesConfig.demoJSON;
+			
 
 			$scope.$watchCollection('layers.overlays', function(allArray) {
 				leafletData.getLayers('map').then(function(baselayers) {
 					// check if all layers are loaded
 					if (Object.keys(allArray).length === userLayersCount) {
+						$rootScope.appConfig.preloader = false;
 						// move to front a layer										
 						if ($scope.userLayersConfig.topLayers) {
 							for (var i=0; i < $scope.userLayersConfig.topLayers.length; i++) {
