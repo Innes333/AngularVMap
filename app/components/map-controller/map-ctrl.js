@@ -117,6 +117,7 @@
 				leafletData.getLayers('map').then(function(baselayers) {
 					// check if all layers are loaded
 					if (Object.keys(allArray).length === userLayersCount) {
+						$rootScope.appConfig.preloader = false;
 						// move to front a layer										
 						if ($scope.userLayersConfig.topLayers) {
 							for (var i=0; i < $scope.userLayersConfig.topLayers.length; i++) {

@@ -42,7 +42,9 @@
 			});
 
 			$rootScope.$on('$routeChangeSuccess', function() {
-				$rootScope.appConfig.preloader = false;
+				if (window.location.href.indexOf('/map') === -1) {
+					$rootScope.appConfig.preloader = false;
+				}
 			});
 
 			$rootScope.appConfig = {
