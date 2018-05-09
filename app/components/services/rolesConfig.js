@@ -74,6 +74,7 @@
                         'OTB_serial_number',
                         'OTB_installation_date',
                         'OTB_Template',
+	                    'MQ',
                         'Longitude',
                         'Latitude'
 	                ],
@@ -99,6 +100,7 @@
                         'OTB_serial_number',
                         'OTB_installation_date',
                         'OTB_Template',
+	                    'MQ',
                         'Longitude',
                         'Latitude'
 	                ],
@@ -167,13 +169,14 @@
                     popupColumns: [
                         'OTB_City_Region',
                         'OTB_Name',
+	                    'MQ',
                         'BuildingID',
                         'Internal_Floors'
 	                ],
 	                category: 'other'
                 },       
-                ar: {
-                    name: 'AR',
+                area: {
+                    name: 'Area',
                     className: 'ar',
                     pane: 'overlayPane',
                     type: 'poly',
@@ -187,6 +190,7 @@
                         'OTB_Name',
                         'ID',
                         'ID_provisoire',
+                        'MQ',
                         'Status'
 	                ],
 	                category: 'other'
@@ -217,7 +221,7 @@
                 },                          
             },            
             demoLayers: {
-                ar: 'ar',
+                area: 'area',
                 cross: 'cross',
                 demand: 'demand',
 				ofc_12: 'ofc_12',
