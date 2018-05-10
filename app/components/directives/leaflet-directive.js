@@ -1606,8 +1606,11 @@
 					content += '<div><span>' + columns[i] + ':</span> ' + feature.properties[columns[i]] +'</div>' : '';
 				}
 				if (feature.properties.pdf) {
-					console.log(feature.properties.file);
 					content += '<a href="pdf/'+ feature.properties.pdf + '.pdf" class="pdf-link" target="_blank">' + 'Open PDF' + '</a>'
+				}
+				if (feature.properties.img) {
+					console.log(feature.properties.img);
+					content += '<div class="popup-img"><img src="img/'+ feature.properties.img + '"/></div>'
 				}
 				return content;
 			};
