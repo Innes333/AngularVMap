@@ -40,7 +40,8 @@
 	                            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 	                            continuousWorld: true,
 	                            showOnSelector: true,
-   								maxZoom: 25
+								maxZoom: 25,
+								preferCanvas: true
 	                        }
 	                    }
 					},
@@ -49,7 +50,7 @@
 			});
 
 	        // get map object from $scope
-	        var map = leafletData.getMap('map');
+			var map = leafletData.getMap('map');
 		
 			// addLayer
 			var addLayer = function(layer, layerName) {
@@ -62,6 +63,7 @@
 						$scope.layers.overlays[layerName] = {
 							name: overlayName,
 							type: layerType,
+							renderer: L.canvas(),
 							data: response.data,
 							visible: true,
 							clickable: true,
@@ -145,12 +147,12 @@
 					$scope.userLayersConfig = rolesConfig.testGeoJSON;
 				break;
 				default:
-					$scope.vmap.lng = 2.24078;
-					$scope.vmap.lat = 7.973468;
-					userLayersCount = Object.keys(rolesConfig.vincentLayers).length;
-					getLayers(rolesConfig.vincentLayers, 'vincentJSON', userLayersCount);
-					$scope.userLayers = rolesConfig.vincentLayers;
-					$scope.userLayersConfig = rolesConfig.vincentJSON;
+					$scope.vmap.lng = 2.385152;
+					$scope.vmap.lat = 6.369213;
+					userLayersCount = Object.keys(rolesConfig.demoLayers).length;
+					getLayers(rolesConfig.demoLayers, 'demoJSON', userLayersCount);
+					$scope.userLayers = rolesConfig.demoLayers;
+					$scope.userLayersConfig = rolesConfig.demoJSON;
 			};
 
 			$scope.$watchCollection('layers.overlays', function(allArray) {
