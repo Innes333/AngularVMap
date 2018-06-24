@@ -1694,8 +1694,7 @@
 					mustHaveUrl: false,
 					createLayer: function (params) {		
 						var styleSetter = function(feature) {
-							if (typeof params.options.color === 'object' && typeof params.options.fillColor === 'object') {		
-								console.log(params.options.color[feature.properties.class]);	
+							if (typeof params.options.color === 'object' && typeof params.options.fillColor === 'object') {	
 								return { 
 									fillColor: params.options.fillColor[feature.properties.class],
 									color: params.options.color[feature.properties.class],
@@ -1711,10 +1710,10 @@
 								return params.options;
 							}		
 						}
-						
-							
+													
 						return new L.geoJson(params.data, {
 							style: styleSetter,
+							renderer: L.canvas(),
 							onEachFeature: function (feature, layer) {
 								layer.bindPopup(createPopupContent(feature, layer, params.options));
 							}

@@ -13,7 +13,7 @@
                     className: 'ofc_12',
                     pane: 'overlayPane',
                     type: 'line',
-                    url: 'demoJSON/OFC12_LOM_AR3',
+                    url:'http://137.74.82.193:3000/ofc_12',
                     color: '#00E5FF',
                     fillColor: '#00E5FF',
                     opacity: 1,
@@ -36,7 +36,7 @@
                     className: 'ofc_144',
                     pane: 'overlayPane',
                     type: 'line',
-                    url: 'demoJSON/OFC144_LOM_AR3',
+                    url: 'http://137.74.82.193:3000/ofc_144',
                     color: '#1A237E',
                     fillColor: '#1A237E',
                     opacity: 1,
@@ -158,7 +158,7 @@
                     className: 'demand',
                     pane: 'overlayPane',
                     type: 'poly',
-                    url: 'demoJSON/Demand_LOM_AR3',
+                    url: 'http://137.74.82.193:3000/demand',
                     color: {
                         connected: '#1ABC9C',
                         unconnected: '#757575',
@@ -171,10 +171,7 @@
                     fillOpacity: 0.3,
                     weight: 1.0,
                     popupColumns: [
-                        'OTB_City_Region',
-                        'OTB_Name',
-                        'BuildingID',
-                        'Internal_Floors'
+                        'id', 'otb_city_region', 'otb_name', 'internal_floors', 'comment', 'mq', 'search_id', 'connected'
 	                ],
 	                category: 'other'
                 },       
@@ -223,15 +220,15 @@
                 },                          
             },            
             demoLayers: {
-                ar: 'ar',
-                cross: 'cross',
+                // ar: 'ar',
+                // cross: 'cross',
                 demand: 'demand',
 				ofc_12: 'ofc_12',
 				ofc_144: 'ofc_144',
-				otb: 'otb',
-				otbb: 'otbb',
-				sc144: 'sc144',
-				poles: 'poles'
+				// otb: 'otb',
+				// otbb: 'otbb',
+				// sc144: 'sc144',
+				// poles: 'poles'
             },	
             cityLocation: {
                 Lome: {

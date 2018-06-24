@@ -57,7 +57,7 @@
 					'geoJSONPolyline' : 'geoJSONSVGMarker';
 				var overlayName = '<span class="check"><span class="checked"></span></span><span class="'
 				 + layer.type + ' ' + layerName + '"></span>' + layer.name;
-				dataService.getData(layer.url + '.geojson')
+				dataService.getData(layer.url)
 					.then(function (response) {
 						$scope.layers.overlays[layerName] = {
 							name: overlayName,
@@ -93,12 +93,12 @@
 					addLayer(rolesConfig[url][layer], layer);					
 				}					
 			};
-
+			
 	
 			$scope.vmap.lng = 1.240906;
 			$scope.vmap.lat = 6.130398;
 			userLayersCount = Object.keys(rolesConfig.demoLayers).length;
-			getLayers(rolesConfig.demoLayers, 'demoJSON', userLayersCount);
+			getLayers(rolesConfig.demoLayers, 'demoJSON');
 			$scope.userLayers = rolesConfig.demoLayers;
 			$scope.userLayersConfig = rolesConfig.demoJSON;
 			
@@ -109,11 +109,11 @@
 					if (Object.keys(allArray).length === userLayersCount) {
 						$rootScope.appConfig.preloader = false;
 						// move to front a layer										
-						if ($scope.userLayersConfig.topLayers) {
-							for (var i=0; i < $scope.userLayersConfig.topLayers.length; i++) {
-								baselayers.overlays[$scope.userLayersConfig.topLayers[i]].bringToFront();
-							}
-						}							
+						// if ($scope.userLayersConfig.topLayers) {
+						// 	for (var i=0; i < $scope.userLayersConfig.topLayers.length; i++) {
+						// 		baselayers.overlays[$scope.userLayersConfig.topLayers[i]].bringToFront();
+						// 	}
+						// }							
 						
 						var poiLayers;
 						// Prepare array of overlay layers
