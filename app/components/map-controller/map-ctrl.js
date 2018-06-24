@@ -57,7 +57,7 @@
 					'geoJSONPolyline' : 'geoJSONSVGMarker';
 				var overlayName = '<span class="check"><span class="checked"></span></span><span class="'
 				 + layer.type + ' ' + layerName + '"></span>' + layer.name;
-				dataService.getData(layer.url + '.geojson')
+				dataService.getData(layer.url)
 					.then(function (response) {
 						$scope.layers.overlays[layerName] = {
 							name: overlayName,
@@ -119,11 +119,11 @@
 					if (Object.keys(allArray).length === userLayersCount) {
 						$rootScope.appConfig.preloader = false;
 						// move to front a layer										
-						if ($scope.userLayersConfig.topLayers) {
-							for (var i=0; i < $scope.userLayersConfig.topLayers.length; i++) {
-								baselayers.overlays[$scope.userLayersConfig.topLayers[i]].bringToFront();
-							}
-						}							
+						// if ($scope.userLayersConfig.topLayers) {
+						// 	for (var i=0; i < $scope.userLayersConfig.topLayers.length; i++) {
+						// 		baselayers.overlays[$scope.userLayersConfig.topLayers[i]].bringToFront();
+						// 	}
+						// }							
 						
 						var poiLayers;
 						// Prepare array of overlay layers

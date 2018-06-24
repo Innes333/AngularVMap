@@ -1665,7 +1665,7 @@
 				},
 				geoJSONSVGMarker: {
 					mustHaveUrl: false,
-					createLayer: function(params) {
+					createLayer: function(params) {												
 						return new L.geoJson(params.data, {
 							pointToLayer: function(feature, latlng) {
 								var styles;
@@ -1760,6 +1760,7 @@
 							
 						return new L.geoJson(params.data, {
 							style: styleSetter,
+							renderer: L.canvas(),
 							onEachFeature: function (feature, layer) {
 								layer.bindPopup(createPopupContent(feature, layer, params.options));
 							}
