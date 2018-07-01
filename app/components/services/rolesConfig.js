@@ -8,10 +8,23 @@
             itemsUrl:	'testJson.json',
             demoJSON: {
                 topLayers: ['otb', 'sc144', 'otbb'],
+                loadFirst: [
+                    'area',
+                    'cross',
+                    'fig_8',
+                    'ofc_12',
+                    'ofc_48',
+                    'ofc_144',
+                    'otb',
+                    'otbb',
+                    'sc',
+                    'sc144',
+                    'sc48',
+                ],
                 fig_8: {
                     name: 'CABLE',
                     className: 'fig_8',
-                    pane: 'tilePane',
+                    pane: 'overlayPane',
                     type: 'line',
                     url: 'http://137.74.82.193:3000/fig_8',
                     color: '#FFD600',
@@ -31,12 +44,39 @@
                         'id_prov', 
                         'planed_installation_week'
 	                ],
-                    category: 'ofc'
+                    category: 'ofc',
+                    zone: 'Arrondissement_1'
+                },    
+                test: {
+                    name: 'Test',
+                    className: 'test',
+                    pane: 'overlayPane',
+                    type: 'line',
+                    url: 'http://137.74.82.193:3000/fig_8',
+                    color: '#FFD600',
+                    fillColor: '#FFD600',
+                    opacity: 1,
+                    fillOpacity: 1,
+                    weight: 1.0,
+                    popupColumns: [
+                        'id', 
+                        'osp_cable_name', 
+                        'osp_cable_installation_date', 
+                        'osp_cable_template',
+                        'comment',
+                        'marker_start',
+                        'marker_stop', 
+                        'cable_lenght', 
+                        'id_prov', 
+                        'planed_installation_week'
+	                ],
+                    category: 'ofc',
+                    zone: 'Arrondissement_2'
                 },    
                 ofc_12: {
                     name: 'OFC-12',
                     className: 'ofc_12',
-                    pane: 'tilePane',
+                    pane: 'overlayPane',
                     type: 'line',
                     url: 'http://137.74.82.193:3000/ofc_12',
                     color: '#00B0FF',
@@ -56,12 +96,13 @@
                         'id_prov', 
                         'planed_installation_week'
 	                ],
-                    category: 'ofc'
+                    category: 'ofc',
+                    zone: 'Arrondissement_1'
                 },     
                 ofc_48: {
                     name: 'OFC-48',
                     className: 'ofc_48',
-                    pane: 'tilePane',
+                    pane: 'overlayPane',
                     type: 'line',
                     url: 'http://137.74.82.193:3000/ofc_48',
                     color: '#BF360C ',
@@ -81,12 +122,13 @@
                         'id_prov', 
                         'planed_installation_week'
 	                ],
-                    category: 'ofc'
+                    category: 'ofc',
+                    zone: 'Arrondissement_1'
                 },     
                 ofc_144: {
                     name: 'OFC-144',
                     className: 'ofc_144',
-                    pane: 'tilePane',
+                    pane: 'overlayPane',
                     type: 'line',
                     url: 'http://137.74.82.193:3000/ofc_144',
                     color: '#1A237E',
@@ -105,12 +147,13 @@
                         'id_prov', 
                         'Planned_Installation_Week'
 	                ],
-	                category: 'ofc'
+                    category: 'ofc',
+                    zone: 'Arrondissement_1'
                 },
                 otb: {
                     name: 'OTB',
                     className: 'otb',
-                    pane: 'tilePane',
+                    pane: 'overlayPane',
                     type: 'point',
                     url: 'http://137.74.82.193:3000/otb',
                     color: '#ccc',
@@ -136,12 +179,13 @@
                         'comment',
                         'id_prov'
 	                ],
-	                category: 'otb_lines'
+                    category: 'otb_lines',
+                    zone: 'Arrondissement_1'
                 },
                 otbb: {
                     name: 'OTBB',
                     className: 'otbb',
-                    pane: 'tilePane',
+                    pane: 'overlayPane',
                     type: 'point',
                     url: 'http://137.74.82.193:3000/otbb',
                     color: '#666',
@@ -167,12 +211,13 @@
                         'comment',
                         'id_prov'
 	                ],
-	                category: 'otb_lines'
+                    category: 'otb_lines',
+                    zone: 'Arrondissement_1'
                 },               
                 sc: {
                     name: 'SC',
                     className: 'sc',
-                    pane: 'tilePane',
+                    pane: 'overlayPane',
                     type: 'point',
                     url: 'http://137.74.82.193:3000/sc',
                     color: '#333333',
@@ -185,12 +230,13 @@
                         'id', 
                         'name'
 	                ],
-	                category: 'sc_points'
+                    category: 'sc_points',
+                    zone: 'Arrondissement_1'
                 },
                 sc48: {
                     name: 'SC-48',
                     className: 'sc48',
-                    pane: 'tilePane',
+                    pane: 'overlayPane',
                     type: 'point',
                     url: 'http://137.74.82.193:3000/sc_48',
                     color: '#333333',
@@ -213,12 +259,42 @@
                         'longitude', 
                         'id_prov'
 	                ],
-	                category: 'sc_points'
+                    category: 'sc_points',
+                    zone: 'Arrondissement_1'
+                },
+                test2: {
+                    name: 'Test2',
+                    className: 'test2',
+                    pane: 'overlayPane',
+                    type: 'point',
+                    url: 'http://137.74.82.193:3000/sc_48',
+                    color: '#333333',
+                    fillColor: '#C0392B',
+                    opacity: 1,
+                    fillOpacity: 1,
+                    weight: 1.0,
+                    radius: 3,
+                    popupColumns: [
+                        'id', 
+                        'city_region', 
+                        'location_type', 
+                        'location_id', 
+                        'splice_closure_name', 
+                        'splice_closure_serial_number', 
+                        'splice_closure_installation_dat', 
+                        'splice_closure_template', 
+                        'comment', 
+                        'latitude', 
+                        'longitude', 
+                        'id_prov'
+	                ],
+                    category: 'sc_points',
+                    zone: 'Arrondissement_3'
                 },
                 sc144: {
                     name: 'SC-144',
                     className: 'sc144',
-                    pane: 'tilePane',
+                    pane: 'overlayPane',
                     type: 'point',
                     url: 'http://137.74.82.193:3000/sc_144',
                     color: '#333333',
@@ -241,7 +317,8 @@
                         'longitude', 
                         'id_prov'
 	                ],
-	                category: 'sc_points'
+                    category: 'sc_points',
+                    zone: 'Arrondissement_1'
                 },
                 poles: {
                     name: 'Poles',
@@ -284,12 +361,13 @@
                         'surved', 
                         'realise_par'
 	                ],
-	                category: 'other'
+                    category: 'other',
+                    zone: 'Arrondissement_1'
                 },      
                 demand: {
                     name: 'Demand',
                     className: 'demand',
-                    pane: 'tilePane',
+                    pane: 'overlayPane',
                     type: 'poly',
                     url: 'http://137.74.82.193:3000/demand',
                     color: '#757575',
@@ -305,12 +383,13 @@
                         'comment',
                         'connected'
 	                ],
-	                category: 'other'
+                    category: 'other',
+                    zone: 'Arrondissement_1'
                 },       
                 area: {
                     name: 'Area',
-                    className: 'ar',
-                    pane: 'tilePane',
+                    className: 'area',
+                    pane: 'overlayPane',
                     type: 'poly',
                     url: 'http://137.74.82.193:3000/area_otb',
                     color: '#33691E',
@@ -326,12 +405,13 @@
                         'comments',
                         'mq'
 	                ],
-	                category: 'otb_lines'
+                    category: 'otb_lines',
+                    zone: 'Arrondissement_1'
                 },     
                 cross: {
                     name: 'Cross',
                     className: 'cross',
-                    pane: 'tilePane',
+                    pane: 'overlayPane',
                     type: 'point',
                     url: 'http://137.74.82.193:3000/cross',
                     color: '#666',
@@ -344,7 +424,8 @@
                         'id',
                         'Storage_loop_metres'
 	                ],
-	                category: 'other'
+                    category: 'other',
+                    zone: 'Arrondissement_1'
                 },                          
             },            
             demoLayers: {
@@ -360,8 +441,10 @@
                 sc: 'sc',
                 sc144: 'sc144',
                 sc48: 'sc48',
-				poles: 'poles'
-            },	
+                poles: 'poles',
+                test: 'test',
+                test2: 'test2'
+            },            
             cityLocation: {
                 Lome: {
                     lng: 1.240906,

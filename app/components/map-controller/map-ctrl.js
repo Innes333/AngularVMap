@@ -12,12 +12,16 @@
 				vmap: {
 					lat: 0.504503980130774,
 					lng: 9.408579986073635,
-					zoom: 16
+					zoom: 16,
+					preferCanvas: true,
+					renderer: L.canvas()				
 				},
 				defaults: {
 					zoomAnimation: true,
 					markerZoomAnimation: false,
-					fadeAnimation: true
+					fadeAnimation: true,
+					preferCanvas: true,
+					renderer: L.canvas()
 				},
 				controls: {
 					custom: new L.Control.Measure({
@@ -27,7 +31,10 @@
 						secondaryAreaUnit: 'hectares'
 					})
 				},
+				preferCanvas: true,
+				renderer: L.canvas(),
 				layers: {
+					renderer: L.canvas(),
 					sortLayers: true,
 					sortFunction: function() {},
 					baselayers: {
@@ -49,10 +56,12 @@
 			});
 
 	        // get map object from $scope
-	        var map = leafletData.getMap('map');
+			var map = leafletData.getMap('map');
+			console.log(map);
 		
 			// addLayer
-			var addLayer = function(layer, layerName) {
+			$scope.addLayer = function(layer, layerName) {
+				$rootScope.appConfig.preloader = true;
 				var layerType = layer.type === 'poly' || layer.type === 'line' ?
 					'geoJSONPolyline' : 'geoJSONSVGMarker';
 				var overlayName = '<span class="check"><span class="checked"></span></span><span class="'
@@ -81,17 +90,19 @@
 								popupColumns: layer.popupColumns
 							}
 						};
+						$rootScope.appConfig.preloader = false;
 					}, function (error) {
 						throw dataService.catchError(error, 'Ajax call error message!');
 					});
 			};
 
 			var currentUser = $rootScope.appConfig.user.username,
-				userLayersCount = 0;
+				userLayersCount = 0,
+				loadFirstCount = 0;
 
-			var getLayers = function(nameOfLayers, url) {				
+			var loadLayers = function(nameOfLayers, url, loadFirst) {				
 				for (var layer in nameOfLayers) {
-					addLayer(rolesConfig[url][layer], layer);					
+					loadFirst.includes(layer) && $scope.addLayer(rolesConfig[url][layer], layer);					
 				}					
 			};
 
@@ -100,7 +111,8 @@
 					$scope.vmap.lng = 1.240906;
 					$scope.vmap.lat = 6.130398;
 					userLayersCount = Object.keys(rolesConfig.demoLayers).length;
-					getLayers(rolesConfig.demoLayers, 'demoJSON', userLayersCount);
+					loadFirstCount = rolesConfig.demoJSON.loadFirst.length;
+					loadLayers(rolesConfig.demoLayers, 'demoJSON', rolesConfig.demoJSON.loadFirst );
 					$scope.userLayers = rolesConfig.demoLayers;
 					$scope.userLayersConfig = rolesConfig.demoJSON;
 				break;							
@@ -108,7 +120,8 @@
 					$scope.vmap.lng = 1.240906;
 					$scope.vmap.lat = 6.130398;
 					userLayersCount = Object.keys(rolesConfig.demoLayers).length;
-					getLayers(rolesConfig.demoLayers, 'demoJSON', userLayersCount);
+					loadFirstCount = rolesConfig.demoJSON.loadFirst.length;
+					loadLayers(rolesConfig.demoLayers, 'demoJSON', rolesConfig.demoJSON.loadFirst);
 					$scope.userLayers = rolesConfig.demoLayers;
 					$scope.userLayersConfig = rolesConfig.demoJSON;
 			};
@@ -116,7 +129,7 @@
 			$scope.$watchCollection('layers.overlays', function(allArray) {
 				leafletData.getLayers('map').then(function(baselayers) {
 					// check if all layers are loaded
-					if (Object.keys(allArray).length === userLayersCount) {
+					if (Object.keys(allArray).length === loadFirstCount || Object.keys(allArray).length === userLayersCount ) {
 						$rootScope.appConfig.preloader = false;
 						// move to front a layer										
 						// if ($scope.userLayersConfig.topLayers) {

@@ -1603,16 +1603,15 @@
 					content += '<div class="layer-name">' + layer.options.layerName.toUpperCase() +'</div>' : '';
 				for (var i=0; i < columns.length; i++) {
 					feature.properties[columns[i]] !== null && feature.properties[columns[i]] !== undefined ?
-					content += '<div><span>' + columns[i] + ':</span> ' + feature.properties[columns[i]] +'</div>' : '';
+					content += '<div class="form-group"><span class="input-label">' + columns[i] + ':</span> <input value="' + feature.properties[columns[i]] +'" type="text"/></div>' : '';
 				}
 				if (feature.properties.pdf) {
 					content += '<a href="pdf/'+ feature.properties.pdf + '.pdf" class="pdf-link" target="_blank">' + 'Open PDF' + '</a>'
 				}
 				if (feature.properties.img) {
-					console.log(feature.properties.img);
 					content += '<div class="popup-img"><img src="img/'+ feature.properties.img + '"/></div>'
 				}
-				return content;
+				return '<form>' + content + '<button type="submit">Update</button></form>';
 			};
 
 			var layerTypes = {
@@ -1667,6 +1666,7 @@
 					mustHaveUrl: false,
 					createLayer: function(params) {												
 						return new L.geoJson(params.data, {
+							renderer: L.canvas(),
 							pointToLayer: function(feature, latlng) {
 								var styles;
 								if (typeof params.options.fillColor === 'object') {
@@ -1685,11 +1685,12 @@
 									styles = params.options;
 								}
 								
-								return L.circleMarker(latlng, styles);
+								return L.circle(latlng, styles);
 							},
 							onEachFeature: function (feature, layer) {
 								layer.bindPopup(createPopupContent(feature, layer, params.options));
-					        } 
+							},
+							renderer: L.canvas(),
 						});
 					},
 				},
@@ -1756,9 +1757,8 @@
 								return params.options;
 							}		
 						}
-						
-							
-						return new L.geoJson(params.data, {
+
+						return new L.geoJson(params.data, {							
 							style: styleSetter,
 							renderer: L.canvas(),
 							onEachFeature: function (feature, layer) {

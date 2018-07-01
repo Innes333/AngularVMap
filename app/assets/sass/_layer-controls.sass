@@ -37,16 +37,35 @@
         color: $darkBlue
 
     .control-layers-selector
+      position: relative
       padding-left: 20px
+
+      input:checked ~ .fa-edit
+        pointer-events: all
+        opacity: 1
+
+      .fa-edit
+        position: absolute
+        right: 7px
+        top: 5px
+        cursor: pointer      
+        pointer-events: none
+        opacity: 0.5
+        &.active
+          color: $main
+
+    .w-category-name
+      cursor: pointer
 
     .category-label
       text-transform: uppercase
+      font-size: 14px
 
   .control-layers-overlays
     position: absolute
     right: 0
     padding: 25px 10px 20px 20px
-    min-width: 200px
+    min-width: 230px
     background: #ffffff
     box-shadow: 0 1px 5px rgba(0,0,0,.4)
     label
@@ -152,7 +171,7 @@
       background: #ff0ff7
     &.population
       background: #830c0e
-    &.ar
+    &.area
       background: rgba(51, 105, 30, 0.2)
       border: 2px dashed #33691E
     &.demand
