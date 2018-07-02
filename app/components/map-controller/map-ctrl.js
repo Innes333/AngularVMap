@@ -47,7 +47,8 @@
 	                            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 	                            continuousWorld: true,
 	                            showOnSelector: true,
-   								maxZoom: 25
+								maxZoom: 25,
+								preferCanvas: true
 	                        }
 	                    }
 					},
@@ -57,7 +58,6 @@
 
 	        // get map object from $scope
 			var map = leafletData.getMap('map');
-			console.log(map);
 		
 			// addLayer
 			$scope.addLayer = function(layer, layerName) {
@@ -71,6 +71,7 @@
 						$scope.layers.overlays[layerName] = {
 							name: overlayName,
 							type: layerType,
+							renderer: L.canvas(),
 							data: response.data,
 							visible: true,
 							clickable: true,

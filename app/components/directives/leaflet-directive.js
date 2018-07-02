@@ -1666,7 +1666,6 @@
 					mustHaveUrl: false,
 					createLayer: function(params) {												
 						return new L.geoJson(params.data, {
-							renderer: L.canvas(),
 							pointToLayer: function(feature, latlng) {
 								var styles;
 								if (typeof params.options.fillColor === 'object') {
@@ -1683,17 +1682,16 @@
 									}										
 								} else {
 									styles = params.options;
-								}
-								
+								}								
+
 								return L.circle(latlng, styles);
 							},
 							onEachFeature: function (feature, layer) {
 								layer.bindPopup(createPopupContent(feature, layer, params.options));
 							},
-							renderer: L.canvas(),
 						});
 					},
-				},
+				},				
 				geoJSONPolyline: {
 					mustHaveUrl: false,
 					createLayer: function (params) {		
@@ -1758,15 +1756,18 @@
 							}		
 						}
 
-						return new L.geoJson(params.data, {							
+						return new L.geoJson(params.data, {			
+
 							style: styleSetter,
 							renderer: L.canvas(),
 							onEachFeature: function (feature, layer) {
+								console.log(layer);
 								layer.bindPopup(createPopupContent(feature, layer, params.options));
 							}
 						});									
 					}
 				},
+				
 				utfGrid: {
 					mustHaveUrl: true,
 					createLayer: utfGridCreateLayer,

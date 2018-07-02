@@ -39,6 +39,7 @@
 				// 	$rootScope.appConfig.user = false;
 				// }
 				$rootScope.appConfig.preloader = true;
+
 			});
 
 			$rootScope.$on('$routeChangeSuccess', function() {
