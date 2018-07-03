@@ -68,11 +68,15 @@
 				 + layer.type + ' ' + layerName + '"></span>' + layer.name;
 				dataService.getData(layer.url)
 					.then(function (response) {
+						var features = response.data;
+						if (!response.data.features) {
+							features = [{"type":"Feature","geometry":{"type":"LineString","coordinates":[]}}]
+						}
 						$scope.layers.overlays[layerName] = {
 							name: overlayName,
 							type: layerType,
 							renderer: L.canvas(),
-							data: response.data,
+							data: features,
 							visible: true,
 							clickable: true,
 							autoZIndex: false,

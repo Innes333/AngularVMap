@@ -12,14 +12,26 @@ angular.module('vMapsApp')
 				scope.checked = true,
 				loadFirstL = userLayersConfig.loadFirst.length,
 				scope.edit = userLayersConfig.loadFirst[loadFirstL - 1];
-				console.log(userLayersConfig);
+				
+				var hexToRGB = function(hex, alpha) {
+					var r = parseInt(hex.slice(1, 3), 16),
+						g = parseInt(hex.slice(3, 5), 16),
+						b = parseInt(hex.slice(5, 7), 16);
+				
+					if (alpha) {
+						return "rgba(" + r + ", " + g + ", " + b + ", " + alpha + ")";
+					} else {
+						return "rgb(" + r + ", " + g + ", " + b + ")";
+					}
+				}
 
-				var createCheckbox = function (config, category) {
-						
+				var createCheckbox = function (config, category) {			
+											
 					var multiColorLayerFunc = function() {
 						var result = '';
 						var renderItems = function(colors) {
 							var items = '';
+							console.log(colors);
 							for (var color in colors) {					
 								items +='<li class="l-sub-name"><span class="l-name-sub-color" style="background:' +
 								colors[color] + '"></span>' + color + '</li>';							    
@@ -32,20 +44,22 @@ angular.module('vMapsApp')
 						} else if (typeof config.fillColor === "object") {
 							renderItems(config.fillColor);
 						}
-						return result;
-						
+						return result;						
 					}
+
+					var layerColor = typeof config.fillColor === "object" ? Object.values(config.fillColor)[0] : config.fillColor;
 
 					return '<div class="control-layers-selector">' +
 						'<input ng-checked="'+ userLayersConfig.loadFirst.includes(config.className) + '" ng-click="switchLayer(' + "'" + config.className + "'" +
 							')" id="' + config.className + '" type="checkbox">' +
 						'<label for="' + config.className + '">' +
-							'<span class="'	+ config.type + ' ' + config.className + '"></span>' +
-							'<span class="l-name">' + config.name + '</span>' + 							
+							'<span class="'	+ config.type + '" style="background:'+ hexToRGB(layerColor, config.fillOpacity) + '">' +						
+							'</span>' +
+							'<span class="l-name">' + config.name + '</span>' +					
 						'</label>' + 
 						'<span class="fa fa-edit" ng-class="{' + "'" + 'active' + "'" + ': edit ==' + "'" + config.className + "'" +  '}" ' +
 						'ng-click="moveTop('  + "'" + config.className + "'" + ')"></span>' +
-						multiColorLayerFunc() +
+							multiColorLayerFunc() +
 						'</div>';
 				
 				};
@@ -74,7 +88,7 @@ angular.module('vMapsApp')
 					var list = '';
 					var categoryList = '';
 					var categoriesArray = {};
-					for (layer in layers) {						
+					for (layer in layers) {			
 						var zone = userLayersConfig[layer].zone;
 						if(zone && categoriesArray.hasOwnProperty(zone)) {
 							categoriesArray[zone].push(layer);
@@ -131,7 +145,6 @@ angular.module('vMapsApp')
 					scope.edit = layer;
 					leafletData.getLayers('map').then(function(baselayers) {
 						zIndex += 1;
-						console.log(baselayers.overlays[layer]);
 
 						if( !baselayers.overlays[layer].options.renderer._container) {
 							baselayers.overlays[layer].bringToFront();

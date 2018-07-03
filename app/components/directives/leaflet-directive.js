@@ -1664,7 +1664,7 @@
 				},
 				geoJSONSVGMarker: {
 					mustHaveUrl: false,
-					createLayer: function(params) {												
+					createLayer: function(params) {						
 						return new L.geoJson(params.data, {
 							pointToLayer: function(feature, latlng) {
 								var styles;
@@ -1687,6 +1687,9 @@
 								return L.circle(latlng, styles);
 							},
 							onEachFeature: function (feature, layer) {
+								if (feature.geometry.coordinates.length === 0) {
+									return;
+								}
 								layer.bindPopup(createPopupContent(feature, layer, params.options));
 							},
 						});
@@ -1761,7 +1764,9 @@
 							style: styleSetter,
 							renderer: L.canvas(),
 							onEachFeature: function (feature, layer) {
-								console.log(layer);
+								if (feature.geometry.coordinates.length === 0) {
+									return;
+								}
 								layer.bindPopup(createPopupContent(feature, layer, params.options));
 							}
 						});									
