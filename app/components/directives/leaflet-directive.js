@@ -1560,7 +1560,8 @@
 	}]);
 
 	angular.module('leaflet-directive')
-		.factory('leafletLayerHelpers', ["$rootScope", "$log", "$q", "leafletHelpers", "leafletIterators", function($rootScope, $log, $q, leafletHelpers, leafletIterators) {
+		.factory('leafletLayerHelpers', ["$rootScope", "$log", "$q", "leafletHelpers", "leafletIterators", "$compile",
+			function($rootScope, $log, $q, leafletHelpers, leafletIterators, $compile) {
 			var Helpers = leafletHelpers;
 			var isString = leafletHelpers.isString;
 			var isObject = leafletHelpers.isObject;
@@ -1595,7 +1596,7 @@
 
 				return utfgrid;
 			};
-			
+
 			var createPopupContent = function(feature, layer, params) {
 				var content = '';
 				var columns = params.popupColumns;
@@ -1611,7 +1612,7 @@
 				if (feature.properties.img) {
 					content += '<div class="popup-img"><img src="img/'+ feature.properties.img + '"/></div>'
 				}
-				return '<form>' + content + '<button type="submit">Update</button></form>';
+				return '<form>' + content + '<button data-update-layer type="submit">Update</button></form>';
 			};
 
 			var layerTypes = {
@@ -1690,7 +1691,9 @@
 								if (feature.geometry.coordinates.length === 0) {
 									return;
 								}
-								layer.bindPopup(createPopupContent(feature, layer, params.options));
+								var html = createPopupContent(feature, layer, params.options);
+								html = $compile(html)($rootScope);
+								layer.bindPopup(html[0]);
 							},
 						});
 					},
@@ -1767,7 +1770,8 @@
 								if (feature.geometry.coordinates.length === 0) {
 									return;
 								}
-								layer.bindPopup(createPopupContent(feature, layer, params.options));
+								var html = createPopupContent(feature, layer, params.options);
+								layer.bindPopup(html);
 							}
 						});									
 					}

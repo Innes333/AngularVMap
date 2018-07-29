@@ -1,7 +1,7 @@
 (function(){
 	angular.module('vMapsApp')
 		.controller('mapCtrl', ['$http',
-			'$interval', 'leafletData','$rootScope', '$scope', '$window',
+			'$interval', 'leafletData', '$rootScope', '$scope', '$window',
 			'$routeParams', '$timeout', '$localStorage',
 			'baseFunc', 'dataService', 'rolesConfig',
 			function($http, $interval, leafletData, $rootScope,
@@ -168,6 +168,14 @@
 				});
 			});
 
+			// console.log(leafletData.getMap('map'))
+			// window.onsubmit = function(e) {
+			// 	e.preventDefault();
+			// 	// window.data = e;
+			// 	var formData = angular(e.target);
+			// 	console.log('submit', formData);
+			// };
+
 			// get current location by IP
 			$scope.searchIP = function() {
 				var url = "http://freegeoip.net/json/";
@@ -181,7 +189,7 @@
 				});
 			};
 
-
+					
 			// Toggle map baselayer visibility
 			var baseMapLayer = $scope.layers.baselayers.osm;
 			var overlays = $scope.layers.baselayers;	
