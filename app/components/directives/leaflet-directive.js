@@ -1604,7 +1604,8 @@
 					content += '<div class="layer-name">' + layer.options.layerName.toUpperCase() +'</div>' : '';
 				for (var i=0; i < columns.length; i++) {
 					feature.properties[columns[i]] !== null && feature.properties[columns[i]] !== undefined ?
-					content += '<div class="form-group"><span class="input-label">' + columns[i] + ':</span> <input value="' + feature.properties[columns[i]] +'" type="text"/></div>' : '';
+					content += '<div class="form-group"><span class="input-label">' + columns[i] + 
+					':</span> <input value="' + feature.properties[columns[i]] +'" data-column="'+ columns[i] + '"/></div>' : '';
 				}
 				if (feature.properties.pdf) {
 					content += '<a href="pdf/'+ feature.properties.pdf + '.pdf" class="pdf-link" target="_blank">' + 'Open PDF' + '</a>'
@@ -1612,7 +1613,8 @@
 				if (feature.properties.img) {
 					content += '<div class="popup-img"><img src="img/'+ feature.properties.img + '"/></div>'
 				}
-				return '<form>' + content + '<button data-update-layer type="submit">Update</button></form>';
+				return '<form data-layer="'+ layer.options.layerName + '" data-schema="' + layer.options.schema + '">' + content + 
+					'<button data-update-layer type="submit">Update</button></form>';
 			};
 
 			var layerTypes = {

@@ -20,9 +20,9 @@ var gulp         = require('gulp'),
 
 /** Default task list auto apdate page, compile sass and minifi css **/
 gulp.task('browser-sync', [
-						'styles',
-						'vendorCss'
-						], function() {
+	'styles',
+	'vendorCss'
+	], function() {
 	browserSync.init({
 			server: {
 					baseDir: "./app"

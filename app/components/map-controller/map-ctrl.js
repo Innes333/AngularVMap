@@ -92,7 +92,8 @@
 								dashArray: layer.dashArray !== '' ? layer.dashArray : '',
 								layerName: layerName,
 								zIndex: 100,
-								popupColumns: layer.popupColumns
+								popupColumns: layer.popupColumns,
+								schema: layer.schema
 							}
 						};
 						$rootScope.appConfig.preloader = false;

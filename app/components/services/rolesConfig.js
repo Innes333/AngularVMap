@@ -26,7 +26,7 @@
                     className: 'fig8_lom_ar1',
                     pane: 'overlayPane',
                     type: 'line',
-                    url: 'http://137.74.82.193:3000/layers/fig8_lom_ar1',
+                    url: 'http://137.74.82.193:3000/layers/ar1_lom/fig8_lom_ar1',
                     color: '#FFD600',
                     fillColor: '#FFD600',
                     opacity: 1,
@@ -45,6 +45,7 @@
                         'planed_installation_week'
 	                ],
                     category: 'ofc',
+                    schema: 'ar1_lom',
                     zone: 'Arrondissement_1'
                 },
 				fig8_lom_ar2: {
@@ -52,7 +53,7 @@
                     className: 'fig8_lom_ar2',
                     pane: 'overlayPane',
                     type: 'line',
-                    url: 'http://137.74.82.193:3000/layers/fig8_lom_ar2',
+                    url: 'http://137.74.82.193:3000/layers/ar2_lom/fig8_lom_ar2',
                     color: '#FFD600',
                     fillColor: '#FFD600',
                     opacity: 1,
@@ -71,6 +72,7 @@
                         'planed_installation_week'
 	                ],
                     category: 'ofc',
+                    schema: 'ar2_lom',
                     zone: 'Arrondissement_2'
                 },
 				fig8_lom_ar3: {
@@ -78,7 +80,7 @@
                     className: 'fig8_lom_ar3',
                     pane: 'overlayPane',
                     type: 'line',
-                    url: 'http://137.74.82.193:3000/layers/fig8_lom_ar3',
+                    url: 'http://137.74.82.193:3000/layers/ar3_lom/fig8_lom_ar3',
                     color: '#FFD600',
                     fillColor: '#FFD600',
                     opacity: 1,
@@ -97,6 +99,7 @@
                         'planed_installation_week'
 	                ],
                     category: 'ofc',
+                    schema: 'ar3_lom',
                     zone: 'Arrondissement_3'
                 },
 				fig8_lom_ar5: {
@@ -104,7 +107,7 @@
                     className: 'fig8_lom_ar5',
                     pane: 'overlayPane',
                     type: 'line',
-                    url: 'http://137.74.82.193:3000/layers/fig8_lom_ar5',
+                    url: 'http://137.74.82.193:3000/layers/ar5_lom/fig8_lom_ar5',
                     color: '#FFD600',
                     fillColor: '#FFD600',
                     opacity: 1,
@@ -123,6 +126,7 @@
                         'planed_installation_week'
 	                ],
                     category: 'ofc',
+                    schema: 'ar5_lom',
                     zone: 'Arrondissement_5'
                 },    
                 ofc12_lom_ar1: {
@@ -130,7 +134,7 @@
                     className: 'ofc12_lom_ar1',
                     pane: 'overlayPane',
                     type: 'line',
-                    url: 'http://137.74.82.193:3000/layers/ofc12_lom_ar1',
+                    url: 'http://137.74.82.193:3000/layers/ar1_lom/ofc12_lom_ar1',
                     color: '#00B0FF',
                     fillColor: '#00B0FF',
                     opacity: 1,
@@ -149,6 +153,7 @@
                         'planed_installation_week'
 	                ],
                     category: 'ofc',
+                    schema: 'ar1_lom',
                     zone: 'Arrondissement_1'
                 },
 				ofc12_lom_ar2: {
@@ -156,7 +161,7 @@
                     className: 'ofc12_lom_ar2',
                     pane: 'overlayPane',
                     type: 'line',
-                    url: 'http://137.74.82.193:3000/layers/ofc12_lom_ar2',
+                    url: 'http://137.74.82.193:3000/layers/ar2_lom/ofc12_lom_ar2',
                     color: '#00B0FF',
                     fillColor: '#00B0FF',
                     opacity: 1,
@@ -175,6 +180,7 @@
                         'planed_installation_week'
 	                ],
                     category: 'ofc',
+                    schema: 'ar2_lom',
                     zone: 'Arrondissement_2'
                 },
 				ofc12_lom_ar3: {
@@ -182,7 +188,7 @@
                     className: 'ofc12_lom_ar3',
                     pane: 'overlayPane',
                     type: 'line',
-                    url: 'http://137.74.82.193:3000/layers/ofc12_lom_ar3',
+                    url: 'http://137.74.82.193:3000/layers/ar3_lom/ofc12_lom_ar3',
                     color: '#00B0FF',
                     fillColor: '#00B0FF',
                     opacity: 1,
@@ -201,6 +207,7 @@
                         'planed_installation_week'
 	                ],
                     category: 'ofc',
+                    schema: 'ar3_lom',
                     zone: 'Arrondissement_3'
                 },
 				ofc12_lom_ar5: {
@@ -208,7 +215,7 @@
                     className: 'ofc12_lom_ar5',
                     pane: 'overlayPane',
                     type: 'line',
-                    url: 'http://137.74.82.193:3000/layers/ofc12_lom_ar5',
+                    url: 'http://137.74.82.193:3000/layers/ar5_lom/ofc12_lom_ar5',
                     color: '#00B0FF',
                     fillColor: '#00B0FF',
                     opacity: 1,
@@ -227,6 +234,7 @@
                         'planed_installation_week'
 	                ],
                     category: 'ofc',
+                    schema: 'ar5_lom',
                     zone: 'Arrondissement_5'
                 },
                 ofc48_lom_ar1: {
@@ -234,7 +242,7 @@
                     className: 'ofc48_lom_ar1',
                     pane: 'overlayPane',
                     type: 'line',
-                    url: 'http://137.74.82.193:3000/layers/ofc48_lom_ar1',
+                    url: 'http://137.74.82.193:3000/layers/ar1_lom/ofc48_lom_ar1',
                     color: '#BF360C ',
                     fillColor: '#BF360C ',
                     opacity: 1,
@@ -253,6 +261,7 @@
                         'planed_installation_week'
 	                ],
                     category: 'ofc',
+                    schema: 'ar1_lom',
                     zone: 'Arrondissement_1'
                 },
 				ofc48_lom_ar2: {
@@ -260,7 +269,7 @@
                     className: 'ofc48_lom_ar2',
                     pane: 'overlayPane',
                     type: 'line',
-                    url: 'http://137.74.82.193:3000/layers/ofc48_lom_ar2',
+                    url: 'http://137.74.82.193:3000/layers/ar2_lom/ofc48_lom_ar2',
                     color: '#BF360C ',
                     fillColor: '#BF360C ',
                     opacity: 1,
@@ -279,6 +288,7 @@
                         'planed_installation_week'
 	                ],
                     category: 'ofc',
+                    schema: 'ar2_lom',
                     zone: 'Arrondissement_2'
                 },
 				ofc48_lom_ar3: {
@@ -286,7 +296,7 @@
                     className: 'ofc48_lom_ar3',
                     pane: 'overlayPane',
                     type: 'line',
-                    url: 'http://137.74.82.193:3000/layers/ofc48_lom_ar3',
+                    url: 'http://137.74.82.193:3000/layers/ar3_lom/ofc48_lom_ar3',
                     color: '#BF360C ',
                     fillColor: '#BF360C ',
                     opacity: 1,
@@ -305,6 +315,7 @@
                         'planed_installation_week'
 	                ],
                     category: 'ofc',
+                    schema: 'ar3_lom',
                     zone: 'Arrondissement_3'
                 },
 				ofc48_lom_ar5: {
@@ -312,7 +323,7 @@
                     className: 'ofc48_lom_ar5',
                     pane: 'overlayPane',
                     type: 'line',
-                    url: 'http://137.74.82.193:3000/layers/ofc48_lom_ar5',
+                    url: 'http://137.74.82.193:3000/layers/ar5_lom/ofc48_lom_ar5',
                     color: '#BF360C ',
                     fillColor: '#BF360C ',
                     opacity: 1,
@@ -331,6 +342,7 @@
                         'planed_installation_week'
 	                ],
                     category: 'ofc',
+                    schema: 'ar5_lom',
                     zone: 'Arrondissement_5'
                 },
                 ofc144_lom_ar1: {
@@ -338,7 +350,7 @@
                     className: 'ofc144_lom_ar1',
                     pane: 'overlayPane',
                     type: 'line',
-                    url: 'http://137.74.82.193:3000/layers/ofc144_lom_ar1',
+                    url: 'http://137.74.82.193:3000/layers/ar1_lom/ofc144_lom_ar1',
                     color: '#1A237E',
                     fillColor: '#1A237E',
                     opacity: 1,
@@ -356,6 +368,7 @@
                         'Planned_Installation_Week'
 	                ],
                     category: 'ofc',
+                    schema: 'ar1_lom',
                     zone: 'Arrondissement_1'
                 },
 				ofc144_lom_ar2: {
@@ -363,7 +376,7 @@
                     className: 'ofc144_lom_ar2',
                     pane: 'overlayPane',
                     type: 'line',
-                    url: 'http://137.74.82.193:3000/layers/ofc144_lom_ar2',
+                    url: 'http://137.74.82.193:3000/layers/ar2_lom/ofc144_lom_ar2',
                     color: '#1A237E',
                     fillColor: '#1A237E',
                     opacity: 1,
@@ -381,6 +394,7 @@
                         'Planned_Installation_Week'
 	                ],
                     category: 'ofc',
+                    schema: 'ar2_lom',
                     zone: 'Arrondissement_2'
                 },
 				ofc144_lom_ar3: {
@@ -388,7 +402,7 @@
                     className: 'ofc144_lom_ar3',
                     pane: 'overlayPane',
                     type: 'line',
-                    url: 'http://137.74.82.193:3000/layers/ofc144_lom_ar3',
+                    url: 'http://137.74.82.193:3000/layers/ar3_lom/ofc144_lom_ar3',
                     color: '#1A237E',
                     fillColor: '#1A237E',
                     opacity: 1,
@@ -406,6 +420,7 @@
                         'Planned_Installation_Week'
 	                ],
                     category: 'ofc',
+                    schema: 'ar3_lom',
                     zone: 'Arrondissement_3'
                 },
 				ofc144_lom_ar5: {
@@ -413,7 +428,7 @@
                     className: 'ofc144_lom_ar5',
                     pane: 'overlayPane',
                     type: 'line',
-                    url: 'http://137.74.82.193:3000/layers/ofc144_lom_ar5',
+                    url: 'http://137.74.82.193:3000/layers/ar5_lom/ofc144_lom_ar5',
                     color: '#1A237E',
                     fillColor: '#1A237E',
                     opacity: 1,
@@ -431,6 +446,7 @@
                         'Planned_Installation_Week'
 	                ],
                     category: 'ofc',
+                    schema: 'ar5_lom',
                     zone: 'Arrondissement_5'
                 },
                 otb_lom_ar1: {
@@ -438,7 +454,7 @@
                     className: 'otb_lom_ar1',
                     pane: 'overlayPane',
                     type: 'point',
-                    url: 'http://137.74.82.193:3000/layers/otb_lom_ar1',
+                    url: 'http://137.74.82.193:3000/layers/ar1_lom/otb_lom_ar1',
                     color: '#ccc',
                     fillColor: '#00E5FF',
                     opacity: 1,
@@ -463,6 +479,7 @@
                         'id_prov'
 	                ],
                     category: 'otb_lines',
+                    schema: 'ar1_lom',
                     zone: 'Arrondissement_1'
                 },
 				otb_lom_ar2: {
@@ -470,7 +487,7 @@
                     className: 'otb_lom_ar2',
                     pane: 'overlayPane',
                     type: 'point',
-                    url: 'http://137.74.82.193:3000/layers/otb_lom_ar2',
+                    url: 'http://137.74.82.193:3000/layers/ar2_lom/otb_lom_ar2',
                     color: '#ccc',
                     fillColor: '#00E5FF',
                     opacity: 1,
@@ -495,6 +512,7 @@
                         'id_prov'
 	                ],
                     category: 'otb_lines',
+                    schema: 'ar2_lom',
                     zone: 'Arrondissement_2'
                 },
 				otb_lom_ar3: {
@@ -502,7 +520,7 @@
                     className: 'otb_lom_ar3',
                     pane: 'overlayPane',
                     type: 'point',
-                    url: 'http://137.74.82.193:3000/layers/otb_lom_ar3',
+                    url: 'http://137.74.82.193:3000/layers/ar3_lom/otb_lom_ar3',
                     color: '#ccc',
                     fillColor: '#00E5FF',
                     opacity: 1,
@@ -527,6 +545,7 @@
                         'id_prov'
 	                ],
                     category: 'otb_lines',
+                    schema: 'ar3_lom',
                     zone: 'Arrondissement_3'
                 },
 				otb_lom_ar5: {
@@ -534,7 +553,7 @@
                     className: 'otb_lom_ar5',
                     pane: 'overlayPane',
                     type: 'point',
-                    url: 'http://137.74.82.193:3000/layers/otb_lom_ar5',
+                    url: 'http://137.74.82.193:3000/layers/ar5_lom/otb_lom_ar5',
                     color: '#ccc',
                     fillColor: '#00E5FF',
                     opacity: 1,
@@ -559,6 +578,7 @@
                         'id_prov'
 	                ],
                     category: 'otb_lines',
+                    schema: 'ar5_lom',
                     zone: 'Arrondissement_5'
                 },
                 otbb_lom_ar1: {
@@ -566,7 +586,7 @@
                     className: 'otbb_lom_ar1',
                     pane: 'overlayPane',
                     type: 'point',
-                    url: 'http://137.74.82.193:3000/layers/otbb_lom_ar1',
+                    url: 'http://137.74.82.193:3000/layers/ar1_lom/otbb_lom_ar1',
                     color: '#666',
                     fillColor: '#D500F9',
                     opacity: 1,
@@ -591,6 +611,7 @@
                         'id_prov'
 	                ],
                     category: 'otb_lines',
+                    schema: 'ar1_lom',
                     zone: 'Arrondissement_1'
                 },
 				otbb_lom_ar2: {
@@ -598,7 +619,7 @@
                     className: 'otbb_lom_ar2',
                     pane: 'overlayPane',
                     type: 'point',
-                    url: 'http://137.74.82.193:3000/layers/otbb_lom_ar2',
+                    url: 'http://137.74.82.193:3000/layers/ar2_lom/otbb_lom_ar2',
                     color: '#666',
                     fillColor: '#D500F9',
                     opacity: 1,
@@ -623,6 +644,7 @@
                         'id_prov'
 	                ],
                     category: 'otb_lines',
+                    schema: 'ar2_lom',
                     zone: 'Arrondissement_2'
                 },
 				otbb_lom_ar3: {
@@ -630,7 +652,7 @@
                     className: 'otbb_lom_ar3',
                     pane: 'overlayPane',
                     type: 'point',
-                    url: 'http://137.74.82.193:3000/layers/otbb_lom_ar3',
+                    url: 'http://137.74.82.193:3000/layers/ar3_lom/otbb_lom_ar3',
                     color: '#666',
                     fillColor: '#D500F9',
                     opacity: 1,
@@ -655,6 +677,7 @@
                         'id_prov'
 	                ],
                     category: 'otb_lines',
+                    schema: 'ar3_lom',
                     zone: 'Arrondissement_3'
                 },
 				otbb_lom_ar5: {
@@ -662,7 +685,7 @@
                     className: 'otbb_lom_ar5',
                     pane: 'overlayPane',
                     type: 'point',
-                    url: 'http://137.74.82.193:3000/layers/otbb_lom_ar5',
+                    url: 'http://137.74.82.193:3000/layers/ar5_lom/otbb_lom_ar5',
                     color: '#666',
                     fillColor: '#D500F9',
                     opacity: 1,
@@ -687,6 +710,7 @@
                         'id_prov'
 	                ],
                     category: 'otb_lines',
+                    schema: 'ar5_lom',
                     zone: 'Arrondissement_5'
                 },
                 sc_lom_ar1: {
@@ -694,7 +718,7 @@
                     className: 'sc_lom_ar1',
                     pane: 'overlayPane',
                     type: 'point',
-                    url: 'http://137.74.82.193:3000/layers/sc_lom_ar1',
+                    url: 'http://137.74.82.193:3000/layers/ar1_lom/sc_lom_ar1',
                     color: '#333333',
                     fillColor: '#067c4e',
                     opacity: 1,
@@ -706,6 +730,7 @@
                         'name'
 	                ],
                     category: 'sc_points',
+                    schema: 'ar1_lom',
                     zone: 'Arrondissement_1'
                 },
 				sc_lom_ar2: {
@@ -713,7 +738,7 @@
                     className: 'sc_lom_ar2',
                     pane: 'overlayPane',
                     type: 'point',
-                    url: 'http://137.74.82.193:3000/layers/sc_lom_ar2',
+                    url: 'http://137.74.82.193:3000/layers/ar2_lom/sc_lom_ar2',
                     color: '#333333',
                     fillColor: '#067c4e',
                     opacity: 1,
@@ -725,6 +750,7 @@
                         'name'
 	                ],
                     category: 'sc_points',
+                    schema: 'ar2_lom',
                     zone: 'Arrondissement_2'
                 },
 				sc_lom_ar3: {
@@ -732,7 +758,7 @@
                     className: 'sc_lom_ar3',
                     pane: 'overlayPane',
                     type: 'point',
-                    url: 'http://137.74.82.193:3000/layers/sc_lom_ar3',
+                    url: 'http://137.74.82.193:3000/layers/ar3_lom/sc_lom_ar3',
                     color: '#333333',
                     fillColor: '#067c4e',
                     opacity: 1,
@@ -744,6 +770,7 @@
                         'name'
 	                ],
                     category: 'sc_points',
+                    schema: 'ar3_lom',
                     zone: 'Arrondissement_3'
                 },
 				sc_lom_ar5: {
@@ -751,7 +778,7 @@
                     className: 'sc_lom_ar5',
                     pane: 'overlayPane',
                     type: 'point',
-                    url: 'http://137.74.82.193:3000/layers/sc_lom_ar5',
+                    url: 'http://137.74.82.193:3000/layers/ar5_lom/sc_lom_ar5',
                     color: '#333333',
                     fillColor: '#067c4e',
                     opacity: 1,
@@ -763,6 +790,7 @@
                         'name'
 	                ],
                     category: 'sc_points',
+                    schema: 'ar5_lom',
                     zone: 'Arrondissement_5'
                 },
                 sc_48_lom_ar1: {
@@ -770,7 +798,7 @@
                     className: 'sc_48_lom_ar1',
                     pane: 'overlayPane',
                     type: 'point',
-                    url: 'http://137.74.82.193:3000/layers/sc_48_lom_ar1',
+                    url: 'http://137.74.82.193:3000/layers/ar1_lom/sc_48_lom_ar1',
                     color: '#333333',
                     fillColor: '#C0392B',
                     opacity: 1,
@@ -792,6 +820,7 @@
                         'id_prov'
 	                ],
                     category: 'sc_points',
+                    schema: 'ar1_lom',
                     zone: 'Arrondissement_1'
                 },
 				sc_48_lom_ar2: {
@@ -799,7 +828,7 @@
                     className: 'sc_48_lom_ar2',
                     pane: 'overlayPane',
                     type: 'point',
-                    url: 'http://137.74.82.193:3000/layers/sc_48_lom_ar2',
+                    url: 'http://137.74.82.193:3000/layers/ar2_lom/sc_48_lom_ar2',
                     color: '#333333',
                     fillColor: '#C0392B',
                     opacity: 1,
@@ -821,6 +850,7 @@
                         'id_prov'
 	                ],
                     category: 'sc_points',
+                    schema: 'ar2_lom',
                     zone: 'Arrondissement_2'
                 },
 				sc_48_lom_ar3: {
@@ -828,7 +858,7 @@
                     className: 'sc_48_lom_ar3',
                     pane: 'overlayPane',
                     type: 'point',
-                    url: 'http://137.74.82.193:3000/layers/sc_48_lom_ar3',
+                    url: 'http://137.74.82.193:3000/layers/ar3_lom/sc_48_lom_ar3',
                     color: '#333333',
                     fillColor: '#C0392B',
                     opacity: 1,
@@ -850,6 +880,7 @@
                         'id_prov'
 	                ],
                     category: 'sc_points',
+                    schema: 'ar3_lom',
                     zone: 'Arrondissement_3'
                 },
 				sc_48_lom_ar5: {
@@ -857,7 +888,7 @@
                     className: 'sc_48_lom_ar5',
                     pane: 'overlayPane',
                     type: 'point',
-                    url: 'http://137.74.82.193:3000/layers/sc_48_lom_ar5',
+                    url: 'http://137.74.82.193:3000/layers/ar5_lom/sc_48_lom_ar5',
                     color: '#333333',
                     fillColor: '#C0392B',
                     opacity: 1,
@@ -879,6 +910,7 @@
                         'id_prov'
 	                ],
                     category: 'sc_points',
+                    schema: 'ar5_lom',
                     zone: 'Arrondissement_5'
                 },
                 sc_144_lom_ar1: {
@@ -886,7 +918,7 @@
                     className: 'sc_144_lom_ar1',
                     pane: 'overlayPane',
                     type: 'point',
-                    url: 'http://137.74.82.193:3000/layers/sc_144_lom_ar1',
+                    url: 'http://137.74.82.193:3000/layers/ar1_lom/sc_144_lom_ar1',
                     color: '#333333',
                     fillColor: '#19459d',
                     opacity: 1,
@@ -908,6 +940,7 @@
                         'id_prov'
 	                ],
                     category: 'sc_points',
+                    schema: 'ar1_lom',
                     zone: 'Arrondissement_1'
                 },
 				sc_144_lom_ar2: {
@@ -915,7 +948,7 @@
                     className: 'sc_144_lom_ar2',
                     pane: 'overlayPane',
                     type: 'point',
-                    url: 'http://137.74.82.193:3000/layers/sc_144_lom_ar2',
+                    url: 'http://137.74.82.193:3000/layers/ar2_lom/sc_144_lom_ar2',
                     color: '#333333',
                     fillColor: '#19459d',
                     opacity: 1,
@@ -937,6 +970,7 @@
                         'id_prov'
 	                ],
                     category: 'sc_points',
+                    schema: 'ar2_lom',
                     zone: 'Arrondissement_2'
                 },
 				sc_144_lom_ar3: {
@@ -944,7 +978,7 @@
                     className: 'sc_144_lom_ar3',
                     pane: 'overlayPane',
                     type: 'point',
-                    url: 'http://137.74.82.193:3000/layers/sc_144_lom_ar3',
+                    url: 'http://137.74.82.193:3000/layers/ar3_lom/sc_144_lom_ar3',
                     color: '#333333',
                     fillColor: '#19459d',
                     opacity: 1,
@@ -966,6 +1000,7 @@
                         'id_prov'
 	                ],
                     category: 'sc_points',
+                    schema: 'ar3_lom',
                     zone: 'Arrondissement_3'
                 },
 				sc_144_lom_ar5: {
@@ -973,7 +1008,7 @@
                     className: 'sc_144_lom_ar5',
                     pane: 'overlayPane',
                     type: 'point',
-                    url: 'http://137.74.82.193:3000/layers/sc_144_lom_ar5',
+                    url: 'http://137.74.82.193:3000/layers/ar5_lom/sc_144_lom_ar5',
                     color: '#333333',
                     fillColor: '#19459d',
                     opacity: 1,
@@ -995,6 +1030,7 @@
                         'id_prov'
 	                ],
                     category: 'sc_points',
+                    schema: 'ar5_lom',
                     zone: 'Arrondissement_5'
                 },
                 poles_lom_ar1: {
@@ -1002,7 +1038,7 @@
                     className: 'poles_lom_ar1',
                     pane: 'overlayPane',
                     type: 'point',
-                    url: 'http://137.74.82.193:3000/layers/poles_lom_ar1',
+                    url: 'http://137.74.82.193:3000/layers/ar1_lom/poles_lom_ar1',
                     color: '#666',
                     fillColor: '#757575',
                     opacity: 1,
@@ -1039,6 +1075,7 @@
                         'realise_par'
 	                ],
                     category: 'other',
+                    schema: 'ar1_lom',
                     zone: 'Arrondissement_1'
                 },
 				poles_lom_ar2: {
@@ -1046,7 +1083,7 @@
                     className: 'poles_lom_ar2',
                     pane: 'overlayPane',
                     type: 'point',
-                    url: 'http://137.74.82.193:3000/layers/poles_lom_ar2',
+                    url: 'http://137.74.82.193:3000/layers/ar2_lom/poles_lom_ar2',
                     color: '#666',
                     fillColor: '#757575',
                     opacity: 1,
@@ -1083,6 +1120,7 @@
                         'realise_par'
 	                ],
                     category: 'other',
+                    schema: 'ar2_lom',
                     zone: 'Arrondissement_2'
                 },
 				poles_lom_ar3: {
@@ -1090,7 +1128,7 @@
                     className: 'poles_lom_ar3',
                     pane: 'overlayPane',
                     type: 'point',
-                    url: 'http://137.74.82.193:3000/layers/poles_lom_ar3',
+                    url: 'http://137.74.82.193:3000/layers/ar3_lom/poles_lom_ar3',
                     color: '#666',
                     fillColor: '#757575',
                     opacity: 1,
@@ -1127,6 +1165,7 @@
                         'realise_par'
 	                ],
                     category: 'other',
+                    schema: 'ar3_lom',
                     zone: 'Arrondissement_3'
                 },
 				poles_lom_ar5: {
@@ -1134,7 +1173,7 @@
                     className: 'poles_lom_ar5',
                     pane: 'overlayPane',
                     type: 'point',
-                    url: 'http://137.74.82.193:3000/layers/poles_lom_ar5',
+                    url: 'http://137.74.82.193:3000/layers/ar5_lom/poles_lom_ar5',
                     color: '#666',
                     fillColor: '#757575',
                     opacity: 1,
@@ -1171,6 +1210,7 @@
                         'realise_par'
 	                ],
                     category: 'other',
+                    schema: 'ar5_lom',
                     zone: 'Arrondissement_5'
                 },
                 demand_lom_ar1: {
@@ -1178,7 +1218,7 @@
                     className: 'demand_lom_ar1',
                     pane: 'overlayPane',
                     type: 'poly',
-                    url: 'http://137.74.82.193:3000/layers/demand_lom_ar1',
+                    url: 'http://137.74.82.193:3000/layers/ar1_lom/demand_lom_ar1',
                     color: '#757575',
                     fillColor: '#757575',
                     opacity: 1,
@@ -1193,6 +1233,7 @@
                         'connected'
 	                ],
                     category: 'other',
+                    schema: 'ar1_lom',
                     zone: 'Arrondissement_1'
                 },
 				demand_lom_ar2: {
@@ -1200,7 +1241,7 @@
                     className: 'demand_lom_ar2',
                     pane: 'overlayPane',
                     type: 'poly',
-                    url: 'http://137.74.82.193:3000/layers/demand_lom_ar2',
+                    url: 'http://137.74.82.193:3000/layers/ar2_lom/demand_lom_ar2',
                     color: '#757575',
                     fillColor: '#757575',
                     opacity: 1,
@@ -1215,6 +1256,7 @@
                         'connected'
 	                ],
                     category: 'other',
+                    schema: 'ar2_lom',
                     zone: 'Arrondissement_2'
                 },
 				demand_lom_ar3: {
@@ -1222,7 +1264,7 @@
                     className: 'demand_lom_ar3',
                     pane: 'overlayPane',
                     type: 'poly',
-                    url: 'http://137.74.82.193:3000/layers/demand_lom_ar3',
+                    url: 'http://137.74.82.193:3000/layers/ar3_lom/demand_lom_ar3',
                     color: '#757575',
                     fillColor: '#757575',
                     opacity: 1,
@@ -1237,6 +1279,7 @@
                         'connected'
 	                ],
                     category: 'other',
+                    schema: 'ar3_lom',
                     zone: 'Arrondissement_3'
                 },
 				demand_lom_ar5: {
@@ -1244,7 +1287,7 @@
                     className: 'demand_lom_ar5',
                     pane: 'overlayPane',
                     type: 'poly',
-                    url: 'http://137.74.82.193:3000/layers/demand_lom_ar5',
+                    url: 'http://137.74.82.193:3000/layers/ar5_lom/demand_lom_ar5',
                     color: '#757575',
                     fillColor: '#757575',
                     opacity: 1,
@@ -1259,6 +1302,7 @@
                         'connected'
 	                ],
                     category: 'other',
+                    schema: 'ar5_lom',
                     zone: 'Arrondissement_5'
                 },
                 ar1_area_otb: {
@@ -1266,7 +1310,7 @@
                     className: 'ar1_area_otb',
                     pane: 'overlayPane',
                     type: 'poly',
-                    url: 'http://137.74.82.193:3000/layers/ar1_area_otb',
+                    url: 'http://137.74.82.193:3000/layers/ar1_lom/ar1_area_otb',
                     color: '#33691E',
                     fillColor: '#33691E',
                     opacity: 1,
@@ -1281,6 +1325,7 @@
                         'mq'
 	                ],
                     category: 'otb_lines',
+                    schema: 'ar1_lom',
                     zone: 'Arrondissement_1'
                 },
 				ar2_area_otb: {
@@ -1288,7 +1333,7 @@
                     className: 'ar2_area_otb',
                     pane: 'overlayPane',
                     type: 'poly',
-                    url: 'http://137.74.82.193:3000/layers/ar2_area_otb',
+                    url: 'http://137.74.82.193:3000/layers/ar2_lom/ar2_area_otb',
                     color: '#33691E',
                     fillColor: '#33691E',
                     opacity: 1,
@@ -1303,6 +1348,7 @@
                         'mq'
 	                ],
                     category: 'otb_lines',
+                    schema: 'ar2_lom',
                     zone: 'Arrondissement_2'
                 },
 				ar3_area_otb: {
@@ -1310,7 +1356,7 @@
                     className: 'ar3_area_otb',
                     pane: 'overlayPane',
                     type: 'poly',
-                    url: 'http://137.74.82.193:3000/layers/ar3_area_otb',
+                    url: 'http://137.74.82.193:3000/layers/ar3_lom/ar3_area_otb',
                     color: '#33691E',
                     fillColor: '#33691E',
                     opacity: 1,
@@ -1325,6 +1371,7 @@
                         'mq'
 	                ],
                     category: 'otb_lines',
+                    schema: 'ar3_lom',
                     zone: 'Arrondissement_3'
                 },
 				ar5_area_otb: {
@@ -1332,7 +1379,7 @@
                     className: 'ar5_area_otb',
                     pane: 'overlayPane',
                     type: 'poly',
-                    url: 'http://137.74.82.193:3000/layers/ar5_area_otb',
+                    url: 'http://137.74.82.193:3000/layers/ar5_lom/ar5_area_otb',
                     color: '#33691E',
                     fillColor: '#33691E',
                     opacity: 1,
@@ -1347,6 +1394,7 @@
                         'mq'
 	                ],
                     category: 'otb_lines',
+                    schema: 'ar5_lom',
                     zone: 'Arrondissement_5'
                 },
                 cross_lom_ar1: {
@@ -1354,7 +1402,7 @@
                     className: 'cross_lom_ar1',
                     pane: 'overlayPane',
                     type: 'point',
-                    url: 'http://137.74.82.193:3000/layers/cross_lom_ar1',
+                    url: 'http://137.74.82.193:3000/layers/ar1_lom/cross_lom_ar1',
                     color: '#666',
                     fillColor: '#D50000',
                     opacity: 1,
@@ -1366,6 +1414,7 @@
                         'Storage_loop_metres'
 	                ],
                     category: 'other',
+                    schema: 'ar1_lom',
                     zone: 'Arrondissement_1'
                 },
 				cross_lom_ar2: {
@@ -1373,7 +1422,7 @@
                     className: 'cross_lom_ar2',
                     pane: 'overlayPane',
                     type: 'point',
-                    url: 'http://137.74.82.193:3000/layers/cross_lom_ar2',
+                    url: 'http://137.74.82.193:3000/layers/ar2_lom/cross_lom_ar2',
                     color: '#666',
                     fillColor: '#D50000',
                     opacity: 1,
@@ -1385,6 +1434,7 @@
                         'Storage_loop_metres'
 	                ],
                     category: 'other',
+                    schema: 'ar2_lom',
                     zone: 'Arrondissement_2'
                 },
 				cross_lom_ar3: {
@@ -1392,7 +1442,7 @@
                     className: 'cross_lom_ar3',
                     pane: 'overlayPane',
                     type: 'point',
-                    url: 'http://137.74.82.193:3000/layers/cross_lom_ar3',
+                    url: 'http://137.74.82.193:3000/layers/ar3_lom/cross_lom_ar3',
                     color: '#666',
                     fillColor: '#D50000',
                     opacity: 1,
@@ -1404,6 +1454,7 @@
                         'Storage_loop_metres'
 	                ],
                     category: 'other',
+                    schema: 'ar3_lom',
                     zone: 'Arrondissement_3'
                 },
 				cross_lom_ar5: {
@@ -1411,7 +1462,7 @@
                     className: 'cross_lom_ar5',
                     pane: 'overlayPane',
                     type: 'point',
-                    url: 'http://137.74.82.193:3000/layers/cross_lom_ar5',
+                    url: 'http://137.74.82.193:3000/layers/ar5_lom/cross_lom_ar5',
                     color: '#666',
                     fillColor: '#D50000',
                     opacity: 1,
@@ -1423,6 +1474,7 @@
                         'Storage_loop_metres'
 	                ],
                     category: 'other',
+                    schema: 'ar5_lom',
                     zone: 'Arrondissement_5'
                 },
             },            

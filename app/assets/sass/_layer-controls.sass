@@ -12,7 +12,6 @@
   transition: all 0.4s
   box-shadow: 0 1px 5px rgba(0,0,0,.4)
 
-
   .fa-clone
     position: absolute
     top: 10px
@@ -38,7 +37,7 @@
 
     .control-layers-selector
       position: relative
-      padding-left: 20px
+      padding-left: 10px
 
       input:checked ~ .fa-edit
         pointer-events: all
@@ -65,7 +64,9 @@
     position: absolute
     right: 0
     padding: 25px 10px 20px 20px
-    min-width: 230px
+    min-width: 240px
+    max-height: 90vh
+    overflow-y: auto
     background: #ffffff
     box-shadow: 0 1px 5px rgba(0,0,0,.4)
     label
