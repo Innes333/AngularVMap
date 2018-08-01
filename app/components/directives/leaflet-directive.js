@@ -1773,7 +1773,8 @@
 									return;
 								}
 								var html = createPopupContent(feature, layer, params.options);
-								layer.bindPopup(html);
+								html = $compile(html)($rootScope);
+								layer.bindPopup(html[0]);
 							}
 						});									
 					}
