@@ -12,7 +12,7 @@
 				vmap: {
 					lat: 0.504503980130774,
 					lng: 9.408579986073635,
-					zoom: 16,
+					zoom: 10,
 					preferCanvas: true,
 					renderer: L.canvas()				
 				},
@@ -114,8 +114,8 @@
 
 			switch (currentUser) {
 				case 'demo':
-					$scope.vmap.lng = 1.240906;
-					$scope.vmap.lat = 6.130398;
+					$scope.vmap.lng = 0.991557;
+					$scope.vmap.lat = 5.9311694;
 					userLayersCount = Object.keys(rolesConfig.demoLayers).length;
 					loadFirstCount = rolesConfig.demoJSON.loadFirst.length;
 					loadLayers(rolesConfig.demoLayers, 'demoJSON', rolesConfig.demoJSON.loadFirst );
@@ -123,8 +123,8 @@
 					$scope.userLayersConfig = rolesConfig.demoJSON;
 				break;							
 				default:
-					$scope.vmap.lng = 1.240906;
-					$scope.vmap.lat = 6.130398;
+					$scope.vmap.lng = 0.867053;
+					$scope.vmap.lat = 6.0648827;
 					userLayersCount = Object.keys(rolesConfig.demoLayers).length;
 					loadFirstCount = rolesConfig.demoJSON.loadFirst.length;
 					loadLayers(rolesConfig.demoLayers, 'demoJSON', rolesConfig.demoJSON.loadFirst);

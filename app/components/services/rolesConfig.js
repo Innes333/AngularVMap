@@ -16,19 +16,23 @@
                     className: 'gsm_sites_ghana',
                     pane: 'overlayPane',
                     type: 'point',
-                    url: 'http://137.74.82.193:3000/ghana_gsm/gsm/gsm_sites_ghana',
-                    color: '#ccc',
-                    fillColor: '#00E5FF',
+                    url: 'http://137.74.82.193:3000/gva/gsm/gsm_sites_ghana',
+                    fillColor: '#333',
+                    color: {
+                        done: '#1B5E20',
+                        undone: '#D50000',
+                        bad: '#FFFF00'
+                    },
                     opacity: 1,
                     fillOpacity: 1,
-                    weight: 1.0,
-                    radius: 4,
+                    weight: 6,
+                    radius: 8,
                     popupColumns: [
                         'id', 'name',
                         'longitude', 'latitude', 
                         'altitude_m', 'comments', 'support_height_m',
                         'site_name', 'bsc', 'type', 'city', 'lte', 'g3',
-                        'trmflag', 'search_id', 'class'
+                        'trmflag', 'class'
 	                ],
                     category: null,
                     schema: 'gsm',
@@ -39,13 +43,13 @@
 				gsm_sites_ghana: 'gsm_sites_ghana'
             },            
             cityLocation: {
-                Lome: {
-                    lng: 1.240906,
-					lat: 6.130398
+                Akatsi: {
+                    lng: 0.7934081,
+					lat: 6.1288312
                 },
-                Tabligbo: {
-                    lng: 1.502488,
-					lat: 6.595080, 
+                Abor: {
+                    lng: 0.8569122,
+					lat: 6.0604373
                 },
                 Kara: {
                     lng: 1.194402,

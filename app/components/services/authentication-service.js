@@ -7,8 +7,8 @@
 				this.Login = function(user, callback) {
 					var roles = {
 						togo: [{
-							name: 'Togo',
-							password: 'demo',
+							name: 'NETIS Ghana',
+							password: 'Helios',
 							role: 'admin',
 						}]						
 					};

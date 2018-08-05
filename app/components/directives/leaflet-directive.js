@@ -1671,9 +1671,9 @@
 						return new L.geoJson(params.data, {
 							pointToLayer: function(feature, latlng) {
 								var styles;
-								if (typeof params.options.fillColor === 'object') {
+								if (typeof params.options.color === 'object') {
 									styles = {
-										fillColor: params.options.fillColor[feature.properties.class],
+										fillColor: params.options.fillColor,
 										color: params.options.color[feature.properties.class],
 										pane: params.options.pane,
 										radius: params.options.radius,
