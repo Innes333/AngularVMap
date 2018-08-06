@@ -7,6 +7,7 @@ angular.module('vMapsApp')
 			restrict: 'A',
 			scope: true,
 			link: function(scope,element,attrs){
+				console.log('popup');
 				element.bind('click', function(e){
 					var popupId = attrs.popupBlock,
 							popupEl = document.getElementById(popupId);
