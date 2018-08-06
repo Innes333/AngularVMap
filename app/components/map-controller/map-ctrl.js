@@ -123,8 +123,8 @@
 					$scope.userLayersConfig = rolesConfig.demoJSON;
 				break;							
 				default:
-					$scope.vmap.lng = 0.867053;
-					$scope.vmap.lat = 6.0648827;
+					$scope.vmap.lng = -0.239391;
+					$scope.vmap.lat = 5.632969;
 					userLayersCount = Object.keys(rolesConfig.demoLayers).length;
 					loadFirstCount = rolesConfig.demoJSON.loadFirst.length;
 					loadLayers(rolesConfig.demoLayers, 'demoJSON', rolesConfig.demoJSON.loadFirst);
@@ -169,6 +169,10 @@
 				});
 			});
 
+			$scope.getMediaf = 'jfdkjfdkjf';
+			$scope.getMedia = function() {
+				console.log('click');
+			}
 			// console.log(leafletData.getMap('map'))
 			// window.onsubmit = function(e) {
 			// 	e.preventDefault();

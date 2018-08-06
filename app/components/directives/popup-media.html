@@ -1,0 +1,26 @@
+<div class="popup-content">
+	<div class="save-popup-content">
+		<div class="container-fluid clrp">
+			<div class="col-md-12 clrp">
+				<div class="card error-content">
+					<h2>Media information about GSM site</h2>					
+                    <h2>{{getMediaf}}</h2>
+                    <ul>
+                        <li data-ng-repeat="item in imagesPopup track by $index">
+                            {{item}}
+                        </li>
+                    </ul>				
+					<div class="error-information custom-scroll"
+						data-ng-class="{'active': showError}">
+						gfhhf
+					</div>
+				</div>
+			</div>			
+		</div>
+	</div>
+	<button type="button"
+		data-popup-close
+		class="btn material popup-close">
+		<i class="fa fa-times"></i>
+	</button>
+</div>	

@@ -1607,11 +1607,20 @@
 					content += '<div class="form-group"><span class="input-label">' + columns[i] + 
 					':</span> <input value="' + feature.properties[columns[i]] +'" data-column="'+ columns[i] + '"/></div>' : '';
 				}
-				if (feature.properties.pdf) {
-					content += '<a href="pdf/'+ feature.properties.pdf + '.pdf" class="pdf-link" target="_blank">' + 'Open PDF' + '</a>'
+				if (feature.properties.data_pdf ) {
+					content += '<a href="gsm_data/'+ feature.properties.city + '/' + 
+					feature.properties.data_pdf + '" class="pdf-link" target="_blank">View PDF</a>'					
 				}
+				if (feature.properties.data_img) {						
+					content += '<button popup-btn popup-block="popup-media"' +
+					// 'data-videos="['+ feature.properties.data_video + ']"  ' +
+					'data-images="['+ JSON.stringify(feature.properties.data_img) + ']">' +
+					'View popup </button>'
+				}
+
 				if (feature.properties.img) {
-					content += '<div class="popup-img"><img src="img/'+ feature.properties.img + '"/></div>'
+					content += '<div class="popup-img">' + 
+					'<img src="gsm_data/'+ feature.properties.city + '/' + feature.properties.img + '"/></div>'
 				}
 				return '<form data-layer="'+ layer.options.layerName + '" data-schema="' + layer.options.schema + '">' + content + 
 					'<button data-update-layer type="submit">Update</button></form>';

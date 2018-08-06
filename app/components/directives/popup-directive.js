@@ -11,6 +11,10 @@ angular.module('vMapsApp')
 					var popupId = attrs.popupBlock,
 							popupEl = document.getElementById(popupId);
 					angular.element(popupEl).addClass('active');
+					console.log(attrs.images);
+					if(attrs.images) {
+						// scope.imagesPopup = JSON.parse(attrs.images);
+					}
 				});
 			}
 		}
