@@ -1,190 +1,190 @@
 .w-control-layers
-	position: absolute
-	top: 48px
-	right: 20px
-	z-index: 1000
-	background: #fff
-	width: 37px
-	height: 37px
-	border: 1px solid #cecece
-	border-radius: 5px
-	text-align: left
-	transition: all 0.4s
-	box-shadow: 0 1px 5px rgba(0,0,0,.4)
+  position: absolute
+  top: 48px
+  right: 20px
+  z-index: 1000
+  background: #fff
+  width: 37px
+  height: 37px
+  border: 1px solid #cecece
+  border-radius: 5px
+  text-align: left
+  transition: all 0.4s
+  box-shadow: 0 1px 5px rgba(0,0,0,.4)
 
-	.fa-clone
-		position: absolute
-		top: 10px
-		right: 9px
-		font-size: 18px
-		cursor: pointer
-		z-index: 1000
+  .fa-clone
+    position: absolute
+    top: 10px
+    right: 9px
+    font-size: 18px
+    cursor: pointer
+    z-index: 1000
 
-	.category
-		position: relative
-		margin: 5px 0
-		padding: 5px 0
-		border-bottom: 1px dashed $grayLight
+  .category
+    position: relative
+    margin: 5px 0
+    padding: 5px 0
+    border-bottom: 1px dashed $grayLight
 
-		.fa-angle-down
-			position: absolute
-			top: 10px
-			right: 10px
-			font-weight: 600
-			cursor: pointer
-			&:hover
-				color: $darkBlue
+    .fa-angle-down
+      position: absolute
+      top: 10px
+      right: 10px
+      font-weight: 600
+      cursor: pointer
+      &:hover
+        color: $darkBlue
 
-		.w-category-name
-			cursor: pointer
+    .control-layers-selector
+      position: relative
+      padding-left: 10px
 
-		.category-label
-			text-transform: uppercase
-			font-size: 14px
+      input:checked ~ .fa-edit
+        pointer-events: all
+        opacity: 1
 
-	.control-layers-selector
-		position: relative
-		padding-left: 10px
+      .fa-edit
+        position: absolute
+        right: 7px
+        top: 5px
+        cursor: pointer      
+        pointer-events: none
+        opacity: 0.5
+        &.active
+          color: $main
 
-		input:checked ~ .fa-edit
-			pointer-events: all
-			opacity: 1
+    .w-category-name
+      cursor: pointer
 
-		.fa-edit
-			position: absolute
-			right: 7px
-			top: 5px
-			cursor: pointer      
-			pointer-events: none
-			opacity: 0.5
-			&.active
-				color: $main
+    .category-label
+      text-transform: uppercase
+      font-size: 14px
 
-	.control-layers-overlays
-		position: absolute
-		right: 0
-		padding: 25px 10px 20px 20px
-		min-width: 240px
-		max-height: 90vh
-		overflow-y: auto
-		background: #ffffff
-		box-shadow: 0 1px 5px rgba(0,0,0,.4)
-		label
-			font-size: 14px
+  .control-layers-overlays
+    position: absolute
+    right: 0
+    padding: 25px 10px 20px 20px
+    min-width: 240px
+    max-height: 90vh
+    overflow-y: auto
+    background: #ffffff
+    box-shadow: 0 1px 5px rgba(0,0,0,.4)
+    label
+      font-size: 14px
 
-		.l-sub
-			margin-left: 25px
-			font-size: 13px
-			.l-name-sub-color
-				width: 8px
-				height: 8px
-				margin-right: 8px
-				display: inline-block
+    .l-sub
+      margin-left: 25px
+      font-size: 13px
+      .l-name-sub-color
+        width: 8px
+        height: 8px
+        margin-right: 8px
+        display: inline-block
 
-	input[type=checkbox]
-		display: none
-		+ label:before
-			font-family: FontAwesome
-			display: inline-block
-			content: "\f096"
-			letter-spacing: 10px
-			color: #555
-		&:checked + label:before
-			content: "\f046"
-			letter-spacing: 5px
+  input[type=checkbox]
+    display: none
+    + label:before
+      font-family: FontAwesome
+      display: inline-block
+      content: "\f096"
+      letter-spacing: 10px
+      color: #555
+    &:checked + label:before
+      content: "\f046"
+      letter-spacing: 5px
 
-	.point
-		margin-left: 6px
-		margin-right: 8px
-		display: inline-block
-		width: 10px
-		height: 10px
-		border-radius: 10px
-		text-align: center
-		background: #333333
-		border: 1px solid #000000
-		&.sc
-			background: #067c4e
-		&.sc48
-			background: #C0392B
-		&.sc144
-			background: #19459d
-		&.otb
-			background: #00E5FF
-		&.otbb
-			background: #D500F9  
-		&.poles
-			background: #757575  
-		&.cross
-			background: red
-		&.newPole
-			background: #f2eb15
-		&.report
-			background: red
-		&.cross
-			background: #D50000  
-
-
-	.line
-		margin-left: 6px
-		margin-right: 8px
-		display: inline-block
-		vertical-align: middle
-		width: 10px
-		height: 2px
-		text-align: center
-		background: #333333
-		&.drop
-			background: #8b2b22
-		&.ofc_12
-			background: #00B0FF
-		&.fig_8
-			background: #FFD600
-		&.ofc_48
-			background: #BF360C 
-		&.ofc_144
-			background: #1A237E
-		&.roads
-			background: #E67E22
-		&.railways
-			background: #333
-		&.nbn_metro_exist
-			background: #4A148C
-			height: 3px
-		&.cable
-			background: #34495E
+  .point
+    margin-left: 6px
+    margin-right: 8px
+    display: inline-block
+    width: 10px
+    height: 10px
+    border-radius: 10px
+    text-align: center
+    background: #333333
+    border: 1px solid #000000
+    &.sc
+      background: #067c4e
+    &.sc48
+      background: #C0392B
+    &.sc144
+      background: #19459d
+    &.otb
+      background: #00E5FF
+    &.otbb
+      background: #D500F9  
+    &.poles
+      background: #757575  
+    &.cross
+      background: red
+    &.newPole
+      background: #f2eb15
+    &.report
+      background: red
+    &.cross
+      background: #D50000  
 
 
-	.poly
-		margin-left: 6px
-		margin-right: 8px
-		display: inline-block
-		width: 10px
-		height: 10px
-		text-align: center
-		background: #333333
-		border: 1px solid #000000
-		&.buildings
-			background: #b8b8b8
-		&.hydro
-			background: #6aacf6
-		&.mdu
-			background: #ff0ff7
-		&.population
-			background: #830c0e
-		&.area
-			background: rgba(51, 105, 30, 0.2)
-			border: 2px dashed #33691E
-		&.demand
-			background: rgba(117, 117, 117, 0.4)
-			border: 2px dashed #757575
+  .line
+    margin-left: 6px
+    margin-right: 8px
+    display: inline-block
+    vertical-align: middle
+    width: 10px
+    height: 2px
+    text-align: center
+    background: #333333
+    &.drop
+      background: #8b2b22
+    &.ofc_12
+      background: #00B0FF
+    &.fig_8
+      background: #FFD600
+    &.ofc_48
+      background: #BF360C 
+    &.ofc_144
+      background: #1A237E
+    &.roads
+      background: #E67E22
+    &.railways
+      background: #333
+    &.nbn_metro_exist
+      background: #4A148C
+      height: 3px
+    &.cable
+      background: #34495E
 
-		span
-			color: $darkBlue
-			position: relative
-			display: inline-block
 
-		div
-			position: relative
-			line-height: 25px
+  .poly
+    margin-left: 6px
+    margin-right: 8px
+    display: inline-block
+    width: 10px
+    height: 10px
+    text-align: center
+    background: #333333
+    border: 1px solid #000000
+    &.buildings
+      background: #b8b8b8
+    &.hydro
+      background: #6aacf6
+    &.mdu
+      background: #ff0ff7
+    &.population
+      background: #830c0e
+    &.area
+      background: rgba(51, 105, 30, 0.2)
+      border: 2px dashed #33691E
+    &.demand
+      background: rgba(117, 117, 117, 0.4)
+      border: 2px dashed #757575
+
+    span
+      color: $darkBlue
+      position: relative
+      display: inline-block
+
+    div
+      position: relative
+      line-height: 25px
 

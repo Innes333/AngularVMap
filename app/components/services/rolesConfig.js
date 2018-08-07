@@ -43,13 +43,13 @@
 				gsm_sites_ghana: 'gsm_sites_ghana'
             },            
             cityLocation: {
-                Akatsi: {
-                    lng: 0.7934081,
-					lat: 6.1288312
+                Lome: {
+                    lng: 1.240906,
+					lat: 6.130398
                 },
-                Abor: {
-                    lng: 0.8569122,
-					lat: 6.0604373
+                Tabligbo: {
+                    lng: 1.502488,
+					lat: 6.595080, 
                 },
                 Kara: {
                     lng: 1.194402,

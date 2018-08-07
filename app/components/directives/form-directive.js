@@ -18,7 +18,7 @@ angular.module('vMapsApp')
 
 					formData.id &&
 					$http.put(
-						'http://137.74.82.193:3000/gva/' + schema + '/' + layer + '/' + formData.id,
+						'http://137.74.82.193:3000/gva/gsm/' + layer + '/' + formData.id,
 						formData
 					);
 				})

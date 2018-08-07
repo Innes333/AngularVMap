@@ -1,0 +1,50 @@
+<div class="popup-content">
+	<div class="save-popup-content">
+		<div class="container-fluid clrp">
+			<div class="col-md-12 clrp">
+				<div class="card">
+					<h2> Media Information of current GSM site</h2>					
+                                         
+					<button 
+						class="tab-btn"
+						ng-init="activetab = 'tab1'"
+						ng-click="activetab = 'tab1'"
+						ng-class="{active : activetab === 'tab1'}"
+					>
+						Images
+					</button>
+					<button
+						class="tab-btn"
+						ng-click="activetab = 'tab2'"
+						ng-class="{active : activetab === 'tab2'}"
+					>
+						Videos
+					</button>					
+					
+					<div class="tab-content" ng-show="activetab === 'tab1'">  
+						<div class="w-images">
+							<div data-ng-repeat="item in imageList">
+								<img data-ng-src="{{item}}" alt="gsm site">
+							</div>
+						</div> 
+					</div>
+
+					<div class="tab-content" ng-show="activetab === 'tab2'">
+						<div class="w-videos" data-ng-repeat="video in videoList">
+							<video controls>
+							<source data-ng-src="{{video}}" type="video/mp4">						
+								Your browser does not support the video tag.
+							</video>		
+						</div>
+												  
+					</div>
+				</div>
+			</div>			
+		</div>
+	</div>
+	<button type="button"
+		data-popup-close
+		class="btn material popup-close">
+		<i class="fa fa-times"></i>
+	</button>
+</div>	

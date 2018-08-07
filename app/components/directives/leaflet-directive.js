@@ -1607,11 +1607,20 @@
 					content += '<div class="form-group"><span class="input-label">' + columns[i] + 
 					':</span> <input value="' + feature.properties[columns[i]] +'" data-column="'+ columns[i] + '"/></div>' : '';
 				}
-				if (feature.properties.data_pdf) {
-					content += '<a href="gsm_data/'+ feature.properties.city + '/' + 
-					feature.properties.data_pdf + '" class="pdf-link" target="_blank">' + 'View PDF' + '</a>' +
-					'<button type="button" class="btn" data-popup-btn title="popup button"> Show media</button>';
+
+				if (feature.properties.data_pdf ) {
+					content += '<a href="gsm_data/Mile_7/' + 
+					feature.properties.data_pdf + '" class="pdf-link" target="_blank">View PDF</a>'					
 				}
+
+				if (feature.properties.data_img || feature.properties.data_video) {	
+					content += '<button class="media-btn" popup-btn popup-block="popup-media"' +
+					'data-videos='+ feature.properties.data_video + '  ' +
+					'data-images='+ feature.properties.data_img + '>' +
+					'View media </button>'
+				}
+				console.log(layer.options.layerName);
+
 				if (feature.properties.img) {
 					content += '<div class="popup-img">' + 
 					'<img src="gsm_data/'+ feature.properties.city + '/' + feature.properties.img + '"/></div>'
