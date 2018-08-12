@@ -12,7 +12,6 @@
   transition: all 0.4s
   box-shadow: 0 1px 5px rgba(0,0,0,.4)
 
-
   .fa-clone
     position: absolute
     top: 10px
@@ -37,16 +36,37 @@
         color: $darkBlue
 
     .control-layers-selector
-      padding-left: 20px
+      position: relative
+      padding-left: 10px
+
+      input:checked ~ .fa-edit
+        pointer-events: all
+        opacity: 1
+
+      .fa-edit
+        position: absolute
+        right: 7px
+        top: 5px
+        cursor: pointer      
+        pointer-events: none
+        opacity: 0.5
+        &.active
+          color: $main
+
+    .w-category-name
+      cursor: pointer
 
     .category-label
       text-transform: uppercase
+      font-size: 14px
 
   .control-layers-overlays
     position: absolute
     right: 0
     padding: 25px 10px 20px 20px
-    min-width: 200px
+    min-width: 240px
+    max-height: 90vh
+    overflow-y: auto
     background: #ffffff
     box-shadow: 0 1px 5px rgba(0,0,0,.4)
     label
@@ -83,18 +103,26 @@
     text-align: center
     background: #333333
     border: 1px solid #000000
+    &.sc
+      background: #067c4e
     &.sc48
-      background: #33a02c
+      background: #C0392B
     &.sc144
-      background: #1e2cec
+      background: #19459d
     &.otb
-      background: #975959
+      background: #00E5FF
+    &.otbb
+      background: #D500F9  
+    &.poles
+      background: #757575  
     &.cross
       background: red
     &.newPole
       background: #f2eb15
     &.report
       background: red
+    &.cross
+      background: #D50000  
 
 
   .line
@@ -109,13 +137,13 @@
     &.drop
       background: #8b2b22
     &.ofc_12
-      background: #64FFDA
-    &.ofc_fig_8
-      background: #ff001e
+      background: #00B0FF
+    &.fig_8
+      background: #FFD600
     &.ofc_48
-      background: #795548
+      background: #BF360C 
     &.ofc_144
-      background: #304FFE
+      background: #1A237E
     &.roads
       background: #E67E22
     &.railways
@@ -144,12 +172,12 @@
       background: #ff0ff7
     &.population
       background: #830c0e
-    &.departments
-      background: rgba(131, 12, 14, 0.1)
-      border: 2px dashed #BF360C
-    &.province
-      background: rgba(131, 12, 14, 0.1)
-      border: 2px dashed #3E2723
+    &.area
+      background: rgba(51, 105, 30, 0.2)
+      border: 2px dashed #33691E
+    &.demand
+      background: rgba(117, 117, 117, 0.4)
+      border: 2px dashed #757575
 
     span
       color: $darkBlue

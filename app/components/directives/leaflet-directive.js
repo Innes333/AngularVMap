@@ -1560,7 +1560,8 @@
 	}]);
 
 	angular.module('leaflet-directive')
-		.factory('leafletLayerHelpers', ["$rootScope", "$log", "$q", "leafletHelpers", "leafletIterators", function($rootScope, $log, $q, leafletHelpers, leafletIterators) {
+		.factory('leafletLayerHelpers', ["$rootScope", "$log", "$q", "leafletHelpers", "leafletIterators", "$compile",
+			function($rootScope, $log, $q, leafletHelpers, leafletIterators, $compile) {
 			var Helpers = leafletHelpers;
 			var isString = leafletHelpers.isString;
 			var isObject = leafletHelpers.isObject;
@@ -1595,7 +1596,7 @@
 
 				return utfgrid;
 			};
-			
+
 			var createPopupContent = function(feature, layer, params) {
 				var content = '';
 				var columns = params.popupColumns;
@@ -1603,13 +1604,17 @@
 					content += '<div class="layer-name">' + layer.options.layerName.toUpperCase() +'</div>' : '';
 				for (var i=0; i < columns.length; i++) {
 					feature.properties[columns[i]] !== null && feature.properties[columns[i]] !== undefined ?
-					content += '<div><span>' + columns[i] + ':</span> ' + feature.properties[columns[i]] +'</div>' : '';
+					content += '<div class="form-group"><span class="input-label">' + columns[i] + 
+					':</span> <input value="' + feature.properties[columns[i]] +'" data-column="'+ columns[i] + '"/></div>' : '';
 				}
 				if (feature.properties.pdf) {
-					console.log(feature.properties.file);
 					content += '<a href="pdf/'+ feature.properties.pdf + '.pdf" class="pdf-link" target="_blank">' + 'Open PDF' + '</a>'
 				}
-				return content;
+				if (feature.properties.img) {
+					content += '<div class="popup-img"><img src="img/'+ feature.properties.img + '"/></div>'
+				}
+				return '<form data-layer="'+ layer.options.layerName + '" data-schema="' + layer.options.schema + '">' + content + 
+					'<button data-update-layer type="submit">Update</button></form>';
 			};
 
 			var layerTypes = {
@@ -1662,9 +1667,8 @@
 				},
 				geoJSONSVGMarker: {
 					mustHaveUrl: false,
-					createLayer: function(params) {
+					createLayer: function(params) {						
 						return new L.geoJson(params.data, {
-							// renderer: L.canvas(),
 							pointToLayer: function(feature, latlng) {
 								var styles;
 								if (typeof params.options.fillColor === 'object') {
@@ -1681,15 +1685,19 @@
 									}										
 								} else {
 									styles = params.options;
-								}
-								
-								return L.circleMarker(latlng, {styles: styles});
+								}								
+
+								return L.circle(latlng, styles);
 							},
 							onEachFeature: function (feature, layer) {
-								layer.bindPopup(createPopupContent(feature, layer, params.options));
-					        } 
-						});						
-						
+								if (feature.geometry.coordinates.length === 0) {
+									return;
+								}
+								var html = createPopupContent(feature, layer, params.options);
+								html = $compile(html)($rootScope);
+								layer.bindPopup(html[0]);
+							},
+						});
 					},
 				},				
 				geoJSONPolyline: {
@@ -1754,14 +1762,19 @@
 							} else {
 								return params.options;
 							}		
-						}					
-							
-						return new L.geoJson(params.data, {
-							renderer: L.canvas(),
+						}
+
+						return new L.geoJson(params.data, {			
+
 							style: styleSetter,
+							renderer: L.canvas(),
 							onEachFeature: function (feature, layer) {
-								console.log(layer);
-								layer.bindPopup(createPopupContent(feature, layer, params.options));
+								if (feature.geometry.coordinates.length === 0) {
+									return;
+								}
+								var html = createPopupContent(feature, layer, params.options);
+								html = $compile(html)($rootScope);
+								layer.bindPopup(html[0]);
 							}
 						});									
 					}

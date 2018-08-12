@@ -1,105 +1,127 @@
 angular.module('vMapsApp')
 	.directive('layerControl', ['$document','$window', '$compile', 'leafletData', 'rolesConfig',
 	function($document, $window, $compile, leafletData, rolesConfig, $rootScope) {
+		var zIndex = 210;
 		return {
 			restrict: 'AE',
 			scope: true,			
 			link: function(scope, element, attrs){	
 				var layers = scope.$parent.userLayers,
-					userLayersConfig = scope.$parent.userLayersConfig;
-				scope.checked = true;
-
-				var createCheckbox = function (config, category) {
-						
-					var multiColorLayerFunc = function() {
-
-						if (typeof config.color==="object") {
-							
-							var subLayer = config.color;
-							var result = '';
-
-							for (var item in subLayer) {
-								if(subLayer.hasOwnProperty(item)) {
-							      result +='<li class="l-sub-name"><span class="l-name-sub-color" style="background:' + subLayer[item] + '"></span>' + item + '</li>';
-							    } 
-							}
-
-							return result;
-
-						} else {
-							return '<li class="l-color"></li>';
-						}
+					userLayersConfig = scope.$parent.userLayersConfig,
+					addLayer = scope.$parent.addLayer;
+				scope.checked = true,
+				loadFirstL = userLayersConfig.loadFirst.length,
+				scope.edit = userLayersConfig.loadFirst[loadFirstL - 1];
+				
+				var hexToRGB = function(hex, alpha) {
+					var r = parseInt(hex.slice(1, 3), 16),
+						g = parseInt(hex.slice(3, 5), 16),
+						b = parseInt(hex.slice(5, 7), 16);
+				
+					if (alpha) {
+						return "rgba(" + r + ", " + g + ", " + b + ", " + alpha + ")";
+					} else {
+						return "rgb(" + r + ", " + g + ", " + b + ")";
 					}
-					
-					return '<div class="control-layers-selector">' +
-						'<input ng-checked="'+ category + '" checked ng-click="switchLayer(' + "'" + config.className + "'" +
-						')" id="' + config.className + '" type="checkbox">' +
-						'<label for="' + config.className + '">' +
-						'<span class="'	+ config.type + ' ' + config.className + '"></span>' +
-						'<span class="l-name">' + config.name + '</span></label>' +
-						'<ul class="l-sub">' + multiColorLayerFunc() + '</ul>' +
-						'</div>';
+				}
 
+				var createCheckbox = function (config, category) {			
+											
+					var multiColorLayerFunc = function() {
+						var result = '';
+						var renderItems = function(colors) {
+							var items = '';
+							console.log(colors);
+							for (var color in colors) {					
+								items +='<li class="l-sub-name"><span class="l-name-sub-color" style="background:' +
+								colors[color] + '"></span>' + color + '</li>';							    
+							}
+							result = '<ul class="l-sub">' + items + '</ul>';
+						}
+
+						if (typeof config.color === "object") {
+							renderItems(config.color);
+						} else if (typeof config.fillColor === "object") {
+							renderItems(config.fillColor);
+						}
+						return result;						
+					}
+
+					var layerColor = typeof config.fillColor === "object" ? Object.values(config.fillColor)[0] : config.fillColor;
+
+					return '<div class="control-layers-selector">' +
+						'<input ng-checked="'+ userLayersConfig.loadFirst.includes(config.className) + '" ng-click="switchLayer(' + "'" + config.className + "'" +
+							')" id="' + config.className + '" type="checkbox">' +
+						'<label for="' + config.className + '">' +
+							'<span class="'	+ config.type + '" style="background:'+ hexToRGB(layerColor, config.fillOpacity) + '">' +						
+							'</span>' +
+							'<span class="l-name">' + config.name + '</span>' +					
+						'</label>' + 
+						'<span class="fa fa-edit" ng-class="{' + "'" + 'active' + "'" + ': edit ==' + "'" + config.className + "'" +  '}" ' +
+						'ng-click="moveTop('  + "'" + config.className + "'" + ')"></span>' +
+							multiColorLayerFunc() +
+						'</div>';
+				
 				};
 
 				var switcher = function (baseLayers, layerName) {
-					baseLayers.overlays[layerName].eachLayer(function (layer) {
-						if (layer.options.opacity === 0) {
-							layer.setStyle({
-								fillOpacity : userLayersConfig[layerName].fillOpacity,
-								opacity: userLayersConfig[layerName].opacity
-							})
-						} else {
-							layer.setStyle({
-								fillOpacity : 0,
-								opacity: 0
-							})
-						}
-					});
+					if (!baseLayers.overlays[layerName]) {
+						addLayer(userLayersConfig[layerName], layerName);
+					} else {
+						baseLayers.overlays[layerName].eachLayer(function (layer) {
+							if (layer.options.opacity === 0) {
+								layer.setStyle({
+									fillOpacity : userLayersConfig[layerName].fillOpacity,
+									opacity: userLayersConfig[layerName].opacity
+								})
+							} else {
+								layer.setStyle({
+									fillOpacity : 0,
+									opacity: 0
+								})
+							}
+						});						
+					}
 				};
 
 				var renderHmtl = function() {
 					var list = '';
 					var categoryList = '';
-					var layersArray = {};
-					for (layer in layers) {
-						var category = userLayersConfig[layer].category;
-						if(category && layersArray.hasOwnProperty(category)) {
-							layersArray[category].push(layer);
-						} else if(category && !layersArray.hasOwnProperty(category)) {
-							layersArray[category] = [layer];
+					var categoriesArray = {};
+					for (layer in layers) {			
+						var zone = userLayersConfig[layer].zone;
+						if(zone && categoriesArray.hasOwnProperty(zone)) {
+							categoriesArray[zone].push(layer);
+						} else if(zone && !categoriesArray.hasOwnProperty(zone)) {
+							categoriesArray[zone] = [layer];
 						}
 						else {
-							layersArray[layer] = layer;
+							categoriesArray[layer] = layer;
 						}
 					}
-					for (layer in layersArray) {
-						if (typeof layersArray[layer] === 'string') {
-							var layerConfig = userLayersConfig[layer];
+					for (category in categoriesArray) {
+						if (typeof categoriesArray[category] === 'string') {
+							var layerConfig = userLayersConfig[category];
 							list += createCheckbox(layerConfig, 'checked');							
 						} else {
 							var checkboxes = '';
-							scope[layer] = true;
-							layersArray[layer].map(function(item) {
-								var layerConfig = userLayersConfig[item];
-								checkboxes += createCheckbox(layerConfig, layer);
+							scope[category] = true;
+							categoriesArray[category].map(function(item) {
+								checkboxes += createCheckbox(userLayersConfig[item], category);
 							});
+							var categoryName = category.replace(/_/g, '-');
 
 							list +=
-								'<div class="control-layers-selector category">' +
-								'<input checked ng-click="switchLayer('+ "'" + layersArray[layer] + "'" +
-								'); ' + layer + '=!' + layer + '" id="' + layer + '" type="checkbox">' +
-								'<label class="category-label" for="' + layer + '">' +
-								layer + '</label>' +
-								'<span class="fa fa-angle-down" ng-click="show' + layer + '= !show' + layer + '"> </span>' +
-								'<div class="sub-categories" ng-show="show' + layer + '">' + checkboxes +
-								'</div>' +
+								'<div class="control-layers-selector category">' +	
+									'<div class="w-category-name" ng-click="show' + category + '= !show' + category + '">' +						
+										'<span class="category-label">' + categoryName + '</span>' +
+										'<span class="fa fa-angle-down"> </span>' +
+									'</div>' +
+									'<div class="sub-categories" ng-show="show' + category + '">' + checkboxes + '</div>' +
 								'</div>';
-
-						}				
-						
-
+						}
 					}
+
 					list += categoryList;
 					return list;
 				};
@@ -116,6 +138,22 @@ angular.module('vMapsApp')
 						} else {
 							switcher(baselayers, layers);
 						}
+					})
+				};
+
+				scope.moveTop = function(layer) {
+					scope.edit = layer;
+					leafletData.getLayers('map').then(function(baselayers) {
+						zIndex += 1;
+
+						if( !baselayers.overlays[layer].options.renderer._container) {
+							baselayers.overlays[layer].bringToFront();
+						} else {
+							baselayers.overlays[layer].options.renderer._container.style.zIndex = zIndex;
+						}
+						// console.log(baselayers.overlays[layer].options.renderer(function(e){ console.log(e)}));
+						// baselayers.overlays[layer].bringToFront();
+						// baselayers.overlays[$scope.userLayersConfig.topLayers[i]].bringToFront();
 					})
 				};
 
