@@ -3,7 +3,7 @@
 		.module('vMapsApp')
 		.service('rolesConfig', function(){
             return {               
-            baseUrl:  'http://localhost:3000/layers/',
+            baseUrl:  'http://176.37.101.48:3000/',
             loginUrl: 'login.json',
             itemsUrl:	'testJson.json',
             demoJSON: {
@@ -16,7 +16,7 @@
                     className: 'gsm_sites_ghana',
                     pane: 'overlayPane',
                     type: 'point',
-                    url: 'http://137.74.82.193:3000/gva/gsm/gsm_sites_ghana',
+                    url: 'http://176.37.101.48:3000/gva/gsm/gsm_sites_ghana',
                     fillColor: '#333',
                     color: {
                         done: '#1B5E20',
