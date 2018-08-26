@@ -1624,7 +1624,7 @@
 					content += '<div class="popup-img">' + 
 					'<img src="gsm_data/'+ feature.properties.city + '/' + feature.properties.img + '"/></div>'
 				}
-				return '<form data-layer="'+ layer.options.layerName + '" data-schema="' + params.schema + '">' + content + 
+				return '<form id="update-form" data-layer="'+ layer.options.layerName + '" data-schema="' + params.schema + '">' + content + 
 					'<button data-update-layer type="submit">Update'+
 					'<span class="progress"></span></button></form>';
 			};

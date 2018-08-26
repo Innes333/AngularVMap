@@ -17,18 +17,21 @@ angular.module('vMapsApp')
 							formData[inputs[i].dataset.column] = inputs[i].value;
 						}
 					}
+					
 					element.removeClass('saved');
 					element.addClass('saving');
+					
 					formData.id &&
 					$http.put(
 						rolesConfig.baseUrl + 'gva/' + schema + '/' + layer + '/' + formData.id,
 						formData
 					).then(function(resp){
-						console.log(resp);
 						if (resp.status === 200) {
 							window.setTimeout(function() {
-								element.removeClass('saving');
-								element.addClass('saved');
+								// element.removeClass('saving');
+								// element.addClass('saved');
+								element.attr('class','ng-scope saved');
+
 							}, 800);
 						}
 					});
