@@ -3,23 +3,25 @@
 		<div class="container-fluid clrp">
 			<div class="col-md-12 clrp">
 				<div class="card">
-					<h2> Media Information of current GSM site</h2>					
-                                         
-					<button 
-						class="tab-btn"
-						ng-init="activetab = 'tab1'"
-						ng-click="activetab = 'tab1'"
-						ng-class="{active : activetab === 'tab1'}"
-					>
-						Images
-					</button>
-					<button
-						class="tab-btn"
-						ng-click="activetab = 'tab2'"
-						ng-class="{active : activetab === 'tab2'}"
-					>
-						Videos
-					</button>					
+					<h2> Media Information of current GSM site</h2>	
+									
+                    <div class="tab-bar">
+						<button 
+							class="tab-btn"
+							ng-init="activetab = 'tab1'"
+							ng-click="activetab = 'tab1'"
+							ng-class="{active : activetab === 'tab1'}"
+						>
+							Images
+						</button>
+						<button
+							class="tab-btn"
+							ng-click="activetab = 'tab2'"
+							ng-class="{active : activetab === 'tab2'}"
+						>
+							Videos
+						</button>
+					</div>                     
 					
 					<div class="tab-content" ng-show="activetab === 'tab1'">  
 						<div class="w-images">

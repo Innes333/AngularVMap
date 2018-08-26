@@ -1619,14 +1619,14 @@
 					'data-images='+ feature.properties.data_img + '>' +
 					'View media </button>'
 				}
-				console.log(layer.options.layerName);
-
+				
 				if (feature.properties.img) {
 					content += '<div class="popup-img">' + 
 					'<img src="gsm_data/'+ feature.properties.city + '/' + feature.properties.img + '"/></div>'
 				}
-				return '<form data-layer="'+ layer.options.layerName + '" data-schema="' + layer.options.schema + '">' + content + 
-					'<button data-update-layer type="submit">Update</button></form>';
+				return '<form data-layer="'+ layer.options.layerName + '" data-schema="' + params.schema + '">' + content + 
+					'<button data-update-layer type="submit">Update'+
+					'<span class="progress"></span></button></form>';
 			};
 
 			var layerTypes = {

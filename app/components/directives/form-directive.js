@@ -1,5 +1,5 @@
 angular.module('vMapsApp')
-	.directive('updateLayer', ['$http', '$document','$window', '$compile', 'leafletData', 'rolesConfig',
+	.directive('updateLayer', ['$http', '$document','$window', '$compile', 'leafletData', 'rolesConfig', '$rootScope',
 	function($http, $document, $window, $compile, leafletData, rolesConfig, $rootScope) {
 		return {
 			restrict: 'A',
@@ -13,14 +13,25 @@ angular.module('vMapsApp')
 						layer = form[0].dataset.layer;
 					
 					for (i=0; i < inputs.length -1; i++) {	
-						formData[inputs[i].dataset.column] = inputs[i].value;
+						if (inputs[i].value) {
+							formData[inputs[i].dataset.column] = inputs[i].value;
+						}
 					}
-
+					element.removeClass('saved');
+					element.addClass('saving');
 					formData.id &&
 					$http.put(
-						rolesConfig.baseUrl + 'gva/gsm/' + layer + '/' + formData.id,
+						rolesConfig.baseUrl + 'gva/' + schema + '/' + layer + '/' + formData.id,
 						formData
-					);
+					).then(function(resp){
+						console.log(resp);
+						if (resp.status === 200) {
+							window.setTimeout(function() {
+								element.removeClass('saving');
+								element.addClass('saved');
+							}, 800);
+						}
+					});
 				})
 
 			

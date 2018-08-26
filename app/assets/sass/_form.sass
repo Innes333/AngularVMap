@@ -287,11 +287,31 @@ form
 	button
 		display: block
 		margin: 15px auto
-		padding: 5px 10px		
+		padding: 6px 10px 6px 36px	
 		color: $white	
 		text-transform: uppercase
 		letter-spacing: 1px
-		@extend %extend_bg_blue
+		background: $main
+
+		.progress
+			display: inline-block
+			margin-left: 8px
+			width: 15px
+			height: 15px
+			background-repeat: no-repeat
+			background-size: contain
+			vertical-align: bottom
+
+		&.saving
+			pointer-events: none
+			opacity: 0.6
+
+			.progress	
+				background-image: url('../img/loader.gif')
+		&.saved
+			.progress	
+				background-image: url('../img/white-check.png')
+
 
 	.media-btn		
 		display: inline-block

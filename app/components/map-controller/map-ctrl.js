@@ -58,6 +58,7 @@
 
 	        // get map object from $scope
 			var map = leafletData.getMap('map');
+			$rootScope.isSaving = false;
 		
 			// addLayer
 			$scope.addLayer = function(layer, layerName) {
@@ -72,6 +73,7 @@
 						if (!response.data.features) {
 							features = [{"type":"Feature","geometry":{"type":"LineString","coordinates":[]}}]
 						}
+						console.log('mapctrl', layer.schema);
 						$scope.layers.overlays[layerName] = {
 							name: overlayName,
 							type: layerType,
@@ -168,18 +170,6 @@
 					};
 				});
 			});
-
-			$scope.getMediaf = 'jfdkjfdkjf';
-			$scope.getMedia = function() {
-				console.log('click');
-			}
-			// console.log(leafletData.getMap('map'))
-			// window.onsubmit = function(e) {
-			// 	e.preventDefault();
-			// 	// window.data = e;
-			// 	var formData = angular(e.target);
-			// 	console.log('submit', formData);
-			// };
 
 			// get current location by IP
 			$scope.searchIP = function() {
