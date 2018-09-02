@@ -215,6 +215,10 @@
 				$scope.vmap.lat = cityLoc.lat;
 			}
 
+			$scope.openFolder = function(num) {
+				$scope.activeFolder = num - 0;
+				// $scope.$digest();
+			}
 
 	}]);
 }());

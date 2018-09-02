@@ -3,7 +3,7 @@
 		<div class="container-fluid clrp">
 			<div class="col-md-12 clrp">
 				<div class="card">
-					<h2> Media Information of current GSM site</h2>	
+					<h2>Media information of GSM site {{siteName}}</h2>	
 									
                     <div class="tab-bar">
 						<button 
@@ -21,14 +21,55 @@
 						>
 							Videos
 						</button>
+						<button
+							class="tab-btn"
+							ng-click="activetab = 'tab3'"
+							ng-class="{active : activetab === 'tab3'}"
+						>
+							Orthophoto
+						</button>
+						<button
+							class="tab-btn"
+							ng-click="activetab = 'tab4'"
+							ng-class="{active : activetab === 'tab4'}"	
+						>
+							3D model
+						</button>
 					</div>                     
 					
 					<div class="tab-content" ng-show="activetab === 'tab1'">  
-						<div class="w-images">
-							<div data-ng-repeat="item in imageList">
-								<img data-ng-src="{{item}}" alt="gsm site">
+						<div class="w-folders" ng-hide="activeFolder">
+							<div class="folder" ng-click="openFolder(item)" data-ng-repeat="item in siteCount track by $index">								
+								<i class="fa fa-folder" ></i>
+								<span class="folder-number">{{item}}</span>								
+							</div>
+						</div>
+
+						<div class="w-images" data-ng-show="activeFolder">
+							<span class="fa chevron-circle-left back" data-ng-click="openFolder(false)"></span>
+
+							<div ng-show="activeFolder == 1">
+								<div data-ng-repeat="img in imageList1" >
+									<img data-ng-src="{{img}}" alt="gsm site">
+								</div>
+							</div>
+							<div ng-show="activeFolder == 2">
+								<div data-ng-repeat="item in imageList2" >
+									<img data-ng-src="{{item}}" alt="gsm site">
+								</div>
+							</div>
+							<div ng-show="activeFolder == 3">
+								<div data-ng-repeat="item in imageList3" >
+									<img data-ng-src="{{item}}" alt="gsm site">
+								</div>
+							</div>
+							<div ng-show="activeFolder == 4">
+								<div data-ng-repeat="item in imageList4" >
+									<img data-ng-src="{{item}}" alt="gsm site">
+								</div>
 							</div>
 						</div> 
+
 					</div>
 
 					<div class="tab-content" ng-show="activetab === 'tab2'">
@@ -40,6 +81,14 @@
 						</div>
 												  
 					</div>
+
+					<div class="tab-content" ng-show="activetab === 'tab3'">
+						<div class="w-orto">
+							<img data-ng-src="{{orthophoto}}" alt="gsm site orthophoto">
+						</div>
+												  
+					</div>
+
 				</div>
 			</div>			
 		</div>

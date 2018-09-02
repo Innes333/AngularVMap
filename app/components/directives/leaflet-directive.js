@@ -1610,14 +1610,22 @@
 
 				if (feature.properties.data_pdf ) {
 					content += '<a href="gsm_data/Mile_7/' + 
-					feature.properties.data_pdf + '" class="pdf-link" target="_blank">View PDF</a>'					
+					feature.properties.data_pdf + '" class="pdf-link" target="_blank">Reports</a>'					
 				}
 
-				if (feature.properties.data_img || feature.properties.data_video) {	
+				if (feature.properties.data_img1 || feature.properties.data_video) {
+					var dataImg1 = 	feature.properties.data_img1 !== '' ? 'data-images1="'+ feature.properties.data_img1 + '" ' : "",
+						dataImg2 = 	feature.properties.data_img2 !== '' ? 'data-images2="'+ feature.properties.data_img2 + '" ' : "",
+						dataImg3 = 	feature.properties.data_img3 !== '' ? 'data-images3="'+ feature.properties.data_img3 + '" ' : "",
+						dataImg4 = 	feature.properties.data_img4 !== '' ? 'data-images4="'+ feature.properties.data_img4 + '" ' : "",
+						dataOrtho = feature.properties.data_ortho !== '' ? 'data-ortho="'+ feature.properties.data_ortho + '" ' : "",
+						data3d = feature.properties.data_3d !== '' ? 'data-3d="'+ feature.properties.data_3d + '" ' : "";
+
 					content += '<button class="media-btn" popup-btn popup-block="popup-media"' +
+					'data-name='+ feature.properties.site_name + '  ' +
 					'data-videos='+ feature.properties.data_video + '  ' +
-					'data-images='+ feature.properties.data_img + '>' +
-					'View media </button>'
+					dataImg1 + dataImg2 + dataImg3 + dataImg4 + dataOrtho + data3d +  '>' +
+					'Media </button>'
 				}
 				
 				if (feature.properties.img) {
@@ -1686,7 +1694,7 @@
 								if (typeof params.options.color === 'object') {
 									styles = {
 										fillColor: params.options.fillColor,
-										color: params.options.color[feature.properties.class],
+										color: params.options.color[feature.properties.status],
 										pane: params.options.pane,
 										radius: params.options.radius,
 										weight: params.options.weight,
@@ -1719,17 +1727,17 @@
 							if (typeof params.options.color === 'object') {			
 								return { 
 									fillColor: params.options.fillColor,
-									color: params.options.color[feature.properties.class],
+									color: params.options.color[feature.properties.status],
 									pane: params.options.pane,
 									radius: params.options.radius,
-									weight: params.options.weight[feature.properties.class],
+									weight: params.options.weight[feature.properties.status],
 									opacity: params.options.opacity,
 									pointerEvents: 'all',
 									layerName: params.options.layerName,
 									popupColumns: params.options.popupColumns
 								}							
 							} else if (typeof params.options.fillColor === 'object') {								
-								var currentColor = params.options.fillColor[feature.properties.class];
+								var currentColor = params.options.fillColor[feature.properties.status];
 								if (params.options.layerName === 'population') {
 									var val = feature.properties.population;									
 									switch (true) {

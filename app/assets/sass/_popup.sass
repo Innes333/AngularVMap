@@ -100,6 +100,7 @@
 			color: $white
 			border-bottom: 3px solid $blue
 
+	
 
 	h2
 		margin-top: 15px
@@ -112,7 +113,35 @@
 	img
 		width: 100%		
 		margin-bottom: 15px
+	.back
+		margin-left: 5px
+		font-size: 20px
+		cursor: pointer	
 
 .w-videos		
 	video
 		width: 100%
+
+
+// media popup
+.w-folders
+	.folder
+		position: relative
+		display: inline-block
+		width: 75px
+		cursor: pointer
+
+		&:hover 
+			.folder-number
+				color: $blue
+
+		.fa-folder
+			font-size: 45px
+			text-shadow: 1px 3px 4px #ccc
+			color: #555555
+
+		.folder-number
+			position: absolute
+			top: 10px
+			left: 25px
+			color: $white	
