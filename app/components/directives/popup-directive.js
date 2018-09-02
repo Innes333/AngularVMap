@@ -58,10 +58,9 @@ angular.module('vMapsApp')
 						count.push(4); 
 					}
 
-					console.log(attrs);
 					if(attrs.videos) {		
 						var videoList= attrs.videos.split(',').map(function(item){
-							return 'gsm_data/Mile_7/' + item;
+							return 'gsm_data/'+ folderName + '/video/' + item;
 						});
 						scope.$parent.videoList = videoList;
 						scope.$parent.isVideoShown = true;
