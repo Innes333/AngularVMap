@@ -23,7 +23,18 @@
 		width: 70vw
 		height: 80vh		
 		@include transform(translateX(-50%) translateY(-50%))
-		@include transition(all 0.6s)		
+		@include transition(all 0.6s)	
+
+		&.fullscreen
+			width: 95vw
+			height: 95vh
+			text-align: center
+			.card
+				text-align: center	
+			img
+				max-width: 100%
+				max-height: 94vh
+
 		&.error-massage
 			.save-popup-content
 				min-height: 200px
@@ -100,7 +111,6 @@
 			color: $white
 			border-bottom: 3px solid $blue
 
-	
 
 	h2
 		margin-top: 15px
@@ -109,10 +119,32 @@
 
 
 // Media popup
-.w-images
+.w-media-images
+	.small-img
+		position: relative
+		display: inline-block
+		width: 100px
+		margin-right: 10px
+		margin-top: 10px
+		border: 1px solid #cecece
+		cursor: pointer
+
+		&:hover
+			.fa-expand
+				opacity: 1
+
+		.fa-expand
+			position: absolute
+			top: 30px
+			left: 50%
+			margin-left: -10px
+			font-size: 20px
+			opacity: 0
+			transition: opacity 0.3s
+			color: $white
+
 	img
-		width: 100%		
-		margin-bottom: 15px
+		width: 100%	
 	.back
 		margin-left: 5px
 		font-size: 20px

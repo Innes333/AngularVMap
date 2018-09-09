@@ -1,10 +1,10 @@
 (function(){
 	angular.module('vMapsApp')
 		.controller('mapCtrl', ['$http',
-			'$interval', 'leafletData', '$rootScope', '$scope', '$window',
+			'$interval', 'leafletData', 'leafletMarkerEvents', '$rootScope', '$scope', '$window',
 			'$routeParams', '$timeout', '$localStorage',
 			'baseFunc', 'dataService', 'rolesConfig',
-			function($http, $interval, leafletData, $rootScope,
+			function($http, $interval, leafletData, leafletMarkerEvents, $rootScope,
 			         $scope, $window, $routeParams, $timeout, $localStorage,
 			         baseFunc, dataService, rolesConfig){
 					
@@ -82,6 +82,7 @@
 							visible: true,
 							clickable: true,
 							autoZIndex: false,
+							title: 'marker',
 							layerOptions: {
 								pane: layer.pane,
 								radius: layer.radius,
@@ -171,6 +172,17 @@
 				});
 			});
 
+			// get all events
+			$scope.events = {
+                markers: {
+                    enable: leafletMarkerEvents.getAvailableEvents(),
+                }
+            };
+
+			$scope.$on('mouseover', function(event, args){
+				console.log(event, args);
+			});
+
 			// get current location by IP
 			$scope.searchIP = function() {
 				var url = "http://freegeoip.net/json/";
@@ -219,6 +231,11 @@
 				$scope.activeFolder = num - 0;
 				// $scope.$digest();
 			}
+
+			$scope.setImgSrc = function(imgSrc) {
+				$scope.viewImgSrc = imgSrc;
+				// $scope.$digest();
+			};
 
 	}]);
 }());

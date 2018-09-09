@@ -23,7 +23,7 @@ angular.module('vMapsApp')
 					scope.$parent.is3dShown = false;
 					
 					
-					if(attrs.images1) {		
+					if(attrs.images1 && attrs.images1 !== 'null') {		
 						scope.$parent.isimgshown = true;
 						var imgList	= attrs.images1.split(',').map(function(item){
 							return 'gsm_data/' + folderName + '/1/' + item;
@@ -31,7 +31,7 @@ angular.module('vMapsApp')
 						scope.$parent.imageList1 = imgList;
 					}
 
-					if(attrs.images2) {		
+					if(attrs.images2 && attrs.images2 !== 'null') {		
 						scope.$parent.isimgshown = true;
 						var imgList	= attrs.images2.split(',').map(function(item){
 							return 'gsm_data/' + folderName + '/2/' + item;
@@ -40,7 +40,7 @@ angular.module('vMapsApp')
 						count.push(2);
 					}
 
-					if(attrs.images3) {		
+					if(attrs.images3 && attrs.images3 !== 'null') {		
 						scope.$parent.isimgshown = true;
 						var imgList	= attrs.images3.split(',').map(function(item){
 							return 'gsm_data/' + folderName + '/3/' + item;
@@ -49,7 +49,7 @@ angular.module('vMapsApp')
 						count.push(3); 
 					}
 
-					if(attrs.images4) {		
+					if(attrs.images4 && attrs.images4 !== 'null') {		
 						scope.$parent.isimgshown = true;
 						var imgList	= attrs.images4.split(',').map(function(item){
 							return 'gsm_data/' + folderName + '/4/' + item;
@@ -58,7 +58,7 @@ angular.module('vMapsApp')
 						count.push(4); 
 					}
 
-					if(attrs.videos) {		
+					if(attrs.videos && attrs.videos !== 'null') {		
 						var videoList= attrs.videos.split(',').map(function(item){
 							return 'gsm_data/'+ folderName + '/video/' + item;
 						});
@@ -83,10 +83,15 @@ angular.module('vMapsApp')
 			scope: true,
 			link: function(scope,element,attrs,ngModel){
 				element.bind('click', function(e){
-					var popups = document.getElementsByClassName('popup');
-					for(var i = 0; i < popups.length; i++){
-						angular.element(popups[i]).removeClass('active');
-					};
+					if (attrs.onlyOne) {
+						angular.element(element).parent().parent().removeClass('active');
+						console.log(angular.element(element).parent().parent());
+					} else {
+						var popups = document.getElementsByClassName('popup');
+						for(var i = 0; i < popups.length; i++){
+							angular.element(popups[i]).removeClass('active');
+						};
+					}
 				});
 			}
 		}

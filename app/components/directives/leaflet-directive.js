@@ -1603,9 +1603,13 @@
 				layer.options.layerName !== null && layer.options.layerName !== undefined ?
 					content += '<div class="layer-name">' + layer.options.layerName.toUpperCase() +'</div>' : '';
 				for (var i=0; i < columns.length; i++) {
-					feature.properties[columns[i]] !== null && feature.properties[columns[i]] !== undefined ?
-					content += '<div class="form-group"><span class="input-label">' + columns[i] + 
-					':</span> <input value="' + feature.properties[columns[i]] +'" data-column="'+ columns[i] + '"/></div>' : '';
+					if (feature.properties[columns[i]] !== null && feature.properties[columns[i]] !== undefined) {
+						columns[i] === 'status'
+						? content += '<hr><div class="form-group"><span class="input-label">' + columns[i] + 
+							':</span> <input value="' + feature.properties[columns[i]] +'" data-column="'+ columns[i] + '"/></div>'
+						: content += '<div class="form-group"><span class="input-label">' + columns[i] + 
+							':</span> <input value="' + feature.properties[columns[i]] +'" data-column="'+ columns[i] + '"/></div>';
+					}
 				}
 
 				if (feature.properties.data_pdf ) {
@@ -1716,6 +1720,7 @@
 								var html = createPopupContent(feature, layer, params.options);
 								html = $compile(html)($rootScope);
 								layer.bindPopup(html[0]);
+								layer.bindTooltip(feature.properties.site_name);
 							},
 						});
 					},
@@ -1737,36 +1742,7 @@
 									popupColumns: params.options.popupColumns
 								}							
 							} else if (typeof params.options.fillColor === 'object') {								
-								var currentColor = params.options.fillColor[feature.properties.status];
-								if (params.options.layerName === 'population') {
-									var val = feature.properties.population;									
-									switch (true) {
-										case (val < 150): 
-											currentColor = '#1a9641';
-										break;
-										case (150 <= val &&  val < 500): 
-											currentColor = '#77c35c';
-										break;
-										case (500 <= val &&  val < 1000): 
-											currentColor = '#9cbf5a';
-										break;
-										case (1000 <= val &&  val < 2500): 
-											currentColor = '#e2e250';
-										break;		
-										case (2500 <= val &&  val < 4000): 
-											currentColor = '#fec981';
-										break;	
-										case (4000 <= val &&  val < 6500): 
-											currentColor = '#f17c4a';
-										break;	
-										case (6500 <= val &&  val < 13000): 
-											currentColor = '#b73d2b';
-										break;	
-										case (val >= 13000): 
-											currentColor = '#830c0e';
-										break;											
-									}									
-								}								
+								var currentColor = params.options.fillColor[feature.properties.status];													
 								return { 
 									fillColor: currentColor,
 									color: params.options.color,

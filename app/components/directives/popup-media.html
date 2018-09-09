@@ -45,12 +45,20 @@
 							</div>
 						</div>
 
-						<div class="w-images" data-ng-show="activeFolder">
+						<div class="w-media-images" data-ng-show="activeFolder">
 							<span class="fa fa-arrow-left back" data-ng-click="openFolder(false)"></span>
 
 							<div ng-show="activeFolder == 1">
-								<div data-ng-repeat="img in imageList1" >
+								<div
+									class="small-img"
+									data-ng-repeat="img in imageList1" 
+									data-popup-btn
+									popup-block="popup-view-img"
+									data-ng-click="setImgSrc(img)"
+								>
 									<img data-ng-src="{{img}}" alt="gsm site">
+									<i class="fa fa-expand"></i>
+
 								</div>
 							</div>
 							<div ng-show="activeFolder == 2">

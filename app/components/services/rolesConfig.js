@@ -24,9 +24,11 @@
                         bad: '#C62828',
                         planned: '#FDD835'
                     },
+                    title: 'test',
+                    alt: 'blah',
                     opacity: 1,
                     fillOpacity: 1,
-                    weight: 6,
+                    weight: 8,
                     radius: 8,
                     popupColumns: [
                         'id', 'site_name', 'site_reference', 'city', 'access_contact',
