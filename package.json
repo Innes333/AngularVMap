@@ -16,13 +16,14 @@
     "gulp-nodemon": "^2.2.1",
     "gulp-order": "^1.1.1",
     "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.0.4",
-    "gulp-sourcemaps": "^1.6.0",
-    "gulp-uglify": "^2.0.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "1.6.0",
+    "gulp-uglify": "2.0.1",
     "gulp-uglifyjs": "^0.6.2",
     "gulp-useref": "^3.1.2",
     "gulp-util": "^3.0.8",
     "node-bourbon": "^4.2.3",
+    "node-sass": "^3.4.2",
     "vinyl-ftp": "^0.6.0"
   },
   "dependencies": {

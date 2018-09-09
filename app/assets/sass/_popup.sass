@@ -20,9 +20,10 @@
 		left: 50%
 		opacity: 0
 		margin-top: 150px
-		min-height: 270px
+		width: 70vw
+		height: 80vh		
 		@include transform(translateX(-50%) translateY(-50%))
-		@include transition(all 0.6s)
+		@include transition(all 0.6s)		
 		&.error-massage
 			.save-popup-content
 				min-height: 200px
@@ -50,6 +51,8 @@
 				@include transition(top 0.3s)
 				&.active
 					top: 100%
+		.card
+			text-align: left			
 
 	.fade-out
 		position: absolute
@@ -67,6 +70,78 @@
 		font-weight: bold
 	.popup-close
 		position: absolute
-		right: -30px
-		top: -40px
+		right: 0
+		top: 0
 		line-height: 38px
+		background: transparent
+		box-shadow: unset
+		color: #777
+		font-size: 18px
+	
+	.tab-content
+		padding-top: 20px
+		width: 100%
+		height: 55vh
+		overflow-y: auto
+
+	.tab-bar
+		margin-top: 20px
+		background: $darkBlue
+
+	.tab-btn
+		padding: 8px 30px
+		background: transparent
+		border-bottom: 3px solid $darkBlue
+		color: #bababa
+		font-size: 11px
+		text-transform: uppercase
+		letter-spacing: 1px
+		&.active
+			color: $white
+			border-bottom: 3px solid $blue
+
+	
+
+	h2
+		margin-top: 15px
+		text-align: center
+		font-size: 18px
+
+
+// Media popup
+.w-images
+	img
+		width: 100%		
+		margin-bottom: 15px
+	.back
+		margin-left: 5px
+		font-size: 20px
+		cursor: pointer	
+
+.w-videos		
+	video
+		width: 100%
+
+
+// media popup
+.w-folders
+	.folder
+		position: relative
+		display: inline-block
+		width: 75px
+		cursor: pointer
+
+		&:hover 
+			.folder-number
+				color: $blue
+
+		.fa-folder
+			font-size: 45px
+			text-shadow: 1px 3px 4px #ccc
+			color: #555555
+
+		.folder-number
+			position: absolute
+			top: 10px
+			left: 25px
+			color: $white	

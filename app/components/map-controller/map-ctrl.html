@@ -9,9 +9,11 @@
 			layers="layers"
 			defaults="defaults"
 			watch-markers="false"
-			legend="legend">			
+			legend="legend"
+			preferCanvas="true">			
 		</leaflet>
 		<div class="location-control fa fa-map-marker" data-ng-click="searchIP()"></div>
+
 		<div class="map-visibility-control fa" data-ng-class="isActive ? 'fa-map-o': 'fa-map'" data-ng-click="toggleLayer('osm')"></div>
 
 		<div class="w-control-layers">
@@ -19,10 +21,20 @@
 			<div data-layer-control class="control-layers-overlays" data-ng-show="active"></div>
 		</div>
 
-
+		<div class="w-control-city">
+			<i class="fa fa-location-arrow" aria-hidden="true" data-ng-click="cityShow = !cityShow"></i>
+			<div class="city-control" data-ng-show="cityShow">
+				<div class="change-city-label">Select different location</div>
+				<select ng-options="option for option in cityOptions" 
+					ng-model="selectedCity"
+					data-ng-change="selectedCityChanged()">
+				</select>
+			</div>
+		</div>
+		<div id="popup-media" 
+			class="popup"
+			data-ng-include src="'components/directives/popup-media.html'">
+		</div>
 	</div>
-</div>
-<div id="popup-items" 
-	class="popup"
-	data-ng-include src="'components/directives/popup-items-template.html'">
+	
 </div>

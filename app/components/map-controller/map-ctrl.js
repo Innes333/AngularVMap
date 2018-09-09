@@ -1,7 +1,7 @@
 (function(){
 	angular.module('vMapsApp')
 		.controller('mapCtrl', ['$http',
-			'$interval', 'leafletData','$rootScope', '$scope', '$window',
+			'$interval', 'leafletData', '$rootScope', '$scope', '$window',
 			'$routeParams', '$timeout', '$localStorage',
 			'baseFunc', 'dataService', 'rolesConfig',
 			function($http, $interval, leafletData, $rootScope,
@@ -12,12 +12,16 @@
 				vmap: {
 					lat: 0.504503980130774,
 					lng: 9.408579986073635,
-					zoom: 16
+					zoom: 10,
+					preferCanvas: true,
+					renderer: L.canvas()				
 				},
 				defaults: {
-					zoomAnimation: false,
+					zoomAnimation: true,
 					markerZoomAnimation: false,
-					fadeAnimation: false
+					fadeAnimation: true,
+					preferCanvas: true,
+					renderer: L.canvas()
 				},
 				controls: {
 					custom: new L.Control.Measure({
@@ -27,7 +31,10 @@
 						secondaryAreaUnit: 'hectares'
 					})
 				},
+				preferCanvas: true,
+				renderer: L.canvas(),
 				layers: {
+					renderer: L.canvas(),
 					sortLayers: true,
 					sortFunction: function() {},
 					baselayers: {
@@ -51,20 +58,27 @@
 
 	        // get map object from $scope
 			var map = leafletData.getMap('map');
+			$rootScope.isSaving = false;
 		
 			// addLayer
-			var addLayer = function(layer, layerName) {
+			$scope.addLayer = function(layer, layerName) {
+				$rootScope.appConfig.preloader = true;
 				var layerType = layer.type === 'poly' || layer.type === 'line' ?
 					'geoJSONPolyline' : 'geoJSONSVGMarker';
 				var overlayName = '<span class="check"><span class="checked"></span></span><span class="'
 				 + layer.type + ' ' + layerName + '"></span>' + layer.name;
-				dataService.getData(layer.url + '.geojson')
+				dataService.getData(layer.url)
 					.then(function (response) {
+						var features = response.data;
+						if (!response.data.features) {
+							features = [{"type":"Feature","geometry":{"type":"LineString","coordinates":[]}}]
+						}
+						console.log('mapctrl', layer.schema);
 						$scope.layers.overlays[layerName] = {
 							name: overlayName,
 							type: layerType,
 							renderer: L.canvas(),
-							data: response.data,
+							data: features,
 							visible: true,
 							clickable: true,
 							autoZIndex: false,
@@ -80,77 +94,42 @@
 								dashArray: layer.dashArray !== '' ? layer.dashArray : '',
 								layerName: layerName,
 								zIndex: 100,
-								popupColumns: layer.popupColumns
+								popupColumns: layer.popupColumns,
+								schema: layer.schema
 							}
 						};
+						$rootScope.appConfig.preloader = false;
 					}, function (error) {
 						throw dataService.catchError(error, 'Ajax call error message!');
 					});
 			};
 
 			var currentUser = $rootScope.appConfig.user.username,
-				userLayersCount = 0;
+				userLayersCount = 0,
+				loadFirstCount = 0;
 
-			var getLayers = function(nameOfLayers, url) {				
+			var loadLayers = function(nameOfLayers, url, loadFirst) {				
 				for (var layer in nameOfLayers) {
-					addLayer(rolesConfig[url][layer], layer);					
+					loadFirst.includes(layer) && $scope.addLayer(rolesConfig[url][layer], layer);					
 				}					
 			};
 
 			switch (currentUser) {
 				case 'demo':
-					$scope.vmap.lng = 2.385152;
-					$scope.vmap.lat = 6.369213;
+					$scope.vmap.lng = 0.991557;
+					$scope.vmap.lat = 5.9311694;
 					userLayersCount = Object.keys(rolesConfig.demoLayers).length;
-					getLayers(rolesConfig.demoLayers, 'demoJSON', userLayersCount);
+					loadFirstCount = rolesConfig.demoJSON.loadFirst.length;
+					loadLayers(rolesConfig.demoLayers, 'demoJSON', rolesConfig.demoJSON.loadFirst );
 					$scope.userLayers = rolesConfig.demoLayers;
 					$scope.userLayersConfig = rolesConfig.demoJSON;
-				break;
-				case 'Vincent':
-					$scope.vmap.lng = 2.24078;
-					$scope.vmap.lat = 7.973468;
-					userLayersCount = Object.keys(rolesConfig.vincentLayers).length;
-					getLayers(rolesConfig.vincentLayers, 'vincentJSON', userLayersCount);
-					$scope.userLayers = rolesConfig.vincentLayers;
-					$scope.userLayersConfig = rolesConfig.vincentJSON;
-				break;
-				case 'Gabon':
-					$scope.vmap.lat = 0.60393;
-					$scope.vmap.lng = 9.650924;
-					$scope.vmap.zoom = 9;
-					$scope.legend = {
-						position: 'bottomright',
-						colors: [ '#1a9641', '#77c35c', '#9cbf5a', '#e2e250', '#fec981', '#f17c4a', '#b73d2b', '#830c0e' ],
-						labels: [ '0 - 150', '150 - 500', '500 - 1000', '1000 - 2500', '2500 - 4000', '4000 - 6500', '6500 - 13000', '13000 - 80000' ]
-					};
-					getLayers(rolesConfig.populationLayers, 'populationJSON');
-					userLayersCount = Object.keys(rolesConfig.populationLayers).length;
-					$scope.userLayers = rolesConfig.populationLayers;
-					$scope.userLayersConfig = rolesConfig.populationJSON;
-				break;
-				case 'presidence':
-					getLayers(rolesConfig.presidenceLayers, 'testGeoJSON');
-					userLayersCount = Object.keys(rolesConfig.presidenceLayers).length;
-					$scope.userLayers = rolesConfig.presidenceLayers;
-					$scope.userLayersConfig = rolesConfig.testGeoJSON;
-				break;
-				case 'bti':
-					getLayers(rolesConfig.btiLayers, 'testGeoJSON');
-					userLayersCount = Object.keys(rolesConfig.btiLayers).length;
-					$scope.userLayers = rolesConfig.btiLayers;
-					$scope.userLayersConfig = rolesConfig.testGeoJSON;
-				break;
-				case 'bts':
-					getLayers(rolesConfig.btsLayers, 'testGeoJSON');
-					userLayersCount = Object.keys(rolesConfig.btsLayers).lengt;
-					$scope.userLayers = rolesConfig.btsLayers;
-					$scope.userLayersConfig = rolesConfig.testGeoJSON;
-				break;
+				break;							
 				default:
-					$scope.vmap.lng = 2.385152;
-					$scope.vmap.lat = 6.369213;
+					$scope.vmap.lng = -0.239391;
+					$scope.vmap.lat = 5.632969;
 					userLayersCount = Object.keys(rolesConfig.demoLayers).length;
-					getLayers(rolesConfig.demoLayers, 'demoJSON', userLayersCount);
+					loadFirstCount = rolesConfig.demoJSON.loadFirst.length;
+					loadLayers(rolesConfig.demoLayers, 'demoJSON', rolesConfig.demoJSON.loadFirst);
 					$scope.userLayers = rolesConfig.demoLayers;
 					$scope.userLayersConfig = rolesConfig.demoJSON;
 			};
@@ -158,13 +137,14 @@
 			$scope.$watchCollection('layers.overlays', function(allArray) {
 				leafletData.getLayers('map').then(function(baselayers) {
 					// check if all layers are loaded
-					if (Object.keys(allArray).length === userLayersCount) {
+					if (Object.keys(allArray).length === loadFirstCount || Object.keys(allArray).length === userLayersCount ) {
+						$rootScope.appConfig.preloader = false;
 						// move to front a layer										
-						if ($scope.userLayersConfig.topLayers) {
-							for (var i=0; i < $scope.userLayersConfig.topLayers.length; i++) {
-								baselayers.overlays[$scope.userLayersConfig.topLayers[i]].bringToFront();
-							}
-						}							
+						// if ($scope.userLayersConfig.topLayers) {
+						// 	for (var i=0; i < $scope.userLayersConfig.topLayers.length; i++) {
+						// 		baselayers.overlays[$scope.userLayersConfig.topLayers[i]].bringToFront();
+						// 	}
+						// }							
 						
 						var poiLayers;
 						// Prepare array of overlay layers
@@ -204,7 +184,7 @@
 				});
 			};
 
-
+					
 			// Toggle map baselayer visibility
 			var baseMapLayer = $scope.layers.baselayers.osm;
 			var overlays = $scope.layers.baselayers;	
@@ -215,8 +195,8 @@
 			// 		$scope.isActive = false;
 			// 	}
 			// }
-			$scope.toggleLayer = function(overlayName) {
 
+			$scope.toggleLayer = function(overlayName) {
                 if (overlays.hasOwnProperty(overlayName)) {
                     delete overlays[overlayName];
                     $scope.isActive = !$scope.isActive;
@@ -224,8 +204,21 @@
                 } else {
                     overlays[overlayName] = baseMapLayer;
                 }
-            };
+			};
+			
+			// changee city location
+			$scope.cityOptions = ['Lome', 'Tabligbo', 'Kara'];
+  
+			$scope.selectedCityChanged = function(){
+				var cityLoc = rolesConfig.cityLocation[$scope.selectedCity];
+				$scope.vmap.lng = cityLoc.lng;
+				$scope.vmap.lat = cityLoc.lat;
+			}
 
+			$scope.openFolder = function(num) {
+				$scope.activeFolder = num - 0;
+				// $scope.$digest();
+			}
 
 	}]);
 }());

@@ -38,11 +38,14 @@
 				// 	$location.path('/');
 				// 	$rootScope.appConfig.user = false;
 				// }
-				// $rootScope.appConfig.preloader = true;
+				$rootScope.appConfig.preloader = true;
+
 			});
 
 			$rootScope.$on('$routeChangeSuccess', function() {
-				$rootScope.appConfig.preloader = false;
+				if (window.location.href.indexOf('/map') === -1) {
+					$rootScope.appConfig.preloader = false;
+				}
 			});
 
 			$rootScope.appConfig = {

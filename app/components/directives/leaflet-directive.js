@@ -1560,7 +1560,8 @@
 	}]);
 
 	angular.module('leaflet-directive')
-		.factory('leafletLayerHelpers', ["$rootScope", "$log", "$q", "leafletHelpers", "leafletIterators", function($rootScope, $log, $q, leafletHelpers, leafletIterators) {
+		.factory('leafletLayerHelpers', ["$rootScope", "$log", "$q", "leafletHelpers", "leafletIterators", "$compile",
+			function($rootScope, $log, $q, leafletHelpers, leafletIterators, $compile) {
 			var Helpers = leafletHelpers;
 			var isString = leafletHelpers.isString;
 			var isObject = leafletHelpers.isObject;
@@ -1595,7 +1596,7 @@
 
 				return utfgrid;
 			};
-			
+
 			var createPopupContent = function(feature, layer, params) {
 				var content = '';
 				var columns = params.popupColumns;
@@ -1603,13 +1604,37 @@
 					content += '<div class="layer-name">' + layer.options.layerName.toUpperCase() +'</div>' : '';
 				for (var i=0; i < columns.length; i++) {
 					feature.properties[columns[i]] !== null && feature.properties[columns[i]] !== undefined ?
-					content += '<div><span>' + columns[i] + ':</span> ' + feature.properties[columns[i]] +'</div>' : '';
+					content += '<div class="form-group"><span class="input-label">' + columns[i] + 
+					':</span> <input value="' + feature.properties[columns[i]] +'" data-column="'+ columns[i] + '"/></div>' : '';
 				}
-				if (feature.properties.pdf) {
-					console.log(feature.properties.file);
-					content += '<a href="pdf/'+ feature.properties.pdf + '.pdf" class="pdf-link" target="_blank">' + 'Open PDF' + '</a>'
+
+				if (feature.properties.data_pdf ) {
+					content += '<a href="gsm_data/Mile_7/' + 
+					feature.properties.data_pdf + '" class="pdf-link" target="_blank">Reports</a>'					
 				}
-				return content;
+
+				if (feature.properties.data_img1 || feature.properties.data_video) {
+					var dataImg1 = 	feature.properties.data_img1 !== '' ? 'data-images1="'+ feature.properties.data_img1 + '" ' : "",
+						dataImg2 = 	feature.properties.data_img2 !== '' ? 'data-images2="'+ feature.properties.data_img2 + '" ' : "",
+						dataImg3 = 	feature.properties.data_img3 !== '' ? 'data-images3="'+ feature.properties.data_img3 + '" ' : "",
+						dataImg4 = 	feature.properties.data_img4 !== '' ? 'data-images4="'+ feature.properties.data_img4 + '" ' : "",
+						dataOrtho = feature.properties.data_ortho !== '' ? 'data-ortho="'+ feature.properties.data_ortho + '" ' : "",
+						data3d = feature.properties.data_3d !== '' ? 'data-3d="'+ feature.properties.data_3d + '" ' : "";
+
+					content += '<button class="media-btn" popup-btn popup-block="popup-media"' +
+					'data-name='+ feature.properties.site_name + '  ' +
+					'data-videos='+ feature.properties.data_video + '  ' +
+					dataImg1 + dataImg2 + dataImg3 + dataImg4 + dataOrtho + data3d +  '>' +
+					'Media </button>'
+				}
+				
+				if (feature.properties.img) {
+					content += '<div class="popup-img">' + 
+					'<img src="gsm_data/'+ feature.properties.city + '/' + feature.properties.img + '"/></div>'
+				}
+				return '<form id="update-form" data-layer="'+ layer.options.layerName + '" data-schema="' + params.schema + '">' + content + 
+					'<button data-update-layer type="submit">Update'+
+					'<span class="progress"></span></button></form>';
 			};
 
 			var layerTypes = {
@@ -1662,15 +1687,14 @@
 				},
 				geoJSONSVGMarker: {
 					mustHaveUrl: false,
-					createLayer: function(params) {
+					createLayer: function(params) {						
 						return new L.geoJson(params.data, {
-							// renderer: L.canvas(),
 							pointToLayer: function(feature, latlng) {
 								var styles;
-								if (typeof params.options.fillColor === 'object') {
+								if (typeof params.options.color === 'object') {
 									styles = {
-										fillColor: params.options.fillColor[feature.properties.class],
-										color: params.options.color[feature.properties.class],
+										fillColor: params.options.fillColor,
+										color: params.options.color[feature.properties.status],
 										pane: params.options.pane,
 										radius: params.options.radius,
 										weight: params.options.weight,
@@ -1681,15 +1705,19 @@
 									}										
 								} else {
 									styles = params.options;
-								}
-								
-								return L.circleMarker(latlng, {styles: styles});
+								}								
+
+								return L.circle(latlng, styles);
 							},
 							onEachFeature: function (feature, layer) {
-								layer.bindPopup(createPopupContent(feature, layer, params.options));
-					        } 
-						});						
-						
+								if (feature.geometry.coordinates.length === 0) {
+									return;
+								}
+								var html = createPopupContent(feature, layer, params.options);
+								html = $compile(html)($rootScope);
+								layer.bindPopup(html[0]);
+							},
+						});
 					},
 				},				
 				geoJSONPolyline: {
@@ -1699,17 +1727,17 @@
 							if (typeof params.options.color === 'object') {			
 								return { 
 									fillColor: params.options.fillColor,
-									color: params.options.color[feature.properties.class],
+									color: params.options.color[feature.properties.status],
 									pane: params.options.pane,
 									radius: params.options.radius,
-									weight: params.options.weight[feature.properties.class],
+									weight: params.options.weight[feature.properties.status],
 									opacity: params.options.opacity,
 									pointerEvents: 'all',
 									layerName: params.options.layerName,
 									popupColumns: params.options.popupColumns
 								}							
 							} else if (typeof params.options.fillColor === 'object') {								
-								var currentColor = params.options.fillColor[feature.properties.class];
+								var currentColor = params.options.fillColor[feature.properties.status];
 								if (params.options.layerName === 'population') {
 									var val = feature.properties.population;									
 									switch (true) {
@@ -1754,14 +1782,19 @@
 							} else {
 								return params.options;
 							}		
-						}					
-							
-						return new L.geoJson(params.data, {
-							renderer: L.canvas(),
+						}
+
+						return new L.geoJson(params.data, {			
+
 							style: styleSetter,
+							renderer: L.canvas(),
 							onEachFeature: function (feature, layer) {
-								console.log(layer);
-								layer.bindPopup(createPopupContent(feature, layer, params.options));
+								if (feature.geometry.coordinates.length === 0) {
+									return;
+								}
+								var html = createPopupContent(feature, layer, params.options);
+								html = $compile(html)($rootScope);
+								layer.bindPopup(html[0]);
 							}
 						});									
 					}
