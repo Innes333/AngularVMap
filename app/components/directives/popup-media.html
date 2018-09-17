@@ -39,9 +39,10 @@
 					
 					<div class="tab-content" ng-show="activetab === 'tab1'">  
 						<div class="w-folders" ng-hide="activeFolder">
+							<img src="./assets/img/gsm-schema.png" alt="gsm site schema" class="site-schema">
 							<div class="folder" ng-click="openFolder(item)" data-ng-repeat="item in siteCount track by $index">								
 								<i class="fa fa-folder" ></i>
-								<span class="folder-number">{{item}}</span>								
+								<span class="folder-number">{{ item }}</span>								
 							</div>
 						</div>
 
@@ -56,7 +57,8 @@
 									popup-block="popup-view-img"
 									data-ng-click="setImgSrc(img)"
 								>
-									<img data-ng-src="{{img}}" alt="gsm site">
+									<img data-ng-src="{{img}}" alt="gsm site"/>
+									<span class="small-img-name">{{ img.split('/')[3] }}</span>
 									<i class="fa fa-expand"></i>
 
 								</div>
