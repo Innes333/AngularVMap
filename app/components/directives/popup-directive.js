@@ -11,7 +11,7 @@ angular.module('vMapsApp')
 					var popupId = attrs.popupBlock,
 							popupEl = document.getElementById(popupId),
 							folderName = attrs.name,
-							count = [1];
+							count = ['A'];
 
 					angular.element(popupEl).addClass('active');
 
@@ -37,7 +37,7 @@ angular.module('vMapsApp')
 							return 'gsm_data/' + folderName + '/2/' + item;
 						});
 						scope.$parent.imageList2 = imgList;
-						count.push(2);
+						count.push('B');
 					}
 
 					if(attrs.images3 && attrs.images3 !== 'null') {		
@@ -46,7 +46,7 @@ angular.module('vMapsApp')
 							return 'gsm_data/' + folderName + '/3/' + item;
 						});
 						scope.$parent.imageList3 = imgList;
-						count.push(3); 
+						count.push('C'); 
 					}
 
 					if(attrs.images4 && attrs.images4 !== 'null') {		
@@ -55,7 +55,7 @@ angular.module('vMapsApp')
 							return 'gsm_data/' + folderName + '/4/' + item;
 						});
 						scope.$parent.imageList4 = imgList;
-						count.push(4); 
+						count.push('D'); 
 					}
 
 					if(attrs.videos && attrs.videos !== 'null') {		

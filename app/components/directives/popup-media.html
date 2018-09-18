@@ -49,7 +49,7 @@
 						<div class="w-media-images" data-ng-show="activeFolder">
 							<span class="fa fa-arrow-left back" data-ng-click="openFolder(false)"></span>
 
-							<div ng-show="activeFolder == 1">
+							<div ng-show="activeFolder == 'A'">
 								<div
 									class="small-img"
 									data-ng-repeat="img in imageList1" 
@@ -63,17 +63,17 @@
 
 								</div>
 							</div>
-							<div ng-show="activeFolder == 2">
+							<div ng-show="activeFolder == 'B'">
 								<div data-ng-repeat="item in imageList2" >
 									<img data-ng-src="{{item}}" alt="gsm site">
 								</div>
 							</div>
-							<div ng-show="activeFolder == 3">
+							<div ng-show="activeFolder == 'C'">
 								<div data-ng-repeat="item in imageList3" >
 									<img data-ng-src="{{item}}" alt="gsm site">
 								</div>
 							</div>
-							<div ng-show="activeFolder == 4">
+							<div ng-show="activeFolder == 'D'">
 								<div data-ng-repeat="item in imageList4" >
 									<img data-ng-src="{{item}}" alt="gsm site">
 								</div>
