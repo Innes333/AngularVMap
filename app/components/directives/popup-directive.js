@@ -57,14 +57,44 @@ angular.module('vMapsApp')
 						scope.$parent.imageList4 = imgList;
 						count.push('D'); 
 					}
-
-					if(attrs.videos && attrs.videos !== 'null') {		
-						var videoList= attrs.videos.split(',').map(function(item){
-							return 'gsm_data/'+ folderName + '/video/' + item;
-						});
-						scope.$parent.videoList = videoList;
+					
+					// ugly video src check
+					if(attrs.video1 && attrs.video1 !== 'null') {		
 						scope.$parent.isVideoShown = true;
+						var videoList = attrs.video1.split(',').map(function(item){
+							return 'gsm_data/' + folderName + '/video/1/' + item;
+						});
+						scope.$parent.videoList1 = videoList;
+						count.push('A'); 
 					}
+
+					if(attrs.video2 && attrs.video2 !== 'null') {		
+						scope.$parent.isVideoShown = true;
+						var videoList = attrs.video2.split(',').map(function(item){
+							return 'gsm_data/' + folderName + '/video/2/' + item;
+						});
+						scope.$parent.videoList2 = videoList;
+						count.push('B'); 
+					}
+
+					if(attrs.video3 && attrs.video3 !== 'null') {		
+						scope.$parent.isVideoShown = true;
+						var videoList = attrs.video3.split(',').map(function(item){
+							return 'gsm_data/' + folderName + '/video/3/' + item;
+						});
+						scope.$parent.videoList3 = videoList;
+						count.push('C'); 
+					}
+
+					if(attrs.video4 && attrs.video4 !== 'null') {		
+						scope.$parent.isVideoShown = true;
+						var videoList	= attrs.video4.split(',').map(function(item){
+							return 'gsm_data/' + folderName + '/video/4/' + item;
+						});
+						scope.$parent.videoList4 = videoList;
+						count.push('D'); 
+					}
+
 					if(attrs.ortho !== 'null') {						
 						scope.$parent.orthophoto = 'gsm_data/' + folderName + '/ortho/' + attrs.ortho;
 						scope.$parent.isOrtoShown = true;
