@@ -6,42 +6,35 @@
             baseUrl:  'http://176.37.101.48:3000/',
             loginUrl: 'login.json',
             itemsUrl:	'testJson.json',
-            demoJSON: {
-                topLayers: ['ghana_gsm_sites'],
+            streetJSON: {
+                topLayers: ['street_view'],
                 loadFirst: [
-					'ghana_gsm_sites'                   
+					'street_view'                   
                 ],       
-				ghana_gsm_sites: {
-                    name: 'GSM sites',
-                    className: 'ghana_gsm_sites',
+				street_view: {
+                    name: 'Street view',
+                    className: 'street_view',
                     pane: 'overlayPane',
                     type: 'point',
-                    url: 'http://176.37.101.48:3000/gva/gsm/ghana_gsm_sites',
-                    fillColor: '#333',
-                    color: {
-                        done: '#1B5E20',
-                        undone: '#D50000',
-                        bad: '#C62828',
-                        planned: '#FDD835'
-                    },
+                    url: 'http://176.37.101.48:3000/gva/street/street_view',
+                    fillColor: '#B71C1C',
+                    color: '#B71C1C',
                     title: 'test',
                     alt: 'blah',
                     opacity: 1,
                     fillOpacity: 1,
-                    weight: 8,
-                    radius: 8,
+                    weight: 4,
+                    radius: 4,
                     popupColumns: [
-                        'id', 'site_name', 'site_reference', 'city', 'access_contact',
-                        'longitude', 'latitude', 'tower_height', 'tower_type', 
-                        'site_type', 'site_cluster', 'powering', 'status', 'class', 'comments'
+                        'id', 'longitude', 'latitude', 'comments'
 	                ],
                     category: null,
                     schema: 'gsm',
                     zone: null
                 },
             },            
-            demoLayers: {                
-				ghana_gsm_sites: 'ghana_gsm_sites'
+            streetLayers: {                
+				street_view: 'street_view'
             },            
             cityLocation: {
                 Lome: {

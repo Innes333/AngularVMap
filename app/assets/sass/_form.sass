@@ -258,7 +258,7 @@ form
 			font-weight: 600
 			letter-spacing: 2px
 			color: $darkBlue
-
+	
 	form
 		padding: 0	
 
@@ -278,6 +278,10 @@ form
 			text-indent: 5px
 			text-overflow: ellipsis
 			border-radius: 3px
+
+		input[readonly]
+			color: #888
+			cursor: default				
 
 		&.layer-name
 			font-weight: 600
@@ -344,10 +348,16 @@ form
 		&:hover
 			color: $darkBlue
 	// images in popup
+
 	.popup-img
+		padding: 15px 0 5px
+		text-align: center	
+				
 		img
-			width: 100%
-			border: 1px solid #ccc		
+			max-width: 150px
+			border: 1px solid #cecece
+			border-radius: 3px
+			cursor: pointer		
 
 	hr
 		margin: 15px 0			

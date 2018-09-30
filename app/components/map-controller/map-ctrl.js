@@ -12,7 +12,7 @@
 				vmap: {
 					lat: 0.504503980130774,
 					lng: 9.408579986073635,
-					zoom: 10,
+					zoom: 15,
 					preferCanvas: true,
 					renderer: L.canvas()				
 				},
@@ -116,22 +116,22 @@
 
 			switch (currentUser) {
 				case 'demo':
-					$scope.vmap.lng = 0.991557;
-					$scope.vmap.lat = 5.9311694;
-					userLayersCount = Object.keys(rolesConfig.demoLayers).length;
-					loadFirstCount = rolesConfig.demoJSON.loadFirst.length;
-					loadLayers(rolesConfig.demoLayers, 'demoJSON', rolesConfig.demoJSON.loadFirst );
-					$scope.userLayers = rolesConfig.demoLayers;
-					$scope.userLayersConfig = rolesConfig.demoJSON;
+					$scope.vmap.lng = 1.210535;
+					$scope.vmap.lat = 6.121205;
+					userLayersCount = Object.keys(rolesConfig.streetLayers).length;
+					loadFirstCount = rolesConfig.streetJSON.loadFirst.length;
+					loadLayers(rolesConfig.streetLayers, 'streetJSON', rolesConfig.streetJSON.loadFirst );
+					$scope.userLayers = rolesConfig.streetLayers;
+					$scope.userLayersConfig = rolesConfig.streetJSON;
 				break;							
 				default:
-					$scope.vmap.lng = -0.239391;
-					$scope.vmap.lat = 5.632969;
-					userLayersCount = Object.keys(rolesConfig.demoLayers).length;
-					loadFirstCount = rolesConfig.demoJSON.loadFirst.length;
-					loadLayers(rolesConfig.demoLayers, 'demoJSON', rolesConfig.demoJSON.loadFirst);
-					$scope.userLayers = rolesConfig.demoLayers;
-					$scope.userLayersConfig = rolesConfig.demoJSON;
+					$scope.vmap.lng = 1.210535;
+					$scope.vmap.lat = 6.121205;
+					userLayersCount = Object.keys(rolesConfig.streetLayers).length;
+					loadFirstCount = rolesConfig.streetJSON.loadFirst.length;
+					loadLayers(rolesConfig.streetLayers, 'streetJSON', rolesConfig.streetJSON.loadFirst);
+					$scope.userLayers = rolesConfig.streetLayers;
+					$scope.userLayersConfig = rolesConfig.streetJSON;
 			};
 
 			$scope.$watchCollection('layers.overlays', function(allArray) {

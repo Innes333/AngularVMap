@@ -1606,11 +1606,17 @@
 					window.layer = layer;
 				for (var i=0; i < columns.length; i++) {
 					if (feature.properties[columns[i]] !== null && feature.properties[columns[i]] !== undefined) {
-						columns[i] === 'status'
-						? content += '<hr><div class="form-group"><span class="input-label">' + columns[i] + 
-							':</span> <input value="' + feature.properties[columns[i]] +'" data-column="'+ columns[i] + '"/></div>'
-						: content += '<div class="form-group"><span class="input-label">' + columns[i] + 
-							':</span> <input value="' + feature.properties[columns[i]] +'" data-column="'+ columns[i] + '"/></div>';
+						if (columns[i] === 'status') {
+							content += '<hr><div class="form-group"><span class="input-label">' + columns[i] + 
+								':</span> <input value="' + feature.properties[columns[i]] +'" data-column="'+ columns[i] + '"/></div>'
+						} else if (columns[i] === 'longitude' || columns[i] === 'latitude') {
+							content += '<div class="form-group"><span class="input-label">' + columns[i] + 
+								':</span> <input value="' + feature.properties[columns[i]] +'" data-column="'+ columns[i] + '" readonly /></div>';
+						} else {
+							content += '<div class="form-group"><span class="input-label">' + columns[i] + 
+								':</span> <input value="' + feature.properties[columns[i]] +'" data-column="'+ columns[i] + '"/></div>';
+						}
+
 					}
 				}
 
@@ -1641,8 +1647,9 @@
 				}
 				
 				if (feature.properties.img) {
-					content += '<div class="popup-img">' + 
-					'<img src="gsm_data/'+ feature.properties.city + '/' + feature.properties.img + '"/></div>'
+					content += '<div class="popup-img" data-popup-btn popup-block="popup-view-img" ' +
+					'data-src="' + feature.properties.img + '">' + 
+					'<img src="data_img/' + feature.properties.img + '"></div>'
 				}
 				return '<form id="update-form" data-layer="'+ layer.options.layerName + '" data-schema="' + params.schema + '">' + content + 
 					'<div class="w-submit"><button data-update-layer type="submit">Update'+
@@ -1725,10 +1732,11 @@
 								if (feature.geometry.coordinates.length === 0) {
 									return;
 								}
+							
 								var html = createPopupContent(feature, layer, params.options);
 								html = $compile(html)($rootScope);
 								layer.bindPopup(html[0]);
-								layer.bindTooltip(feature.properties.site_name);
+								layer.bindTooltip('Id: ' + feature.properties.id);
 							},
 						});
 					},

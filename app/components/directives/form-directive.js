@@ -6,7 +6,7 @@ angular.module('vMapsApp')
 			scope: true,			
 			link: function(scope, element, attrs) {
 				angular.element(element).on('click', function() {
-					var form = angular.element(this).parent('form'),
+					var form = angular.element(this).parent().parent('form'),
 						inputs = form[0].elements,
 						formData = {},
 						schema = form[0].dataset.schema,
@@ -23,7 +23,7 @@ angular.module('vMapsApp')
 					
 					formData.id &&
 					$http.put(
-						rolesConfig.baseUrl + 'gva/' + schema + '/' + layer + '/' + formData.id,
+						rolesConfig.baseUrl + 'gva/street/street_view/' + formData.id,
 						formData
 					).then(function(resp){
 						if (resp.status === 200) {
