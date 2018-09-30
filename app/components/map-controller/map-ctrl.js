@@ -231,6 +231,11 @@
 				// $scope.$digest();
 			}
 
+			$scope.openVideoFolder = function(name) {
+				$scope.activeVideoFolder = name;
+				// $scope.$digest();
+			}
+
 			$scope.setImgSrc = function(imgSrc) {
 				$scope.viewImgSrc = imgSrc;
 				// $scope.$digest();
