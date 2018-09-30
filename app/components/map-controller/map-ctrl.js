@@ -73,7 +73,6 @@
 						if (!response.data.features) {
 							features = [{"type":"Feature","geometry":{"type":"LineString","coordinates":[]}}]
 						}
-						console.log('mapctrl', layer.schema);
 						$scope.layers.overlays[layerName] = {
 							name: overlayName,
 							type: layerType,

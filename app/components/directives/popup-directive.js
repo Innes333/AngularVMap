@@ -1,8 +1,8 @@
 angular.module('vMapsApp')
-	.directive('popupBtn', ['$document','$window', '$compile', popupBtn])
+	.directive('popupBtn', ['$document','$window', '$compile', 'leafletData', popupBtn])
 	.directive('popupClose', ['$document','$window', '$compile', popupClose])
 
-	function popupBtn($document,$window,$compile){
+	function popupBtn($document,$window,$compile, leafletData){
 		return {
 			restrict: 'A',
 			scope: true,
@@ -21,7 +21,11 @@ angular.module('vMapsApp')
 					scope.$parent.isVideoShown = false;
 					scope.$parent.isOrtoShown = false;
 					scope.$parent.is3dShown = false;
-					
+					console.log('layerid', attrs);
+					leafletData.getLayers('map').then(function(layers){
+						// console.log('scopes ', layers.overlays[attrs.layer]._layers);
+						window.popl = layers.overlays[attrs.layer];
+					});
 					
 					if(attrs.images1 && attrs.images1 !== 'null') {		
 						scope.$parent.isimgshown = true;
@@ -71,8 +75,6 @@ angular.module('vMapsApp')
 					}
 					
 					scope.$parent.siteCount = count;
-					console.log(scope.$parent.siteCount);
-
 				});
 			}
 		}

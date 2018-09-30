@@ -1602,6 +1602,8 @@
 				var columns = params.popupColumns;
 				layer.options.layerName !== null && layer.options.layerName !== undefined ?
 					content += '<div class="layer-name">' + layer.options.layerName.toUpperCase() +'</div>' : '';
+					
+					window.layer = layer;
 				for (var i=0; i < columns.length; i++) {
 					if (feature.properties[columns[i]] !== null && feature.properties[columns[i]] !== undefined) {
 						columns[i] === 'status'
@@ -1612,7 +1614,7 @@
 					}
 				}
 
-				if (feature.properties.data_pdf ) {
+				if (feature.properties.data_pdf) {
 					content += '<a href="gsm_data/Mile_7/' + 
 					feature.properties.data_pdf + '" class="pdf-link" target="_blank">Reports</a>'					
 				}
@@ -1626,6 +1628,8 @@
 						data3d = feature.properties.data_3d !== '' ? 'data-3d="'+ feature.properties.data_3d + '" ' : "";
 
 					content += '<button class="media-btn" popup-btn popup-block="popup-media"' +
+					'data-layerid=' + layer._leaflet_id +  ' ' +
+					'data-layer=' + layer.options.layerName +  ' ' +
 					'data-name='+ feature.properties.site_name + '  ' +
 					'data-videos='+ feature.properties.data_video + '  ' +
 					dataImg1 + dataImg2 + dataImg3 + dataImg4 + dataOrtho + data3d +  '>' +
