@@ -1620,16 +1620,16 @@
 				}
 
 				if (feature.properties.data_img1 || feature.properties.data_video1) {
-					var dataImg1 = 	feature.properties.data_img1 !== '' ? 'data-images1="'+ feature.properties.data_img1 + '" ' : "",
-						dataImg2 = 	feature.properties.data_img2 !== '' ? 'data-images2="'+ feature.properties.data_img2 + '" ' : "",
-						dataImg3 = 	feature.properties.data_img3 !== '' ? 'data-images3="'+ feature.properties.data_img3 + '" ' : "",
-						dataImg4 = 	feature.properties.data_img4 !== '' ? 'data-images4="'+ feature.properties.data_img4 + '" ' : "",
+					var dataImg1 = 	feature.properties.data_img1 !== '' ? 'data-images1='+ feature.properties.data_img1 : "",
+						dataImg2 = 	feature.properties.data_img2 !== '' ? 'data-images2='+ feature.properties.data_img2 : "",
+						dataImg3 = 	feature.properties.data_img3 !== '' ? 'data-images3='+ feature.properties.data_img3 : "",
+						dataImg4 = 	feature.properties.data_img4 !== '' ? 'data-images4='+ feature.properties.data_img4 : "",
 						dataVideo1 = feature.properties.data_video1 !== '' ? 'data-video1='+ feature.properties.data_video1  : "",
-						dataVideo2 = feature.properties.data_video2 !== '' ? 'data-video2="'+ feature.properties.data_video2 + '" ' : "",
-						dataVideo3 = feature.properties.data_video3 !== '' ? 'data-video3="'+ feature.properties.data_video3 + '" ' : "",
-						dataVideo4 = feature.properties.data_video4 !== '' ? 'data-video4="'+ feature.properties.data_video4 + '" ' : "",						
-						dataOrtho = feature.properties.data_ortho !== '' ? 'data-ortho="'+ feature.properties.data_ortho + '" ' : "",
-						data3d = feature.properties.data_3d !== '' ? 'data-3d="'+ feature.properties.data_3d + '" ' : "";
+						dataVideo2 = feature.properties.data_video2 !== '' ? 'data-video2='+ feature.properties.data_video2 : "",
+						dataVideo3 = feature.properties.data_video3 !== '' ? 'data-video3='+ feature.properties.data_video3 : "",
+						dataVideo4 = feature.properties.data_video4 !== '' ? 'data-video4='+ feature.properties.data_video4 : "",						
+						dataOrtho = feature.properties.data_ortho !== '' ? 'data-ortho='+ feature.properties.data_ortho : "",
+						data3d = feature.properties.data_3d !== '' ? 'data-3d='+ feature.properties.data_3d : "";
 
 					content += '<button class="media-btn" popup-btn popup-block="popup-media"' +
 					'data-layerid=' + layer._leaflet_id +  ' ' +
@@ -1645,8 +1645,8 @@
 					'<img src="gsm_data/'+ feature.properties.city + '/' + feature.properties.img + '"/></div>'
 				}
 				return '<form id="update-form" data-layer="'+ layer.options.layerName + '" data-schema="' + params.schema + '">' + content + 
-					'<button data-update-layer type="submit">Update'+
-					'<span class="progress"></span></button></form>';
+					'<div><button data-update-layer type="submit">Update'+
+					'<span class="progress"></span></button></div></form>';
 			};
 
 			var layerTypes = {

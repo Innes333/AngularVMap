@@ -11,7 +11,8 @@ angular.module('vMapsApp')
 					var popupId = attrs.popupBlock,
 							popupEl = document.getElementById(popupId),
 							folderName = attrs.name,
-							count = ['A'];
+							count = [],
+							videoCount = [];
 
 					angular.element(popupEl).addClass('active');
 
@@ -33,6 +34,7 @@ angular.module('vMapsApp')
 							return 'gsm_data/' + folderName + '/1/' + item;
 						});
 						scope.$parent.imageList1 = imgList;
+						count.push('A');
 					}
 
 					if(attrs.images2 && attrs.images2 !== 'null') {		
@@ -69,7 +71,7 @@ angular.module('vMapsApp')
 							return 'gsm_data/' + folderName + '/video/1/' + item;
 						});
 						scope.$parent.videoList1 = videoList;
-						count.push('A'); 
+						videoCount.push('A'); 
 					}
 
 					if(attrs.video2 && attrs.video2 !== 'null') {		
@@ -78,7 +80,7 @@ angular.module('vMapsApp')
 							return 'gsm_data/' + folderName + '/video/2/' + item;
 						});
 						scope.$parent.videoList2 = videoList;
-						count.push('B'); 
+						videoCount.push('B'); 
 					}
 
 					if(attrs.video3 && attrs.video3 !== 'null') {		
@@ -87,7 +89,7 @@ angular.module('vMapsApp')
 							return 'gsm_data/' + folderName + '/video/3/' + item;
 						});
 						scope.$parent.videoList3 = videoList;
-						count.push('C'); 
+						videoCount.push('C'); 
 					}
 
 					if(attrs.video4 && attrs.video4 !== 'null') {		
@@ -96,7 +98,7 @@ angular.module('vMapsApp')
 							return 'gsm_data/' + folderName + '/video/4/' + item;
 						});
 						scope.$parent.videoList4 = videoList;
-						count.push('D'); 
+						videoCount.push('D'); 
 					}
 
 					if(attrs.ortho !== 'null') {						
@@ -105,6 +107,7 @@ angular.module('vMapsApp')
 					}
 					
 					scope.$parent.siteCount = count;
+					scope.$parent.videoCount = videoCount;
 				});
 			}
 		}
