@@ -1645,7 +1645,7 @@
 					'<img src="gsm_data/'+ feature.properties.city + '/' + feature.properties.img + '"/></div>'
 				}
 				return '<form id="update-form" data-layer="'+ layer.options.layerName + '" data-schema="' + params.schema + '">' + content + 
-					'<div><button data-update-layer type="submit">Update'+
+					'<div class="w-submit"><button data-update-layer type="submit">Update'+
 					'<span class="progress"></span></button></div></form>';
 			};
 
