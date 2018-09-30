@@ -153,16 +153,18 @@
 							layerArray.push(baselayers.overlays[overlay]);
 						}
 					
-						poiLayers = L.featureGroup(layerArray);				
+						poiLayers = L.featureGroup(layerArray);			
+						
+						console.log(poiLayers);
 						
 						$scope.controls.search = {
 							layer: poiLayers,
 							initial: false,
-							propertyName: 'search_id',
+							propertyName: 'longitude',
 							hideMarkerOnCollapse: false,
 							buildTip: function(text, val) {
-								var type = val.layer.feature.properties.search_id;
-								return '<a href="#">' + '<b>' + type + ' </b><span style = background-color:'+val.layer.options.fillColor+'>'+
+								var type = val.layer.feature.properties.longitude;
+								return '<a href="#">' + '<b>' + type + ' </b><span style = background-color:'+ val.layer.options.fillColor+'>'+
 								val.layer.options.layerName+'</span></a>';
 							}
 						}
