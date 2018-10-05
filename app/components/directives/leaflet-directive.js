@@ -1635,8 +1635,8 @@
 					'data-layerid=' + layer._leaflet_id +  ' ' +
 					'data-layer=' + layer.options.layerName +  ' ' +
 					'data-name='+ feature.properties.site_name + '  ' +
-					dataVideo1 + dataVideo2 + dataVideo3 + dataVideo4 + ' ' +
-					dataImg1 + dataImg2 + dataImg3 + dataImg4 + dataOrtho + data3d +  '>' +
+					dataVideo1 + ' ' + dataVideo2 + ' ' + dataVideo3 + ' ' + dataVideo4 + ' ' +
+					dataImg1 + ' ' + dataImg2 + ' ' + dataImg3 + ' ' +  dataImg4 + ' ' + dataOrtho + ' ' + data3d +  '>' +
 					'Media </button>'
 				}
 				

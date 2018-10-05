@@ -31,7 +31,7 @@ angular.module('vMapsApp')
 					if(attrs.images1 && attrs.images1 !== 'null') {		
 						scope.$parent.isimgshown = true;
 						var imgList	= attrs.images1.split(',').map(function(item){
-							return 'gsm_data/' + folderName + '/1/' + item;
+							return 'gsm_data/' + folderName + '/img/1/' + item;
 						});
 						scope.$parent.imageList1 = imgList;
 						count.push('A');
@@ -40,7 +40,7 @@ angular.module('vMapsApp')
 					if(attrs.images2 && attrs.images2 !== 'null') {		
 						scope.$parent.isimgshown = true;
 						var imgList	= attrs.images2.split(',').map(function(item){
-							return 'gsm_data/' + folderName + '/2/' + item;
+							return 'gsm_data/' + folderName + '/img/2/' + item;
 						});
 						scope.$parent.imageList2 = imgList;
 						count.push('B');
@@ -49,7 +49,7 @@ angular.module('vMapsApp')
 					if(attrs.images3 && attrs.images3 !== 'null') {		
 						scope.$parent.isimgshown = true;
 						var imgList	= attrs.images3.split(',').map(function(item){
-							return 'gsm_data/' + folderName + '/3/' + item;
+							return 'gsm_data/' + folderName + '/img/3/' + item;
 						});
 						scope.$parent.imageList3 = imgList;
 						count.push('C'); 
@@ -58,7 +58,7 @@ angular.module('vMapsApp')
 					if(attrs.images4 && attrs.images4 !== 'null') {		
 						scope.$parent.isimgshown = true;
 						var imgList	= attrs.images4.split(',').map(function(item){
-							return 'gsm_data/' + folderName + '/4/' + item;
+							return 'gsm_data/' + folderName + '/img/4/' + item;
 						});
 						scope.$parent.imageList4 = imgList;
 						count.push('D'); 
