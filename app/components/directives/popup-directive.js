@@ -13,7 +13,7 @@ angular.module('vMapsApp')
 
 					angular.element(popupEl).addClass('active');
 					angular.element(popupEl).find('img').attr('src', 'data_img/' + attrs.src);
-				
+								
 				});
 			}
 		}

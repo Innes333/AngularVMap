@@ -1649,7 +1649,8 @@
 				if (feature.properties.img) {
 					content += '<div class="popup-img" data-popup-btn popup-block="popup-view-img" ' +
 					'data-src="' + feature.properties.img + '">' + 
-					'<img src="data_img/' + feature.properties.img + '"></div>'
+					'<div class="preview-img" data-src="data_img/' + feature.properties.img + '">View image: ' + feature.properties.img + '</div>' +
+					'</div>'
 				}
 				return '<form id="update-form" data-layer="'+ layer.options.layerName + '" data-schema="' + params.schema + '">' + content + 
 					'<div class="w-submit"><button data-update-layer type="submit">Update'+
