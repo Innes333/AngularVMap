@@ -7,7 +7,7 @@
 			function($http, $interval, leafletData, $rootScope,
 			         $scope, $window, $routeParams, $timeout, $localStorage,
 			         baseFunc, dataService, rolesConfig){
-					
+									
 	        angular.extend($scope, {
 				vmap: {
 					lat: 0.504503980130774,
@@ -58,7 +58,17 @@
 
 	        // get map object from $scope
 			var map = leafletData.getMap('map');
-		
+			// bind to onDragEnd event
+			map.then(function(map) {
+				map.on('dragend', function() {
+					var bbox = map.getBounds().toBBoxString().split(',');
+					var bboxUrl = 'http://176.37.101.48:3000/bbox/ar1_lom/fig8_lom_ar1'
+						+ `?lat1=${bbox[0]}&lng1=${bbox[1]}`
+						+ `&lat2=${bbox[2]}&lng2=${bbox[3]}`;
+					console.log(bboxUrl);
+				});
+			})
+		  
 			// addLayer
 			$scope.addLayer = function(layer, layerName) {
 				$rootScope.appConfig.preloader = true;
@@ -106,7 +116,7 @@
 				userLayersCount = 0,
 				loadFirstCount = 0;
 
-			var loadLayers = function(nameOfLayers, url, loadFirst) {				
+			var loadLayers = function(nameOfLayers, url, loadFirst, bbox) {
 				for (var layer in nameOfLayers) {
 					loadFirst.includes(layer) && $scope.addLayer(rolesConfig[url][layer], layer);					
 				}					
@@ -117,7 +127,7 @@
 					$scope.vmap.lng = 1.240906;
 					$scope.vmap.lat = 6.130398;
 					userLayersCount = Object.keys(rolesConfig.demoLayers).length;
-					loadFirstCount = rolesConfig.demoJSON.loadFirst.length;
+					loadFirstCount = rolesConfig.demoJSON.loadFirst.length;					
 					loadLayers(rolesConfig.demoLayers, 'demoJSON', rolesConfig.demoJSON.loadFirst );
 					$scope.userLayers = rolesConfig.demoLayers;
 					$scope.userLayersConfig = rolesConfig.demoJSON;
