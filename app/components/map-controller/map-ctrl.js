@@ -12,7 +12,7 @@
 				vmap: {
 					lat: 0.504503980130774,
 					lng: 9.408579986073635,
-					zoom: 16,
+					zoom: 18,
 					preferCanvas: true,
 					renderer: L.canvas()				
 				},
@@ -56,32 +56,41 @@
 				}
 			});
 
+			var getBboxUrl = function(url, bbox) {
+				return url + `?lat1=${bbox[0]}&lng1=${bbox[1]}`
+					+ `&lat2=${bbox[2]}&lng2=${bbox[3]}`;
+			}
 	        // get map object from $scope
 			var map = leafletData.getMap('map');
+			var bbox = null;
 			// bind to onDragEnd event
-			map.then(function(map) {
+			map.then(function(map) {				
+				bbox = map.getBounds().toBBoxString().split(',');
+				loadLayers($scope.userLayers, 'demoJSON', $scope.userLayersConfig.loadFirst, bbox);
+				
 				map.on('dragend', function() {
-					var bbox = map.getBounds().toBBoxString().split(',');
-					var bboxUrl = 'http://176.37.101.48:3000/bbox/ar1_lom/fig8_lom_ar1'
-						+ `?lat1=${bbox[0]}&lng1=${bbox[1]}`
-						+ `&lat2=${bbox[2]}&lng2=${bbox[3]}`;
-					console.log(bboxUrl);
+					bbox = map.getBounds().toBBoxString().split(',');
+					console.log('drag ', getBboxUrl('localhost:30303/', bbox));
+					loadLayers($scope.userLayers, 'demoJSON', $scope.userLayersConfig.loadFirst, bbox);
 				});
 			})
 		  
 			// addLayer
-			$scope.addLayer = function(layer, layerName) {
+			$scope.addLayer = function(layer, layerName, bbox) {
 				$rootScope.appConfig.preloader = true;
 				var layerType = layer.type === 'poly' || layer.type === 'line' ?
 					'geoJSONPolyline' : 'geoJSONSVGMarker';
 				var overlayName = '<span class="check"><span class="checked"></span></span><span class="'
 				 + layer.type + ' ' + layerName + '"></span>' + layer.name;
-				dataService.getData(layer.url)
+				var bboxUrl = getBboxUrl(layer.url, bbox);
+				// console.log('bbox  ', getBboxUrl(layer.url, bbox));
+				dataService.getData(bboxUrl)
 					.then(function (response) {
 						var features = response.data;
 						if (!response.data.features) {
 							features = [{"type":"Feature","geometry":{"type":"LineString","coordinates":[]}}]
 						}
+						console.log('first loD ', $scope.layers.overlays[layerName]);
 						$scope.layers.overlays[layerName] = {
 							name: overlayName,
 							type: layerType,
@@ -101,14 +110,14 @@
 								pointerEvents: 'all',
 								dashArray: layer.dashArray !== '' ? layer.dashArray : '',
 								layerName: layerName,
-								zIndex: 100,
 								popupColumns: layer.popupColumns,
 								schema: layer.schema
 							}
 						};
+						console.log($scope.layers.overlays[layerName]);
 						$rootScope.appConfig.preloader = false;
 					}, function (error) {
-						throw dataService.catchError(error, 'Ajax call error message!');
+						throw dataService.catchError(error, 'Something goes wrong with server!');
 					});
 			};
 
@@ -118,7 +127,7 @@
 
 			var loadLayers = function(nameOfLayers, url, loadFirst, bbox) {
 				for (var layer in nameOfLayers) {
-					loadFirst.includes(layer) && $scope.addLayer(rolesConfig[url][layer], layer);					
+					loadFirst.includes(layer) && bbox && $scope.addLayer(rolesConfig[url][layer], layer, bbox);					
 				}					
 			};
 
@@ -137,47 +146,48 @@
 					$scope.vmap.lat = 6.130398;
 					userLayersCount = Object.keys(rolesConfig.demoLayers).length;
 					loadFirstCount = rolesConfig.demoJSON.loadFirst.length;
-					loadLayers(rolesConfig.demoLayers, 'demoJSON', rolesConfig.demoJSON.loadFirst);
 					$scope.userLayers = rolesConfig.demoLayers;
 					$scope.userLayersConfig = rolesConfig.demoJSON;
+					console.log('cse bbox ', bbox);
+					
 			};
 
-			$scope.$watchCollection('layers.overlays', function(allArray) {
-				leafletData.getLayers('map').then(function(baselayers) {
-					// check if all layers are loaded
-					if (Object.keys(allArray).length === loadFirstCount || Object.keys(allArray).length === userLayersCount ) {
-						$rootScope.appConfig.preloader = false;
-						// move to front a layer										
-						// if ($scope.userLayersConfig.topLayers) {
-						// 	for (var i=0; i < $scope.userLayersConfig.topLayers.length; i++) {
-						// 		baselayers.overlays[$scope.userLayersConfig.topLayers[i]].bringToFront();
-						// 	}
-						// }							
+			// $scope.$watchCollection('layers.overlays', function(allArray) {
+			// 	leafletData.getLayers('map').then(function(baselayers) {
+			// 		// check if all layers are loaded
+			// 		if (Object.keys(allArray).length === loadFirstCount || Object.keys(allArray).length === userLayersCount ) {
+			// 			$rootScope.appConfig.preloader = false;
+			// 			// move to front a layer										
+			// 			// if ($scope.userLayersConfig.topLayers) {
+			// 			// 	for (var i=0; i < $scope.userLayersConfig.topLayers.length; i++) {
+			// 			// 		baselayers.overlays[$scope.userLayersConfig.topLayers[i]].bringToFront();
+			// 			// 	}
+			// 			// }							
 						
-						var poiLayers;
-						// Prepare array of overlay layers
-						var layerArray = [];
-						for (overlay in baselayers.overlays) {
-							layerArray.push(baselayers.overlays[overlay]);
-						}
+			// 			var poiLayers;
+			// 			// Prepare array of overlay layers
+			// 			var layerArray = [];
+			// 			for (overlay in baselayers.overlays) {
+			// 				layerArray.push(baselayers.overlays[overlay]);
+			// 			}
 					
-						poiLayers = L.featureGroup(layerArray);				
+			// 			poiLayers = L.featureGroup(layerArray);				
 						
-						$scope.controls.search = {
-							layer: poiLayers,
-							initial: false,
-							propertyName: 'search_id',
-							hideMarkerOnCollapse: false,
-							buildTip: function(text, val) {
-								var type = val.layer.feature.properties.search_id;
-								return '<a href="#">' + '<b>' + type + ' </b><span style = background-color:'+val.layer.options.fillColor+'>'+
-								val.layer.options.layerName+'</span></a>';
-							}
-						}
+			// 			$scope.controls.search = {
+			// 				layer: poiLayers,
+			// 				initial: false,
+			// 				propertyName: 'search_id',
+			// 				hideMarkerOnCollapse: false,
+			// 				buildTip: function(text, val) {
+			// 					var type = val.layer.feature.properties.search_id;
+			// 					return '<a href="#">' + '<b>' + type + ' </b><span style = background-color:'+val.layer.options.fillColor+'>'+
+			// 					val.layer.options.layerName+'</span></a>';
+			// 				}
+			// 			}
 						
-					};
-				});
-			});
+			// 		};
+			// 	});
+			// });
 
 			// console.log(leafletData.getMap('map'))
 			// window.onsubmit = function(e) {
