@@ -23,7 +23,7 @@ angular.module('vMapsApp')
 					
 					formData.id &&
 					$http.put(
-						rolesConfig.baseUrl + 'gva/' + schema + '/' + layer + '/' + formData.id,
+						rolesConfig.baseUrl + 'map/gva/' + schema + '/' + layer + '/' + formData.id,
 						formData
 					).then(function(resp){
 						if (resp.status === 200) {

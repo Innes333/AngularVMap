@@ -10,7 +10,12 @@
 							name: 'NETIS Ghana',
 							password: 'Helios',
 							role: 'admin',
-						}]						
+						}],
+						drone: [{
+							name: 'drone_by_netis',
+							password: 'Ulysco',
+							role: 'admin',
+						}]							
 					};
 					for(role in roles) {
 						var item = roles[role];

@@ -16,7 +16,7 @@
                     className: 'ghana_gsm_sites',
                     pane: 'overlayPane',
                     type: 'point',
-                    url: 'http://176.37.101.48:3000/gva/gsm/ghana_gsm_sites',
+                    url: 'http://176.37.101.48:3000/map/gva/gsm/ghana_gsm_sites',
                     fillColor: '#333',
                     color: {
                         done: '#1B5E20',

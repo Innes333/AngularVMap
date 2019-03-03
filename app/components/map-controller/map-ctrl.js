@@ -12,7 +12,7 @@
 				vmap: {
 					lat: 0.504503980130774,
 					lng: 9.408579986073635,
-					zoom: 10,
+					zoom: 12,
 					preferCanvas: true,
 					renderer: L.canvas()				
 				},
