@@ -56,22 +56,24 @@
 				}
 			});
 
-			var getBboxUrl = function(url, bbox) {
-				return url + `?lat1=${bbox[0]}&lng1=${bbox[1]}`
-					+ `&lat2=${bbox[2]}&lng2=${bbox[3]}`;
+			$scope.bbox = []
+			var getBboxUrl = function(url) {
+				return url + `?lat1=${$scope.bbox[0]}&lng1=${$scope.bbox[1]}`
+					+ `&lat2=${$scope.bbox[2]}&lng2=${$scope.bbox[3]}`;
 			}
 	        // get map object from $scope
 			var map = leafletData.getMap('map');
-			var bbox = null;
+			
 			// bind to onDragEnd event
 			map.then(function(map) {				
-				bbox = map.getBounds().toBBoxString().split(',');
-				loadLayers($scope.userLayers, 'demoJSON', $scope.userLayersConfig.loadFirst, bbox);
+				$scope.bbox = map.getBounds().toBBoxString().split(',');
+				loadLayers($scope.userLayers, 'demoJSON', $scope.userLayersConfig.loadFirst, $scope.bbox);
 				
 				map.on('dragend', function() {
-					bbox = map.getBounds().toBBoxString().split(',');
-					console.log('drag ', getBboxUrl('localhost:30303/', bbox));
-					loadLayers($scope.userLayers, 'demoJSON', $scope.userLayersConfig.loadFirst, bbox);
+					$scope.bbox = map.getBounds().toBBoxString().split(',');
+					
+					loadLayers($scope.userLayers, 'demoJSON', $scope.userLayersConfig.loadFirst, $scope.bbox);
+					map._resetView(map.getCenter(), map.getZoom(), true);
 				});
 			})
 		  
@@ -83,14 +85,14 @@
 				var overlayName = '<span class="check"><span class="checked"></span></span><span class="'
 				 + layer.type + ' ' + layerName + '"></span>' + layer.name;
 				var bboxUrl = getBboxUrl(layer.url, bbox);
-				// console.log('bbox  ', getBboxUrl(layer.url, bbox));
+
 				dataService.getData(bboxUrl)
 					.then(function (response) {
 						var features = response.data;
 						if (!response.data.features) {
 							features = [{"type":"Feature","geometry":{"type":"LineString","coordinates":[]}}]
 						}
-						console.log('first loD ', $scope.layers.overlays[layerName]);
+						if ($scope.layer) $scope.layer.clearLayers();
 						$scope.layers.overlays[layerName] = {
 							name: overlayName,
 							type: layerType,
@@ -99,6 +101,7 @@
 							visible: true,
 							clickable: true,
 							autoZIndex: false,
+							doRefresh: true,
 							layerOptions: {
 								pane: layer.pane,
 								radius: layer.radius,
@@ -114,7 +117,6 @@
 								schema: layer.schema
 							}
 						};
-						console.log($scope.layers.overlays[layerName]);
 						$rootScope.appConfig.preloader = false;
 					}, function (error) {
 						throw dataService.catchError(error, 'Something goes wrong with server!');
@@ -147,9 +149,7 @@
 					userLayersCount = Object.keys(rolesConfig.demoLayers).length;
 					loadFirstCount = rolesConfig.demoJSON.loadFirst.length;
 					$scope.userLayers = rolesConfig.demoLayers;
-					$scope.userLayersConfig = rolesConfig.demoJSON;
-					console.log('cse bbox ', bbox);
-					
+					$scope.userLayersConfig = rolesConfig.demoJSON;					
 			};
 
 			// $scope.$watchCollection('layers.overlays', function(allArray) {
