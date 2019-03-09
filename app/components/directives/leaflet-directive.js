@@ -1615,8 +1615,12 @@
 				}
 
 				if (feature.properties.data_pdf) {
-					content += '<a href="gsm_data/Mile_7/' + 
-					feature.properties.data_pdf + '" class="pdf-link" target="_blank">Reports</a>'					
+					var pdfs = feature.properties.data_pdf.split(',');
+					pdfs.map(function(file, index){
+						content += '<a href="gsm_data/Mile_7/' + 
+						file + '" class="pdf-link" target="_blank">Reports ' + (index + 1) + '</a><br/>';				
+
+					})
 				}
 
 				if (feature.properties.data_img1 || feature.properties.data_video1) {
