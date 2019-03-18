@@ -1617,8 +1617,8 @@
 				if (feature.properties.data_pdf) {
 					var pdfs = feature.properties.data_pdf.split(',');
 					pdfs.map(function(file, index){
-						content += '<a href="gsm_data/Mile_7/' + 
-						file + '" class="pdf-link" target="_blank">Reports ' + (index + 1) + '</a><br/>';				
+						content += '<a href="gsm_data/' + feature.properties.site_name + '/pdf/' + 
+						file + '" class="pdf-link" target="_blank">Reports ' + (index + 1) + '</a>';				
 
 					})
 				}

@@ -57,9 +57,27 @@
 			});
 
 	        // get map object from $scope
-			var map = leafletData.getMap('map');
 			$rootScope.isSaving = false;
+			$scope.bbox = [];
+
+			var getBboxUrl = function(url) {
+				return url + `?lat1=${$scope.bbox[0]}&lng1=${$scope.bbox[1]}`
+					+ `&lat2=${$scope.bbox[2]}&lng2=${$scope.bbox[3]}`;
+			}
+			var map = leafletData.getMap('map');
+
 		
+			map.then(function(map) {				
+				$scope.bbox = map.getBounds().toBBoxString().split(',');
+				loadLayers($scope.userLayers, 'demoJSON', $scope.userLayersConfig.loadFirst, $scope.bbox);
+				
+				map.on('dragend', function() {
+					$scope.bbox = map.getBounds().toBBoxString().split(',');
+					
+					loadLayers($scope.userLayers, 'demoJSON', $scope.userLayersConfig.loadFirst, $scope.bbox);
+					map._resetView(map.getCenter(), map.getZoom(), true);
+				});
+			})
 			// addLayer
 			$scope.addLayer = function(layer, layerName) {
 				$rootScope.appConfig.preloader = true;
@@ -120,7 +138,7 @@
 					$scope.vmap.lat = 5.9311694;
 					userLayersCount = Object.keys(rolesConfig.demoLayers).length;
 					loadFirstCount = rolesConfig.demoJSON.loadFirst.length;
-					loadLayers(rolesConfig.demoLayers, 'demoJSON', rolesConfig.demoJSON.loadFirst );
+					// loadLayers(rolesConfig.demoLayers, 'demoJSON', rolesConfig.demoJSON.loadFirst );
 					$scope.userLayers = rolesConfig.demoLayers;
 					$scope.userLayersConfig = rolesConfig.demoJSON;
 				break;							
@@ -129,7 +147,7 @@
 					$scope.vmap.lat = 5.632969;
 					userLayersCount = Object.keys(rolesConfig.demoLayers).length;
 					loadFirstCount = rolesConfig.demoJSON.loadFirst.length;
-					loadLayers(rolesConfig.demoLayers, 'demoJSON', rolesConfig.demoJSON.loadFirst);
+					// loadLayers(rolesConfig.demoLayers, 'demoJSON', rolesConfig.demoJSON.loadFirst);
 					$scope.userLayers = rolesConfig.demoLayers;
 					$scope.userLayersConfig = rolesConfig.demoJSON;
 			};
